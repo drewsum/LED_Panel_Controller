@@ -14,18 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Connection ~ 2770 2240
-$Comp
-L Custom_Library:+12Vin #PWR?
-U 1 1 5BB687E3
-P 3300 2160
-F 0 "#PWR?" H 3300 2010 50  0001 C CNN
-F 1 "+12Vin" H 3300 2310 50  0000 C CNN
-F 2 "" H 3300 2160 50  0000 C CNN
-F 3 "" H 3300 2160 50  0000 C CNN
-	1    3300 2160
-	1    0    0    -1  
-$EndComp
+Connection ~ 2020 2240
 $Comp
 L Custom_Library:CP_Tant_Custom C?
 U 1 1 5BB7221C
@@ -66,76 +55,51 @@ $EndComp
 $Comp
 L power:PWR_FLAG #FLG?
 U 1 1 5BB80B0C
-P 2770 2160
-F 0 "#FLG?" H 2770 2235 50  0001 C CNN
-F 1 "PWR_FLAG" H 2770 2310 50  0000 C CNN
-F 2 "" H 2770 2160 50  0001 C CNN
-F 3 "~" H 2770 2160 50  0001 C CNN
-	1    2770 2160
+P 2020 2160
+F 0 "#FLG?" H 2020 2235 50  0001 C CNN
+F 1 "PWR_FLAG" H 2020 2310 50  0000 C CNN
+F 2 "" H 2020 2160 50  0001 C CNN
+F 3 "~" H 2020 2160 50  0001 C CNN
+	1    2020 2160
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2770 2160 2770 2240
+	2020 2160 2020 2240
 $Comp
 L Connector:Barrel_Jack_Switch J?
 U 1 1 5BF0E9C8
-P 1580 2340
-F 0 "J?" H 1580 2550 50  0000 C CNN
-F 1 "+12V IN" H 1580 2140 50  0000 C CNN
-F 2 "Connectors:BARREL_JACK" H 1630 2300 50  0001 C CNN
-F 3 "~" H 1630 2300 50  0001 C CNN
-	1    1580 2340
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5BF10B9D
-P 1960 2520
-F 0 "#PWR?" H 1960 2270 50  0001 C CNN
-F 1 "GND" H 1960 2370 50  0000 C CNN
-F 2 "" H 1960 2520 50  0001 C CNN
-F 3 "" H 1960 2520 50  0001 C CNN
-	1    1960 2520
+P 1370 2340
+F 0 "J?" H 1370 2550 50  0000 C CNN
+F 1 "+12V IN" H 1370 2140 50  0000 C CNN
+F 2 "Connectors:BARREL_JACK" H 1420 2300 50  0001 C CNN
+F 3 "~" H 1420 2300 50  0001 C CNN
+	1    1370 2340
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1960 2520 1960 2440
+	1750 2440 1670 2440
 Wire Wire Line
-	1960 2440 1880 2440
+	1750 2440 1750 2340
 Wire Wire Line
-	1960 2440 1960 2340
+	1750 2340 1670 2340
 Wire Wire Line
-	1960 2340 1880 2340
-Connection ~ 1960 2440
-Wire Wire Line
-	1880 2240 2770 2240
-$Comp
-L power:GND #PWR?
-U 1 1 5BC52ED8
-P 2770 2620
-F 0 "#PWR?" H 2770 2370 50  0001 C CNN
-F 1 "GND" H 2770 2470 50  0000 C CNN
-F 2 "" H 2770 2620 50  0001 C CNN
-F 3 "" H 2770 2620 50  0001 C CNN
-	1    2770 2620
-	1    0    0    -1  
-$EndComp
+	1670 2240 2020 2240
 $Comp
 L Device:D_TVS_ALT D?
 U 1 1 5BC52DC5
-P 2770 2470
-F 0 "D?" V 2724 2549 50  0000 L CNN
-F 1 "24V" V 2815 2549 50  0000 L CNN
-F 2 "Diodes_SMD:D_SMA" H 2770 2470 50  0001 C CNN
-F 3 "~" H 2770 2470 50  0001 C CNN
-F 4 "SMAJ24CALFCT-ND" H 2770 2470 50  0001 C CNN "Digi-Key PN"
-	1    2770 2470
+P 2020 2470
+F 0 "D?" V 1974 2549 50  0000 L CNN
+F 1 "24V" V 2065 2549 50  0000 L CNN
+F 2 "Diodes_SMD:D_SMA" H 2020 2470 50  0001 C CNN
+F 3 "~" H 2020 2470 50  0001 C CNN
+F 4 "SMAJ24CALFCT-ND" H 2020 2470 50  0001 C CNN "Digi-Key PN"
+	1    2020 2470
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2770 2320 2770 2240
+	2020 2320 2020 2240
 Text Notes 1350 5280 0    50   ~ 0
-UVLO threshold set to 10.8V\nOVLO threshold set to 13.2V\n\nMODE set to Circuit Breaker with Auto-Retry\n\nOutput Current Limit set to 1.2A
+UVLO threshold set to 10.8V\nOVLO threshold set to 13.2V\n\nMODE set to Circuit Breaker with Auto-Retry\n\nOutput Current Limit set to 2A
 Wire Wire Line
 	7780 2170 7780 2240
 $Comp
@@ -157,103 +121,9 @@ Connection ~ 8530 2240
 Wire Wire Line
 	8530 2240 7780 2240
 $Comp
-L Custom_Library:+12Vin #PWR?
-U 1 1 5BB6907F
-P 5600 5880
-F 0 "#PWR?" H 5600 5730 50  0001 C CNN
-F 1 "+12Vin" H 5600 6030 50  0000 C CNN
-F 2 "" H 5600 5880 50  0000 C CNN
-F 3 "" H 5600 5880 50  0000 C CNN
-	1    5600 5880
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5BB5EFF4
-P 5600 6340
-F 0 "#PWR?" H 5600 6090 50  0001 C CNN
-F 1 "GND" H 5600 6190 50  0000 C CNN
-F 2 "" H 5600 6340 50  0001 C CNN
-F 3 "" H 5600 6340 50  0001 C CNN
-	1    5600 6340
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5600 5920 5900 5920
-Wire Wire Line
-	5600 5920 5600 5960
-Wire Wire Line
-	5900 5920 5900 5960
-Connection ~ 5600 5920
-Wire Wire Line
-	5300 5920 5600 5920
-Wire Wire Line
-	5300 5960 5300 5920
-Wire Wire Line
-	5600 5880 5600 5920
-Wire Wire Line
-	5900 6300 5900 6260
-Wire Wire Line
-	5600 6300 5900 6300
-Wire Wire Line
-	5600 6300 5600 6260
-Wire Wire Line
-	5300 6300 5300 6260
-Connection ~ 5600 6300
-Wire Wire Line
-	5600 6300 5300 6300
-Wire Wire Line
-	5600 6340 5600 6300
-$Comp
-L Custom_Library:C_Custom C?
-U 1 1 5BB57710
-P 5900 6110
-AR Path="/5BAAE16C/5BB57710" Ref="C?"  Part="1" 
-AR Path="/5BB181D8/5BB57710" Ref="C?"  Part="1" 
-AR Path="/5BB2595E/5BB57710" Ref="C?"  Part="1" 
-AR Path="/5BAAE0FA/5BB57710" Ref="C?"  Part="1" 
-AR Path="/5BB86F23/5BB57710" Ref="C?"  Part="1" 
-AR Path="/5D77A516/5BB57710" Ref="C?"  Part="1" 
-AR Path="/5E939CFF/5BB57710" Ref="C?"  Part="1" 
-AR Path="/5F581B41/5BB57710" Ref="C?"  Part="1" 
-F 0 "C?" H 5925 6210 50  0000 L CNN
-F 1 "1nF" H 5925 6010 50  0000 L CNN
-F 2 "" H 5938 5960 50  0001 C CNN
-F 3 "" H 5925 6210 50  0001 C CNN
-F 4 "0402" H 5750 6210 50  0001 R CNN "display_footprint"
-F 5 "50V" H 5750 6110 50  0001 R CNN "Voltage"
-F 6 "X7R" H 5750 6010 50  0001 R CNN "Dielectric"
-F 7 "" H 6325 6610 60  0001 C CNN "Digi-Key PN"
-	1    5900 6110
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:C_Custom C?
-U 1 1 5BB57705
-P 5600 6110
-AR Path="/5BAAE16C/5BB57705" Ref="C?"  Part="1" 
-AR Path="/5BB181D8/5BB57705" Ref="C?"  Part="1" 
-AR Path="/5BB2595E/5BB57705" Ref="C?"  Part="1" 
-AR Path="/5BAAE0FA/5BB57705" Ref="C?"  Part="1" 
-AR Path="/5BB86F23/5BB57705" Ref="C?"  Part="1" 
-AR Path="/5D77A516/5BB57705" Ref="C?"  Part="1" 
-AR Path="/5E939CFF/5BB57705" Ref="C?"  Part="1" 
-AR Path="/5F581B41/5BB57705" Ref="C?"  Part="1" 
-F 0 "C?" H 5625 6210 50  0000 L CNN
-F 1 "10nF" H 5625 6010 50  0000 L CNN
-F 2 "" H 5638 5960 50  0001 C CNN
-F 3 "" H 5625 6210 50  0001 C CNN
-F 4 "0402" H 5450 6210 50  0001 R CNN "display_footprint"
-F 5 "50V" H 5450 6110 50  0001 R CNN "Voltage"
-F 6 "X7R" H 5450 6010 50  0001 R CNN "Dielectric"
-F 7 "" H 6025 6610 60  0001 C CNN "Digi-Key PN"
-	1    5600 6110
-	1    0    0    -1  
-$EndComp
-$Comp
 L Custom_Library:C_Custom C?
 U 1 1 5BB576FA
-P 5300 6110
+P 5600 6030
 AR Path="/5BAAE16C/5BB576FA" Ref="C?"  Part="1" 
 AR Path="/5BB181D8/5BB576FA" Ref="C?"  Part="1" 
 AR Path="/5BB2595E/5BB576FA" Ref="C?"  Part="1" 
@@ -262,15 +132,15 @@ AR Path="/5BB86F23/5BB576FA" Ref="C?"  Part="1"
 AR Path="/5D77A516/5BB576FA" Ref="C?"  Part="1" 
 AR Path="/5E939CFF/5BB576FA" Ref="C?"  Part="1" 
 AR Path="/5F581B41/5BB576FA" Ref="C?"  Part="1" 
-F 0 "C?" H 5325 6210 50  0000 L CNN
-F 1 "0.1uF" H 5325 6010 50  0000 L CNN
-F 2 "" H 5338 5960 50  0001 C CNN
-F 3 "" H 5325 6210 50  0001 C CNN
-F 4 "0402" H 5150 6210 50  0000 R CNN "display_footprint"
-F 5 "50V" H 5150 6110 50  0000 R CNN "Voltage"
-F 6 "X7R" H 5150 6010 50  0000 R CNN "Dielectric"
-F 7 "" H 5725 6610 60  0001 C CNN "Digi-Key PN"
-	1    5300 6110
+F 0 "C?" H 5625 6130 50  0000 L CNN
+F 1 "0.1uF" H 5625 5930 50  0000 L CNN
+F 2 "" H 5638 5880 50  0001 C CNN
+F 3 "" H 5625 6130 50  0001 C CNN
+F 4 "0402" H 5450 6130 50  0000 R CNN "display_footprint"
+F 5 "50V" H 5450 6030 50  0000 R CNN "Voltage"
+F 6 "X7R" H 5450 5930 50  0000 R CNN "Dielectric"
+F 7 "" H 6025 6530 60  0001 C CNN "Digi-Key PN"
+	1    5600 6030
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -346,11 +216,6 @@ Wire Wire Line
 	6540 5460 4900 5460
 Wire Wire Line
 	4920 2240 4600 2240
-Wire Wire Line
-	3300 2160 3300 2240
-Connection ~ 3300 2240
-Wire Wire Line
-	3300 2240 2770 2240
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5DDBCEA9
@@ -735,34 +600,106 @@ F 7 "" H 6910 4770 60  0001 C CNN "Digi-Key PN"
 	1    6610 4370
 	1    0    0    -1  
 $EndComp
+Text Notes 7180 3890 0    50   ~ 0
++3.3V Logic Level
 $Comp
 L Custom_Library:R_Custom R?
-U 1 1 5F374B48
+U 1 1 5F6FDD66
 P 6540 5210
-AR Path="/5BB27BA3/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5BB27BF7/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5C1DE17A/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5C1E3A08/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5D779AE1/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5E0F263A/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5E939D31/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5E98CF45/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5F280E04/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5E939CFF/5F374B48" Ref="R?"  Part="1" 
-AR Path="/5F581B41/5F374B48" Ref="R?"  Part="1" 
-F 0 "R?" H 6460 5210 50  0000 R CNN
-F 1 "10k" V 6540 5210 50  0000 C CNN
+AR Path="/5D6B2673/5F6FDD66" Ref="R?"  Part="1" 
+AR Path="/5D6C0D23/5F6FDD66" Ref="R?"  Part="1" 
+AR Path="/5D77A516/5F6FDD66" Ref="R?"  Part="1" 
+AR Path="/5E939CFF/5F6FDD66" Ref="R?"  Part="1" 
+AR Path="/5F581B41/5F6FDD66" Ref="R?"  Part="1" 
+F 0 "R?" H 6450 5210 50  0000 R CNN
+F 1 "5.11k" V 6540 5210 40  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 6540 5210 50  0001 C CNN
 F 3 "" H 6540 5210 50  0001 C CNN
-F 4 "0402" H 6640 5290 50  0000 L CNN "display_footprint"
-F 5 "1%" H 6640 5210 50  0000 L CNN "Tolerance"
-F 6 "1/16W" H 6650 5130 50  0000 L CNN "Wattage"
+F 4 "0402" H 6640 5280 50  0000 L CNN "display_footprint"
+F 5 "1%" H 6640 5180 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 6640 5080 50  0000 L CNN "Wattage"
 F 7 "" H 6840 5610 60  0001 C CNN "Digi-Key PN"
 	1    6540 5210
 	1    0    0    -1  
 $EndComp
-Text Notes 7180 3890 0    50   ~ 0
-+3.3V Logic Level
+$Comp
+L Custom_Library:+12Vin #PWR?
+U 1 1 5BB6907F
+P 5600 5880
+F 0 "#PWR?" H 5600 5730 50  0001 C CNN
+F 1 "+12Vin" H 5600 6030 50  0000 C CNN
+F 2 "" H 5600 5880 50  0000 C CNN
+F 3 "" H 5600 5880 50  0000 C CNN
+	1    5600 5880
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F703F35
+P 5600 6180
+F 0 "#PWR?" H 5600 5930 50  0001 C CNN
+F 1 "GND" H 5600 6030 50  0000 C CNN
+F 2 "" H 5600 6180 50  0001 C CNN
+F 3 "" H 5600 6180 50  0001 C CNN
+	1    5600 6180
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 2440 1750 2700
+Wire Wire Line
+	1750 2700 2020 2700
+Wire Wire Line
+	2020 2700 2020 2620
+Connection ~ 1750 2440
+$Comp
+L Custom_Library:DLW5ATN501MQ2L FL?
+U 1 1 5F7200EA
+P 2740 2340
+F 0 "FL?" H 2750 2680 50  0000 C CNN
+F 1 "DLW5ATN501MQ2L" H 2750 2580 50  0000 C CNN
+F 2 "" H 2740 2090 50  0001 C CNN
+F 3 "~" V 2740 2380 50  0001 C CNN
+	1    2740 2340
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 2160 3300 2240
+$Comp
+L Custom_Library:+12Vin #PWR?
+U 1 1 5BB687E3
+P 3300 2160
+F 0 "#PWR?" H 3300 2010 50  0001 C CNN
+F 1 "+12Vin" H 3300 2310 50  0000 C CNN
+F 2 "" H 3300 2160 50  0000 C CNN
+F 3 "" H 3300 2160 50  0000 C CNN
+	1    3300 2160
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 2240 2940 2240
+Connection ~ 3300 2240
+Wire Wire Line
+	2540 2240 2020 2240
+Wire Wire Line
+	2020 2700 2460 2700
+Wire Wire Line
+	2460 2700 2460 2440
+Wire Wire Line
+	2460 2440 2540 2440
+Connection ~ 2020 2700
+$Comp
+L power:GND #PWR?
+U 1 1 5F72EDF3
+P 3020 2520
+F 0 "#PWR?" H 3020 2270 50  0001 C CNN
+F 1 "GND" H 3020 2370 50  0000 C CNN
+F 2 "" H 3020 2520 50  0001 C CNN
+F 3 "" H 3020 2520 50  0001 C CNN
+	1    3020 2520
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3020 2520 3020 2440
+Wire Wire Line
+	3020 2440 2940 2440
 $EndSCHEMATC
