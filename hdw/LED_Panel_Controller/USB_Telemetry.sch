@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 3 34
+Sheet 34 34
 Title "Pulse Oximeter"
 Date "2020-08-01"
 Rev "A"
@@ -15,9 +15,9 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text GLabel 3790 1800 0    50   UnSpc ~ 0
-POS12_SNS+
+POS5_USB_SNS+
 Text GLabel 3790 2260 0    50   UnSpc ~ 0
-POS12_SNS-
+POS5_USB_SNS-
 $Comp
 L power:GND #PWR?
 U 1 1 5E0ACFF2
@@ -27,6 +27,8 @@ AR Path="/5E0A0E29/5E0ACFF2" Ref="#PWR?"  Part="1"
 AR Path="/5E052856/5E0ACFF2" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D84/5E0ACFF2" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B58/5E0ACFF2" Ref="#PWR?"  Part="1" 
+AR Path="/5F581BB7/5E0ACFF2" Ref="#PWR?"  Part="1" 
+AR Path="/5F7B4289/5E0ACFF2" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 2190 50  0001 C CNN
 F 1 "GND" H 5110 2290 50  0000 C CNN
 F 2 "" H 5110 2440 50  0001 C CNN
@@ -43,6 +45,8 @@ AR Path="/5E0A0E29/5E0AD665" Ref="#PWR?"  Part="1"
 AR Path="/5E052856/5E0AD665" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D84/5E0AD665" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B58/5E0AD665" Ref="#PWR?"  Part="1" 
+AR Path="/5F581BB7/5E0AD665" Ref="#PWR?"  Part="1" 
+AR Path="/5F7B4289/5E0AD665" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 1490 50  0001 C CNN
 F 1 "+3.3V" H 5110 1780 50  0000 C CNN
 F 2 "" H 5110 1640 50  0001 C CNN
@@ -62,6 +66,8 @@ AR Path="/5E0A0E29/5E0B2427" Ref="C?"  Part="1"
 AR Path="/5E052856/5E0B2427" Ref="C?"  Part="1" 
 AR Path="/5EAE2D84/5E0B2427" Ref="C?"  Part="1" 
 AR Path="/5F581B58/5E0B2427" Ref="C?"  Part="1" 
+AR Path="/5F581BB7/5E0B2427" Ref="C?"  Part="1" 
+AR Path="/5F7B4289/5E0B2427" Ref="C?"  Part="1" 
 F 0 "C?" H 5135 3110 50  0000 L CNN
 F 1 "0.1uF" H 5135 2910 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 5148 2860 50  0001 C CNN
@@ -82,6 +88,8 @@ AR Path="/5E0A0E29/5E0B535B" Ref="#PWR?"  Part="1"
 AR Path="/5E052856/5E0B535B" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D84/5E0B535B" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B58/5E0B535B" Ref="#PWR?"  Part="1" 
+AR Path="/5F581BB7/5E0B535B" Ref="#PWR?"  Part="1" 
+AR Path="/5F7B4289/5E0B535B" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 2710 50  0001 C CNN
 F 1 "+3.3V" H 5110 3000 50  0000 C CNN
 F 2 "" H 5110 2860 50  0001 C CNN
@@ -98,6 +106,8 @@ AR Path="/5E0A0E29/5E0B592B" Ref="#PWR?"  Part="1"
 AR Path="/5E052856/5E0B592B" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D84/5E0B592B" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B58/5E0B592B" Ref="#PWR?"  Part="1" 
+AR Path="/5F581BB7/5E0B592B" Ref="#PWR?"  Part="1" 
+AR Path="/5F7B4289/5E0B592B" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 2910 50  0001 C CNN
 F 1 "GND" H 5110 3010 50  0000 C CNN
 F 2 "" H 5110 3160 50  0001 C CNN
@@ -116,6 +126,8 @@ AR Path="/5E0A0E29/5E0B8BC8" Ref="DOC?"  Part="1"
 AR Path="/5E052856/5E0B8BC8" Ref="DOC?"  Part="1" 
 AR Path="/5EAE2D84/5E0B8BC8" Ref="DOC?"  Part="1" 
 AR Path="/5F581B58/5E0B8BC8" Ref="DOC?"  Part="1" 
+AR Path="/5F581BB7/5E0B8BC8" Ref="DOC?"  Part="1" 
+AR Path="/5F7B4289/5E0B8BC8" Ref="DOC?"  Part="1" 
 F 0 "DOC?" H 6010 3130 60  0001 C CNN
 F 1 "FIXME" H 5560 2880 60  0000 L CNN
 F 2 "" H 6010 3230 60  0001 C CNN
@@ -133,6 +145,8 @@ AR Path="/5E0A0E29/5E2AA995" Ref="#PWR?"  Part="1"
 AR Path="/5E052856/5E2AA995" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D84/5E2AA995" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B58/5E2AA995" Ref="#PWR?"  Part="1" 
+AR Path="/5F581BB7/5E2AA995" Ref="#PWR?"  Part="1" 
+AR Path="/5F7B4289/5E2AA995" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 4870 50  0001 C CNN
 F 1 "GND" H 5110 4970 50  0000 C CNN
 F 2 "" H 5110 5120 50  0001 C CNN
@@ -158,6 +172,8 @@ AR Path="/5E0A0E29/5E2AA99A" Ref="#PWR?"  Part="1"
 AR Path="/5E052856/5E2AA99A" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D84/5E2AA99A" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B58/5E2AA99A" Ref="#PWR?"  Part="1" 
+AR Path="/5F581BB7/5E2AA99A" Ref="#PWR?"  Part="1" 
+AR Path="/5F7B4289/5E2AA99A" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 3890 50  0001 C CNN
 F 1 "+3.3V" H 5110 4180 50  0000 C CNN
 F 2 "" H 5110 4040 50  0001 C CNN
@@ -175,6 +191,8 @@ AR Path="/5E0A0E29/5E2AA99D" Ref="U?"  Part="1"
 AR Path="/5E052856/5E2AA99D" Ref="U?"  Part="1" 
 AR Path="/5EAE2D84/5E2AA99D" Ref="U?"  Part="1" 
 AR Path="/5F581B58/5E2AA99D" Ref="U?"  Part="1" 
+AR Path="/5F581BB7/5E2AA99D" Ref="U?"  Part="1" 
+AR Path="/5F7B4289/5E2AA99D" Ref="U?"  Part="1" 
 F 0 "U?" H 4860 4990 50  0000 C CNN
 F 1 "MCP9804" H 5510 4990 50  0000 C CNN
 F 2 "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm" H 4010 4040 50  0001 C CNN
@@ -199,6 +217,8 @@ AR Path="/5E0A0E29/5E2AA9A1" Ref="C?"  Part="1"
 AR Path="/5E052856/5E2AA9A1" Ref="C?"  Part="1" 
 AR Path="/5EAE2D84/5E2AA9A1" Ref="C?"  Part="1" 
 AR Path="/5F581B58/5E2AA9A1" Ref="C?"  Part="1" 
+AR Path="/5F581BB7/5E2AA9A1" Ref="C?"  Part="1" 
+AR Path="/5F7B4289/5E2AA9A1" Ref="C?"  Part="1" 
 F 0 "C?" H 5135 5790 50  0000 L CNN
 F 1 "0.1uF" H 5135 5590 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 5148 5540 50  0001 C CNN
@@ -219,6 +239,8 @@ AR Path="/5E0A0E29/5E2AA9A6" Ref="#PWR?"  Part="1"
 AR Path="/5E052856/5E2AA9A6" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D84/5E2AA9A6" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B58/5E2AA9A6" Ref="#PWR?"  Part="1" 
+AR Path="/5F581BB7/5E2AA9A6" Ref="#PWR?"  Part="1" 
+AR Path="/5F7B4289/5E2AA9A6" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 5390 50  0001 C CNN
 F 1 "+3.3V" H 5110 5680 50  0000 C CNN
 F 2 "" H 5110 5540 50  0001 C CNN
@@ -235,6 +257,8 @@ AR Path="/5E0A0E29/5E2AA9AD" Ref="#PWR?"  Part="1"
 AR Path="/5E052856/5E2AA9AD" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D84/5E2AA9AD" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B58/5E2AA9AD" Ref="#PWR?"  Part="1" 
+AR Path="/5F581BB7/5E2AA9AD" Ref="#PWR?"  Part="1" 
+AR Path="/5F7B4289/5E2AA9AD" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5110 5590 50  0001 C CNN
 F 1 "GND" H 5110 5690 50  0000 C CNN
 F 2 "" H 5110 5840 50  0001 C CNN
@@ -251,6 +275,8 @@ AR Path="/5E0A0E29/5E2AA9AF" Ref="DOC?"  Part="1"
 AR Path="/5E052856/5E2AA9AF" Ref="DOC?"  Part="1" 
 AR Path="/5EAE2D84/5E2AA9AF" Ref="DOC?"  Part="1" 
 AR Path="/5F581B58/5E2AA9AF" Ref="DOC?"  Part="1" 
+AR Path="/5F581BB7/5E2AA9AF" Ref="DOC?"  Part="1" 
+AR Path="/5F7B4289/5E2AA9AF" Ref="DOC?"  Part="1" 
 F 0 "DOC?" H 6010 5810 60  0001 C CNN
 F 1 "FIXME" H 5560 5560 60  0000 L CNN
 F 2 "" H 6010 5910 60  0001 C CNN
@@ -272,6 +298,8 @@ AR Path="/5E0A0E29/5E07E0FD" Ref="C?"  Part="1"
 AR Path="/5E052856/5E07E0FD" Ref="C?"  Part="1" 
 AR Path="/5EAE2D84/5E07E0FD" Ref="C?"  Part="1" 
 AR Path="/5F581B58/5E07E0FD" Ref="C?"  Part="1" 
+AR Path="/5F581BB7/5E07E0FD" Ref="C?"  Part="1" 
+AR Path="/5F7B4289/5E07E0FD" Ref="C?"  Part="1" 
 F 0 "C?" H 4255 2130 50  0000 L CNN
 F 1 "0.1uF" H 4255 1930 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 4268 1880 50  0001 C CNN
