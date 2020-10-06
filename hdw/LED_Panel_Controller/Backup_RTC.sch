@@ -357,7 +357,7 @@ F 3 "" H 3975 3290 50  0001 C CNN
 F 4 "0402" H 3800 3290 50  0000 R CNN "display_footprint"
 F 5 "10V" H 3800 3190 50  0000 R CNN "Voltage"
 F 6 "X5R" H 3800 3090 50  0000 R CNN "Dielectric"
-F 7 "" H 3950 3190 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-6830-1-ND" H 3950 3190 50  0001 C CNN "Digi-Key PN"
 	1    3950 3190
 	1    0    0    -1  
 $EndComp
