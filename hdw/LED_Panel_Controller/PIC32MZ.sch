@@ -4,161 +4,47 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 11 34
-Title "Pulse Oximeter"
-Date "2020-08-01"
+Title "LED Panel Controller"
+Date "2020-12-23"
 Rev "A"
-Comp "Drew Maatman"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Wire Line
-	5420 1050 5420 1090
-Connection ~ 5420 1090
-Wire Wire Line
-	5420 1090 5420 1130
-Wire Wire Line
-	5420 1090 5320 1090
-Wire Wire Line
-	5220 1130 5220 1090
-Wire Wire Line
-	5320 1130 5320 1090
-Connection ~ 5320 1090
-Wire Wire Line
-	5320 1090 5220 1090
-Wire Wire Line
-	5520 1130 5520 1090
-Connection ~ 5520 1090
-Wire Wire Line
-	5520 1090 5420 1090
-Wire Wire Line
-	5620 1130 5620 1090
-Wire Wire Line
-	5620 1090 5520 1090
-$Comp
-L power:GND #PWR?
-U 1 1 5CB03EF2
-P 5420 6410
-F 0 "#PWR?" H 5420 6160 50  0001 C CNN
-F 1 "GND" H 5420 6260 50  0000 C CNN
-F 2 "" H 5420 6410 50  0001 C CNN
-F 3 "" H 5420 6410 50  0001 C CNN
-	1    5420 6410
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5420 6410 5420 6370
-Wire Wire Line
-	5420 6370 5370 6370
-Wire Wire Line
-	5420 6370 5470 6370
-Connection ~ 5420 6370
-Wire Wire Line
-	5170 6330 5170 6370
-Wire Wire Line
-	5270 6330 5270 6370
-Connection ~ 5270 6370
-Wire Wire Line
-	5270 6370 5170 6370
-Wire Wire Line
-	5370 6330 5370 6370
-Connection ~ 5370 6370
-Wire Wire Line
-	5370 6370 5270 6370
-Wire Wire Line
-	5470 6330 5470 6370
-Connection ~ 5470 6370
-Wire Wire Line
-	5470 6370 5570 6370
-Wire Wire Line
-	5570 6330 5570 6370
-Connection ~ 5570 6370
-Wire Wire Line
-	5570 6370 5670 6370
-Wire Wire Line
-	5670 6330 5670 6370
-Wire Wire Line
-	4770 6330 4770 6410
-Wire Wire Line
-	4770 1050 4770 1130
-Text GLabel 3320 6080 0    40   Input ~ 0
+Text GLabel 3300 5990 0    40   Input ~ 0
 ~PIC32MZ_MCLR
 $Comp
 L power:GND #PWR?
 U 1 1 5CB14B21
-P 3210 5660
-F 0 "#PWR?" H 3210 5410 50  0001 C CNN
-F 1 "GND" H 3210 5510 50  0000 C CNN
-F 2 "" H 3210 5660 50  0001 C CNN
-F 3 "" H 3210 5660 50  0001 C CNN
-	1    3210 5660
+P 3190 5570
+F 0 "#PWR?" H 3190 5320 50  0001 C CNN
+F 1 "GND" H 3190 5420 50  0000 C CNN
+F 2 "" H 3190 5570 50  0001 C CNN
+F 3 "" H 3190 5570 50  0001 C CNN
+	1    3190 5570
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3210 5660 3210 5580
+	3190 5570 3190 5490
 Wire Wire Line
-	3210 5580 3320 5580
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5E6E7B25
-P 5420 1050
-F 0 "#PWR?" H 5420 900 50  0001 C CNN
-F 1 "+3.3V" H 5420 1190 50  0000 C CNN
-F 2 "" H 5420 1050 50  0001 C CNN
-F 3 "" H 5420 1050 50  0001 C CNN
-	1    5420 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:+3.3VA_MZ #PWR?
-U 1 1 5EB1FED1
-P 4770 1050
-F 0 "#PWR?" H 4770 900 50  0001 C CNN
-F 1 "+3.3VA_MZ" H 4770 1190 50  0000 C CNN
-F 2 "" H 4770 1050 50  0001 C CNN
-F 3 "" H 4770 1050 50  0001 C CNN
-	1    4770 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:GNDA_MZ #PWR?
-U 1 1 5EB20397
-P 4770 6410
-F 0 "#PWR?" H 4770 6160 50  0001 C CNN
-F 1 "GNDA_MZ" H 4770 6260 50  0000 C CNN
-F 2 "" H 4770 6410 50  0001 C CNN
-F 3 "" H 4770 6410 50  0001 C CNN
-	1    4770 6410
-	1    0    0    -1  
-$EndComp
-NoConn ~ 3320 5480
-NoConn ~ 3320 5680
-NoConn ~ 3320 5780
-$Comp
-L Custom_Library:PIC32MZ0512EFE064T-I_PT U?
-U 1 1 5EB2446C
-P 5420 3730
-F 0 "U?" H 7220 1230 50  0000 R CNN
-F 1 "PIC32MZ0512EFE064T-I_PT" H 5420 3730 50  0000 C CNN
-F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 5420 3730 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf" H 5420 3730 50  0001 C CNN
-F 4 "PIC32MZ0512EFE064T-I/PTCT-ND" H 5420 3730 50  0001 C CNN "Digi-Key PN"
-	1    5420 3730
-	1    0    0    -1  
-$EndComp
-Text GLabel 9630 2880 2    50   Output ~ 0
+	3190 5490 3300 5490
+NoConn ~ 3300 5390
+NoConn ~ 3300 5590
+NoConn ~ 3300 5690
+Text GLabel 9410 4490 2    50   Output ~ 0
 I2C_SCL
-Text GLabel 9630 2780 2    50   BiDi ~ 0
+Text GLabel 9410 4390 2    50   BiDi ~ 0
 I2C_SDA
 Wire Wire Line
-	7520 2780 8740 2780
+	7300 4390 8520 4390
 Wire Wire Line
-	7520 2880 9330 2880
+	7300 4490 9110 4490
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5EB7DAD1
-P 9330 2550
+P 9110 4160
 AR Path="/5BB27BA3/5EB7DAD1" Ref="R?"  Part="1" 
 AR Path="/5BB27BF7/5EB7DAD1" Ref="R?"  Part="1" 
 AR Path="/5C1DE17A/5EB7DAD1" Ref="R?"  Part="1" 
@@ -173,32 +59,32 @@ AR Path="/5EAE2D66/5EB7DAD1" Ref="R?"  Part="1"
 AR Path="/5EAE4A89/5EB7DAD1" Ref="R?"  Part="1" 
 AR Path="/5EAE2F23/5EB7DAD1" Ref="R?"  Part="1" 
 AR Path="/5F5829D3/5EB7DAD1" Ref="R?"  Part="1" 
-F 0 "R?" H 9250 2550 50  0000 R CNN
-F 1 "10k" V 9330 2550 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" H 9330 2550 50  0001 C CNN
-F 3 "" H 9330 2550 50  0001 C CNN
-F 4 "0402" H 9430 2630 50  0000 L CNN "display_footprint"
-F 5 "1%" H 9430 2550 50  0000 L CNN "Tolerance"
-F 6 "1/16W" H 9440 2470 50  0000 L CNN "Wattage"
-F 7 "RMCF0402FT10K0CT-ND" H 9330 2550 50  0001 C CNN "Digi-Key PN"
-	1    9330 2550
+F 0 "R?" H 9030 4160 50  0000 R CNN
+F 1 "10k" V 9110 4160 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 9110 4160 50  0001 C CNN
+F 3 "" H 9110 4160 50  0001 C CNN
+F 4 "0402" H 9210 4240 50  0000 L CNN "display_footprint"
+F 5 "1%" H 9210 4160 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 9220 4080 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 9110 4160 50  0001 C CNN "Digi-Key PN"
+	1    9110 4160
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5EB7DAD7
-P 9330 2400
-F 0 "#PWR?" H 9330 2250 50  0001 C CNN
-F 1 "+3.3V" H 9330 2540 50  0000 C CNN
-F 2 "" H 9330 2400 50  0001 C CNN
-F 3 "" H 9330 2400 50  0001 C CNN
-	1    9330 2400
+P 9110 4010
+F 0 "#PWR?" H 9110 3860 50  0001 C CNN
+F 1 "+3.3V" H 9110 4150 50  0000 C CNN
+F 2 "" H 9110 4010 50  0001 C CNN
+F 3 "" H 9110 4010 50  0001 C CNN
+	1    9110 4010
 	1    0    0    -1  
 $EndComp
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5EB7DEAB
-P 8740 2550
+P 8520 4160
 AR Path="/5BB27BA3/5EB7DEAB" Ref="R?"  Part="1" 
 AR Path="/5BB27BF7/5EB7DEAB" Ref="R?"  Part="1" 
 AR Path="/5C1DE17A/5EB7DEAB" Ref="R?"  Part="1" 
@@ -213,52 +99,228 @@ AR Path="/5EAE2D66/5EB7DEAB" Ref="R?"  Part="1"
 AR Path="/5EAE4A89/5EB7DEAB" Ref="R?"  Part="1" 
 AR Path="/5EAE2F23/5EB7DEAB" Ref="R?"  Part="1" 
 AR Path="/5F5829D3/5EB7DEAB" Ref="R?"  Part="1" 
-F 0 "R?" H 8660 2550 50  0000 R CNN
-F 1 "10k" V 8740 2550 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" H 8740 2550 50  0001 C CNN
-F 3 "" H 8740 2550 50  0001 C CNN
-F 4 "0402" H 8840 2630 50  0000 L CNN "display_footprint"
-F 5 "1%" H 8840 2550 50  0000 L CNN "Tolerance"
-F 6 "1/16W" H 8850 2470 50  0000 L CNN "Wattage"
-F 7 "RMCF0402FT10K0CT-ND" H 8740 2550 50  0001 C CNN "Digi-Key PN"
-	1    8740 2550
+F 0 "R?" H 8440 4160 50  0000 R CNN
+F 1 "10k" V 8520 4160 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 8520 4160 50  0001 C CNN
+F 3 "" H 8520 4160 50  0001 C CNN
+F 4 "0402" H 8620 4240 50  0000 L CNN "display_footprint"
+F 5 "1%" H 8620 4160 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 8630 4080 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 8520 4160 50  0001 C CNN "Digi-Key PN"
+	1    8520 4160
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5EB7DEB5
-P 8740 2400
-F 0 "#PWR?" H 8740 2250 50  0001 C CNN
-F 1 "+3.3V" H 8740 2540 50  0000 C CNN
-F 2 "" H 8740 2400 50  0001 C CNN
-F 3 "" H 8740 2400 50  0001 C CNN
-	1    8740 2400
+P 8520 4010
+F 0 "#PWR?" H 8520 3860 50  0001 C CNN
+F 1 "+3.3V" H 8520 4150 50  0000 C CNN
+F 2 "" H 8520 4010 50  0001 C CNN
+F 3 "" H 8520 4010 50  0001 C CNN
+	1    8520 4010
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8740 2700 8740 2780
-Connection ~ 8740 2780
+	8520 4310 8520 4390
+Connection ~ 8520 4390
 Wire Wire Line
-	8740 2780 9630 2780
+	8520 4390 9410 4390
 Wire Wire Line
-	9330 2700 9330 2880
-Connection ~ 9330 2880
+	9110 4310 9110 4490
+Connection ~ 9110 4490
 Wire Wire Line
-	9330 2880 9630 2880
-Text GLabel 3320 3680 0    50   Output ~ 0
+	9110 4490 9410 4490
+Text GLabel 3300 4890 0    50   Output ~ 0
 PIC32MZ_REFCLK1
-Text GLabel 3320 4580 0    50   Output ~ 0
+Text GLabel 1330 5630 0    50   Output ~ 0
 USB_UART_TX
-Text GLabel 3320 4480 0    50   Input ~ 0
+Text GLabel 1330 5530 0    50   Input ~ 0
 USB_UART_RX
-Text GLabel 3320 3880 0    50   Output ~ 0
-PIC32MZ_POSC_EC_Enable
-Text GLabel 3320 2280 0    50   Input ~ 0
+Text GLabel 3300 3240 0    50   Input ~ 0
 PIC32MZ_ICSPCLK
-Text GLabel 3320 2380 0    50   BiDi ~ 0
+Text GLabel 3300 3340 0    50   BiDi ~ 0
 PIC32MZ_ICSPDAT
-Text GLabel 3320 3580 0    50   Input ~ 0
+Text GLabel 3300 4790 0    50   Input ~ 0
 PIC32MZ_POSC_EC
-Text GLabel 3320 3780 0    50   Input ~ 0
+Text GLabel 3300 4990 0    50   Input ~ 0
 PIC32MZ_SOSC
+Text GLabel 1290 1850 0    40   Input ~ 0
+~WIFI_RESET
+Text GLabel 1290 1950 0    50   Input ~ 0
+WIFI_WAKE
+Text GLabel 1290 2050 0    50   Input ~ 0
+WIFI_CHIP_EN
+Text GLabel 1290 2250 0    50   Input ~ 0
+WIFI_SPI_SCK
+Text GLabel 1290 2450 0    40   Input ~ 0
+~WIFI_SPI_SS
+Text GLabel 1290 2550 0    50   Input ~ 0
+WIFI_SPI_MOSI
+Text GLabel 1290 2650 0    50   Output ~ 0
+WIFI_SPI_MISO
+Text GLabel 820  2350 2    50   Output ~ 0
+WIFI_IRQN
+$Comp
+L Custom_Library:PIC32MZ2048EFG100_IPF U?
+U 1 1 5FFB3C3D
+P 5300 3640
+F 0 "U?" H 7100 1140 50  0000 R CNN
+F 1 "PIC32MZ2048EFG100_IPF" H 5300 4240 50  0000 C CNN
+F 2 "Housings_QFP:TQFP-100_14x14mm_Pitch0.5mm" H 5300 3640 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf" H 5300 3640 50  0001 C CNN
+F 4 "PIC32MZ2048EFG100-I/PF-ND" H 5300 3640 50  0001 C CNN "Digi-Key PN"
+	1    5300 3640
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:GNDA_MZ #PWR?
+U 1 1 5FFB96A6
+P 4650 6320
+F 0 "#PWR?" H 4650 6070 50  0001 C CNN
+F 1 "GNDA_MZ" H 4650 6170 50  0000 C CNN
+F 2 "" H 4650 6320 50  0001 C CNN
+F 3 "" H 4650 6320 50  0001 C CNN
+	1    4650 6320
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 6320 4650 6240
+$Comp
+L Custom_Library:+3.3VA_MZ #PWR?
+U 1 1 5FFB9C17
+P 4650 960
+F 0 "#PWR?" H 4650 810 50  0001 C CNN
+F 1 "+3.3VA_MZ" H 4650 1100 50  0000 C CNN
+F 2 "" H 4650 960 50  0001 C CNN
+F 3 "" H 4650 960 50  0001 C CNN
+	1    4650 960 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 960  4650 1040
+Wire Wire Line
+	5450 1040 5450 1000
+Wire Wire Line
+	5450 1000 5350 1000
+Wire Wire Line
+	4850 1000 4850 1040
+Wire Wire Line
+	4950 1040 4950 1000
+Connection ~ 4950 1000
+Wire Wire Line
+	4950 1000 4850 1000
+Wire Wire Line
+	5050 1040 5050 1000
+Connection ~ 5050 1000
+Wire Wire Line
+	5050 1000 4950 1000
+Wire Wire Line
+	5150 1040 5150 1000
+Connection ~ 5150 1000
+Wire Wire Line
+	5150 1000 5050 1000
+Wire Wire Line
+	5250 1040 5250 1000
+Connection ~ 5250 1000
+Wire Wire Line
+	5250 1000 5150 1000
+Wire Wire Line
+	5350 1040 5350 1000
+Connection ~ 5350 1000
+Wire Wire Line
+	5350 1000 5250 1000
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FFBDFF7
+P 5150 960
+F 0 "#PWR?" H 5150 810 50  0001 C CNN
+F 1 "+3.3V" H 5150 1100 50  0000 C CNN
+F 2 "" H 5150 960 50  0001 C CNN
+F 3 "" H 5150 960 50  0001 C CNN
+	1    5150 960 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 960  5150 1000
+Wire Wire Line
+	5550 6240 5550 6280
+Wire Wire Line
+	5550 6280 5450 6280
+Wire Wire Line
+	4950 6280 4950 6240
+Wire Wire Line
+	5050 6240 5050 6280
+Connection ~ 5050 6280
+Wire Wire Line
+	5050 6280 4950 6280
+Wire Wire Line
+	5150 6240 5150 6280
+Connection ~ 5150 6280
+Wire Wire Line
+	5150 6280 5050 6280
+Wire Wire Line
+	5250 6240 5250 6280
+Connection ~ 5250 6280
+Wire Wire Line
+	5250 6280 5150 6280
+Wire Wire Line
+	5350 6240 5350 6280
+Connection ~ 5350 6280
+Wire Wire Line
+	5350 6280 5300 6280
+Wire Wire Line
+	5450 6240 5450 6280
+Connection ~ 5450 6280
+Wire Wire Line
+	5450 6280 5350 6280
+Wire Wire Line
+	5550 6280 5650 6280
+Wire Wire Line
+	5650 6280 5650 6240
+Connection ~ 5550 6280
+Wire Wire Line
+	5300 6280 5300 6320
+Connection ~ 5300 6280
+Wire Wire Line
+	5300 6280 5250 6280
+$Comp
+L power:GND #PWR?
+U 1 1 5FFC1E1C
+P 5300 6320
+F 0 "#PWR?" H 5300 6070 50  0001 C CNN
+F 1 "GND" H 5300 6170 50  0000 C CNN
+F 2 "" H 5300 6320 50  0001 C CNN
+F 3 "" H 5300 6320 50  0001 C CNN
+	1    5300 6320
+	1    0    0    -1  
+$EndComp
+Text Notes 10000 4460 0    50   ~ 0
+I2C5
+Text Notes 1290 3300 0    50   ~ 0
+ICSP2
+Text Notes 1290 4830 0    50   ~ 0
+POSC
+Text Notes 1290 4930 0    50   ~ 0
+REFCLK1
+Text Notes 1290 5030 0    50   ~ 0
+SOSC
+Text GLabel 1320 780  0    50   Input ~ 0
+SD_SPI_CS
+Text GLabel 1320 880  0    50   Input ~ 0
+SD_SPI_MOSI
+Text GLabel 1320 1080 0    50   Input ~ 0
+SD_SPI_SCK
+Text GLabel 1320 1280 0    50   Output ~ 0
+SD_SPI_MISO
+Text GLabel 1320 1480 0    50   Output ~ 0
+SD_CARD_DET
+Text GLabel 9670 2190 0    50   Input ~ 0
+FLASH_SPI_SCK
+Text GLabel 9670 2290 0    40   Input ~ 0
+~FLASH_SPI_CE1
+Text GLabel 9670 2090 0    50   Input ~ 0
+FLASH_SPI_MOSI
+Text GLabel 9000 2520 2    50   Output ~ 0
+FLASH_SPI_MISO
 $EndSCHEMATC

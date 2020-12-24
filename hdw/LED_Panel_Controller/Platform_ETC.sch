@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 14 34
-Title "Pulse Oximeter"
-Date "2020-08-01"
+Title "LED Panel Controller"
+Date "2020-12-23"
 Rev "A"
-Comp "Drew Maatman"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -22,6 +22,7 @@ F 1 "DS1683" H 4840 4450 60  0000 C CNN
 F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 4740 4400 60  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/DS1683.pdf" H 4740 4400 60  0001 C CNN
 F 4 "DS1683S+-ND" H 4940 3850 60  0001 C CNN "Digi-Key PN"
+F 5 "ETC" H 4840 3640 50  0000 C CNN "Configuration"
 	1    4840 4100
 	1    0    0    -1  
 $EndComp

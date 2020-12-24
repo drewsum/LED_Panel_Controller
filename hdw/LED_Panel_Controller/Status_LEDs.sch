@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 19 34
-Title "Pulse Oximeter"
-Date "2020-08-01"
+Title "LED Panel Controller"
+Date "2020-12-23"
 Rev "A"
-Comp "Drew Maatman"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -699,66 +699,50 @@ F 3 "" H 4390 4630 50  0001 C CNN
 	1    4390 4630
 	1    0    0    -1  
 $EndComp
+Text GLabel 3760 4530 0    50   Input ~ 0
+Error_LED
 $Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5EBB3661
+L Custom_Library:74LVC1G97_Power_NOT U?
+U 1 1 5FE90879
 P 4390 2530
-AR Path="/5EAE4ADE/5EBB3661" Ref="U?"  Part="1" 
-AR Path="/5EAE4AE4/5EBB3661" Ref="U?"  Part="1" 
-AR Path="/5F582E50/5EBB3661" Ref="U?"  Part="1" 
-F 0 "U?" H 4490 2680 50  0000 L CNN
-F 1 "74LVC1G06" H 4490 2430 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 4390 2580 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 4390 2530 50  0001 C CNN
-F 4 "296-8484-1-ND" H 4390 2530 50  0001 C CNN "Digi-Key PN"
+F 0 "U?" H 4450 2680 50  0000 L CNN
+F 1 "74LVC1G97" H 4450 2380 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4440 2530 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 4440 2530 50  0001 C CNN
 	1    4390 2530
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5EBB3BCA
+L Custom_Library:74LVC1G97_Power_NOT U?
+U 1 1 5FE90D68
 P 6390 2530
-AR Path="/5EAE4ADE/5EBB3BCA" Ref="U?"  Part="1" 
-AR Path="/5EAE4AE4/5EBB3BCA" Ref="U?"  Part="1" 
-AR Path="/5F582E50/5EBB3BCA" Ref="U?"  Part="1" 
-F 0 "U?" H 6490 2680 50  0000 L CNN
-F 1 "74LVC1G06" H 6490 2430 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 6390 2580 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 6390 2530 50  0001 C CNN
-F 4 "296-8484-1-ND" H 6390 2530 50  0001 C CNN "Digi-Key PN"
+F 0 "U?" H 6450 2680 50  0000 L CNN
+F 1 "74LVC1G97" H 6450 2380 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 6440 2530 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 6440 2530 50  0001 C CNN
 	1    6390 2530
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5EBB56C7
-P 6390 4530
-AR Path="/5EAE4ADE/5EBB56C7" Ref="U?"  Part="1" 
-AR Path="/5EAE4AE4/5EBB56C7" Ref="U?"  Part="1" 
-AR Path="/5F582E50/5EBB56C7" Ref="U?"  Part="1" 
-F 0 "U?" H 6490 4680 50  0000 L CNN
-F 1 "74LVC1G06" H 6490 4430 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 6390 4580 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 6390 4530 50  0001 C CNN
-F 4 "296-8484-1-ND" H 6390 4530 50  0001 C CNN "Digi-Key PN"
-	1    6390 4530
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:74LVC1G06_Power U?
-U 1 1 5EBB6CE5
+L Custom_Library:74LVC1G97_Power_NOT U?
+U 1 1 5FE91396
 P 4390 4530
-AR Path="/5EAE4ADE/5EBB6CE5" Ref="U?"  Part="1" 
-AR Path="/5EAE4AE4/5EBB6CE5" Ref="U?"  Part="1" 
-AR Path="/5F582E50/5EBB6CE5" Ref="U?"  Part="1" 
-F 0 "U?" H 4490 4680 50  0000 L CNN
-F 1 "74LVC1G06" H 4490 4430 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 4390 4580 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf" H 4390 4530 50  0001 C CNN
-F 4 "296-8484-1-ND" H 4390 4530 50  0001 C CNN "Digi-Key PN"
+F 0 "U?" H 4450 4680 50  0000 L CNN
+F 1 "74LVC1G97" H 4450 4380 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4440 4530 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 4440 4530 50  0001 C CNN
 	1    4390 4530
 	1    0    0    -1  
 $EndComp
-Text GLabel 3760 4530 0    50   Input ~ 0
-Error_LED
+$Comp
+L Custom_Library:74LVC1G97_Power_NOT U?
+U 1 1 5FE9193A
+P 6390 4530
+F 0 "U?" H 6450 4680 50  0000 L CNN
+F 1 "74LVC1G97" H 6450 4380 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 6440 4530 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 6440 4530 50  0001 C CNN
+	1    6390 4530
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 13 34
-Title ""
-Date "2020-09-08"
-Rev ""
-Comp ""
+Title "LED Panel Controller"
+Date "2020-12-23"
+Rev "A"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""

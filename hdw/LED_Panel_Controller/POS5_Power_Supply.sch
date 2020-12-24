@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 6 34
-Title "Pulse Oximeter"
-Date "2020-08-01"
+Title "LED Panel Controller"
+Date "2020-12-23"
 Rev "A"
-Comp "Drew Maatman"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -144,7 +144,7 @@ F 0 "C?" H 4215 4870 50  0000 L CNN
 F 1 "10nF" H 4215 4670 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 4228 4620 50  0001 C CNN
 F 3 "" H 4215 4870 50  0001 C CNN
-F 4 "" H 4040 4870 50  0000 R CNN "display_footprint"
+F 4 "0402" H 4040 4870 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4040 4770 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4040 4670 50  0000 R CNN "Dielectric"
 F 7 "490-13295-1-ND" H 270 550 50  0001 C CNN "Digi-Key PN"
@@ -845,5 +845,16 @@ F 2 "" H 9060 2960 50  0001 C CNN
 F 3 "" H 9060 2960 50  0001 C CNN
 	1    9060 2960
 	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5FE45BF8
+P 5120 7010
+F 0 "#PWR?" H 5120 6860 50  0001 C CNN
+F 1 "+5V" H 5120 7150 50  0000 C CNN
+F 2 "" H 5120 7010 50  0001 C CNN
+F 3 "" H 5120 7010 50  0001 C CNN
+	1    5120 7010
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 32 34
-Title "Electronic Display Logic Board"
-Date "2018-12-15"
+Title "LED Panel Controller"
+Date "2020-12-23"
 Rev "A"
-Comp "Marquette University Senior Design 2018/2019 Group E44"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""

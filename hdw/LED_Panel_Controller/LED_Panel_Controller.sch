@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 1 34
-Title ""
-Date "2020-09-08"
-Rev ""
-Comp ""
+Title "LED Panel Controller"
+Date "2020-12-23"
+Rev "A"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -88,8 +88,8 @@ $EndSheet
 $Sheet
 S 3750 5420 500  150 
 U 5F582A92
-F0 "Time of Flight" 50
-F1 "Time_of_Flight.sch" 50
+F0 "Platform ETC" 50
+F1 "Platform_ETC.sch" 50
 $EndSheet
 $Sheet
 S 3750 5770 500  150 
@@ -154,7 +154,7 @@ Text Notes 1290 4870 0    100  ~ 20
 Text Notes 1290 5220 0    100  ~ 20
 13. I2C Boost
 Text Notes 1290 5570 0    100  ~ 20
-14. Time of Flight
+14. Platform ETC
 Text Notes 1290 5920 0    100  ~ 20
 15. USB UART Bridge
 Text Notes 1290 6270 0    100  ~ 20

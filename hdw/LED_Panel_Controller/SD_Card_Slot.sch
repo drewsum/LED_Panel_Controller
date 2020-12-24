@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 16 34
-Title ""
-Date "2020-09-08"
-Rev ""
-Comp ""
+Title "LED Panel Controller"
+Date "2020-12-23"
+Rev "A"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -19,8 +19,9 @@ U 1 1 5F5A18D2
 P 7840 3920
 F 0 "J?" H 7790 4750 50  0000 C CNN
 F 1 "Micro_SD_Card_Det_Hirose_DM3AT" H 7790 4650 50  0000 C CNN
-F 2 "" H 9890 4620 50  0001 C CNN
+F 2 "Connectors_Card:Hirose_DM3AT-SF-PEJM5" H 9890 4620 50  0001 C CNN
 F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 7840 4020 50  0001 C CNN
+F 4 "HR1964CT-ND" H 7840 3920 50  0001 C CNN "Digi-Key PN"
 	1    7840 3920
 	1    0    0    -1  
 $EndComp
@@ -131,22 +132,22 @@ $EndComp
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5F6EBBB2
-P 4300 2950
+P 4300 2960
 AR Path="/5D6B2673/5F6EBBB2" Ref="R?"  Part="1" 
 AR Path="/5D6C0D23/5F6EBBB2" Ref="R?"  Part="1" 
 AR Path="/5D77A516/5F6EBBB2" Ref="R?"  Part="1" 
 AR Path="/5E939CFF/5F6EBBB2" Ref="R?"  Part="1" 
 AR Path="/5F581B41/5F6EBBB2" Ref="R?"  Part="1" 
 AR Path="/5F582E11/5F6EBBB2" Ref="R?"  Part="1" 
-F 0 "R?" H 4210 2950 50  0000 R CNN
-F 1 "10k" V 4300 2880 50  0000 L CNN
-F 2 "Resistors_SMD:R_0402" H 4300 2950 50  0001 C CNN
-F 3 "" H 4300 2950 50  0001 C CNN
-F 4 "0402" H 4400 3020 50  0000 L CNN "display_footprint"
-F 5 "1%" H 4400 2920 50  0000 L CNN "Tolerance"
-F 6 "1/16W" H 4400 2820 50  0000 L CNN "Wattage"
-F 7 "" H 4600 3350 60  0001 C CNN "Digi-Key PN"
-	1    4300 2950
+F 0 "R?" H 4210 2960 50  0000 R CNN
+F 1 "10k" V 4300 2890 50  0000 L CNN
+F 2 "Resistors_SMD:R_0402" H 4300 2960 50  0001 C CNN
+F 3 "" H 4300 2960 50  0001 C CNN
+F 4 "0402" H 4400 3030 50  0000 L CNN "display_footprint"
+F 5 "1%" H 4400 2930 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 4400 2830 50  0000 L CNN "Wattage"
+F 7 "" H 4600 3360 60  0001 C CNN "Digi-Key PN"
+	1    4300 2960
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -191,39 +192,27 @@ F 7 "" H 5700 3360 60  0001 C CNN "Digi-Key PN"
 	1    5400 2960
 	-1   0    0    -1  
 $EndComp
-Text GLabel 3050 3620 0    50   Input ~ 0
+Text GLabel 3010 3620 0    50   Input ~ 0
 SD_SPI_CS
-Text GLabel 3050 3720 0    50   Input ~ 0
-SD_SPI_SDO
-Text GLabel 3050 3920 0    50   Input ~ 0
+Text GLabel 3010 3720 0    50   Input ~ 0
+SD_SPI_MOSI
+Text GLabel 3010 3920 0    50   Input ~ 0
 SD_SPI_SCK
 Text GLabel 3010 4120 0    50   Output ~ 0
-SD_SPI_SDI
-Text GLabel 3050 4320 0    50   Input ~ 0
+SD_SPI_MISO
+Text GLabel 3010 4320 0    50   Output ~ 0
 SD_CARD_DET
-Wire Wire Line
-	3770 2810 4300 2810
-Wire Wire Line
-	4300 2810 4300 2800
-Wire Wire Line
-	4300 2810 4560 2810
-Connection ~ 4300 2810
-Wire Wire Line
-	4560 2560 4560 2810
-Connection ~ 4560 2810
-Wire Wire Line
-	4560 2810 4850 2810
 Wire Wire Line
 	3770 3110 3770 3620
 Wire Wire Line
 	3770 3620 4480 3620
 Wire Wire Line
-	4300 3100 4300 3720
+	4300 3110 4300 3720
 Wire Wire Line
-	3050 3620 3770 3620
+	3010 3620 3770 3620
 Connection ~ 3770 3620
 Wire Wire Line
-	3050 3720 4300 3720
+	3010 3720 4300 3720
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5F6F5E30
@@ -282,7 +271,7 @@ F 7 "" H 3680 4320 60  0001 C CNN "Digi-Key PN"
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	3050 3920 3230 3920
+	3010 3920 3230 3920
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5F6FFFE3
@@ -319,7 +308,7 @@ Connection ~ 4980 3920
 Wire Wire Line
 	4980 3920 4850 3920
 Wire Wire Line
-	3050 4320 5940 4320
+	3010 4320 5940 4320
 Wire Wire Line
 	3010 4120 5400 4120
 $Comp
@@ -343,12 +332,6 @@ F 7 "" H 6240 3360 60  0001 C CNN "Digi-Key PN"
 	1    5940 2960
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	5940 2810 5400 2810
-Wire Wire Line
-	5400 2810 4850 2810
-Connection ~ 5400 2810
-Connection ~ 4850 2810
 Wire Wire Line
 	5480 5440 5480 4120
 Connection ~ 5480 4120
@@ -375,18 +358,18 @@ $EndComp
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5F70F685
-P 4560 2560
+P 3770 2810
 AR Path="/5CB7718D/5F70F685" Ref="#PWR?"  Part="1" 
 AR Path="/5E0DC082/5F70F685" Ref="#PWR?"  Part="1" 
 AR Path="/5E0F263A/5F70F685" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2D8A/5F70F685" Ref="#PWR?"  Part="1" 
 AR Path="/5F581B64/5F70F685" Ref="#PWR?"  Part="1" 
 AR Path="/5F582E11/5F70F685" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4560 2410 50  0001 C CNN
-F 1 "+3.3V" H 4560 2700 50  0000 C CNN
-F 2 "" H 4560 2560 50  0001 C CNN
-F 3 "" H 4560 2560 50  0001 C CNN
-	1    4560 2560
+F 0 "#PWR?" H 3770 2660 50  0001 C CNN
+F 1 "+3.3V" H 3770 2950 50  0000 C CNN
+F 2 "" H 3770 2810 50  0001 C CNN
+F 3 "" H 3770 2810 50  0001 C CNN
+	1    3770 2810
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -572,4 +555,72 @@ Wire Wire Line
 	8760 4500 8760 4420
 Wire Wire Line
 	8760 4420 8640 4420
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE67F76
+P 4300 2810
+AR Path="/5CB7718D/5FE67F76" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5FE67F76" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5FE67F76" Ref="#PWR?"  Part="1" 
+AR Path="/5EAE2D8A/5FE67F76" Ref="#PWR?"  Part="1" 
+AR Path="/5F581B64/5FE67F76" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/5FE67F76" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4300 2660 50  0001 C CNN
+F 1 "+3.3V" H 4300 2950 50  0000 C CNN
+F 2 "" H 4300 2810 50  0001 C CNN
+F 3 "" H 4300 2810 50  0001 C CNN
+	1    4300 2810
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE6815E
+P 4850 2810
+AR Path="/5CB7718D/5FE6815E" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5FE6815E" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5FE6815E" Ref="#PWR?"  Part="1" 
+AR Path="/5EAE2D8A/5FE6815E" Ref="#PWR?"  Part="1" 
+AR Path="/5F581B64/5FE6815E" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/5FE6815E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4850 2660 50  0001 C CNN
+F 1 "+3.3V" H 4850 2950 50  0000 C CNN
+F 2 "" H 4850 2810 50  0001 C CNN
+F 3 "" H 4850 2810 50  0001 C CNN
+	1    4850 2810
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE6833E
+P 5400 2810
+AR Path="/5CB7718D/5FE6833E" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5FE6833E" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5FE6833E" Ref="#PWR?"  Part="1" 
+AR Path="/5EAE2D8A/5FE6833E" Ref="#PWR?"  Part="1" 
+AR Path="/5F581B64/5FE6833E" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/5FE6833E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5400 2660 50  0001 C CNN
+F 1 "+3.3V" H 5400 2950 50  0000 C CNN
+F 2 "" H 5400 2810 50  0001 C CNN
+F 3 "" H 5400 2810 50  0001 C CNN
+	1    5400 2810
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE684D9
+P 5940 2810
+AR Path="/5CB7718D/5FE684D9" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5FE684D9" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5FE684D9" Ref="#PWR?"  Part="1" 
+AR Path="/5EAE2D8A/5FE684D9" Ref="#PWR?"  Part="1" 
+AR Path="/5F581B64/5FE684D9" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/5FE684D9" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5940 2660 50  0001 C CNN
+F 1 "+3.3V" H 5940 2950 50  0000 C CNN
+F 2 "" H 5940 2810 50  0001 C CNN
+F 3 "" H 5940 2810 50  0001 C CNN
+	1    5940 2810
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

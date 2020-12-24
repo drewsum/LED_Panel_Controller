@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 23 34
-Title "Electronic Display Logic Board"
-Date "2018-12-15"
+Title "LED Panel Controller"
+Date "2020-12-23"
 Rev "A"
-Comp "Marquette University Senior Design 2018/2019 Group E44"
+Comp "Drew Maatman, Logan Wedel"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -171,18 +171,6 @@ F 5 "50V" H 1860 6900 50  0000 R CNN "Voltage"
 F 6 "X7R" H 1860 6800 50  0000 R CNN "Dielectric"
 F 7 "311-1344-1-ND" H 2435 7400 60  0001 C CNN "Digi-Key PN"
 	1    2010 6900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:74LVC1G07_Power U?
-U 1 1 5C161AE1
-P 1670 6320
-F 0 "U?" H 1770 6420 50  0000 L CNN
-F 1 "74LVC1G07" H 1770 6220 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5" H 1670 6320 50  0001 C CNN
-F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 1670 6320 50  0001 C CNN
-F 4 "296-8486-1-ND" H 1670 6320 50  0001 C CNN "Digi-Key PN"
-	1    1670 6320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -437,5 +425,16 @@ F 5 "1%" V 7330 3450 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 7430 3450 50  0001 C CNN "Wattage"
 	1    7130 3450
 	0    -1   1    0   
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power_BUF U?
+U 1 1 5FE9D8D5
+P 1670 6320
+F 0 "U?" H 1730 6470 50  0000 L CNN
+F 1 "74LVC1G97" H 1730 6170 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 1720 6320 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 1720 6320 50  0001 C CNN
+	1    1670 6320
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
