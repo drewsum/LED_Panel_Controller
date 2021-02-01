@@ -22,6 +22,7 @@ F 1 "DS3231MZ" H 5500 2350 50  0000 R CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5050 1500 50  0001 C CNN
 F 3 "http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf" H 5050 1400 50  0001 C CNN
 F 4 "DS3231MZ+-ND" H 5050 2000 50  0001 C CNN "Digi-Key PN"
+F 5 "BACKUP_RTC" H 5050 1370 50  0000 C CNN "Configuration"
 	1    5050 2000
 	1    0    0    -1  
 $EndComp
@@ -65,55 +66,25 @@ I2C_SDA
 Text GLabel 4550 1800 0    50   Input ~ 0
 I2C_SCL
 $Comp
-L Custom_Library:C_Custom C?
-U 1 1 5E21E9AC
-P 5470 3190
-F 0 "C?" H 5495 3290 50  0000 L CNN
-F 1 "0.1uF" H 5495 3090 50  0000 L CNN
-F 2 "" H 5508 3040 50  0001 C CNN
-F 3 "" H 5495 3290 50  0001 C CNN
-F 4 "0402" H 5320 3290 50  0000 R CNN "display_footprint"
-F 5 "50V" H 5320 3190 50  0000 R CNN "Voltage"
-F 6 "X7R" H 5320 3090 50  0000 R CNN "Dielectric"
-F 7 "" H 5470 3190 50  0001 C CNN "Digi-Key PN"
-	1    5470 3190
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR?
 U 1 1 5E21E9B2
-P 5470 3040
-F 0 "#PWR?" H 5470 2890 50  0001 C CNN
-F 1 "+3.3V" H 5470 3180 50  0000 C CNN
-F 2 "" H 5470 3040 50  0000 C CNN
-F 3 "" H 5470 3040 50  0000 C CNN
-	1    5470 3040
+P 5850 3040
+F 0 "#PWR?" H 5850 2890 50  0001 C CNN
+F 1 "+3.3V" H 5850 3180 50  0000 C CNN
+F 2 "" H 5850 3040 50  0000 C CNN
+F 3 "" H 5850 3040 50  0000 C CNN
+	1    5850 3040
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5E21E9B8
-P 5470 3340
-F 0 "#PWR?" H 5470 3090 50  0001 C CNN
-F 1 "GND" H 5470 3190 50  0000 C CNN
-F 2 "" H 5470 3340 50  0001 C CNN
-F 3 "" H 5470 3340 50  0001 C CNN
-	1    5470 3340
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:C_Custom C?
-U 1 1 5E220EDC
-P 4740 3190
-F 0 "C?" H 4765 3290 50  0000 L CNN
-F 1 "0.1uF" H 4765 3090 50  0000 L CNN
-F 2 "" H 4778 3040 50  0001 C CNN
-F 3 "" H 4765 3290 50  0001 C CNN
-F 4 "0402" H 4590 3290 50  0000 R CNN "display_footprint"
-F 5 "50V" H 4590 3190 50  0000 R CNN "Voltage"
-F 6 "X7R" H 4590 3090 50  0000 R CNN "Dielectric"
-F 7 "" H 4740 3190 50  0001 C CNN "Digi-Key PN"
-	1    4740 3190
+P 5850 3340
+F 0 "#PWR?" H 5850 3090 50  0001 C CNN
+F 1 "GND" H 5850 3190 50  0000 C CNN
+F 2 "" H 5850 3340 50  0001 C CNN
+F 3 "" H 5850 3340 50  0001 C CNN
+	1    5850 3340
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -158,6 +129,7 @@ F 1 "CR1616" H 1240 4760 50  0000 L CNN
 F 2 "" V 1140 4820 50  0001 C CNN
 F 3 "~" V 1140 4820 50  0001 C CNN
 F 4 "P034-ND" H 1140 4760 50  0001 C CNN "Digi-Key PN"
+F 5 "BACKUP_RTC" H 790 4760 50  0000 C CNN "Configuration"
 	1    1140 4760
 	1    0    0    -1  
 $EndComp
@@ -172,6 +144,7 @@ F 1 "CR1616_Holder" H 1980 4760 50  0000 L CNN
 F 2 "Custom Footprints Library:BAT_BU1632SM-JJ-GTR" V 1880 4820 50  0001 C CNN
 F 3 "~" V 1880 4820 50  0001 C CNN
 F 4 "BU1632SM-JJ-GCT-ND" H 1880 4760 50  0001 C CNN "Digi-Key PN"
+F 5 "BACKUP_RTC" H 2220 4670 50  0000 C CNN "Configuration"
 	1    1880 4760
 	1    0    0    -1  
 $EndComp
@@ -206,6 +179,7 @@ F 1 "TLV6700" H 5330 4870 50  0000 C CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23-6" H 5330 5470 60  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tlv6700.pdf" H 5330 4870 60  0001 C CNN
 F 4 "296-51696-1-ND" H 5330 4870 50  0001 C CNN "Digi-Key PN"
+F 5 "BACKUP_RTC" H 5330 4030 50  0000 C CNN "Configuration"
 	1    5330 4870
 	1    0    0    -1  
 $EndComp
@@ -325,65 +299,23 @@ Falling threshold set to 2.5V
 $Comp
 L power:GND #PWR?
 U 1 1 5F2CCEAA
-P 3950 3340
-F 0 "#PWR?" H 3950 3090 50  0001 C CNN
-F 1 "GND" H 3950 3190 50  0000 C CNN
-F 2 "" H 3950 3340 50  0001 C CNN
-F 3 "" H 3950 3340 50  0001 C CNN
-	1    3950 3340
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:C_Custom C?
-U 1 1 5F2CCEB4
-P 3950 3190
-AR Path="/5CB7718D/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5A557C58/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5CB25152/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5E697934/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5EAE2F02/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5EAE3021/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5EAE2D8A/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5E939D31/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5E939EED/5F2CCEB4" Ref="C?"  Part="1" 
-AR Path="/5F582E7C/5F2CCEB4" Ref="C?"  Part="1" 
-F 0 "C?" H 3975 3290 50  0000 L CNN
-F 1 "10uF" H 3975 3090 50  0000 L CNN
-F 2 "" H 3988 3040 50  0001 C CNN
-F 3 "" H 3975 3290 50  0001 C CNN
-F 4 "0402" H 3800 3290 50  0000 R CNN "display_footprint"
-F 5 "10V" H 3800 3190 50  0000 R CNN "Voltage"
-F 6 "X5R" H 3800 3090 50  0000 R CNN "Dielectric"
-F 7 "1276-6830-1-ND" H 3950 3190 50  0001 C CNN "Digi-Key PN"
-	1    3950 3190
+P 3580 3340
+F 0 "#PWR?" H 3580 3090 50  0001 C CNN
+F 1 "GND" H 3580 3190 50  0000 C CNN
+F 2 "" H 3580 3340 50  0001 C CNN
+F 3 "" H 3580 3340 50  0001 C CNN
+	1    3580 3340
 	1    0    0    -1  
 $EndComp
 $Comp
 L Custom_Library:VBAT #PWR?
 U 1 1 5F2CCEF3
-P 3950 3040
-F 0 "#PWR?" H 3950 2890 50  0001 C CNN
-F 1 "VBAT" H 3950 3190 50  0000 C CNN
-F 2 "" H 3950 3040 50  0001 C CNN
-F 3 "" H 3950 3040 50  0001 C CNN
-	1    3950 3040
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:C_Custom C?
-U 1 1 5F3B2874
-P 5990 5960
-F 0 "C?" H 6015 6060 50  0000 L CNN
-F 1 "0.1uF" H 6015 5860 50  0000 L CNN
-F 2 "" H 6028 5810 50  0001 C CNN
-F 3 "" H 6015 6060 50  0001 C CNN
-F 4 "0402" H 5840 6060 50  0000 R CNN "display_footprint"
-F 5 "50V" H 5840 5960 50  0000 R CNN "Voltage"
-F 6 "X7R" H 5840 5860 50  0000 R CNN "Dielectric"
-F 7 "" H 5990 5960 50  0001 C CNN "Digi-Key PN"
-	1    5990 5960
+P 3580 3040
+F 0 "#PWR?" H 3580 2890 50  0001 C CNN
+F 1 "VBAT" H 3580 3190 50  0000 C CNN
+F 2 "" H 3580 3040 50  0001 C CNN
+F 3 "" H 3580 3040 50  0001 C CNN
+	1    3580 3040
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -419,7 +351,7 @@ F 3 "" H 3325 4950 50  0001 C CNN
 F 4 "0402" H 3150 4950 50  0000 R CNN "display_footprint"
 F 5 "50V" H 3150 4850 50  0000 R CNN "Voltage"
 F 6 "X7R" H 3150 4750 50  0000 R CNN "Dielectric"
-F 7 "" H 3300 4850 50  0001 C CNN "Digi-Key PN"
+F 7 "BACKUP_RTC" H 3680 4850 50  0000 C CNN "Configuration"
 	1    3300 4850
 	-1   0    0    -1  
 $EndComp
@@ -496,34 +428,6 @@ F 3 "~" H 2150 4090 50  0001 C CNN
 $EndComp
 $Comp
 L Custom_Library:R_Custom R?
-U 1 1 5F39B3AD
-P 4130 4390
-AR Path="/5BB27BA3/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5BB27BF7/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5C1DE17A/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5C1E3A08/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5D779AE1/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5E0F263A/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5A557C58/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5E2843EF/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5F360CB6/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5E939EED/5F39B3AD" Ref="R?"  Part="1" 
-AR Path="/5F582E7C/5F39B3AD" Ref="R?"  Part="1" 
-F 0 "R?" H 4050 4390 50  0000 R CNN
-F 1 "1.07M" V 4130 4390 40  0000 C CNN
-F 2 "Resistors_SMD:R_0402" H 4130 4390 50  0001 C CNN
-F 3 "" H 4130 4390 50  0001 C CNN
-F 4 "0402" H 4230 4470 50  0000 L CNN "display_footprint"
-F 5 "1%" H 4230 4390 50  0000 L CNN "Tolerance"
-F 6 "1/16W" H 4240 4310 50  0000 L CNN "Wattage"
-F 7 "" H 4130 4390 50  0001 C CNN "Digi-Key PN"
-	1    4130 4390
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
 U 1 1 5F39C65B
 P 4130 4850
 AR Path="/5BB27BA3/5F39C65B" Ref="R?"  Part="1" 
@@ -546,7 +450,7 @@ F 3 "" H 4130 4850 50  0001 C CNN
 F 4 "0402" H 4230 4930 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4230 4850 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 4240 4770 50  0000 L CNN "Wattage"
-F 7 "" H 4130 4850 50  0001 C CNN "Digi-Key PN"
+F 7 "BACKUP_RTC" H 4090 5010 50  0000 R CNN "Configuration"
 	1    4130 4850
 	-1   0    0    -1  
 $EndComp
@@ -554,4 +458,92 @@ Wire Wire Line
 	3300 4620 4130 4620
 Connection ~ 3300 4620
 NoConn ~ 5550 1800
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 6021E2B7
+P 4130 4390
+AR Path="/5BB27BA3/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5BB27BF7/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5C1DE17A/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5C1E3A08/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5D779AE1/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5E0F263A/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5A557C58/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5E2843EF/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5F360CB6/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5E939EED/6021E2B7" Ref="R?"  Part="1" 
+AR Path="/5F582E7C/6021E2B7" Ref="R?"  Part="1" 
+F 0 "R?" H 4050 4390 50  0000 R CNN
+F 1 "1.07M" V 4130 4390 40  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 4130 4390 50  0001 C CNN
+F 3 "" H 4130 4390 50  0001 C CNN
+F 4 "0402" H 4230 4470 50  0000 L CNN "display_footprint"
+F 5 "1%" H 4230 4390 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 4240 4310 50  0000 L CNN "Wattage"
+F 7 "BACKUP_RTC" H 4090 4550 50  0000 R CNN "Configuration"
+	1    4130 4390
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 602245D4
+P 5990 5960
+F 0 "C?" H 6015 6060 50  0000 L CNN
+F 1 "0.1uF" H 6015 5860 50  0000 L CNN
+F 2 "" H 6028 5810 50  0001 C CNN
+F 3 "" H 6015 6060 50  0001 C CNN
+F 4 "0402" H 5840 6060 50  0000 R CNN "display_footprint"
+F 5 "50V" H 5840 5960 50  0000 R CNN "Voltage"
+F 6 "X7R" H 5840 5860 50  0000 R CNN "Dielectric"
+F 7 "BACKUP_RTC" H 6370 5960 50  0000 C CNN "Configuration"
+	1    5990 5960
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 6022626F
+P 5850 3190
+F 0 "C?" H 5875 3290 50  0000 L CNN
+F 1 "0.1uF" H 5875 3090 50  0000 L CNN
+F 2 "" H 5888 3040 50  0001 C CNN
+F 3 "" H 5875 3290 50  0001 C CNN
+F 4 "0402" H 5700 3290 50  0000 R CNN "display_footprint"
+F 5 "50V" H 5700 3190 50  0000 R CNN "Voltage"
+F 6 "X7R" H 5700 3090 50  0000 R CNN "Dielectric"
+F 7 "BACKUP_RTC" H 6230 3190 50  0000 C CNN "Configuration"
+	1    5850 3190
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 602278F5
+P 4740 3190
+F 0 "C?" H 4765 3290 50  0000 L CNN
+F 1 "0.1uF" H 4765 3090 50  0000 L CNN
+F 2 "" H 4778 3040 50  0001 C CNN
+F 3 "" H 4765 3290 50  0001 C CNN
+F 4 "0402" H 4590 3290 50  0000 R CNN "display_footprint"
+F 5 "50V" H 4590 3190 50  0000 R CNN "Voltage"
+F 6 "X7R" H 4590 3090 50  0000 R CNN "Dielectric"
+F 7 "BACKUP_RTC" H 5120 3190 50  0000 C CNN "Configuration"
+	1    4740 3190
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 6022C07C
+P 3580 3190
+F 0 "C?" H 3605 3290 50  0000 L CNN
+F 1 "10uF" H 3605 3090 50  0000 L CNN
+F 2 "" H 3618 3040 50  0001 C CNN
+F 3 "" H 3605 3290 50  0001 C CNN
+F 4 "0402" H 3430 3290 50  0000 R CNN "display_footprint"
+F 5 "10V" H 3430 3190 50  0000 R CNN "Voltage"
+F 6 "X7R" H 3430 3090 50  0000 R CNN "Dielectric"
+F 7 "BACKUP_RTC" H 3960 3190 50  0000 C CNN "Configuration"
+	1    3580 3190
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC

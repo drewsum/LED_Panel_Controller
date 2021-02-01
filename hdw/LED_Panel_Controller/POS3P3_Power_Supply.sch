@@ -14,26 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Custom_Library:L_Custom L?
-U 1 1 5C26EF0D
-P 6330 3040
-AR Path="/5CB7718D/5C26EF0D" Ref="L?"  Part="1" 
-AR Path="/5E0DC082/5C26EF0D" Ref="L?"  Part="1" 
-AR Path="/5E0F263A/5C26EF0D" Ref="L?"  Part="1" 
-AR Path="/5EAE2D8A/5C26EF0D" Ref="L?"  Part="1" 
-AR Path="/5F581B64/5C26EF0D" Ref="L?"  Part="1" 
-F 0 "L?" V 6280 3040 50  0000 C CNN
-F 1 "3.3uH" V 6405 3040 50  0000 C CNN
-F 2 "Inductors_SMD:L_Vishay_IHLP-1212" H 6330 3040 50  0001 C CNN
-F 3 "" H 6330 3040 50  0001 C CNN
-F 4 "541-2567-1-ND" H 6330 3040 50  0001 C CNN "Digi-Key PN"
-F 5 "IHLP1212" V 6480 3040 50  0000 C CNN "display_footprint"
-F 6 "2.7A" V 6580 3040 50  0000 C CNN "Ampacity"
-F 7 "20%" V 6680 3040 50  0000 C CNN "Tolerance"
-	1    6330 3040
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Custom_Library:C_Custom C?
 U 1 1 5E2AA96A
 P 4550 2970
@@ -315,31 +295,10 @@ F 3 "" H 8220 2960 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	5890 3040 6180 3040
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E06F7D6
-P 7520 3040
-AR Path="/5CB6F1ED/5E06F7D6" Ref="R?"  Part="1" 
-AR Path="/5CB7718D/5E06F7D6" Ref="R?"  Part="1" 
-AR Path="/5E0DC082/5E06F7D6" Ref="R?"  Part="1" 
-AR Path="/5E0F263A/5E06F7D6" Ref="R?"  Part="1" 
-AR Path="/5EAE2D8A/5E06F7D6" Ref="R?"  Part="1" 
-AR Path="/5F581B64/5E06F7D6" Ref="R?"  Part="1" 
-F 0 "R?" V 7420 3040 50  0000 C CNN
-F 1 "0.02" V 7520 3040 40  0000 C CNN
-F 2 "Resistors_SMD:R_0612" H 7520 3040 50  0001 C CNN
-F 3 "" H 7520 3040 50  0001 C CNN
-F 4 "P16010CT-ND" H 7820 3440 60  0001 C CNN "Digi-Key PN"
-F 5 "0612" V 7620 3040 50  0000 C CNN "display_footprint"
-F 6 "1%" V 7720 3040 50  0000 C CNN "Tolerance"
-F 7 "1W" V 7820 3040 50  0000 C CNN "Wattage"
-	1    7520 3040
-	0    -1   -1   0   
-$EndComp
 Text GLabel 7290 2560 1    50   UnSpc ~ 0
-POS3P3_SNS_OUT+
+POS3P3_SNS+
 Text GLabel 7750 2560 1    50   UnSpc ~ 0
-POS3P3_SNS_OUT-
+POS3P3_SNS-
 Wire Wire Line
 	6480 3040 6920 3040
 Wire Wire Line
@@ -450,7 +409,7 @@ F 3 "" H 7290 2710 50  0001 C CNN
 F 4 "0402" V 7390 2710 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7490 2710 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 7590 2710 50  0001 C CNN "Wattage"
-F 7 "" H 7290 2710 50  0001 C CNN "Digi-Key PN"
+F 7 "Telemetry" V 7390 2710 50  0000 C CNN "Configuration"
 	1    7290 2710
 	-1   0    0    -1  
 $EndComp
@@ -471,7 +430,7 @@ F 3 "" H 7750 2710 50  0001 C CNN
 F 4 "0402" V 7850 2710 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7950 2710 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 8050 2710 50  0001 C CNN "Wattage"
-F 7 "" H 7750 2710 50  0001 C CNN "Digi-Key PN"
+F 7 "Telemetry" V 7850 2710 50  0000 C CNN "Configuration"
 	1    7750 2710
 	-1   0    0    -1  
 $EndComp
@@ -481,8 +440,6 @@ Wire Wire Line
 	7290 2860 7290 3040
 Wire Wire Line
 	7290 3040 7370 3040
-Wire Wire Line
-	7750 2860 7750 3040
 Connection ~ 7750 3040
 Wire Wire Line
 	7750 3040 8220 3040
@@ -692,18 +649,6 @@ F 7 "490-13211-1-ND" H 3680 6980 50  0001 C CNN "Digi-Key PN"
 	1    3680 6980
 	1    0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:TPS62150 U?
-U 1 1 5EB8DB31
-P 5390 3740
-F 0 "U?" H 5390 4990 50  0000 C CNN
-F 1 "TPS62150" H 5390 3740 50  0000 C CNN
-F 2 "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm" H 5390 3740 50  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/symlink/tps62150.pdf?&ts=1589125931316" H 5390 3740 50  0001 C CNN
-F 4 "296-41757-1-ND" H 5290 3740 50  0001 C CNN "Digi-Key PN"
-	1    5390 3740
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8220 3960 8220 4240
 Wire Wire Line
@@ -827,4 +772,153 @@ Wire Wire Line
 	4890 4240 2770 4240
 Text GLabel 4090 7490 0    50   Input ~ 0
 POS3P3_RUN
+$Comp
+L Custom_Library:TPS62130 U?
+U 1 1 6019E970
+P 5390 3740
+AR Path="/5F581BA3/6019E970" Ref="U?"  Part="1" 
+AR Path="/5F581B64/6019E970" Ref="U?"  Part="1" 
+F 0 "U?" H 5390 4990 50  0000 C CNN
+F 1 "TPS62130" H 5390 3740 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm" H 5390 3740 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps62130.pdf" H 5390 3740 50  0001 C CNN
+F 4 "296-37878-1-ND" H 5290 3740 50  0001 C CNN "Digi-Key PN"
+	1    5390 3740
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:L_Custom L?
+U 1 1 601A324F
+P 6330 3040
+AR Path="/5F581BA3/601A324F" Ref="L?"  Part="1" 
+AR Path="/5F581B64/601A324F" Ref="L?"  Part="1" 
+F 0 "L?" V 6280 3040 50  0000 C CNN
+F 1 "2.2uH" V 6405 3040 50  0000 C CNN
+F 2 "" H 6330 3040 50  0001 C CNN
+F 3 "" H 6330 3040 50  0001 C CNN
+F 4 "IHLP2020" V 6480 3040 50  0000 C CNN "display_footprint"
+F 5 "6.7A" V 6580 3040 50  0000 C CNN "Ampacity"
+F 6 "20%" V 6680 3040 50  0000 C CNN "Tolerance"
+F 7 "541-1236-1-ND" H 6330 3040 50  0001 C CNN "Digi-Key PN"
+	1    6330 3040
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 601AAF61
+P 7520 3410
+AR Path="/5EAE2EF2/601AAF61" Ref="R?"  Part="1" 
+AR Path="/5EAE30C7/601AAF61" Ref="R?"  Part="1" 
+AR Path="/5EAE2D8A/601AAF61" Ref="R?"  Part="1" 
+AR Path="/5EAE2D66/601AAF61" Ref="R?"  Part="1" 
+AR Path="/5F581B41/601AAF61" Ref="R?"  Part="1" 
+AR Path="/5F581B64/601AAF61" Ref="R?"  Part="1" 
+F 0 "R?" V 7420 3410 50  0000 C CNN
+F 1 "0" V 7520 3410 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 7520 3410 50  0001 C CNN
+F 3 "" H 7520 3410 50  0001 C CNN
+F 4 "0402" V 7620 3410 50  0001 C CNN "display_footprint"
+F 5 "1%" V 7720 3410 50  0001 C CNN "Tolerance"
+F 6 "1/16W" V 7820 3410 50  0001 C CNN "Wattage"
+F 7 "~Telemetry" V 7620 3410 50  0000 C CNN "Configuration"
+F 8 "2019-RK73Z1ETTPCT-ND" H 7520 3410 50  0001 C CNN "Digi-Key PN"
+	1    7520 3410
+	0    -1   1    0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 601AAF6C
+P 7520 3710
+AR Path="/5EAE2EF2/601AAF6C" Ref="R?"  Part="1" 
+AR Path="/5EAE30C7/601AAF6C" Ref="R?"  Part="1" 
+AR Path="/5EAE2D8A/601AAF6C" Ref="R?"  Part="1" 
+AR Path="/5EAE2D66/601AAF6C" Ref="R?"  Part="1" 
+AR Path="/5F581B41/601AAF6C" Ref="R?"  Part="1" 
+AR Path="/5F581B64/601AAF6C" Ref="R?"  Part="1" 
+F 0 "R?" V 7420 3710 50  0000 C CNN
+F 1 "0" V 7520 3710 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 7520 3710 50  0001 C CNN
+F 3 "" H 7520 3710 50  0001 C CNN
+F 4 "0402" V 7620 3710 50  0001 C CNN "display_footprint"
+F 5 "1%" V 7720 3710 50  0001 C CNN "Tolerance"
+F 6 "1/16W" V 7820 3710 50  0001 C CNN "Wattage"
+F 7 "~Telemetry" V 7620 3710 50  0000 C CNN "Configuration"
+F 8 "2019-RK73Z1ETTPCT-ND" H 7520 3710 50  0001 C CNN "Digi-Key PN"
+	1    7520 3710
+	0    -1   1    0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 601AAF77
+P 7520 4010
+AR Path="/5EAE2EF2/601AAF77" Ref="R?"  Part="1" 
+AR Path="/5EAE30C7/601AAF77" Ref="R?"  Part="1" 
+AR Path="/5EAE2D8A/601AAF77" Ref="R?"  Part="1" 
+AR Path="/5EAE2D66/601AAF77" Ref="R?"  Part="1" 
+AR Path="/5F581B41/601AAF77" Ref="R?"  Part="1" 
+AR Path="/5F581B64/601AAF77" Ref="R?"  Part="1" 
+F 0 "R?" V 7420 4010 50  0000 C CNN
+F 1 "0" V 7520 4010 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 7520 4010 50  0001 C CNN
+F 3 "" H 7520 4010 50  0001 C CNN
+F 4 "0402" V 7620 4010 50  0001 C CNN "display_footprint"
+F 5 "1%" V 7720 4010 50  0001 C CNN "Tolerance"
+F 6 "1/16W" V 7820 4010 50  0001 C CNN "Wattage"
+F 7 "~Telemetry" V 7620 4010 50  0000 C CNN "Configuration"
+F 8 "2019-RK73Z1ETTPCT-ND" H 7520 4010 50  0001 C CNN "Digi-Key PN"
+	1    7520 4010
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	7670 4010 7750 4010
+Wire Wire Line
+	7750 4010 7750 3710
+Wire Wire Line
+	7290 4010 7370 4010
+Wire Wire Line
+	7370 3710 7290 3710
+Connection ~ 7290 3710
+Wire Wire Line
+	7290 3710 7290 4010
+Wire Wire Line
+	7670 3710 7750 3710
+Connection ~ 7750 3710
+Wire Wire Line
+	7750 3710 7750 3410
+Wire Wire Line
+	7670 3410 7750 3410
+Connection ~ 7750 3410
+Wire Wire Line
+	7370 3410 7290 3410
+Connection ~ 7290 3410
+Wire Wire Line
+	7290 3410 7290 3710
+Wire Wire Line
+	7750 2860 7750 3040
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E06F7D6
+P 7520 3040
+AR Path="/5CB6F1ED/5E06F7D6" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5E06F7D6" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5E06F7D6" Ref="R?"  Part="1" 
+AR Path="/5E0F263A/5E06F7D6" Ref="R?"  Part="1" 
+AR Path="/5EAE2D8A/5E06F7D6" Ref="R?"  Part="1" 
+AR Path="/5F581B64/5E06F7D6" Ref="R?"  Part="1" 
+F 0 "R?" V 7420 3040 50  0000 C CNN
+F 1 "0.02" V 7520 3040 40  0000 C CNN
+F 2 "Resistors_SMD:R_0612" H 7520 3040 50  0001 C CNN
+F 3 "" H 7520 3040 50  0001 C CNN
+F 4 "P16010CT-ND" H 7820 3440 60  0001 C CNN "Digi-Key PN"
+F 5 "0612" V 7620 3040 50  0000 C CNN "display_footprint"
+F 6 "1%" V 7720 3040 50  0000 C CNN "Tolerance"
+F 7 "1W" V 7820 3040 50  0000 C CNN "Wattage"
+F 8 "Telemetry" V 7350 3040 50  0000 C CNN "Configuration"
+	1    7520 3040
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7290 3040 7290 3410
+Wire Wire Line
+	7750 3040 7750 3410
 $EndSCHEMATC

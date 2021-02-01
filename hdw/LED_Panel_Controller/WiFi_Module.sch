@@ -22,6 +22,7 @@ F 1 "ATWINC1500-MR210PB" H 5649 2198 50  0000 L BNN
 F 2 "" H 6250 3700 50  0001 L BNN
 F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/ATWINC15x0-MR210xB-IEEE-802.11-b-g-n-SmartConnect-IoT-Module-Data-Sheet-DS70005304C.pdf" H 6250 3700 50  0001 L BNN
 F 4 "ATWINC1500-MR210PB-ND" H 6250 3700 50  0001 C CNN "Digi-Key PN"
+F 5 "WIFI" H 6250 2140 50  0000 C CNN "Configuration"
 	1    6250 3700
 	1    0    0    -1  
 $EndComp
@@ -85,7 +86,7 @@ F 3 "" H 7355 3630 50  0001 C CNN
 F 4 "0402" H 7180 3630 50  0000 R CNN "display_footprint"
 F 5 "50V" H 7180 3530 50  0000 R CNN "Voltage"
 F 6 "X7R" H 7180 3430 50  0000 R CNN "Dielectric"
-F 7 "" H 7755 4030 60  0001 C CNN "Digi-Key PN"
+F 7 "WIFI" H 7180 3710 50  0000 R CNN "Configuration"
 	1    7330 3530
 	1    0    0    -1  
 $EndComp
@@ -127,6 +128,7 @@ F 4 "0402" H 7930 3630 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 7930 3530 50  0000 R CNN "Voltage"
 F 6 "X5R" H 7930 3430 50  0000 R CNN "Dielectric"
 F 7 "490-13211-1-ND" H 8080 3530 50  0001 C CNN "Digi-Key PN"
+F 8 "WIFI" H 7930 3710 50  0000 R CNN "Configuration"
 	1    8080 3530
 	1    0    0    -1  
 $EndComp
@@ -164,27 +166,6 @@ Wire Wire Line
 Connection ~ 8080 3300
 Text Label 7480 3300 0    50   ~ 0
 WIFI_VCORE
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5FF2C483
-P 7330 2930
-AR Path="/5D6B2673/5FF2C483" Ref="R?"  Part="1" 
-AR Path="/5D6C0D23/5FF2C483" Ref="R?"  Part="1" 
-AR Path="/5D77A516/5FF2C483" Ref="R?"  Part="1" 
-AR Path="/5E939CFF/5FF2C483" Ref="R?"  Part="1" 
-AR Path="/5F581B41/5FF2C483" Ref="R?"  Part="1" 
-AR Path="/5F582E44/5FF2C483" Ref="R?"  Part="1" 
-F 0 "R?" H 7240 2930 50  0000 R CNN
-F 1 "10k" V 7330 2860 50  0000 L CNN
-F 2 "Resistors_SMD:R_0402" H 7330 2930 50  0001 C CNN
-F 3 "" H 7330 2930 50  0001 C CNN
-F 4 "0402" H 7430 3000 50  0000 L CNN "display_footprint"
-F 5 "1%" H 7430 2900 50  0000 L CNN "Tolerance"
-F 6 "1/16W" H 7430 2800 50  0000 L CNN "Wattage"
-F 7 "" H 7630 3330 60  0001 C CNN "Digi-Key PN"
-	1    7330 2930
-	-1   0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5FF31347
@@ -757,32 +738,6 @@ Wire Wire Line
 Wire Wire Line
 	2380 4800 2300 4800
 $Comp
-L Custom_Library:C_Custom C?
-U 1 1 5FF8CED8
-P 6710 1610
-AR Path="/5CB7718D/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5A557C58/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5CB25152/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5E697934/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5EAE2F02/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5EAE3021/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5EAE2D8A/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5F581B64/5FF8CED8" Ref="C?"  Part="1" 
-AR Path="/5F582E44/5FF8CED8" Ref="C?"  Part="1" 
-F 0 "C?" H 6735 1710 50  0000 L CNN
-F 1 "10uF" H 6735 1510 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0402" H 6748 1460 50  0001 C CNN
-F 3 "" H 6735 1710 50  0001 C CNN
-F 4 "0402" H 6560 1710 50  0000 R CNN "display_footprint"
-F 5 "6.3V" H 6560 1610 50  0000 R CNN "Voltage"
-F 6 "X5R" H 6560 1510 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 6710 1610 50  0001 C CNN "Digi-Key PN"
-	1    6710 1610
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 5FF8DBDF
 P 6710 1760
@@ -802,32 +757,6 @@ F 1 "+3.3V" H 6710 1600 50  0000 C CNN
 F 2 "" H 6710 1460 50  0001 C CNN
 F 3 "" H 6710 1460 50  0001 C CNN
 	1    6710 1460
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:C_Custom C?
-U 1 1 5FF8E14F
-P 7410 1610
-AR Path="/5CB7718D/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5A557C58/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5CB25152/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5E697934/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5EAE2F02/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5EAE3021/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5EAE2D8A/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5F581B64/5FF8E14F" Ref="C?"  Part="1" 
-AR Path="/5F582E44/5FF8E14F" Ref="C?"  Part="1" 
-F 0 "C?" H 7435 1710 50  0000 L CNN
-F 1 "10uF" H 7435 1510 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0402" H 7448 1460 50  0001 C CNN
-F 3 "" H 7435 1710 50  0001 C CNN
-F 4 "0402" H 7260 1710 50  0000 R CNN "display_footprint"
-F 5 "6.3V" H 7260 1610 50  0000 R CNN "Voltage"
-F 6 "X5R" H 7260 1510 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 7410 1610 50  0001 C CNN "Digi-Key PN"
-	1    7410 1610
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -875,6 +804,7 @@ F 4 "0402" H 5160 1710 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 5160 1610 50  0000 R CNN "Voltage"
 F 6 "X5R" H 5160 1510 50  0000 R CNN "Dielectric"
 F 7 "490-13211-1-ND" H 5310 1610 50  0001 C CNN "Digi-Key PN"
+F 8 "WIFI" H 5150 1780 50  0000 R CNN "Configuration"
 	1    5310 1610
 	1    0    0    -1  
 $EndComp
@@ -901,32 +831,6 @@ F 3 "" H 5310 1460 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:C_Custom C?
-U 1 1 5FF91EBF
-P 6010 1610
-AR Path="/5CB7718D/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5E0DC082/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5E0F9110/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5A557C58/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5CB25152/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5E697934/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5EAE2F02/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5EAE3021/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5EAE2D8A/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5F581B64/5FF91EBF" Ref="C?"  Part="1" 
-AR Path="/5F582E44/5FF91EBF" Ref="C?"  Part="1" 
-F 0 "C?" H 6035 1710 50  0000 L CNN
-F 1 "10uF" H 6035 1510 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0402" H 6048 1460 50  0001 C CNN
-F 3 "" H 6035 1710 50  0001 C CNN
-F 4 "0402" H 5860 1710 50  0000 R CNN "display_footprint"
-F 5 "6.3V" H 5860 1610 50  0000 R CNN "Voltage"
-F 6 "X5R" H 5860 1510 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 6010 1610 50  0001 C CNN "Digi-Key PN"
-	1    6010 1610
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 5FF91EC9
 P 6010 1760
@@ -947,5 +851,107 @@ F 2 "" H 6010 1460 50  0001 C CNN
 F 3 "" H 6010 1460 50  0001 C CNN
 	1    6010 1460
 	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 6020EF8E
+P 6010 1610
+AR Path="/5CB7718D/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5A557C58/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5CB25152/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5E697934/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5EAE2F02/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5EAE3021/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5EAE2D8A/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5F581B64/6020EF8E" Ref="C?"  Part="1" 
+AR Path="/5F582E44/6020EF8E" Ref="C?"  Part="1" 
+F 0 "C?" H 6035 1710 50  0000 L CNN
+F 1 "10uF" H 6035 1510 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 6048 1460 50  0001 C CNN
+F 3 "" H 6035 1710 50  0001 C CNN
+F 4 "0402" H 5860 1710 50  0000 R CNN "display_footprint"
+F 5 "6.3V" H 5860 1610 50  0000 R CNN "Voltage"
+F 6 "X5R" H 5860 1510 50  0000 R CNN "Dielectric"
+F 7 "490-13211-1-ND" H 6010 1610 50  0001 C CNN "Digi-Key PN"
+F 8 "WIFI" H 5850 1780 50  0000 R CNN "Configuration"
+	1    6010 1610
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 6020F45D
+P 6710 1610
+AR Path="/5CB7718D/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5A557C58/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5CB25152/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5E697934/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5EAE2F02/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5EAE3021/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5EAE2D8A/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5F581B64/6020F45D" Ref="C?"  Part="1" 
+AR Path="/5F582E44/6020F45D" Ref="C?"  Part="1" 
+F 0 "C?" H 6735 1710 50  0000 L CNN
+F 1 "10uF" H 6735 1510 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 6748 1460 50  0001 C CNN
+F 3 "" H 6735 1710 50  0001 C CNN
+F 4 "0402" H 6560 1710 50  0000 R CNN "display_footprint"
+F 5 "6.3V" H 6560 1610 50  0000 R CNN "Voltage"
+F 6 "X5R" H 6560 1510 50  0000 R CNN "Dielectric"
+F 7 "490-13211-1-ND" H 6710 1610 50  0001 C CNN "Digi-Key PN"
+F 8 "WIFI" H 6550 1780 50  0000 R CNN "Configuration"
+	1    6710 1610
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 6020F910
+P 7410 1610
+AR Path="/5CB7718D/6020F910" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/6020F910" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/6020F910" Ref="C?"  Part="1" 
+AR Path="/5A557C58/6020F910" Ref="C?"  Part="1" 
+AR Path="/5CB25152/6020F910" Ref="C?"  Part="1" 
+AR Path="/5E697934/6020F910" Ref="C?"  Part="1" 
+AR Path="/5EAE2F02/6020F910" Ref="C?"  Part="1" 
+AR Path="/5EAE3021/6020F910" Ref="C?"  Part="1" 
+AR Path="/5EAE2D8A/6020F910" Ref="C?"  Part="1" 
+AR Path="/5F581B64/6020F910" Ref="C?"  Part="1" 
+AR Path="/5F582E44/6020F910" Ref="C?"  Part="1" 
+F 0 "C?" H 7435 1710 50  0000 L CNN
+F 1 "10uF" H 7435 1510 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 7448 1460 50  0001 C CNN
+F 3 "" H 7435 1710 50  0001 C CNN
+F 4 "0402" H 7260 1710 50  0000 R CNN "display_footprint"
+F 5 "6.3V" H 7260 1610 50  0000 R CNN "Voltage"
+F 6 "X5R" H 7260 1510 50  0000 R CNN "Dielectric"
+F 7 "490-13211-1-ND" H 7410 1610 50  0001 C CNN "Digi-Key PN"
+F 8 "WIFI" H 7250 1780 50  0000 R CNN "Configuration"
+	1    7410 1610
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5FF2C483
+P 7330 2930
+AR Path="/5D6B2673/5FF2C483" Ref="R?"  Part="1" 
+AR Path="/5D6C0D23/5FF2C483" Ref="R?"  Part="1" 
+AR Path="/5D77A516/5FF2C483" Ref="R?"  Part="1" 
+AR Path="/5E939CFF/5FF2C483" Ref="R?"  Part="1" 
+AR Path="/5F581B41/5FF2C483" Ref="R?"  Part="1" 
+AR Path="/5F582E44/5FF2C483" Ref="R?"  Part="1" 
+F 0 "R?" H 7240 2930 50  0000 R CNN
+F 1 "10k" V 7330 2860 50  0000 L CNN
+F 2 "Resistors_SMD:R_0402" H 7330 2930 50  0001 C CNN
+F 3 "" H 7330 2930 50  0001 C CNN
+F 4 "0402" H 7430 3000 50  0000 L CNN "display_footprint"
+F 5 "1%" H 7430 2900 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 7430 2800 50  0000 L CNN "Wattage"
+F 7 "" H 7630 3330 60  0001 C CNN "Digi-Key PN"
+	1    7330 2930
+	-1   0    0    -1  
 $EndComp
 $EndSCHEMATC

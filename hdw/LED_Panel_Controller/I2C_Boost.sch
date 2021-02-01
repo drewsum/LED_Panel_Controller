@@ -22,6 +22,7 @@ F 1 "LTC1694" H 5300 4110 60  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5200 4060 60  0001 C CNN
 F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/1694fa.pdf" H 5200 4060 60  0001 C CNN
 F 4 "LTC1694CS5#TRPBFCT-ND" H 5400 3510 60  0001 C CNN "Digi-Key PN"
+F 5 "DNP" H 5300 3300 50  0000 C CNN "Configuration"
 	1    5300 3760
 	1    0    0    -1  
 $EndComp
@@ -95,6 +96,7 @@ F 4 "0402" H 4190 3880 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4190 3780 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4190 3680 50  0000 R CNN "Dielectric"
 F 7 "490-10701-1-ND" H 4765 4280 60  0001 C CNN "Digi-Key PN"
+F 8 "DNP" H 4110 3970 50  0000 C CNN "Configuration"
 	1    4340 3780
 	1    0    0    -1  
 $EndComp
