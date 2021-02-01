@@ -133,10 +133,10 @@ Wire Wire Line
 	9110 4490 9410 4490
 Text GLabel 3300 4890 0    50   Output ~ 0
 PIC32MZ_REFCLK1
-Text GLabel 1330 5630 0    50   Output ~ 0
-USB_UART_TX
-Text GLabel 1330 5530 0    50   Input ~ 0
-USB_UART_RX
+Text GLabel 7300 1590 2    50   Output ~ 0
+PIC32MZ_UART_TX
+Text GLabel 7300 1490 2    50   Input ~ 0
+PIC32MZ_UART_RX
 Text GLabel 3300 3240 0    50   Input ~ 0
 PIC32MZ_ICSPCLK
 Text GLabel 3300 3340 0    50   BiDi ~ 0
@@ -145,31 +145,31 @@ Text GLabel 3300 4790 0    50   Input ~ 0
 PIC32MZ_POSC_EC
 Text GLabel 3300 4990 0    50   Input ~ 0
 PIC32MZ_SOSC
-Text GLabel 1290 1850 0    40   Input ~ 0
+Text GLabel 1220 1680 0    40   Output ~ 0
 ~WIFI_RESET
-Text GLabel 1290 1950 0    50   Input ~ 0
+Text GLabel 1220 1780 0    50   Output ~ 0
 WIFI_WAKE
-Text GLabel 1290 2050 0    50   Input ~ 0
+Text GLabel 1220 1880 0    50   Output ~ 0
 WIFI_CHIP_EN
-Text GLabel 1290 2250 0    50   Input ~ 0
+Text GLabel 7300 1990 2    50   Output ~ 0
 WIFI_SPI_SCK
-Text GLabel 1290 2450 0    40   Input ~ 0
+Text GLabel 1220 2280 0    40   Output ~ 0
 ~WIFI_SPI_SS
-Text GLabel 1290 2550 0    50   Input ~ 0
+Text GLabel 7300 2090 2    50   Output ~ 0
 WIFI_SPI_MOSI
-Text GLabel 1290 2650 0    50   Output ~ 0
+Text GLabel 7300 2490 2    50   Input ~ 0
 WIFI_SPI_MISO
-Text GLabel 820  2350 2    50   Output ~ 0
+Text GLabel 750  2180 2    50   Input ~ 0
 WIFI_IRQN
 $Comp
 L Custom_Library:PIC32MZ2048EFG100_IPF U?
 U 1 1 5FFB3C3D
 P 5300 3640
 F 0 "U?" H 7100 1140 50  0000 R CNN
-F 1 "PIC32MZ2048EFG100_IPF" H 5300 4240 50  0000 C CNN
+F 1 "PIC32MZ2048EFG100-250_IPF" H 5300 4240 50  0000 C CNN
 F 2 "Housings_QFP:TQFP-100_14x14mm_Pitch0.5mm" H 5300 3640 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf" H 5300 3640 50  0001 C CNN
-F 4 "PIC32MZ2048EFG100-I/PF-ND" H 5300 3640 50  0001 C CNN "Digi-Key PN"
+F 4 "PIC32MZ2048EFH100-250I/PF-ND" H 5300 3640 50  0001 C CNN "Digi-Key PN"
 	1    5300 3640
 	1    0    0    -1  
 $EndComp
@@ -295,32 +295,166 @@ F 3 "" H 5300 6320 50  0001 C CNN
 	1    5300 6320
 	1    0    0    -1  
 $EndComp
-Text Notes 10000 4460 0    50   ~ 0
-I2C5
-Text Notes 1290 3300 0    50   ~ 0
-ICSP2
-Text Notes 1290 4830 0    50   ~ 0
+Text Notes 10000 4440 0    50   ~ 0
+SDA5
+Text Notes 1290 3290 0    50   ~ 0
+ICSP2CLK
+Text Notes 1290 4840 0    50   ~ 0
 POSC
-Text Notes 1290 4930 0    50   ~ 0
-REFCLK1
-Text Notes 1290 5030 0    50   ~ 0
+Text Notes 1290 4940 0    50   ~ 0
+REFCLKO1
+Text Notes 1290 5040 0    50   ~ 0
 SOSC
-Text GLabel 1320 780  0    50   Input ~ 0
+Text GLabel 1320 780  0    50   Output ~ 0
 SD_SPI_CS
-Text GLabel 1320 880  0    50   Input ~ 0
+Text GLabel 7300 4090 2    50   Output ~ 0
 SD_SPI_MOSI
-Text GLabel 1320 1080 0    50   Input ~ 0
+Text GLabel 7300 4790 2    50   Output ~ 0
 SD_SPI_SCK
-Text GLabel 1320 1280 0    50   Output ~ 0
+Text GLabel 3300 4390 0    50   Input ~ 0
 SD_SPI_MISO
-Text GLabel 1320 1480 0    50   Output ~ 0
+Text GLabel 1320 1480 0    50   Input ~ 0
 SD_CARD_DET
-Text GLabel 9670 2190 0    50   Input ~ 0
+Text GLabel 3300 4040 0    50   Output ~ 0
 FLASH_SPI_SCK
-Text GLabel 9670 2290 0    40   Input ~ 0
-~FLASH_SPI_CE1
-Text GLabel 9670 2090 0    50   Input ~ 0
+Text GLabel 3300 3640 0    50   Output ~ 0
 FLASH_SPI_MOSI
-Text GLabel 9000 2520 2    50   Output ~ 0
+Text GLabel 3300 3540 0    50   Input ~ 0
 FLASH_SPI_MISO
+Text Notes 10000 1540 0    50   ~ 0
+U1RX
+Text Notes 10000 1640 0    50   ~ 0
+U1TX
+Text GLabel 7300 3090 2    50   Output ~ 0
+G1_POS3P3
+Text GLabel 7300 2990 2    50   Output ~ 0
+G0_POS3P3
+Text GLabel 7300 3290 2    50   Output ~ 0
+B1_POS3P3
+Text GLabel 7300 2890 2    50   Output ~ 0
+R1_POS3P3
+Text GLabel 7300 3190 2    50   Output ~ 0
+B0_POS3P3
+Text GLabel 7300 2790 2    50   Output ~ 0
+R0_POS3P3
+Text Notes 10000 2840 0    50   ~ 0
+PMD0
+Text Notes 10000 2940 0    50   ~ 0
+PMD1
+Text Notes 10000 3040 0    50   ~ 0
+PMD2
+Text Notes 10000 3140 0    50   ~ 0
+PMD3
+Text Notes 10000 3240 0    50   ~ 0
+PMD4
+Text Notes 10000 3340 0    50   ~ 0
+PMD5
+Text GLabel 9310 5940 2    50   Output ~ 0
+Panel_LAT_POS3P3
+Text GLabel 7300 5490 2    40   Output ~ 0
+~Panel_OE_POS3P3
+Text GLabel 3300 4590 0    50   Output ~ 0
+Panel_CLK_POS3P3
+Text GLabel 9310 6340 2    50   Output ~ 0
+Row_C_POS3P3
+Text GLabel 9310 6540 2    50   Output ~ 0
+Row_E_POS3P3
+Text GLabel 9310 6440 2    50   Output ~ 0
+Row_D_POS3P3
+Text GLabel 9310 6240 2    50   Output ~ 0
+Row_B_POS3P3
+Text GLabel 9310 6140 2    50   Output ~ 0
+Row_A_POS3P3
+Text Notes 1290 4640 0    50   ~ 0
+PMWR
+Text Notes 1290 3390 0    50   ~ 0
+ICSP2DAT
+Text Notes 10000 4540 0    50   ~ 0
+SCL5
+Text Notes 10000 3540 0    50   ~ 0
+PMD7
+Text Notes 10000 3440 0    50   ~ 0
+PMD6
+NoConn ~ 7300 3490
+NoConn ~ 7300 3390
+Text Notes 7400 3470 0    50   ~ 0
+DNC these two pins - unused PMP bits can't be disabled
+Text Notes 10000 5540 0    50   ~ 0
+OC3
+Text Notes 9170 6710 0    50   ~ 0
+These must all go in a row
+Text Notes 1290 4090 0    50   ~ 0
+SCK3
+Text Notes 1290 3690 0    50   ~ 0
+SDO3
+Text Notes 1290 3590 0    50   ~ 0
+SDI3
+Text Notes 10000 2040 0    50   ~ 0
+SCK4
+Text Notes 10000 2140 0    50   ~ 0
+SDO4
+Text Notes 10000 2540 0    50   ~ 0
+SDI4
+Text Notes 10000 4840 0    50   ~ 0
+SCK5
+Text Notes 1290 4440 0    50   ~ 0
+SDI5
+Text Notes 10000 4140 0    50   ~ 0
+SDO5
+Text GLabel 1610 6210 0    50   Input ~ 0
+POS12_PGOOD
+Text GLabel 1610 6430 0    50   Input ~ 0
+POS5_PGOOD
+Text GLabel 1610 6530 0    50   Output ~ 0
+PGOOD_LED_SHDN
+Text GLabel 1510 7120 0    50   Input ~ 0
+POS3P3_PGOOD
+Text GLabel 1490 6900 0    50   Input ~ 0
+VBAT_PGOOD
+Text GLabel 1580 6750 0    50   Input ~ 0
+POS5_USB_PGOOD
+Text GLabel 1490 7380 0    50   Output ~ 0
+Heartbeat_LED
+Text GLabel 1460 7620 0    50   Output ~ 0
+Reset_LED
+Text GLabel 1500 7510 0    50   Output ~ 0
+Error_LED
+Text GLabel 1510 7790 0    50   Output ~ 0
+CPU_Trap_LED
+Text GLabel 1490 5980 0    50   Output ~ 0
+VBAT_ADC
+Text GLabel -210 2150 0    50   Output ~ 0
+USB_Stream_Mode_LED
+Text GLabel -240 2870 0    50   Output ~ 0
+Prog1_Mode_LED
+Text GLabel -300 3580 0    50   Output ~ 0
+Prog4_Mode_LED
+Text GLabel -230 2390 0    50   Output ~ 0
+Flash_Slideshow_Mode_LED
+Text GLabel -260 3080 0    50   Output ~ 0
+Prog2_Mode_LED
+Text GLabel -320 3790 0    50   Output ~ 0
+Prog5_Mode_LED
+Text GLabel -300 3340 0    50   Output ~ 0
+Prog3_Mode_LED
+Text GLabel -360 4050 0    50   Output ~ 0
+Prog6_Mode_LED
+Text GLabel -270 2650 0    50   Output ~ 0
+Clock_Mode_LED
+Text GLabel -380 4730 0    40   Output ~ 0
+~FLASH_SPI_CE0
+Text GLabel -380 4830 0    40   Output ~ 0
+~FLASH_SPI_CE1
+Text GLabel -380 4930 0    40   Output ~ 0
+~FLASH_SPI_CE2
+Text GLabel -380 5030 0    40   Output ~ 0
+~FLASH_SPI_CE3
+Text GLabel -380 5130 0    40   Output ~ 0
+~FLASH_SPI_CE4
+Text GLabel -380 5230 0    40   Output ~ 0
+~FLASH_SPI_CE5
+Text GLabel -380 5330 0    40   Output ~ 0
+~FLASH_SPI_CE6
+Text GLabel -380 5430 0    40   Output ~ 0
+~FLASH_SPI_CE7
 $EndSCHEMATC

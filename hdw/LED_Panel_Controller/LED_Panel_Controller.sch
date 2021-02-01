@@ -273,8 +273,6 @@ Text Notes 5080 5220 0    100  ~ 20
 32. Panel Connectors
 Text Notes 5080 5570 0    100  ~ 20
 33. Mechanical
-Text Notes 8660 6640 0    50   ~ 0
-TODO:\n- Determine actual +12V current draw, reevaluate input protection circuit - 2A\n- Determine image size, external flash size- 16,384 bytes\n* Figure out screen modes/mode LEDs\n* Draw WiFi module sheet\n* What PIC32MZ SKU will we use? Should be highest memory + speed - Drew\n
 $Sheet
 S 7030 5770 500  150 
 U 5F7B4289

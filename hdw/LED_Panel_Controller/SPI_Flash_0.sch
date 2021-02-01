@@ -98,7 +98,7 @@ FLASH_SPI_MISO
 Text GLabel 3270 3550 0    50   Input ~ 0
 FLASH_SPI_SCK
 Text GLabel 3270 3650 0    40   Input ~ 0
-~FLASH_SPI_CE1
+~FLASH_SPI_CE0
 Text GLabel 3270 3450 0    50   Input ~ 0
 FLASH_SPI_MOSI
 Wire Wire Line
@@ -190,7 +190,7 @@ F 3 "" H 1670 6420 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 1370 6320 0    40   Input ~ 0
-~FLASH_SPI_CE1
+~FLASH_SPI_CE0
 $Comp
 L power:+3.3V #PWR?
 U 1 1 5C166A81
