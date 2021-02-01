@@ -281,4 +281,6 @@ U 5F7B4289
 F0 "USB Telemetry" 50
 F1 "USB_Telemetry.sch" 50
 $EndSheet
+Text Notes 5080 5920 0    100  ~ 20
+34. USB Telemetry
 $EndSCHEMATC

@@ -107,7 +107,7 @@ Wire Wire Line
 	2010 2340 1930 2340
 Connection ~ 2010 2440
 Wire Wire Line
-	1930 2240 2820 2240
+	1930 2240 2170 2240
 Text Notes 2050 5570 0    50   ~ 0
 UVLO threshold set to 11.12V\nOVLO threshold set to 13.33V\n\nMODE set to Circuit Breaker with Auto-Retry\n\nOutput Current Limit set to 1.2A\n\nOutput ramp rate = 12.5V/ms
 Wire Wire Line
@@ -989,4 +989,50 @@ Wire Wire Line
 Connection ~ 7240 4940
 Wire Wire Line
 	6900 4840 8640 4840
+Wire Wire Line
+	1930 3110 2170 3110
+Wire Wire Line
+	2170 3110 2170 2240
+Connection ~ 2170 2240
+Wire Wire Line
+	2170 2240 2820 2240
+$Comp
+L power:GND #PWR?
+U 1 1 601820E0
+P 2010 3520
+F 0 "#PWR?" H 2010 3270 50  0001 C CNN
+F 1 "GND" H 2010 3370 50  0000 C CNN
+F 2 "" H 2010 3520 50  0001 C CNN
+F 3 "" H 2010 3520 50  0001 C CNN
+	1    2010 3520
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2010 3520 2010 3440
+Wire Wire Line
+	2010 3440 1930 3440
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 6017C82A
+P 1730 3110
+F 0 "J?" H 1730 3210 50  0000 C CNN
+F 1 "Keystone_8191" H 1730 3010 50  0000 C CNN
+F 2 "Custom Footprints Library:Keystone_8191" H 1730 3110 50  0001 C CNN
+F 3 "~" H 1730 3110 50  0001 C CNN
+F 4 "DNP" H 1910 3110 50  0000 C CNN "Configuration"
+	1    1730 3110
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 60188AA9
+P 1730 3440
+F 0 "J?" H 1730 3540 50  0000 C CNN
+F 1 "Keystone_8191" H 1730 3340 50  0000 C CNN
+F 2 "Custom Footprints Library:Keystone_8191" H 1730 3440 50  0001 C CNN
+F 3 "~" H 1730 3440 50  0001 C CNN
+F 4 "DNP" H 1910 3440 50  0000 C CNN "Configuration"
+	1    1730 3440
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
