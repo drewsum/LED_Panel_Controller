@@ -106,7 +106,7 @@ F 0 "DOC?" H 9210 3780 60  0001 C CNN
 F 1 "COM_Port_Settings" H 9210 3880 60  0001 C CNN
 F 2 "" H 9210 3880 60  0001 C CNN
 F 3 "" H 9210 3880 60  0001 C CNN
-F 4 "115200 bps" H 9960 3530 60  0000 R CNN "Baud_Rate"
+F 4 "921600 bps" H 9960 3530 60  0000 R CNN "Baud_Rate"
 F 5 "8 bit" H 9960 3430 60  0000 R CNN "Data_Length"
 F 6 "None" H 9960 3330 60  0000 R CNN "Parity"
 F 7 "1" H 9960 3230 60  0000 R CNN "Stop_Bits"
@@ -1635,4 +1635,22 @@ F 8 "Telemetry" V 5670 3060 50  0000 C CNN "Configuration"
 	1    5570 3060
 	-1   0    0    -1  
 $EndComp
+$Comp
+L Custom_Library:COM_Port_Settings DOC?
+U 1 1 601B933A
+P 9210 4190
+F 0 "DOC?" H 9210 4590 60  0001 C CNN
+F 1 "COM_Port_Settings" H 9210 4690 60  0001 C CNN
+F 2 "" H 9210 4690 60  0001 C CNN
+F 3 "" H 9210 4690 60  0001 C CNN
+F 4 "115200 bps" H 9960 4340 60  0000 R CNN "Baud_Rate"
+F 5 "8 bit" H 9960 4240 60  0000 R CNN "Data_Length"
+F 6 "None" H 9960 4140 60  0000 R CNN "Parity"
+F 7 "1" H 9960 4040 60  0000 R CNN "Stop_Bits"
+F 8 "None" H 9960 3940 60  0000 R CNN "Flow_Control"
+	1    9210 4190
+	1    0    0    -1  
+$EndComp
+Text Notes 8280 2890 0    50   ~ 0
+Enumerates as two COM port endpoints:\nFirst for PIC32MZ, second for ATWINC1500 WiFi module
 $EndSCHEMATC

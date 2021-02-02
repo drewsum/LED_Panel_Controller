@@ -1262,18 +1262,6 @@ F 4 "296-26499-1-ND" H 5280 2350 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74xx:74HCT541 U?
-U 1 1 60236D71
-P 5280 4750
-F 0 "U?" H 4980 5400 50  0000 C CNN
-F 1 "74HCT541" H 4980 4100 50  0000 C CNN
-F 2 "Housings_SSOP:SSOP-20_4.4x6.5mm_Pitch0.65mm" H 5280 4750 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HCT541" H 5280 4750 50  0001 C CNN
-F 4 "296-26499-1-ND" H 5280 4750 50  0001 C CNN "Digi-Key PN"
-	1    5280 4750
-	1    0    0    -1  
-$EndComp
-$Comp
 L Custom_Library:R_Custom R?
 U 1 1 6023BB64
 P 7630 2980
@@ -2128,5 +2116,17 @@ F 5 "1%" V 8550 4950 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 8650 4950 50  0001 C CNN "Wattage"
 	1    8350 4950
 	0    -1   1    0   
+$EndComp
+$Comp
+L 74xx:74HCT541 U?
+U 1 1 6019D5B0
+P 5280 4750
+F 0 "U?" H 4980 5400 50  0000 C CNN
+F 1 "74HCT541" H 4980 4100 50  0000 C CNN
+F 2 "Housings_SSOP:SSOP-20_4.4x6.5mm_Pitch0.65mm" H 5280 4750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HCT541" H 5280 4750 50  0001 C CNN
+F 4 "296-26499-1-ND" H 5280 4750 50  0001 C CNN "Digi-Key PN"
+	1    5280 4750
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

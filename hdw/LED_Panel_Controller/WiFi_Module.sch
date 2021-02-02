@@ -19,7 +19,7 @@ U 1 1 5FF178DC
 P 6250 3700
 F 0 "U?" H 5650 5151 50  0000 L BNN
 F 1 "ATWINC1500-MR210PB" H 5649 2198 50  0000 L BNN
-F 2 "" H 6250 3700 50  0001 L BNN
+F 2 "Custom Footprints Library:XCVR_ATWINC1500-MR210PB" H 6250 3700 50  0001 L BNN
 F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/ATWINC15x0-MR210xB-IEEE-802.11-b-g-n-SmartConnect-IoT-Module-Data-Sheet-DS70005304C.pdf" H 6250 3700 50  0001 L BNN
 F 4 "ATWINC1500-MR210PB-ND" H 6250 3700 50  0001 C CNN "Digi-Key PN"
 F 5 "WIFI" H 6250 2140 50  0000 C CNN "Configuration"
@@ -953,5 +953,180 @@ F 6 "1/16W" H 7430 2800 50  0000 L CNN "Wattage"
 F 7 "" H 7630 3330 60  0001 C CNN "Digi-Key PN"
 	1    7330 2930
 	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 4800 7080 4800
+Wire Wire Line
+	7080 4800 7080 4900
+Connection ~ 7080 4900
+Wire Wire Line
+	7000 4700 7080 4700
+Wire Wire Line
+	7080 4700 7080 4800
+Connection ~ 7080 4800
+NoConn ~ 5500 4000
+NoConn ~ 5500 4100
+NoConn ~ 5500 4200
+NoConn ~ 5500 4300
+NoConn ~ 5500 4400
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 601C0E29
+P 2630 6480
+AR Path="/5BAAE1F3/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5E6AF016/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5EAE4AE4/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5F582E50/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5F5829C2/601C0E29" Ref="C?"  Part="1" 
+AR Path="/5F582E44/601C0E29" Ref="C?"  Part="1" 
+F 0 "C?" H 2655 6580 50  0000 L CNN
+F 1 "0.1uF" H 2655 6380 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 2668 6330 50  0001 C CNN
+F 3 "" H 2655 6580 50  0001 C CNN
+F 4 "490-10701-1-ND" H 3055 6980 60  0001 C CNN "Digi-Key PN"
+F 5 "0402" H 2480 6580 50  0000 R CNN "display_footprint"
+F 6 "50V" H 2480 6480 50  0000 R CNN "Voltage"
+F 7 "X7R" H 2480 6380 50  0000 R CNN "Dielectric"
+	1    2630 6480
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 601C0E2F
+P 2630 6330
+AR Path="/5F582E50/601C0E2F" Ref="#PWR?"  Part="1" 
+AR Path="/5F5829C2/601C0E2F" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C0E2F" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2630 6180 50  0001 C CNN
+F 1 "+3.3V" H 2630 6470 50  0000 C CNN
+F 2 "" H 2630 6330 50  0001 C CNN
+F 3 "" H 2630 6330 50  0001 C CNN
+	1    2630 6330
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 601C0E35
+P 2630 6630
+AR Path="/5F582E50/601C0E35" Ref="#PWR?"  Part="1" 
+AR Path="/5F5829C2/601C0E35" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C0E35" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2630 6380 50  0001 C CNN
+F 1 "GND" H 2630 6480 50  0000 C CNN
+F 2 "" H 2630 6630 50  0001 C CNN
+F 3 "" H 2630 6630 50  0001 C CNN
+	1    2630 6630
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 601C0E3B
+P 2740 7070
+AR Path="/5F582E50/601C0E3B" Ref="#PWR?"  Part="1" 
+AR Path="/5F5829C2/601C0E3B" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C0E3B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2740 6920 50  0001 C CNN
+F 1 "+3.3V" H 2740 7210 50  0000 C CNN
+F 2 "" H 2740 7070 50  0001 C CNN
+F 3 "" H 2740 7070 50  0001 C CNN
+	1    2740 7070
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 601C0E41
+P 2740 7270
+AR Path="/5F582E50/601C0E41" Ref="#PWR?"  Part="1" 
+AR Path="/5F5829C2/601C0E41" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C0E41" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2740 7020 50  0001 C CNN
+F 1 "GND" H 2740 7120 50  0000 C CNN
+F 2 "" H 2740 7270 50  0001 C CNN
+F 3 "" H 2740 7270 50  0001 C CNN
+	1    2740 7270
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power_BUF U?
+U 1 1 601C0E47
+P 2740 7170
+AR Path="/5F5829C2/601C0E47" Ref="U?"  Part="1" 
+AR Path="/5F582E44/601C0E47" Ref="U?"  Part="1" 
+F 0 "U?" H 2800 7320 50  0000 L CNN
+F 1 "74LVC1G97" H 2800 7020 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2790 7170 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2790 7170 50  0001 C CNN
+	1    2740 7170
+	1    0    0    -1  
+$EndComp
+Text GLabel 2440 7170 0    40   Input ~ 0
+~WIFI_SPI_SS
+$Comp
+L Device:LED D?
+U 1 1 601C5578
+P 3310 6900
+AR Path="/5BB844FD/601C5578" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/601C5578" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/601C5578" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/601C5578" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/601C5578" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/601C5578" Ref="D?"  Part="1" 
+AR Path="/5E93CC4E/601C5578" Ref="D?"  Part="1" 
+AR Path="/5F582E4A/601C5578" Ref="D?"  Part="1" 
+F 0 "D?" V 3349 6783 50  0000 R CNN
+F 1 "Green" V 3258 6783 50  0000 R CNN
+F 2 "LEDs:LED_0603" H 3310 6900 50  0001 C CNN
+F 3 "~" H 3310 6900 50  0001 C CNN
+F 4 "754-1121-1-ND" H -1850 580 50  0001 C CNN "Digi-Key PN"
+	1    3310 6900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2990 7170 3310 7170
+Wire Wire Line
+	3310 7170 3310 7050
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 601C5584
+P 3310 6600
+AR Path="/5BAAE1F3/601C5584" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/601C5584" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/601C5584" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/601C5584" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/601C5584" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/601C5584" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/601C5584" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/601C5584" Ref="R?"  Part="1" 
+AR Path="/5E93CC4E/601C5584" Ref="R?"  Part="1" 
+AR Path="/5F582E4A/601C5584" Ref="R?"  Part="1" 
+F 0 "R?" H 3250 6600 50  0000 R CNN
+F 1 "1k" V 3310 6600 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 3310 6600 50  0001 C CNN
+F 3 "" H 3310 6600 50  0001 C CNN
+F 4 "0603" H 3380 6680 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3380 6600 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 3380 6530 50  0000 L CNN "Wattage"
+F 7 "311-1.00KHRCT-ND" H 3610 7000 60  0001 C CNN "Digi-Key PN"
+	1    3310 6600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 601C558A
+P 3310 6450
+AR Path="/5CB7A8BC/601C558A" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/601C558A" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/601C558A" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/601C558A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3310 6300 50  0001 C CNN
+F 1 "+3.3V" H 3310 6590 50  0000 C CNN
+F 2 "" H 3310 6450 50  0001 C CNN
+F 3 "" H 3310 6450 50  0001 C CNN
+	1    3310 6450
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

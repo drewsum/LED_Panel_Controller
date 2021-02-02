@@ -19,7 +19,7 @@ U 1 1 5BB405EB
 P 3250 3730
 F 0 "J?" H 3300 4247 50  0000 C CNN
 F 1 "Panel Data" H 3300 4156 50  0000 C CNN
-F 2 "Connectors_IDC:IDC-Header_2x08_Pitch2.54mm_Straight" H 3250 3730 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x08_P2.54mm_Vertical" H 3250 3730 50  0001 C CNN
 F 3 "~" H 3250 3730 50  0001 C CNN
 F 4 "ED10523-ND" H 700 1930 50  0001 C CNN "Digi-Key PN"
 	1    3250 3730
@@ -178,8 +178,8 @@ P 1650 3880
 AR Path="/5BE5222A/5CBDEB4C" Ref="ECO?"  Part="1" 
 AR Path="/5BAAE10E/5CBDEB4C" Ref="ECO?"  Part="1" 
 AR Path="/5BAAE2CE/5CBDEB4C" Ref="ECO?"  Part="1" 
-AR Path="/5F583BFC/5CBDEB4C" Ref="ECO?"  Part="1" 
-F 0 "ECO?" H 1675 3980 50  0000 L CNN
+AR Path="/5F583BFC/5CBDEB4C" Ref="C?"  Part="1" 
+F 0 "C?" H 1675 3980 50  0000 L CNN
 F 1 "15pF" H 1675 3780 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 1688 3730 50  0001 C CNN
 F 3 "" H 1675 3980 50  0001 C CNN
@@ -187,6 +187,7 @@ F 4 "478-10289-1-ND" H 1650 3880 50  0001 C CNN "Digi-Key PN"
 F 5 "0603" H 1500 3980 50  0000 R CNN "display_footprint"
 F 6 "50V" H 1500 3880 50  0000 R CNN "Voltage"
 F 7 "NP0" H 1500 3780 50  0000 R CNN "Dielectric"
+F 8 "DNP" H 1870 3880 50  0000 C CNN "Configuration"
 	1    1650 3880
 	1    0    0    -1  
 $EndComp
@@ -276,4 +277,6 @@ $EndComp
 Wire Wire Line
 	2780 5830 2780 5750
 Connection ~ 2780 5750
+Text Notes 3010 4480 0    50   ~ 0
+Place on Bottom
 $EndSCHEMATC
