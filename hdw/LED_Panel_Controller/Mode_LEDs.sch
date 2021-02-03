@@ -615,7 +615,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2240 3460 50  0001 C CN
 	1    0    0    -1  
 $EndComp
 Text GLabel 1560 3460 0    50   Input ~ 0
-Prog1_Mode_LED
+WIFI_Stream_Mode_LED
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 6031133F
@@ -816,7 +816,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 4740 3460 50  0001 C CN
 	1    0    0    -1  
 $EndComp
 Text GLabel 4060 3460 0    50   Input ~ 0
-Prog2_Mode_LED
+Prog1_Mode_LED
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 6031A5C4
@@ -1017,7 +1017,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 7240 3460 50  0001 C CN
 	1    0    0    -1  
 $EndComp
 Text GLabel 6560 3460 0    50   Input ~ 0
-Prog3_Mode_LED
+Prog2_Mode_LED
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 60329547
@@ -1218,7 +1218,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2240 5160 50  0001 C CN
 	1    0    0    -1  
 $EndComp
 Text GLabel 1560 5160 0    50   Input ~ 0
-Prog4_Mode_LED
+Prog3_Mode_LED
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 60329997
@@ -1419,7 +1419,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 4740 5160 50  0001 C CN
 	1    0    0    -1  
 $EndComp
 Text GLabel 4060 5160 0    50   Input ~ 0
-Prog5_Mode_LED
+Prog4_Mode_LED
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 60329A19
@@ -1620,7 +1620,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 7240 5160 50  0001 C CN
 	1    0    0    -1  
 $EndComp
 Text GLabel 6560 5160 0    50   Input ~ 0
-Prog6_Mode_LED
+Prog5_Mode_LED
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 6034182A

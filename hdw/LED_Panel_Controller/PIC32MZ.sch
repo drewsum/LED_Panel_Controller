@@ -145,22 +145,22 @@ Text GLabel 3300 4790 0    50   Input ~ 0
 PIC32MZ_POSC_EC
 Text GLabel 3300 4990 0    50   Input ~ 0
 PIC32MZ_SOSC
-Text GLabel 1220 1680 0    40   Output ~ 0
+Text GLabel 7300 1690 2    40   Output ~ 0
 ~WIFI_RESET
-Text GLabel 1220 1780 0    50   Output ~ 0
+Text GLabel 7300 1790 2    50   Output ~ 0
 WIFI_WAKE
-Text GLabel 1220 1880 0    50   Output ~ 0
+Text GLabel 7300 2190 2    50   Output ~ 0
 WIFI_CHIP_EN
 Text GLabel 7300 1990 2    50   Output ~ 0
 WIFI_SPI_SCK
-Text GLabel 1220 2280 0    40   Output ~ 0
+Text GLabel 7300 2290 2    40   Output ~ 0
 ~WIFI_SPI_SS
 Text GLabel 7300 2090 2    50   Output ~ 0
 WIFI_SPI_MOSI
 Text GLabel 7300 2490 2    50   Input ~ 0
 WIFI_SPI_MISO
-Text GLabel 750  2180 2    50   Input ~ 0
-WIFI_IRQN
+Text GLabel 7300 2390 2    40   Input ~ 0
+~WIFI_IRQN
 $Comp
 L Custom_Library:PIC32MZ2048EFG100_IPF U?
 U 1 1 5FFB3C3D
@@ -305,16 +305,16 @@ Text Notes 1290 4940 0    50   ~ 0
 REFCLKO1
 Text Notes 1290 5040 0    50   ~ 0
 SOSC
-Text GLabel 1320 780  0    50   Output ~ 0
-SD_SPI_CS
+Text GLabel 3300 4490 0    40   Output ~ 0
+~SD_SPI_CS
 Text GLabel 7300 4090 2    50   Output ~ 0
 SD_SPI_MOSI
 Text GLabel 7300 4790 2    50   Output ~ 0
 SD_SPI_SCK
 Text GLabel 3300 4390 0    50   Input ~ 0
 SD_SPI_MISO
-Text GLabel 1320 1480 0    50   Input ~ 0
-SD_CARD_DET
+Text GLabel 3300 4690 0    40   Input ~ 0
+~SD_CARD_DET
 Text GLabel 3300 4040 0    50   Output ~ 0
 FLASH_SPI_SCK
 Text GLabel 3300 3640 0    50   Output ~ 0
@@ -349,21 +349,21 @@ Text Notes 10000 3240 0    50   ~ 0
 PMD4
 Text Notes 10000 3340 0    50   ~ 0
 PMD5
-Text GLabel 9310 5940 2    50   Output ~ 0
+Text GLabel 3300 3140 0    50   Output ~ 0
 Panel_LAT_POS3P3
 Text GLabel 7300 5490 2    40   Output ~ 0
 ~Panel_OE_POS3P3
 Text GLabel 3300 4590 0    50   Output ~ 0
 Panel_CLK_POS3P3
-Text GLabel 9310 6340 2    50   Output ~ 0
+Text GLabel 3300 2840 0    50   Output ~ 0
 Row_C_POS3P3
-Text GLabel 9310 6540 2    50   Output ~ 0
+Text GLabel 3300 3040 0    50   Output ~ 0
 Row_E_POS3P3
-Text GLabel 9310 6440 2    50   Output ~ 0
+Text GLabel 3300 2940 0    50   Output ~ 0
 Row_D_POS3P3
-Text GLabel 9310 6240 2    50   Output ~ 0
+Text GLabel 3300 2740 0    50   Output ~ 0
 Row_B_POS3P3
-Text GLabel 9310 6140 2    50   Output ~ 0
+Text GLabel 3300 2640 0    50   Output ~ 0
 Row_A_POS3P3
 Text Notes 1290 4640 0    50   ~ 0
 PMWR
@@ -381,8 +381,6 @@ Text Notes 7400 3470 0    50   ~ 0
 DNC these two pins - unused PMP bits can't be disabled
 Text Notes 10000 5540 0    50   ~ 0
 OC3
-Text Notes 9170 6710 0    50   ~ 0
-These must all go in a row
 Text Notes 1290 4090 0    50   ~ 0
 SCK3
 Text Notes 1290 3690 0    50   ~ 0
@@ -401,60 +399,76 @@ Text Notes 1290 4440 0    50   ~ 0
 SDI5
 Text Notes 10000 4140 0    50   ~ 0
 SDO5
-Text GLabel 1610 6210 0    50   Input ~ 0
+Text GLabel 3300 3740 0    50   Input ~ 0
 POS12_PGOOD
-Text GLabel 1610 6430 0    50   Input ~ 0
+Text GLabel 3300 3840 0    50   Input ~ 0
 POS5_PGOOD
-Text GLabel 1610 6530 0    50   Output ~ 0
+Text GLabel 7300 4590 2    50   Output ~ 0
 PGOOD_LED_SHDN
-Text GLabel 1510 7120 0    50   Input ~ 0
+Text GLabel 7300 4690 2    50   Input ~ 0
 POS3P3_PGOOD
-Text GLabel 1490 6900 0    50   Input ~ 0
+Text GLabel 3300 4140 0    50   Input ~ 0
 VBAT_PGOOD
-Text GLabel 1580 6750 0    50   Input ~ 0
+Text GLabel 7300 4190 2    50   Input ~ 0
 POS5_USB_PGOOD
-Text GLabel 1490 7380 0    50   Output ~ 0
+Text GLabel 7300 1890 2    50   Output ~ 0
 Heartbeat_LED
-Text GLabel 1460 7620 0    50   Output ~ 0
+Text GLabel 3300 2390 0    50   Output ~ 0
 Reset_LED
-Text GLabel 1500 7510 0    50   Output ~ 0
+Text GLabel 3300 2290 0    50   Output ~ 0
 Error_LED
-Text GLabel 1510 7790 0    50   Output ~ 0
+Text GLabel 7300 1290 2    50   Output ~ 0
 CPU_Trap_LED
-Text GLabel 1490 5980 0    50   Output ~ 0
+Text GLabel 7300 3590 2    50   Input ~ 0
 VBAT_ADC
-Text GLabel -210 2150 0    50   Output ~ 0
+Text GLabel 7300 5090 2    50   Output ~ 0
 USB_Stream_Mode_LED
-Text GLabel -240 2870 0    50   Output ~ 0
+Text GLabel 7300 5590 2    50   Output ~ 0
 Prog1_Mode_LED
-Text GLabel -300 3580 0    50   Output ~ 0
+Text GLabel 7300 5890 2    50   Output ~ 0
 Prog4_Mode_LED
-Text GLabel -230 2390 0    50   Output ~ 0
+Text GLabel 7300 5190 2    50   Output ~ 0
 Flash_Slideshow_Mode_LED
-Text GLabel -260 3080 0    50   Output ~ 0
+Text GLabel 7300 5690 2    50   Output ~ 0
 Prog2_Mode_LED
-Text GLabel -320 3790 0    50   Output ~ 0
+Text GLabel 7300 5990 2    50   Output ~ 0
 Prog5_Mode_LED
-Text GLabel -300 3340 0    50   Output ~ 0
+Text GLabel 7300 5790 2    50   Output ~ 0
 Prog3_Mode_LED
-Text GLabel -360 4050 0    50   Output ~ 0
-Prog6_Mode_LED
-Text GLabel -270 2650 0    50   Output ~ 0
+Text GLabel 7300 3690 2    50   Output ~ 0
 Clock_Mode_LED
-Text GLabel -380 4730 0    40   Output ~ 0
+Text GLabel 3300 1290 0    40   Output ~ 0
 ~FLASH_SPI_CE0
-Text GLabel -380 4830 0    40   Output ~ 0
+Text GLabel 3300 1390 0    40   Output ~ 0
 ~FLASH_SPI_CE1
-Text GLabel -380 4930 0    40   Output ~ 0
+Text GLabel 3300 1490 0    40   Output ~ 0
 ~FLASH_SPI_CE2
-Text GLabel -380 5030 0    40   Output ~ 0
+Text GLabel 3300 1590 0    40   Output ~ 0
 ~FLASH_SPI_CE3
-Text GLabel -380 5130 0    40   Output ~ 0
+Text GLabel 3300 1690 0    40   Output ~ 0
 ~FLASH_SPI_CE4
-Text GLabel -380 5230 0    40   Output ~ 0
+Text GLabel 3300 1790 0    40   Output ~ 0
 ~FLASH_SPI_CE5
-Text GLabel -380 5330 0    40   Output ~ 0
+Text GLabel 3300 1890 0    40   Output ~ 0
 ~FLASH_SPI_CE6
-Text GLabel -380 5430 0    40   Output ~ 0
+Text GLabel 3300 1990 0    40   Output ~ 0
 ~FLASH_SPI_CE7
+Text GLabel 3300 3440 0    50   Output ~ 0
+WIFI_Stream_Mode_LED
+Text Notes 10000 1940 0    50   ~ 0
+OC5
+Text Notes 10000 3640 0    50   ~ 0
+AN25
+Text GLabel 7300 5290 2    50   Input ~ 0
+Cap_Touch_Power
+Text GLabel 7300 5390 2    50   Input ~ 0
+Cap_Touch_Mode
+Text Notes 10000 2440 0    50   ~ 0
+INT3
+Text Notes 10000 5340 0    50   ~ 0
+INT2
+Text Notes 10000 5440 0    50   ~ 0
+INT4
+Text GLabel 3300 3940 0    50   Output ~ 0
+POS5_RUN
 $EndSCHEMATC

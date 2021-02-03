@@ -22,6 +22,7 @@ F 1 "Micro_SD_Card_Det_Hirose_DM3AT" H 7790 4650 50  0000 C CNN
 F 2 "Connectors_Card:Hirose_DM3AT-SF-PEJM5" H 9890 4620 50  0001 C CNN
 F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 7840 4020 50  0001 C CNN
 F 4 "HR1964CT-ND" H 7840 3920 50  0001 C CNN "Digi-Key PN"
+F 5 "SD" H 7840 3110 50  0000 C CNN "Configuration"
 	1    7840 3920
 	1    0    0    -1  
 $EndComp
@@ -192,16 +193,16 @@ F 7 "" H 5700 3360 60  0001 C CNN "Digi-Key PN"
 	1    5400 2960
 	-1   0    0    -1  
 $EndComp
-Text GLabel 3010 3620 0    50   Input ~ 0
-SD_SPI_CS
+Text GLabel 3010 3620 0    40   Input ~ 0
+~SD_SPI_CS
 Text GLabel 3010 3720 0    50   Input ~ 0
 SD_SPI_MOSI
 Text GLabel 3010 3920 0    50   Input ~ 0
 SD_SPI_SCK
 Text GLabel 3010 4120 0    50   Output ~ 0
 SD_SPI_MISO
-Text GLabel 3010 4320 0    50   Output ~ 0
-SD_CARD_DET
+Text GLabel 3010 4320 0    40   Output ~ 0
+~SD_CARD_DET
 Wire Wire Line
 	3770 3110 3770 3620
 Wire Wire Line
@@ -623,4 +624,179 @@ F 3 "" H 5940 2810 50  0001 C CNN
 	1    5940 2810
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 601C2224
+P 7200 5330
+AR Path="/5F582E50/601C2224" Ref="#PWR?"  Part="1" 
+AR Path="/5F5829C2/601C2224" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C2224" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/601C2224" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7200 5180 50  0001 C CNN
+F 1 "+3.3V" H 7200 5470 50  0000 C CNN
+F 2 "" H 7200 5330 50  0001 C CNN
+F 3 "" H 7200 5330 50  0001 C CNN
+	1    7200 5330
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 601C222A
+P 7200 5630
+AR Path="/5F582E50/601C222A" Ref="#PWR?"  Part="1" 
+AR Path="/5F5829C2/601C222A" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C222A" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/601C222A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7200 5380 50  0001 C CNN
+F 1 "GND" H 7200 5480 50  0000 C CNN
+F 2 "" H 7200 5630 50  0001 C CNN
+F 3 "" H 7200 5630 50  0001 C CNN
+	1    7200 5630
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 601C2230
+P 7310 6070
+AR Path="/5F582E50/601C2230" Ref="#PWR?"  Part="1" 
+AR Path="/5F5829C2/601C2230" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C2230" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/601C2230" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7310 5920 50  0001 C CNN
+F 1 "+3.3V" H 7310 6210 50  0000 C CNN
+F 2 "" H 7310 6070 50  0001 C CNN
+F 3 "" H 7310 6070 50  0001 C CNN
+	1    7310 6070
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 601C2236
+P 7310 6270
+AR Path="/5F582E50/601C2236" Ref="#PWR?"  Part="1" 
+AR Path="/5F5829C2/601C2236" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C2236" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/601C2236" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7310 6020 50  0001 C CNN
+F 1 "GND" H 7310 6120 50  0000 C CNN
+F 2 "" H 7310 6270 50  0001 C CNN
+F 3 "" H 7310 6270 50  0001 C CNN
+	1    7310 6270
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7560 6170 7880 6170
+Wire Wire Line
+	7880 6170 7880 6050
+$Comp
+L power:+3.3V #PWR?
+U 1 1 601C223F
+P 7880 5450
+AR Path="/5CB7A8BC/601C223F" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/601C223F" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/601C223F" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/601C223F" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E44/601C223F" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E11/601C223F" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7880 5300 50  0001 C CNN
+F 1 "+3.3V" H 7880 5590 50  0000 C CNN
+F 2 "" H 7880 5450 50  0001 C CNN
+F 3 "" H 7880 5450 50  0001 C CNN
+	1    7880 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power_NOT U?
+U 1 1 601C2246
+P 7310 6170
+AR Path="/5F582E44/601C2246" Ref="U?"  Part="1" 
+AR Path="/5F582E11/601C2246" Ref="U?"  Part="1" 
+F 0 "U?" H 7370 6320 50  0000 L CNN
+F 1 "74LVC1G97" H 7370 6020 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 7360 6170 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 7360 6170 50  0001 C CNN
+F 4 "SD" H 7530 5940 50  0000 C CNN "Configuration"
+	1    7310 6170
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 601C224E
+P 7880 5900
+AR Path="/5BB844FD/601C224E" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/601C224E" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/601C224E" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/601C224E" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/601C224E" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/601C224E" Ref="D?"  Part="1" 
+AR Path="/5E93CC4E/601C224E" Ref="D?"  Part="1" 
+AR Path="/5F582E4A/601C224E" Ref="D?"  Part="1" 
+AR Path="/5F582E44/601C224E" Ref="D?"  Part="1" 
+AR Path="/5F582E11/601C224E" Ref="D?"  Part="1" 
+F 0 "D?" V 7919 5783 50  0000 R CNN
+F 1 "Green" V 7828 5783 50  0000 R CNN
+F 2 "LEDs:LED_0603" H 7880 5900 50  0001 C CNN
+F 3 "~" H 7880 5900 50  0001 C CNN
+F 4 "754-1121-1-ND" H 2720 -420 50  0001 C CNN "Digi-Key PN"
+F 5 "SD" V 7750 5700 50  0000 C CNN "Configuration"
+	1    7880 5900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 601C2259
+P 7880 5600
+AR Path="/5BAAE1F3/601C2259" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/601C2259" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/601C2259" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/601C2259" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/601C2259" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/601C2259" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/601C2259" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/601C2259" Ref="R?"  Part="1" 
+AR Path="/5E93CC4E/601C2259" Ref="R?"  Part="1" 
+AR Path="/5F582E4A/601C2259" Ref="R?"  Part="1" 
+AR Path="/5F582E44/601C2259" Ref="R?"  Part="1" 
+AR Path="/5F582E11/601C2259" Ref="R?"  Part="1" 
+F 0 "R?" H 7820 5600 50  0000 R CNN
+F 1 "1k" V 7880 5600 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 7880 5600 50  0001 C CNN
+F 3 "" H 7880 5600 50  0001 C CNN
+F 4 "0603" H 7950 5680 50  0000 L CNN "display_footprint"
+F 5 "1%" H 7950 5600 50  0000 L CNN "Tolerance"
+F 6 "1/10W" H 7950 5530 50  0000 L CNN "Wattage"
+F 7 "311-1.00KHRCT-ND" H 8180 6000 60  0001 C CNN "Digi-Key PN"
+F 8 "SD" H 8030 5750 50  0000 C CNN "Configuration"
+	1    7880 5600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 601C2264
+P 7200 5480
+AR Path="/5BAAE1F3/601C2264" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/601C2264" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/601C2264" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/601C2264" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/601C2264" Ref="C?"  Part="1" 
+AR Path="/5E6AF016/601C2264" Ref="C?"  Part="1" 
+AR Path="/5EAE4AE4/601C2264" Ref="C?"  Part="1" 
+AR Path="/5F582E50/601C2264" Ref="C?"  Part="1" 
+AR Path="/5F5829C2/601C2264" Ref="C?"  Part="1" 
+AR Path="/5F582E44/601C2264" Ref="C?"  Part="1" 
+AR Path="/5F582E11/601C2264" Ref="C?"  Part="1" 
+F 0 "C?" H 7225 5580 50  0000 L CNN
+F 1 "0.1uF" H 7225 5380 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 7238 5330 50  0001 C CNN
+F 3 "" H 7225 5580 50  0001 C CNN
+F 4 "490-10701-1-ND" H 7625 5980 60  0001 C CNN "Digi-Key PN"
+F 5 "0402" H 7050 5580 50  0000 R CNN "display_footprint"
+F 6 "50V" H 7050 5480 50  0000 R CNN "Voltage"
+F 7 "X7R" H 7050 5380 50  0000 R CNN "Dielectric"
+F 8 "SD" H 7420 5480 50  0000 C CNN "Configuration"
+	1    7200 5480
+	-1   0    0    -1  
+$EndComp
+Text GLabel 7010 6170 0    40   Input ~ 0
+~SD_SPI_CS
 $EndSCHEMATC
