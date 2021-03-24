@@ -352,7 +352,7 @@ PMD5
 Text GLabel 3300 3140 0    50   Output ~ 0
 Panel_LAT_POS3P3
 Text GLabel 7300 5490 2    40   Output ~ 0
-~Panel_OE_POS3P3
+Panel_Dim_PWM
 Text GLabel 3300 4590 0    50   Output ~ 0
 Panel_CLK_POS3P3
 Text GLabel 3300 2840 0    50   Output ~ 0
@@ -471,4 +471,6 @@ Text Notes 10000 5440 0    50   ~ 0
 INT4
 Text GLabel 3300 3940 0    50   Output ~ 0
 POS5_RUN
+Text GLabel 7300 1390 2    40   Output ~ 0
+~Panel_OE_POS3P3
 $EndSCHEMATC
