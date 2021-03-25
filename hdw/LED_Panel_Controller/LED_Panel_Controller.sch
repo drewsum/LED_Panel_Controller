@@ -5,9 +5,9 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 34
 Title "LED Panel Controller"
-Date "2020-12-23"
+Date "2021-03-24"
 Rev "A"
-Comp "Drew Maatman, Logan Wedel"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -99,30 +99,36 @@ F1 "USB_UART_Bridge.sch" 50
 $EndSheet
 $Sheet
 S 3750 6120 500  150 
+U 5F7B4289
+F0 "USB Telemetry" 50
+F1 "USB_Telemetry.sch" 50
+$EndSheet
+$Sheet
+S 3750 6470 500  150 
 U 5F582E11
 F0 "SD Card Slot" 50
 F1 "SD_Card_Slot.sch" 50
 $EndSheet
 $Sheet
-S 3750 6470 500  150 
+S 3750 6820 500  150 
 U 5F582E44
 F0 "WiFi Module" 50
 F1 "WiFi_Module.sch" 50
 $EndSheet
 $Sheet
-S 3750 6820 500  150 
+S 3750 7170 500  150 
 U 5F582E4A
 F0 "PGOOD LEDs" 50
 F1 "PGOOD_LEDs.sch" 50
 $EndSheet
 $Sheet
-S 3750 7170 500  150 
+S 3750 7520 500  150 
 U 5F582E50
 F0 "Status LEDs" 50
 F1 "Status_LEDs.sch" 50
 $EndSheet
 $Sheet
-S 3750 7520 500  150 
+S 7030 1220 500  150 
 U 5F582E7C
 F0 "Backup RTC" 50
 F1 "Backup_RTC.sch" 50
@@ -157,128 +163,122 @@ Text Notes 1290 5570 0    100  ~ 20
 14. Platform ETC
 Text Notes 1290 5920 0    100  ~ 20
 15. USB UART Bridge
-Text Notes 1290 6270 0    100  ~ 20
-16. SD Card Slot
 Text Notes 1290 6620 0    100  ~ 20
-17. WiFi Module
+17. SD Card Slot
 Text Notes 1290 6970 0    100  ~ 20
-18. PGOOD LEDs
+18. WiFi Module
 Text Notes 1290 7320 0    100  ~ 20
-19. Status LEDs
+19. PGOOD LEDs
 Text Notes 1290 7670 0    100  ~ 20
-20. Backup RTC
+20. Status LEDs
+Text Notes 5080 1370 0    100  ~ 20
+21. Backup RTC
 Text Notes 1290 1010 0    100  ~ 20
 01. Table of Contents
 $Sheet
-S 7030 1220 500  150 
+S 7030 1570 500  150 
 U 5F58356B
 F0 "Pushbuttons" 50
 F1 "Pushbuttons.sch" 50
 $EndSheet
 $Sheet
-S 7030 1570 500  150 
+S 7030 1920 500  150 
 U 5F583571
 F0 "Mode LEDs" 50
 F1 "Mode_LEDs.sch" 50
 $EndSheet
 $Sheet
-S 7030 1920 500  150 
+S 7030 2270 500  150 
 U 5F583577
 F0 "SPI Flash 0" 50
 F1 "SPI_Flash_0.sch" 50
 $EndSheet
 $Sheet
-S 7030 2270 500  150 
+S 7030 2620 500  150 
 U 5F58358C
 F0 "SPI Flash 1" 50
 F1 "SPI_Flash_1.sch" 50
 $EndSheet
 $Sheet
-S 7030 2620 500  150 
+S 7030 2970 500  150 
 U 5F583592
 F0 "SPI Flash 2" 50
 F1 "SPI_Flash_2.sch" 50
 $EndSheet
 $Sheet
-S 7030 2970 500  150 
+S 7030 3320 500  150 
 U 5F583598
 F0 "SPI Flash 3" 50
 F1 "SPI_Flash_3.sch" 50
 $EndSheet
 $Sheet
-S 7030 3320 500  150 
+S 7030 3670 500  150 
 U 5F58359E
 F0 "SPI Flash 4" 50
 F1 "SPI_Flash_4.sch" 50
 $EndSheet
 $Sheet
-S 7030 3670 500  150 
+S 7030 4020 500  150 
 U 5F5835A4
 F0 "SPI Flash 5" 50
 F1 "SPI_Flash_5.sch" 50
 $EndSheet
 $Sheet
-S 7030 4020 500  150 
+S 7030 4370 500  150 
 U 5F5835AA
 F0 "SPI Flash 6" 50
 F1 "SPI_Flash_6.sch" 50
 $EndSheet
 $Sheet
-S 7030 4370 500  150 
+S 7030 4720 500  150 
 U 5F5835B0
 F0 "SPI Flash 7" 50
 F1 "SPI_Flash_7.sch" 50
 $EndSheet
-Text Notes 5080 1370 0    100  ~ 20
-21. Pushbuttons
 Text Notes 5080 1720 0    100  ~ 20
-22. Mode LEDs
+22. Pushbuttons
 Text Notes 5080 2070 0    100  ~ 20
-23. SPI Flash 0
+23. Mode LEDs
 Text Notes 5080 2420 0    100  ~ 20
-24. SPI Flash 1
+24. SPI Flash 0
 Text Notes 5080 2770 0    100  ~ 20
-25. SPI Flash 2
+25. SPI Flash 1
 Text Notes 5080 3120 0    100  ~ 20
-26. SPI Flash 3
+26. SPI Flash 2
 Text Notes 5080 3470 0    100  ~ 20
-27. SPI Flash 4
+27. SPI Flash 3
 Text Notes 5080 3820 0    100  ~ 20
-28. SPI Flash 5
+28. SPI Flash 4
 Text Notes 5080 4170 0    100  ~ 20
-29. SPI Flash 6
+29. SPI Flash 5
 Text Notes 5080 4520 0    100  ~ 20
-30. SPI Flash 7
+30. SPI Flash 6
+Text Notes 5080 4870 0    100  ~ 20
+31. SPI Flash 7
 $Sheet
-S 7030 4720 500  150 
+S 7030 5070 500  150 
 U 5F583BF6
 F0 "Panel Level Shifters" 50
 F1 "Panel_Level_Shifters.sch" 50
 $EndSheet
 $Sheet
-S 7030 5070 500  150 
+S 7030 5420 500  150 
 U 5F583BFC
 F0 "Panel Connectors" 50
 F1 "Panel_Connectors.sch" 50
 $EndSheet
 $Sheet
-S 7030 5420 500  150 
+S 7030 5770 500  150 
 U 5F583C02
 F0 "Mechanical" 50
 F1 "Mechanical.sch" 50
 $EndSheet
-Text Notes 5080 4870 0    100  ~ 20
-31. Panel Level Shifters
 Text Notes 5080 5220 0    100  ~ 20
-32. Panel Connectors
+32. Panel Level Shifters
 Text Notes 5080 5570 0    100  ~ 20
-33. Mechanical
-$Sheet
-S 7030 5770 500  150 
-U 5F7B4289
-F0 "USB Telemetry" 50
-F1 "USB_Telemetry.sch" 50
-$EndSheet
+33. Panel Connectors
 Text Notes 5080 5920 0    100  ~ 20
-34. USB Telemetry
+34. Mechanical
+Text Notes 1290 6270 0    100  ~ 20
+16. USB Telemetry
 $EndSCHEMATC

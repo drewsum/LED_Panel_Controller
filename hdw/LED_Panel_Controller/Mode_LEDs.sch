@@ -3,11 +3,11 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 22 34
+Sheet 23 34
 Title "LED Panel Controller"
-Date "2020-12-23"
+Date "2021-03-24"
 Rev "A"
-Comp "Drew Maatman, Logan Wedel"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -1779,7 +1779,7 @@ Wire Wire Line
 Wire Wire Line
 	6640 1790 6640 1870
 Text GLabel 6560 1790 0    50   Input ~ 0
-Clock_Mode_LED
+Void_Mode_LED
 Wire Wire Line
 	6560 1790 6640 1790
 Connection ~ 6640 1790

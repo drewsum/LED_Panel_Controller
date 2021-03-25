@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 2 34
-Title "Pulse Oximeter"
-Date "2020-12-31"
-Rev "B"
-Comp "Drew Maatman, Nick Mussoline"
+Title "LED Panel Controller"
+Date "2021-03-24"
+Rev "A"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""

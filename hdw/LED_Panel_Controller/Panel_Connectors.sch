@@ -3,11 +3,11 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 32 34
+Sheet 33 34
 Title "LED Panel Controller"
-Date "2020-12-23"
+Date "2021-03-24"
 Rev "A"
-Comp "Drew Maatman, Logan Wedel"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -178,8 +178,8 @@ P 1650 3880
 AR Path="/5BE5222A/5CBDEB4C" Ref="ECO?"  Part="1" 
 AR Path="/5BAAE10E/5CBDEB4C" Ref="ECO?"  Part="1" 
 AR Path="/5BAAE2CE/5CBDEB4C" Ref="ECO?"  Part="1" 
-AR Path="/5F583BFC/5CBDEB4C" Ref="C?"  Part="1" 
-F 0 "C?" H 1675 3980 50  0000 L CNN
+AR Path="/5F583BFC/5CBDEB4C" Ref="ECO?"  Part="1" 
+F 0 "ECO?" H 1675 3980 50  0000 L CNN
 F 1 "15pF" H 1675 3780 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 1688 3730 50  0001 C CNN
 F 3 "" H 1675 3980 50  0001 C CNN
