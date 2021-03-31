@@ -144,7 +144,7 @@ PIC32MZ_ICSPDAT
 Text GLabel 3020 4800 0    50   Input ~ 0
 PIC32MZ_POSC_EC
 Text GLabel 3020 5000 0    50   Input ~ 0
-PIC32MZ_SOSC
+PIC32MZ_SOSC_EC
 Text GLabel 7020 1700 2    40   Output ~ 0
 ~WIFI_RESET
 Text GLabel 7020 1800 2    50   Output ~ 0
@@ -339,7 +339,7 @@ Text Notes 9720 3350 0    50   ~ 0
 PMD5
 Text GLabel 3020 3150 0    50   Output ~ 0
 Panel_LAT_POS3P3
-Text GLabel 7020 5500 2    40   Output ~ 0
+Text GLabel 7020 5500 2    50   Output ~ 0
 Panel_Dim_PWM
 Text GLabel 3020 4600 0    50   Output ~ 0
 Panel_CLK_POS3P3
@@ -419,8 +419,6 @@ Text GLabel 7020 5200 2    50   Output ~ 0
 Flash_Slideshow_Mode_LED
 Text GLabel 7020 5700 2    50   Output ~ 0
 Prog2_Mode_LED
-Text GLabel 7020 6000 2    50   Output ~ 0
-Prog5_Mode_LED
 Text GLabel 7020 5800 2    50   Output ~ 0
 Prog3_Mode_LED
 Text GLabel 7020 3700 2    50   Output ~ 0
@@ -473,8 +471,14 @@ F 4 "PIC32MZ2048EFG100-I/PF-ND" H 5020 3650 50  0001 C CNN "Digi-Key PN"
 	1    5020 3650
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3020 5100
-NoConn ~ 3020 2100
-NoConn ~ 3020 2200
-NoConn ~ 7020 4000
+Text GLabel 7020 4000 2    40   Input ~ 0
+~Telemetry_Config
+Text GLabel 3020 2100 0    40   Input ~ 0
+~ETC_Config
+Text GLabel 3020 2200 0    40   Input ~ 0
+~WIFI_Config
+Text GLabel 3020 5100 0    40   Input ~ 0
+~BACKUP_RTC_Config
+Text GLabel 7020 6000 2    40   Input ~ 0
+~SPI_FLASH_Config
 $EndSCHEMATC

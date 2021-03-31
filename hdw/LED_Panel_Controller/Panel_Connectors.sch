@@ -172,12 +172,12 @@ Wire Wire Line
 	3550 3530 4350 3530
 NoConn ~ 9030 3610
 $Comp
-L Custom_Library:C_Custom ECO?
+L Custom_Library:C_Custom C?
 U 1 1 5CBDEB4C
 P 1650 3880
-AR Path="/5BE5222A/5CBDEB4C" Ref="ECO?"  Part="1" 
-AR Path="/5BAAE10E/5CBDEB4C" Ref="ECO?"  Part="1" 
-AR Path="/5BAAE2CE/5CBDEB4C" Ref="ECO?"  Part="1" 
+AR Path="/5BE5222A/5CBDEB4C" Ref="C?"  Part="1" 
+AR Path="/5BAAE10E/5CBDEB4C" Ref="C?"  Part="1" 
+AR Path="/5BAAE2CE/5CBDEB4C" Ref="C?"  Part="1" 
 AR Path="/5F583BFC/5CBDEB4C" Ref="C3301"  Part="1" 
 F 0 "C3301" H 1675 3980 50  0000 L CNN
 F 1 "15pF" H 1675 3780 50  0000 L CNN
