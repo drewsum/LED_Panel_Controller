@@ -306,7 +306,7 @@ F 3 "" H 3265 3500 50  0001 C CNN
 F 4 "0402" H 3090 3500 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 3090 3400 50  0000 R CNN "Voltage"
 F 6 "X5R" H 3090 3300 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 3240 3400 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 3240 3400 50  0001 C CNN "Digi-Key PN"
 	1    3240 3400
 	1    0    0    -1  
 $EndComp
@@ -329,7 +329,7 @@ F 3 "" H 4565 3500 50  0001 C CNN
 F 4 "0402" H 4390 3500 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 4390 3400 50  0000 R CNN "Voltage"
 F 6 "X5R" H 4390 3300 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 4540 3400 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 4540 3400 50  0001 C CNN "Digi-Key PN"
 	1    4540 3400
 	1    0    0    -1  
 $EndComp
@@ -352,7 +352,7 @@ F 3 "" H 7165 3500 50  0001 C CNN
 F 4 "0402" H 6990 3500 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 6990 3400 50  0000 R CNN "Voltage"
 F 6 "X5R" H 6990 3300 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 7140 3400 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 7140 3400 50  0001 C CNN "Digi-Key PN"
 	1    7140 3400
 	1    0    0    -1  
 $EndComp
@@ -572,7 +572,7 @@ F 3 "" H 5865 3500 50  0001 C CNN
 F 4 "0402" H 5690 3500 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 5690 3400 50  0000 R CNN "Voltage"
 F 6 "X5R" H 5690 3300 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 5840 3400 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 5840 3400 50  0001 C CNN "Digi-Key PN"
 	1    5840 3400
 	1    0    0    -1  
 $EndComp
@@ -595,7 +595,7 @@ F 3 "" H 3265 4500 50  0001 C CNN
 F 4 "0402" H 3090 4500 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 3090 4400 50  0000 R CNN "Voltage"
 F 6 "X5R" H 3090 4300 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 3240 4400 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 3240 4400 50  0001 C CNN "Digi-Key PN"
 	1    3240 4400
 	1    0    0    -1  
 $EndComp
@@ -620,7 +620,7 @@ F 3 "" H 7165 4500 50  0001 C CNN
 F 4 "0402" H 6990 4500 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 6990 4400 50  0000 R CNN "Voltage"
 F 6 "X5R" H 6990 4300 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 7140 4400 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 7140 4400 50  0001 C CNN "Digi-Key PN"
 	1    7140 4400
 	1    0    0    -1  
 $EndComp

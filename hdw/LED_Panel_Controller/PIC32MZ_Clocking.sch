@@ -105,7 +105,7 @@ F 3 "" H 6110 2700 50  0001 C CNN
 F 4 "0402" V 6210 2700 50  0001 C CNN "display_footprint"
 F 5 "1%" V 6310 2700 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 6410 2700 50  0001 C CNN "Wattage"
-F 7 "" H 6410 3100 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT100RCT-ND" H 6410 3100 60  0001 C CNN "Digi-Key PN"
 	1    6110 2700
 	0    -1   1    0   
 $EndComp
@@ -280,7 +280,7 @@ F 3 "" H 6110 4750 50  0001 C CNN
 F 4 "0402" V 6210 4750 50  0001 C CNN "display_footprint"
 F 5 "1%" V 6310 4750 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 6410 4750 50  0001 C CNN "Wattage"
-F 7 "" H 6410 5150 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT100RCT-ND" H 6410 5150 60  0001 C CNN "Digi-Key PN"
 	1    6110 4750
 	0    -1   1    0   
 $EndComp
@@ -411,7 +411,7 @@ F 3 "" H 6845 2130 50  0001 C CNN
 F 4 "0402" H 6670 2130 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 6670 2030 50  0000 R CNN "Voltage"
 F 6 "X5R" H 6670 1930 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 6820 2030 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 6820 2030 50  0001 C CNN "Digi-Key PN"
 	1    6820 2030
 	1    0    0    -1  
 $EndComp
@@ -489,7 +489,7 @@ F 3 "" H 6845 4180 50  0001 C CNN
 F 4 "0402" H 6670 4180 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 6670 4080 50  0000 R CNN "Voltage"
 F 6 "X5R" H 6670 3980 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 6820 4080 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 6820 4080 50  0001 C CNN "Digi-Key PN"
 	1    6820 4080
 	1    0    0    -1  
 $EndComp
@@ -608,6 +608,7 @@ F 0 "U?" H 2040 2850 50  0000 L CNN
 F 1 "74LVC1G97" H 2040 2550 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2030 2700 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2030 2700 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 1980 2700 50  0001 C CNN "Digi-Key PN"
 	1    1980 2700
 	1    0    0    -1  
 $EndComp

@@ -199,7 +199,7 @@ F 3 "" H 2905 3220 50  0001 C CNN
 F 4 "0402" H 2730 3220 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 2730 3120 50  0000 R CNN "Voltage"
 F 6 "X5R" H 2730 3020 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 2880 3120 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 2880 3120 50  0001 C CNN "Digi-Key PN"
 F 8 "ETC" H 2730 3300 50  0000 R CNN "Configuration"
 	1    2880 3120
 	1    0    0    -1  
@@ -252,7 +252,7 @@ F 3 "" H 3555 3220 50  0001 C CNN
 F 4 "0402" H 3380 3220 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 3380 3120 50  0000 R CNN "Voltage"
 F 6 "X5R" H 3380 3020 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 3530 3120 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 3530 3120 50  0001 C CNN "Digi-Key PN"
 F 8 "ETC" H 3380 3300 50  0000 R CNN "Configuration"
 	1    3530 3120
 	1    0    0    -1  
@@ -277,7 +277,7 @@ F 3 "" H 4205 3220 50  0001 C CNN
 F 4 "0402" H 4030 3220 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 4030 3120 50  0000 R CNN "Voltage"
 F 6 "X5R" H 4030 3020 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 4180 3120 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 4180 3120 50  0001 C CNN "Digi-Key PN"
 F 8 "ETC" H 4030 3300 50  0000 R CNN "Configuration"
 	1    4180 3120
 	1    0    0    -1  

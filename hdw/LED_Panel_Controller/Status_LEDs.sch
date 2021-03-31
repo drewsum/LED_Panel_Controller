@@ -81,7 +81,7 @@ F 3 "" H 4960 1960 50  0001 C CNN
 F 4 "0402" H 5030 2040 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5030 1960 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 5030 1890 50  0000 L CNN "Wattage"
-F 7 "" H 5260 2360 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT1K00CT-ND" H 5260 2360 60  0001 C CNN "Digi-Key PN"
 	1    4960 1960
 	-1   0    0    -1  
 $EndComp
@@ -231,7 +231,7 @@ F 3 "" H 6960 1960 50  0001 C CNN
 F 4 "0402" H 7030 2040 50  0000 L CNN "display_footprint"
 F 5 "1%" H 7030 1960 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 7030 1890 50  0000 L CNN "Wattage"
-F 7 "" H 7260 2360 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT1K00CT-ND" H 7260 2360 60  0001 C CNN "Digi-Key PN"
 	1    6960 1960
 	-1   0    0    -1  
 $EndComp
@@ -361,7 +361,7 @@ F 3 "" H 6960 3960 50  0001 C CNN
 F 4 "0402" H 7030 4040 50  0000 L CNN "display_footprint"
 F 5 "1%" H 7030 3960 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 7030 3890 50  0000 L CNN "Wattage"
-F 7 "" H 7260 4360 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT1K00CT-ND" H 7260 4360 60  0001 C CNN "Digi-Key PN"
 	1    6960 3960
 	-1   0    0    -1  
 $EndComp
@@ -577,7 +577,7 @@ F 3 "" H 4960 3960 50  0001 C CNN
 F 4 "0402" H 5030 4040 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5030 3960 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 5030 3890 50  0000 L CNN "Wattage"
-F 7 "" H 5260 4360 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT1K00CT-ND" H 5260 4360 60  0001 C CNN "Digi-Key PN"
 	1    4960 3960
 	-1   0    0    -1  
 $EndComp
@@ -709,6 +709,7 @@ F 0 "U?" H 4450 2680 50  0000 L CNN
 F 1 "74LVC1G97" H 4450 2380 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4440 2530 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 4440 2530 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 4390 2530 50  0001 C CNN "Digi-Key PN"
 	1    4390 2530
 	1    0    0    -1  
 $EndComp
@@ -720,6 +721,7 @@ F 0 "U?" H 6450 2680 50  0000 L CNN
 F 1 "74LVC1G97" H 6450 2380 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 6440 2530 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 6440 2530 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 6390 2530 50  0001 C CNN "Digi-Key PN"
 	1    6390 2530
 	1    0    0    -1  
 $EndComp
@@ -731,6 +733,7 @@ F 0 "U?" H 4450 4680 50  0000 L CNN
 F 1 "74LVC1G97" H 4450 4380 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4440 4530 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 4440 4530 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 4390 4530 50  0001 C CNN "Digi-Key PN"
 	1    4390 4530
 	1    0    0    -1  
 $EndComp
@@ -742,6 +745,7 @@ F 0 "U?" H 6450 4680 50  0000 L CNN
 F 1 "74LVC1G97" H 6450 4380 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 6440 4530 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 6440 4530 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 6390 4530 50  0001 C CNN "Digi-Key PN"
 	1    6390 4530
 	1    0    0    -1  
 $EndComp

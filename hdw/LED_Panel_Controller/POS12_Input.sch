@@ -170,9 +170,9 @@ F 1 "0.1uF" H 6325 6010 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 6338 5960 50  0001 C CNN
 F 3 "" H 6325 6210 50  0001 C CNN
 F 4 "0402" H 6150 6210 50  0000 R CNN "display_footprint"
-F 5 "25V" H 6150 6110 50  0000 R CNN "Voltage"
+F 5 "50V" H 6150 6110 50  0000 R CNN "Voltage"
 F 6 "X7R" H 6150 6010 50  0000 R CNN "Dielectric"
-F 7 "490-10698-1-ND" H 6725 6610 60  0001 C CNN "Digi-Key PN"
+F 7 "490-10701-1-ND" H 6725 6610 60  0001 C CNN "Digi-Key PN"
 	1    6300 6110
 	1    0    0    -1  
 $EndComp
@@ -308,7 +308,7 @@ L Custom_Library:TP_Pad TP?
 U 1 1 5DDDDB66
 P 7910 2170
 F 0 "TP?" H 7910 2320 50  0000 C CNN
-F 1 "TP_Pad" H 7910 2320 50  0001 C CNN
+F 1 "TP" H 7910 2320 50  0001 C CNN
 F 2 "Custom Footprints Library:Test_Point" H 7910 2170 60  0001 C CNN
 F 3 "" H 7910 2170 60  0000 C CNN
 	1    7910 2170
@@ -319,7 +319,7 @@ L Custom_Library:TP_Pad TP?
 U 1 1 5DDDDFD1
 P 4500 2160
 F 0 "TP?" H 4500 2310 50  0000 C CNN
-F 1 "TP_Pad" H 4500 2310 50  0001 C CNN
+F 1 "TP" H 4500 2310 50  0001 C CNN
 F 2 "Custom Footprints Library:Test_Point" H 4500 2160 60  0001 C CNN
 F 3 "" H 4500 2160 60  0000 C CNN
 	1    4500 2160
@@ -703,7 +703,7 @@ F 4 "0402" V 7310 2640 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7410 2640 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 7510 2640 50  0001 C CNN "Wattage"
 F 7 "~Telemetry" V 7310 2640 50  0000 C CNN "Configuration"
-F 8 "2019-RK73Z1ETTPCT-ND" H 7210 2640 50  0001 C CNN "Digi-Key PN"
+F 8 "RMCF0402ZT0R00CT-ND" H 7210 2640 50  0001 C CNN "Digi-Key PN"
 	1    7210 2640
 	0    -1   1    0   
 $EndComp
@@ -724,7 +724,7 @@ F 4 "0402" V 7310 2940 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7410 2940 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 7510 2940 50  0001 C CNN "Wattage"
 F 7 "~Telemetry" V 7310 2940 50  0000 C CNN "Configuration"
-F 8 "2019-RK73Z1ETTPCT-ND" H 7210 2940 50  0001 C CNN "Digi-Key PN"
+F 8 "RMCF0402ZT0R00CT-ND" H 7210 2940 50  0001 C CNN "Digi-Key PN"
 	1    7210 2940
 	0    -1   1    0   
 $EndComp
@@ -745,7 +745,7 @@ F 4 "0402" V 7310 3240 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7410 3240 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 7510 3240 50  0001 C CNN "Wattage"
 F 7 "~Telemetry" V 7310 3240 50  0000 C CNN "Configuration"
-F 8 "2019-RK73Z1ETTPCT-ND" H 7210 3240 50  0001 C CNN "Digi-Key PN"
+F 8 "RMCF0402ZT0R00CT-ND" H 7210 3240 50  0001 C CNN "Digi-Key PN"
 	1    7210 3240
 	0    -1   1    0   
 $EndComp
@@ -1020,6 +1020,7 @@ F 1 "Keystone_8191" H 1730 3010 50  0000 C CNN
 F 2 "Custom Footprints Library:Keystone_8191" H 1730 3110 50  0001 C CNN
 F 3 "~" H 1730 3110 50  0001 C CNN
 F 4 "DNP" H 1910 3110 50  0000 C CNN "Configuration"
+F 5 "36-8191-ND" H 1730 3110 50  0001 C CNN "Digi-Key PN"
 	1    1730 3110
 	-1   0    0    1   
 $EndComp
@@ -1032,6 +1033,7 @@ F 1 "Keystone_8191" H 1730 3340 50  0000 C CNN
 F 2 "Custom Footprints Library:Keystone_8191" H 1730 3440 50  0001 C CNN
 F 3 "~" H 1730 3440 50  0001 C CNN
 F 4 "DNP" H 1910 3440 50  0000 C CNN "Configuration"
+F 5 "36-8191-ND" H 1730 3440 50  0001 C CNN "Digi-Key PN"
 	1    1730 3440
 	-1   0    0    1   
 $EndComp

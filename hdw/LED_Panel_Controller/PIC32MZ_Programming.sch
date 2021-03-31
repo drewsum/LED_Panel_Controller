@@ -41,12 +41,12 @@ U 1 1 5BC13497
 P 7130 2010
 F 0 "C?" H 7155 2110 50  0000 L CNN
 F 1 "0.1uF" H 7155 1910 50  0000 L CNN
-F 2 "" H 7168 1860 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0402" H 7168 1860 50  0001 C CNN
 F 3 "" H 7155 2110 50  0001 C CNN
 F 4 "0402" H 6980 2110 50  0000 R CNN "display_footprint"
 F 5 "50V" H 6980 2010 50  0000 R CNN "Voltage"
 F 6 "X7R" H 6980 1910 50  0000 R CNN "Dielectric"
-F 7 "" H 7555 2510 60  0001 C CNN "Digi-Key PN"
+F 7 "490-10701-1-ND" H 7555 2510 60  0001 C CNN "Digi-Key PN"
 	1    7130 2010
 	1    0    0    -1  
 $EndComp
@@ -81,7 +81,7 @@ F 3 "" H 5770 4770 50  0001 C CNN
 F 4 "0402" H 5960 4850 50  0000 C CNN "display_footprint"
 F 5 "1%" H 5950 4770 50  0000 C CNN "Tolerance"
 F 6 "1/16W" H 5980 4700 50  0000 C CNN "Wattage"
-F 7 "" H 6070 5170 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10K0CT-ND" H 6070 5170 60  0001 C CNN "Digi-Key PN"
 	1    5770 4770
 	-1   0    0    -1  
 $EndComp
@@ -91,12 +91,12 @@ U 1 1 5BC1574E
 P 5770 5580
 F 0 "C?" H 5795 5680 50  0000 L CNN
 F 1 "0.1uF" H 5795 5480 50  0000 L CNN
-F 2 "" H 5808 5430 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0402" H 5808 5430 50  0001 C CNN
 F 3 "" H 5795 5680 50  0001 C CNN
 F 4 "0402" H 5620 5680 50  0000 R CNN "display_footprint"
 F 5 "50V" H 5620 5580 50  0000 R CNN "Voltage"
 F 6 "X7R" H 5620 5480 50  0000 R CNN "Dielectric"
-F 7 "" H 6195 6080 60  0001 C CNN "Digi-Key PN"
+F 7 "490-10701-1-ND" H 6195 6080 60  0001 C CNN "Digi-Key PN"
 	1    5770 5580
 	1    0    0    -1  
 $EndComp
@@ -122,7 +122,7 @@ F 3 "" H 6300 5000 50  0001 C CNN
 F 4 "0402" V 6400 5000 50  0000 C CNN "display_footprint"
 F 5 "1%" V 6500 5000 50  0000 C CNN "Tolerance"
 F 6 "1/16W" V 6600 5000 50  0000 C CNN "Wattage"
-F 7 "" H 6600 5400 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT1K00CT-ND" H 6600 5400 60  0001 C CNN "Digi-Key PN"
 	1    6300 5000
 	0    1    1    0   
 $EndComp
@@ -166,7 +166,7 @@ F 3 "" H 3690 5520 50  0001 C CNN
 F 4 "0402" V 3790 5520 50  0000 C CNN "display_footprint"
 F 5 "1%" V 3890 5520 50  0000 C CNN "Tolerance"
 F 6 "1/16W" V 3990 5520 50  0000 C CNN "Wattage"
-F 7 "" H 3990 5920 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10R0CT-ND" H 3990 5920 60  0001 C CNN "Digi-Key PN"
 	1    3690 5520
 	0    -1   -1   0   
 $EndComp
@@ -191,7 +191,7 @@ F 3 "" H 4140 5750 50  0001 C CNN
 F 4 "0402" H 4330 5830 50  0000 C CNN "display_footprint"
 F 5 "1%" H 4320 5750 50  0000 C CNN "Tolerance"
 F 6 "1/16W" H 4350 5680 50  0000 C CNN "Wattage"
-F 7 "" H 4440 6150 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10K0CT-ND" H 4440 6150 60  0001 C CNN "Digi-Key PN"
 	1    4140 5750
 	1    0    0    -1  
 $EndComp
@@ -287,58 +287,12 @@ F 0 "J?" H 2840 2700 50  0000 C CNN
 F 1 "PICKIT4" H 2840 2600 50  0000 C CNN
 F 2 "Custom Footprints Library:PICKIT4_Header" H 2970 2160 50  0001 C CNN
 F 3 "~" H 2970 2160 50  0001 C CNN
+F 4 "DEV" H 2970 2160 50  0001 C CNN "Configuration"
 	1    2970 2160
 	-1   0    0    -1  
 $EndComp
 NoConn ~ 3170 2460
 NoConn ~ 3170 2560
-$Comp
-L Power_Protection:PESD3V3L5UY D?
-U 1 1 5F37FACB
-P 3740 2930
-F 0 "D?" H 3740 3030 50  0000 C CNN
-F 1 "PESD3V3L5UY" V 3740 2480 50  0000 R CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3740 2930 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PESDXL5UF_V_Y.pdf" H 3740 2930 50  0001 C CNN
-F 4 "1727-3828-1-ND" H 3740 2930 50  0001 C CNN "Digi-Key PN"
-	1    3740 2930
-	0    1    1    0   
-$EndComp
-$Comp
-L Power_Protection:PESD3V3L5UY D?
-U 3 1 5F380F72
-P 4490 2930
-F 0 "D?" H 4490 3030 50  0000 C CNN
-F 1 "PESD3V3L5UY" H 4490 2830 50  0001 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4490 2930 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PESDXL5UF_V_Y.pdf" H 4490 2930 50  0001 C CNN
-F 4 "1727-3828-1-ND" H 4490 2930 50  0001 C CNN "Digi-Key PN"
-	3    4490 2930
-	0    1    1    0   
-$EndComp
-$Comp
-L Power_Protection:PESD3V3L5UY D?
-U 4 1 5F381590
-P 4240 2930
-F 0 "D?" H 4240 3030 50  0000 C CNN
-F 1 "PESD3V3L5UY" H 4240 2830 50  0001 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4240 2930 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PESDXL5UF_V_Y.pdf" H 4240 2930 50  0001 C CNN
-F 4 "1727-3828-1-ND" H 4240 2930 50  0001 C CNN "Digi-Key PN"
-	4    4240 2930
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5F3831ED
-P 3740 3030
-F 0 "#PWR?" H 3740 2780 50  0001 C CNN
-F 1 "GND" H 3740 2880 50  0000 C CNN
-F 2 "" H 3740 3030 50  0001 C CNN
-F 3 "" H 3740 3030 50  0001 C CNN
-	1    3740 3030
-	-1   0    0    -1  
-$EndComp
 $Comp
 L Device:Ferrite_Bead L?
 U 1 1 5F386594
@@ -382,36 +336,7 @@ Wire Wire Line
 Wire Wire Line
 	5270 2060 6620 2060
 Wire Wire Line
-	3170 1960 3740 1960
-Wire Wire Line
-	3170 1860 3490 1860
-Wire Wire Line
-	3170 2160 3990 2160
-Wire Wire Line
-	3490 2830 3490 1860
-Wire Wire Line
-	3740 2830 3740 1960
-Wire Wire Line
-	3990 2830 3990 2160
-Wire Wire Line
-	4240 2830 4240 2260
-Wire Wire Line
-	4240 2260 3170 2260
-NoConn ~ 4490 2830
-Wire Wire Line
-	3490 1860 4970 1860
-Connection ~ 3490 1860
-Wire Wire Line
-	3740 1960 6620 1960
-Connection ~ 3740 1960
-Wire Wire Line
 	4970 2060 3170 2060
-Wire Wire Line
-	3990 2160 5730 2160
-Connection ~ 3990 2160
-Wire Wire Line
-	5730 2260 4240 2260
-Connection ~ 4240 2260
 Wire Wire Line
 	4730 5000 4930 5000
 Wire Wire Line
@@ -427,32 +352,64 @@ F 3 "" H 5080 5000 50  0001 C CNN
 F 4 "0402" V 5180 5000 50  0000 C CNN "display_footprint"
 F 5 "1%" V 5280 5000 50  0000 C CNN "Tolerance"
 F 6 "1/16W" V 5380 5000 50  0000 C CNN "Wattage"
-F 7 "" H 5380 5400 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10R0CT-ND" H 5380 5400 60  0001 C CNN "Digi-Key PN"
 	1    5080 5000
 	0    -1   -1   0   
 $EndComp
+Wire Wire Line
+	3170 2160 4040 2160
+Wire Wire Line
+	3170 2260 4140 2260
 $Comp
-L Power_Protection:PESD3V3L5UY D?
-U 5 1 5F39050C
-P 3990 2930
-F 0 "D?" H 3990 3030 50  0000 C CNN
-F 1 "PESD3V3L5UY" H 3990 2830 50  0001 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3990 2930 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PESDXL5UF_V_Y.pdf" H 3990 2930 50  0001 C CNN
-F 4 "1727-3828-1-ND" H 3990 2930 50  0001 C CNN "Digi-Key PN"
-	5    3990 2930
-	0    1    1    0   
+L Power_Protection:SP0505BAJT D?
+U 1 1 6067D672
+P 4040 2710
+AR Path="/5F583BFC/6067D672" Ref="D?"  Part="1" 
+AR Path="/5F5829A6/6067D672" Ref="D?"  Part="1" 
+F 0 "D?" H 4340 2810 50  0000 L CNN
+F 1 "SP0505BAJT" H 4340 2735 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-363_SC-70-6" H 4340 2660 50  0001 L CNN
+F 3 "http://www.littelfuse.com/~/media/files/littelfuse/technical%20resources/documents/data%20sheets/sp05xxba.pdf" H 4165 2835 50  0001 C CNN
+F 4 "F3160CT-ND" H 4040 2710 50  0001 C CNN "Digi-Key PN"
+	1    4040 2710
+	1    0    0    -1  
 $EndComp
 $Comp
-L Power_Protection:PESD3V3L5UY D?
-U 2 1 5F38087E
-P 3490 2930
-F 0 "D?" H 3490 3030 50  0000 C CNN
-F 1 "PESD3V3L5UY" H 3490 2830 50  0001 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3490 2930 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PESDXL5UF_V_Y.pdf" H 3490 2930 50  0001 C CNN
-F 4 "1727-3828-1-ND" H 3490 2930 50  0001 C CNN "Digi-Key PN"
-	2    3490 2930
-	0    1    1    0   
+L power:GND #PWR?
+U 1 1 6067E0F5
+P 4040 2910
+F 0 "#PWR?" H 4040 2660 50  0001 C CNN
+F 1 "GND" H 4040 2760 50  0000 C CNN
+F 2 "" H 4040 2910 50  0001 C CNN
+F 3 "" H 4040 2910 50  0001 C CNN
+	1    4040 2910
+	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3170 1860 3840 1860
+Wire Wire Line
+	3170 1960 3940 1960
+Wire Wire Line
+	3940 2510 3940 1960
+Connection ~ 3940 1960
+Wire Wire Line
+	3940 1960 6620 1960
+Wire Wire Line
+	4040 2510 4040 2160
+Connection ~ 4040 2160
+Wire Wire Line
+	4040 2160 5730 2160
+Wire Wire Line
+	4140 2510 4140 2260
+Connection ~ 4140 2260
+Wire Wire Line
+	4140 2260 5730 2260
+Wire Wire Line
+	3840 2510 3840 1860
+Connection ~ 3840 1860
+Wire Wire Line
+	3840 1860 4970 1860
+NoConn ~ 4240 2510
+Text Notes 3160 3340 0    50   ~ 0
+Double check MCLR voltage during programming
 $EndSCHEMATC

@@ -36,9 +36,9 @@ F 1 "0.1uF" H 4575 2870 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 4588 2820 50  0001 C CNN
 F 3 "" H 4575 3070 50  0001 C CNN
 F 4 "0402" H 4400 3070 50  0000 R CNN "display_footprint"
-F 5 "25V" H 4400 2970 50  0000 R CNN "Voltage"
+F 5 "50V" H 4400 2970 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4400 2870 50  0000 R CNN "Dielectric"
-F 7 "490-10698-1-ND" H 4550 2970 50  0001 C CNN "Digi-Key PN"
+F 7 "490-10701-1-ND" H 4550 2970 50  0001 C CNN "Digi-Key PN"
 	1    4550 2970
 	1    0    0    -1  
 $EndComp
@@ -430,7 +430,7 @@ F 3 "" H 2795 3070 50  0001 C CNN
 F 4 "1206" H 2620 3070 50  0000 R CNN "display_footprint"
 F 5 "25V" H 2620 2970 50  0000 R CNN "Voltage"
 F 6 "X5R" H 2620 2870 50  0000 R CNN "Dielectric"
-F 7 "1276-1181-1-ND" H 3195 3470 60  0001 C CNN "Digi-Key PN"
+F 7 "399-8153-1-ND" H 3195 3470 60  0001 C CNN "Digi-Key PN"
 	1    2770 2970
 	1    0    0    -1  
 $EndComp
@@ -473,7 +473,7 @@ F 0 "U?" H 2450 4440 50  0000 L CNN
 F 1 "74LVC1G97" H 2580 4530 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2440 4290 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2440 4290 50  0001 C CNN
-F 4 "296-SN74LVC1G97DCK3CT-ND" H 2390 4290 50  0001 C CNN "Digi-Key PN"
+F 4 "1727-1772-1-ND" H 2390 4290 50  0001 C CNN "Digi-Key PN"
 	1    2390 4290
 	-1   0    0    -1  
 $EndComp
@@ -582,9 +582,9 @@ F 1 "0.1uF" H 2665 4760 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 2678 4710 50  0001 C CNN
 F 3 "" H 2665 4960 50  0001 C CNN
 F 4 "0402" H 2490 4960 50  0000 R CNN "display_footprint"
-F 5 "25V" H 2490 4860 50  0000 R CNN "Voltage"
+F 5 "50V" H 2490 4860 50  0000 R CNN "Voltage"
 F 6 "X7R" H 2490 4760 50  0000 R CNN "Dielectric"
-F 7 "490-10698-1-ND" H 2640 4860 50  0001 C CNN "Digi-Key PN"
+F 7 "490-10701-1-ND" H 2640 4860 50  0001 C CNN "Digi-Key PN"
 	1    2640 4860
 	1    0    0    -1  
 $EndComp
@@ -635,7 +635,7 @@ F 3 "" H 7410 4720 50  0001 C CNN
 F 4 "0402" H 7310 4810 50  0000 R CNN "display_footprint"
 F 5 "1%" H 7310 4720 50  0000 R CNN "Tolerance"
 F 6 "1/16W" H 7310 4620 50  0000 R CNN "Wattage"
-F 7 "2019-RK73Z1ETTPCT-ND" H 7410 4720 50  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402ZT0R00CT-ND" H 7410 4720 50  0001 C CNN "Digi-Key PN"
 	1    7410 4720
 	-1   0    0    -1  
 $EndComp
@@ -679,7 +679,7 @@ F 4 "0402" V 8110 3450 50  0001 C CNN "display_footprint"
 F 5 "1%" V 8210 3450 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 8310 3450 50  0001 C CNN "Wattage"
 F 7 "~Telemetry" V 8110 3450 50  0000 C CNN "Configuration"
-F 8 "2019-RK73Z1ETTPCT-ND" H 8010 3450 50  0001 C CNN "Digi-Key PN"
+F 8 "RMCF0402ZT0R00CT-ND" H 8010 3450 50  0001 C CNN "Digi-Key PN"
 	1    8010 3450
 	0    -1   1    0   
 $EndComp
@@ -700,7 +700,7 @@ F 4 "0402" V 8110 3750 50  0001 C CNN "display_footprint"
 F 5 "1%" V 8210 3750 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 8310 3750 50  0001 C CNN "Wattage"
 F 7 "~Telemetry" V 8110 3750 50  0000 C CNN "Configuration"
-F 8 "2019-RK73Z1ETTPCT-ND" H 8010 3750 50  0001 C CNN "Digi-Key PN"
+F 8 "RMCF0402ZT0R00CT-ND" H 8010 3750 50  0001 C CNN "Digi-Key PN"
 	1    8010 3750
 	0    -1   1    0   
 $EndComp
@@ -721,7 +721,7 @@ F 4 "0402" V 8110 4050 50  0001 C CNN "display_footprint"
 F 5 "1%" V 8210 4050 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 8310 4050 50  0001 C CNN "Wattage"
 F 7 "~Telemetry" V 8110 4050 50  0000 C CNN "Configuration"
-F 8 "2019-RK73Z1ETTPCT-ND" H 8010 4050 50  0001 C CNN "Digi-Key PN"
+F 8 "RMCF0402ZT0R00CT-ND" H 8010 4050 50  0001 C CNN "Digi-Key PN"
 	1    8010 4050
 	0    -1   1    0   
 $EndComp
@@ -770,7 +770,7 @@ F 3 "" H 7435 3380 50  0001 C CNN
 F 4 "1206" H 7260 3380 50  0000 R CNN "display_footprint"
 F 5 "25V" H 7260 3280 50  0000 R CNN "Voltage"
 F 6 "X5R" H 7260 3180 50  0000 R CNN "Dielectric"
-F 7 "1276-1181-1-ND" H 7835 3780 60  0001 C CNN "Digi-Key PN"
+F 7 "399-8153-1-ND" H 7835 3780 60  0001 C CNN "Digi-Key PN"
 	1    7410 3280
 	1    0    0    -1  
 $EndComp
@@ -790,7 +790,7 @@ F 3 "" H 6845 3380 50  0001 C CNN
 F 4 "1206" H 6670 3380 50  0000 R CNN "display_footprint"
 F 5 "25V" H 6670 3280 50  0000 R CNN "Voltage"
 F 6 "X5R" H 6670 3180 50  0000 R CNN "Dielectric"
-F 7 "1276-1181-1-ND" H 7245 3780 60  0001 C CNN "Digi-Key PN"
+F 7 "399-8153-1-ND" H 7245 3780 60  0001 C CNN "Digi-Key PN"
 	1    6820 3280
 	1    0    0    -1  
 $EndComp
@@ -831,7 +831,7 @@ AR Path="/605ED0F5" Ref="L?"  Part="1"
 AR Path="/5F581BA3/605ED0F5" Ref="L?"  Part="1" 
 F 0 "L?" V 6280 3040 50  0000 C CNN
 F 1 "2.2uH" V 6405 3040 50  0000 C CNN
-F 2 "" H 6330 3040 50  0001 C CNN
+F 2 "Inductors_SMD:L_Vishay_IHLP-2020" H 6330 3040 50  0001 C CNN
 F 3 "" H 6330 3040 50  0001 C CNN
 F 4 "IHLP2020" V 6480 3040 50  0000 C CNN "display_footprint"
 F 5 "6.7A" V 6580 3040 50  0000 C CNN "Ampacity"
@@ -864,6 +864,7 @@ F 4 "0402" H 8810 3890 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8810 3810 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 8820 3730 50  0000 L CNN "Wattage"
 F 7 "DNP" H 8560 3890 50  0000 C CNN "Configuration"
+F 8 "RMCF0402FT953KCT-ND" H 8710 3810 50  0001 C CNN "Digi-Key PN"
 	1    8710 3810
 	1    0    0    -1  
 $EndComp
@@ -1126,7 +1127,7 @@ F 3 "" H 3395 6950 50  0001 C CNN
 F 4 "0402" H 3220 6950 50  0000 R CNN "display_footprint"
 F 5 "6.3V" H 3220 6850 50  0000 R CNN "Voltage"
 F 6 "X5R" H 3220 6750 50  0000 R CNN "Dielectric"
-F 7 "490-13211-1-ND" H 3370 6850 50  0001 C CNN "Digi-Key PN"
+F 7 "1276-1451-1-ND" H 3370 6850 50  0001 C CNN "Digi-Key PN"
 	1    3370 6850
 	1    0    0    -1  
 $EndComp

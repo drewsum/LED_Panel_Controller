@@ -66,6 +66,7 @@ F 1 "Standoff" H 4070 3810 50  0000 C CNN
 F 2 "" H 4070 3910 50  0001 C CNN
 F 3 "" H 4070 3910 50  0001 C CNN
 F 4 "1772-1220-ND" H 4070 3560 50  0001 C CNN "Digi-Key PN"
+F 5 "DEV" H 4070 3560 50  0001 C CNN "Configuration"
 	1    4070 3560
 	1    0    0    -1  
 $EndComp
@@ -78,6 +79,7 @@ F 1 "Standoff" H 4820 3810 50  0000 C CNN
 F 2 "" H 4820 3910 50  0001 C CNN
 F 3 "" H 4820 3910 50  0001 C CNN
 F 4 "1772-1220-ND" H 4820 3560 50  0001 C CNN "Digi-Key PN"
+F 5 "DEV" H 4820 3560 50  0001 C CNN "Configuration"
 	1    4820 3560
 	1    0    0    -1  
 $EndComp
@@ -90,6 +92,7 @@ F 1 "Standoff" H 4070 4310 50  0000 C CNN
 F 2 "" H 4070 4410 50  0001 C CNN
 F 3 "" H 4070 4410 50  0001 C CNN
 F 4 "1772-1220-ND" H 4070 4060 50  0001 C CNN "Digi-Key PN"
+F 5 "DEV" H 4070 4060 50  0001 C CNN "Configuration"
 	1    4070 4060
 	1    0    0    -1  
 $EndComp
@@ -102,6 +105,7 @@ F 1 "Standoff" H 4820 4310 50  0000 C CNN
 F 2 "" H 4820 4410 50  0001 C CNN
 F 3 "" H 4820 4410 50  0001 C CNN
 F 4 "1772-1220-ND" H 4820 4060 50  0001 C CNN "Digi-Key PN"
+F 5 "DEV" H 4820 4060 50  0001 C CNN "Configuration"
 	1    4820 4060
 	1    0    0    -1  
 $EndComp
@@ -114,6 +118,7 @@ F 1 "Screw" H 4070 5870 50  0000 C CNN
 F 2 "" H 4070 5920 50  0001 C CNN
 F 3 "" H 4070 5920 50  0001 C CNN
 F 4 "36-9900-ND" H 4070 5670 50  0001 C CNN "Digi-Key PN"
+F 5 "DEV" H 4070 5670 50  0001 C CNN "Configuration"
 	1    4070 5670
 	1    0    0    -1  
 $EndComp
@@ -126,6 +131,7 @@ F 1 "Screw" H 4820 5870 50  0000 C CNN
 F 2 "" H 4820 5920 50  0001 C CNN
 F 3 "" H 4820 5920 50  0001 C CNN
 F 4 "36-9900-ND" H 4820 5670 50  0001 C CNN "Digi-Key PN"
+F 5 "DEV" H 4820 5670 50  0001 C CNN "Configuration"
 	1    4820 5670
 	1    0    0    -1  
 $EndComp
@@ -138,6 +144,7 @@ F 1 "Screw" H 4070 6370 50  0000 C CNN
 F 2 "" H 4070 6420 50  0001 C CNN
 F 3 "" H 4070 6420 50  0001 C CNN
 F 4 "36-9900-ND" H 4070 6170 50  0001 C CNN "Digi-Key PN"
+F 5 "DEV" H 4070 6170 50  0001 C CNN "Configuration"
 	1    4070 6170
 	1    0    0    -1  
 $EndComp
@@ -150,6 +157,7 @@ F 1 "Screw" H 4820 6370 50  0000 C CNN
 F 2 "" H 4820 6420 50  0001 C CNN
 F 3 "" H 4820 6420 50  0001 C CNN
 F 4 "36-9900-ND" H 4820 6170 50  0001 C CNN "Digi-Key PN"
+F 5 "DEV" H 4820 6170 50  0001 C CNN "Configuration"
 	1    4820 6170
 	1    0    0    -1  
 $EndComp

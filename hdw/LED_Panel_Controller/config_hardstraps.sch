@@ -30,7 +30,7 @@ F 3 "" H 2880 2230 50  0001 C CNN
 F 4 "0402" H 2980 2300 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2980 2200 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 2980 2100 50  0000 L CNN "Wattage"
-F 7 "" H 3180 2630 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10K0CT-ND" H 3180 2630 60  0001 C CNN "Digi-Key PN"
 	1    2880 2230
 	-1   0    0    -1  
 $EndComp
@@ -52,6 +52,7 @@ F 4 "0402" H 2980 2760 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2980 2660 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 2980 2560 50  0000 L CNN "Wattage"
 F 7 "Telemetry" H 2610 2600 50  0000 C CNN "Configuration"
+F 8 "RMCF0402FT10R0CT-ND" H 2880 2690 50  0001 C CNN "Digi-Key PN"
 	1    2880 2690
 	-1   0    0    -1  
 $EndComp
@@ -103,7 +104,7 @@ F 3 "" H 4440 2230 50  0001 C CNN
 F 4 "0402" H 4540 2300 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4540 2200 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 4540 2100 50  0000 L CNN "Wattage"
-F 7 "" H 4740 2630 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10K0CT-ND" H 4740 2630 60  0001 C CNN "Digi-Key PN"
 	1    4440 2230
 	-1   0    0    -1  
 $EndComp
@@ -125,6 +126,7 @@ F 4 "0402" H 4540 2760 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4540 2660 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 4540 2560 50  0000 L CNN "Wattage"
 F 7 "ETC" H 4280 2600 50  0000 C CNN "Configuration"
+F 8 "RMCF0402FT10R0CT-ND" H 4440 2690 50  0001 C CNN "Digi-Key PN"
 	1    4440 2690
 	-1   0    0    -1  
 $EndComp
@@ -176,7 +178,7 @@ F 3 "" H 6000 2230 50  0001 C CNN
 F 4 "0402" H 6100 2300 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6100 2200 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 6100 2100 50  0000 L CNN "Wattage"
-F 7 "" H 6300 2630 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10K0CT-ND" H 6300 2630 60  0001 C CNN "Digi-Key PN"
 	1    6000 2230
 	-1   0    0    -1  
 $EndComp
@@ -198,6 +200,7 @@ F 4 "0402" H 6100 2760 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6100 2660 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 6100 2560 50  0000 L CNN "Wattage"
 F 7 "WIFI" H 5840 2600 50  0000 C CNN "Configuration"
+F 8 "RMCF0402FT10R0CT-ND" H 6000 2690 50  0001 C CNN "Digi-Key PN"
 	1    6000 2690
 	-1   0    0    -1  
 $EndComp
@@ -249,7 +252,7 @@ F 3 "" H 7250 2230 50  0001 C CNN
 F 4 "0402" H 7350 2300 50  0000 L CNN "display_footprint"
 F 5 "1%" H 7350 2200 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 7350 2100 50  0000 L CNN "Wattage"
-F 7 "" H 7550 2630 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10K0CT-ND" H 7550 2630 60  0001 C CNN "Digi-Key PN"
 	1    7250 2230
 	-1   0    0    -1  
 $EndComp
@@ -271,6 +274,7 @@ F 4 "0402" H 7350 2760 50  0000 L CNN "display_footprint"
 F 5 "1%" H 7350 2660 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 7350 2560 50  0000 L CNN "Wattage"
 F 7 "BACKUP_RTC" H 7160 2600 50  0000 R CNN "Configuration"
+F 8 "RMCF0402FT10R0CT-ND" H 7250 2690 50  0001 C CNN "Digi-Key PN"
 	1    7250 2690
 	-1   0    0    -1  
 $EndComp
@@ -322,7 +326,7 @@ F 3 "" H 2880 3440 50  0001 C CNN
 F 4 "0402" H 2980 3510 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2980 3410 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 2980 3310 50  0000 L CNN "Wattage"
-F 7 "" H 3180 3840 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0402FT10K0CT-ND" H 3180 3840 60  0001 C CNN "Digi-Key PN"
 	1    2880 3440
 	-1   0    0    -1  
 $EndComp
@@ -344,6 +348,7 @@ F 4 "0402" H 2980 3970 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2980 3870 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 2980 3770 50  0000 L CNN "Wattage"
 F 7 "SPI_FLASH" H 2610 3810 50  0000 C CNN "Configuration"
+F 8 "RMCF0402FT10R0CT-ND" H 2880 3900 50  0001 C CNN "Digi-Key PN"
 	1    2880 3900
 	-1   0    0    -1  
 $EndComp
@@ -524,6 +529,7 @@ F 4 "0402" H 2370 7150 50  0000 R CNN "display_footprint"
 F 5 "50V" H 2370 7050 50  0000 R CNN "Voltage"
 F 6 "X7R" H 2370 6950 50  0000 R CNN "Dielectric"
 F 7 "Telemetry" H 2370 7240 50  0000 R CNN "Configuration"
+F 8 "490-10701-1-ND" H 2520 7090 50  0001 C CNN "Digi-Key PN"
 	1    2520 7090
 	1    0    0    -1  
 $EndComp
@@ -535,8 +541,9 @@ U 1 1 6020946A
 P 6020 5020
 F 0 "J?" H 6020 5220 50  0000 C CNN
 F 1 "I2C" H 6020 4820 50  0000 C CNN
-F 2 "" H 6020 5020 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6020 5020 50  0001 C CNN
 F 3 "~" H 6020 5020 50  0001 C CNN
+F 4 "DNP" H 6020 5020 50  0001 C CNN "Configuration"
 	1    6020 5020
 	1    0    0    -1  
 $EndComp
@@ -565,8 +572,9 @@ U 1 1 6020E176
 P 7020 5020
 F 0 "J?" H 7020 5220 50  0000 C CNN
 F 1 "WIFI_SPI" H 7020 4720 50  0000 C CNN
-F 2 "" H 7020 5020 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 7020 5020 50  0001 C CNN
 F 3 "~" H 7020 5020 50  0001 C CNN
+F 4 "DNP" H 7020 5020 50  0001 C CNN "Configuration"
 	1    7020 5020
 	1    0    0    -1  
 $EndComp
@@ -603,8 +611,9 @@ U 1 1 602191CA
 P 8020 5020
 F 0 "J?" H 8020 5220 50  0000 C CNN
 F 1 "SD_SPI" H 8020 4720 50  0000 C CNN
-F 2 "" H 8020 5020 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8020 5020 50  0001 C CNN
 F 3 "~" H 8020 5020 50  0001 C CNN
+F 4 "DNP" H 8020 5020 50  0001 C CNN "Configuration"
 	1    8020 5020
 	1    0    0    -1  
 $EndComp
@@ -629,8 +638,9 @@ U 1 1 6021A825
 P 9020 5020
 F 0 "J?" H 9020 5220 50  0000 C CNN
 F 1 "FLASH_SPI" H 9020 4720 50  0000 C CNN
-F 2 "" H 9020 5020 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 9020 5020 50  0001 C CNN
 F 3 "~" H 9020 5020 50  0001 C CNN
+F 4 "DNP" H 9020 5020 50  0001 C CNN "Configuration"
 	1    9020 5020
 	1    0    0    -1  
 $EndComp
@@ -661,8 +671,9 @@ U 1 1 60221638
 P 5020 5020
 F 0 "J?" H 5020 5220 50  0000 C CNN
 F 1 "PIC_UART" H 5020 4820 50  0000 C CNN
-F 2 "" H 5020 5020 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5020 5020 50  0001 C CNN
 F 3 "~" H 5020 5020 50  0001 C CNN
+F 4 "DNP" H 5020 5020 50  0001 C CNN "Configuration"
 	1    5020 5020
 	1    0    0    -1  
 $EndComp
@@ -695,8 +706,9 @@ U 1 1 6022AEF7
 P 5020 5770
 F 0 "J?" H 5020 5970 50  0000 C CNN
 F 1 "WIFI_UART" H 5020 5570 50  0000 C CNN
-F 2 "" H 5020 5770 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5020 5770 50  0001 C CNN
 F 3 "~" H 5020 5770 50  0001 C CNN
+F 4 "DNP" H 5020 5770 50  0001 C CNN "Configuration"
 	1    5020 5770
 	1    0    0    -1  
 $EndComp

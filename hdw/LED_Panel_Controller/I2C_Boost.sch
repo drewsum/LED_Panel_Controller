@@ -121,6 +121,7 @@ F 0 "U?" H 5030 5630 50  0000 C CNN
 F 1 "AT24CS32-STUM" H 5430 5130 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5330 5380 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8869-SEEPROM-AT24CS32-Datasheet.pdf" H 5330 5380 50  0001 C CNN
+F 4 "AT24CS32-STUM-T" H 5330 5380 50  0001 C CNN "Digi-Key PN"
 	1    5330 5380
 	1    0    0    -1  
 $EndComp
@@ -371,6 +372,7 @@ F 4 "0402" H 5190 2680 50  0000 R CNN "display_footprint"
 F 5 "50V" H 5190 2580 50  0000 R CNN "Voltage"
 F 6 "X7R" H 5190 2480 50  0000 R CNN "Dielectric"
 F 7 "Telemetry" H 5190 2770 50  0000 R CNN "Configuration"
+F 8 "490-10701-1-ND" H 5340 2620 50  0001 C CNN "Digi-Key PN"
 	1    5340 2620
 	1    0    0    -1  
 $EndComp
