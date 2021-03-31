@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector_Generic:Conn_02x08_Odd_Even J?
+L Connector_Generic:Conn_02x08_Odd_Even J3301
 U 1 1 5BB405EB
 P 3250 3730
-F 0 "J?" H 3300 4247 50  0000 C CNN
+F 0 "J3301" H 3300 4247 50  0000 C CNN
 F 1 "Panel Data" H 3300 4156 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_2x08_P2.54mm_Vertical" H 3250 3730 50  0001 C CNN
 F 3 "~" H 3250 3730 50  0001 C CNN
@@ -54,10 +54,10 @@ G0_POS5
 Text GLabel 3550 3630 2    50   Input ~ 0
 G1_POS5
 $Comp
-L power:GND #PWR?
+L power:GND #PWR03304
 U 1 1 5BB40845
 P 4350 4280
-F 0 "#PWR?" H 4350 4030 50  0001 C CNN
+F 0 "#PWR03304" H 4350 4030 50  0001 C CNN
 F 1 "GND" H 4355 4107 50  0000 C CNN
 F 2 "" H 4350 4280 50  0001 C CNN
 F 3 "" H 4350 4280 50  0001 C CNN
@@ -98,10 +98,10 @@ G0_POS5
 Text GLabel 5730 3610 1    50   Input ~ 0
 G1_POS5
 $Comp
-L Power_Protection:SP0505BAJT D?
+L Power_Protection:SP0505BAJT D3301
 U 1 1 5C14E3A9
 P 5630 3810
-F 0 "D?" H 5930 3910 50  0000 L CNN
+F 0 "D3301" H 5930 3910 50  0000 L CNN
 F 1 "SP0505BAJT" H 5930 3835 50  0000 L CNN
 F 2 "TO_SOT_Packages_SMD:SOT-363_SC-70-6" H 5930 3760 50  0001 L CNN
 F 3 "http://www.littelfuse.com/~/media/files/littelfuse/technical%20resources/documents/data%20sheets/sp05xxba.pdf" H 5755 3935 50  0001 C CNN
@@ -110,10 +110,10 @@ F 4 "F3160CT-ND" H 5630 3810 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR03305
 U 1 1 5C150614
 P 5630 4010
-F 0 "#PWR?" H 5630 3760 50  0001 C CNN
+F 0 "#PWR03305" H 5630 3760 50  0001 C CNN
 F 1 "GND" H 5630 3860 50  0000 C CNN
 F 2 "" H 5630 4010 50  0001 C CNN
 F 3 "" H 5630 4010 50  0001 C CNN
@@ -121,10 +121,10 @@ F 3 "" H 5630 4010 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power_Protection:SP0505BAJT D?
+L Power_Protection:SP0505BAJT D3302
 U 1 1 5C150760
 P 7280 3810
-F 0 "D?" H 7580 3910 50  0000 L CNN
+F 0 "D3302" H 7580 3910 50  0000 L CNN
 F 1 "SP0505BAJT" H 7580 3835 50  0000 L CNN
 F 2 "TO_SOT_Packages_SMD:SOT-363_SC-70-6" H 7580 3760 50  0001 L CNN
 F 3 "http://www.littelfuse.com/~/media/files/littelfuse/technical%20resources/documents/data%20sheets/sp05xxba.pdf" H 7405 3935 50  0001 C CNN
@@ -133,10 +133,10 @@ F 4 "F3160CT-ND" H 7280 3810 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR03306
 U 1 1 5C150767
 P 7280 4010
-F 0 "#PWR?" H 7280 3760 50  0001 C CNN
+F 0 "#PWR03306" H 7280 3760 50  0001 C CNN
 F 1 "GND" H 7280 3860 50  0000 C CNN
 F 2 "" H 7280 4010 50  0001 C CNN
 F 3 "" H 7280 4010 50  0001 C CNN
@@ -144,10 +144,10 @@ F 3 "" H 7280 4010 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power_Protection:SP0505BAJT D?
+L Power_Protection:SP0505BAJT D3303
 U 1 1 5C150847
 P 8930 3810
-F 0 "D?" H 9230 3910 50  0000 L CNN
+F 0 "D3303" H 9230 3910 50  0000 L CNN
 F 1 "SP0505BAJT" H 9230 3835 50  0000 L CNN
 F 2 "TO_SOT_Packages_SMD:SOT-363_SC-70-6" H 9230 3760 50  0001 L CNN
 F 3 "http://www.littelfuse.com/~/media/files/littelfuse/technical%20resources/documents/data%20sheets/sp05xxba.pdf" H 9055 3935 50  0001 C CNN
@@ -156,10 +156,10 @@ F 4 "F3160CT-ND" H 8930 3810 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR03307
 U 1 1 5C15084E
 P 8930 4010
-F 0 "#PWR?" H 8930 3760 50  0001 C CNN
+F 0 "#PWR03307" H 8930 3760 50  0001 C CNN
 F 1 "GND" H 8930 3860 50  0000 C CNN
 F 2 "" H 8930 4010 50  0001 C CNN
 F 3 "" H 8930 4010 50  0001 C CNN
@@ -178,8 +178,8 @@ P 1650 3880
 AR Path="/5BE5222A/5CBDEB4C" Ref="ECO?"  Part="1" 
 AR Path="/5BAAE10E/5CBDEB4C" Ref="ECO?"  Part="1" 
 AR Path="/5BAAE2CE/5CBDEB4C" Ref="ECO?"  Part="1" 
-AR Path="/5F583BFC/5CBDEB4C" Ref="C?"  Part="1" 
-F 0 "C?" H 1675 3980 50  0000 L CNN
+AR Path="/5F583BFC/5CBDEB4C" Ref="C3301"  Part="1" 
+F 0 "C3301" H 1675 3980 50  0000 L CNN
 F 1 "15pF" H 1675 3780 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 1688 3730 50  0001 C CNN
 F 3 "" H 1675 3980 50  0001 C CNN
@@ -194,10 +194,10 @@ $EndComp
 Text GLabel 1650 3730 1    40   UnSpc ~ 0
 ~Panel_OE_POS5
 $Comp
-L power:GND #PWR?
+L power:GND #PWR03301
 U 1 1 5CBDEF57
 P 1650 4030
-F 0 "#PWR?" H 1650 3780 50  0001 C CNN
+F 0 "#PWR03301" H 1650 3780 50  0001 C CNN
 F 1 "GND" H 1650 3880 50  0000 C CNN
 F 2 "" H 1650 4030 50  0001 C CNN
 F 3 "" H 1650 4030 50  0001 C CNN
@@ -205,10 +205,10 @@ F 3 "" H 1650 4030 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x01 J?
+L Connector_Generic:Conn_01x01 J3302
 U 1 1 5F739EFA
 P 3310 5290
-F 0 "J?" H 3310 5390 50  0000 C CNN
+F 0 "J3302" H 3310 5390 50  0000 C CNN
 F 1 "Keystone_8191" H 3310 5190 50  0000 C CNN
 F 2 "Custom Footprints Library:Keystone_8191" H 3310 5290 50  0001 C CNN
 F 3 "~" H 3310 5290 50  0001 C CNN
@@ -217,10 +217,10 @@ F 4 "36-8191-ND" H 3310 5290 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:CP_Tant_Custom C?
+L Custom_Library:CP_Tant_Custom C3302
 U 1 1 5F73C920
 P 2780 5520
-F 0 "C?" H 2805 5620 50  0000 L CNN
+F 0 "C3302" H 2805 5620 50  0000 L CNN
 F 1 "100uF" H 2805 5420 50  0000 L CNN
 F 2 "Capacitors_Tantalum_SMD:CP_Tantalum_Case-X_EIA-7343-43_Reflow" H 2818 5370 50  0001 C CNN
 F 3 "" H 2805 5620 50  0001 C CNN
@@ -236,10 +236,10 @@ Wire Wire Line
 Wire Wire Line
 	2780 5290 2780 5370
 $Comp
-L power:+5V #PWR?
+L power:+5V #PWR03302
 U 1 1 5F73CC26
 P 2780 5210
-F 0 "#PWR?" H 2780 5060 50  0001 C CNN
+F 0 "#PWR03302" H 2780 5060 50  0001 C CNN
 F 1 "+5V" H 2780 5350 50  0000 C CNN
 F 2 "" H 2780 5210 50  0001 C CNN
 F 3 "" H 2780 5210 50  0001 C CNN
@@ -250,10 +250,10 @@ Wire Wire Line
 	2780 5210 2780 5290
 Connection ~ 2780 5290
 $Comp
-L Connector_Generic:Conn_01x01 J?
+L Connector_Generic:Conn_01x01 J3303
 U 1 1 5F73D389
 P 3310 5750
-F 0 "J?" H 3310 5850 50  0000 C CNN
+F 0 "J3303" H 3310 5850 50  0000 C CNN
 F 1 "Keystone_8191" H 3310 5650 50  0000 C CNN
 F 2 "Custom Footprints Library:Keystone_8191" H 3310 5750 50  0001 C CNN
 F 3 "~" H 3310 5750 50  0001 C CNN
@@ -266,10 +266,10 @@ Wire Wire Line
 Wire Wire Line
 	2780 5750 2780 5670
 $Comp
-L power:GND #PWR?
+L power:GND #PWR03303
 U 1 1 5F73DE40
 P 2780 5830
-F 0 "#PWR?" H 2780 5580 50  0001 C CNN
+F 0 "#PWR03303" H 2780 5580 50  0001 C CNN
 F 1 "GND" H 2780 5680 50  0000 C CNN
 F 2 "" H 2780 5830 50  0001 C CNN
 F 3 "" H 2780 5830 50  0001 C CNN
