@@ -5,7 +5,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 10 34
 Title "LED Panel Controller"
-Date "2021-03-24"
+Date "2021-03-31"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -85,30 +85,6 @@ Wire Wire Line
 Wire Wire Line
 	6560 2700 6560 2780
 Connection ~ 6560 2700
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E024C29
-P 6110 2700
-AR Path="/5BAAE2B6/5E024C29" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5E024C29" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5E024C29" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5E024C29" Ref="R?"  Part="1" 
-AR Path="/5CAD2DA3/5E024C29" Ref="R?"  Part="1" 
-AR Path="/5E01BCC3/5E024C29" Ref="R?"  Part="1" 
-AR Path="/5E697952/5E024C29" Ref="R?"  Part="1" 
-AR Path="/5EAE2F15/5E024C29" Ref="R?"  Part="1" 
-AR Path="/5F5829C2/5E024C29" Ref="R1003"  Part="1" 
-F 0 "R1003" V 6070 2560 50  0000 R CNN
-F 1 "100" V 6110 2700 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" H 6110 2700 50  0001 C CNN
-F 3 "" H 6110 2700 50  0001 C CNN
-F 4 "0402" V 6210 2700 50  0001 C CNN "display_footprint"
-F 5 "1%" V 6310 2700 50  0001 C CNN "Tolerance"
-F 6 "1/16W" V 6410 2700 50  0001 C CNN "Wattage"
-F 7 "RMCF0402FT100RCT-ND" H 6410 3100 60  0001 C CNN "Digi-Key PN"
-	1    6110 2700
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	5960 2700 5810 2700
 Wire Wire Line
@@ -260,30 +236,6 @@ Wire Wire Line
 Wire Wire Line
 	6560 4750 6560 4830
 Connection ~ 6560 4750
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5F689623
-P 6110 4750
-AR Path="/5BAAE2B6/5F689623" Ref="R?"  Part="1" 
-AR Path="/5BB6CF6D/5F689623" Ref="R?"  Part="1" 
-AR Path="/5BBE424C/5F689623" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5F689623" Ref="R?"  Part="1" 
-AR Path="/5CAD2DA3/5F689623" Ref="R?"  Part="1" 
-AR Path="/5E01BCC3/5F689623" Ref="R?"  Part="1" 
-AR Path="/5E697952/5F689623" Ref="R?"  Part="1" 
-AR Path="/5EAE2F15/5F689623" Ref="R?"  Part="1" 
-AR Path="/5F5829C2/5F689623" Ref="R1004"  Part="1" 
-F 0 "R1004" V 6070 4610 50  0000 R CNN
-F 1 "100" V 6110 4750 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" H 6110 4750 50  0001 C CNN
-F 3 "" H 6110 4750 50  0001 C CNN
-F 4 "0402" V 6210 4750 50  0001 C CNN "display_footprint"
-F 5 "1%" V 6310 4750 50  0001 C CNN "Tolerance"
-F 6 "1/16W" V 6410 4750 50  0001 C CNN "Wattage"
-F 7 "RMCF0402FT100RCT-ND" H 6410 5150 60  0001 C CNN "Digi-Key PN"
-	1    6110 4750
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	5960 4750 5810 4750
 Wire Wire Line
@@ -664,4 +616,38 @@ Text GLabel 5210 2700 0    50   Input ~ 0
 PIC32MZ_CLK_EN
 Text GLabel 5210 4750 0    50   Input ~ 0
 PIC32MZ_CLK_EN
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 606585C6
+P 6110 2700
+AR Path="/5F5829A6/606585C6" Ref="R?"  Part="1" 
+AR Path="/5F5829C2/606585C6" Ref="R1003"  Part="1" 
+F 0 "R1003" V 6010 2700 50  0000 C CNN
+F 1 "10" V 6110 2700 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 6110 2700 50  0001 C CNN
+F 3 "" H 6110 2700 50  0001 C CNN
+F 4 "0402" V 6210 2700 50  0000 C CNN "display_footprint"
+F 5 "1%" V 6310 2700 50  0000 C CNN "Tolerance"
+F 6 "1/16W" V 6410 2700 50  0000 C CNN "Wattage"
+F 7 "RMCF0402FT10R0CT-ND" H 6410 3100 60  0001 C CNN "Digi-Key PN"
+	1    6110 2700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 60658A20
+P 6110 4750
+AR Path="/5F5829A6/60658A20" Ref="R?"  Part="1" 
+AR Path="/5F5829C2/60658A20" Ref="R1004"  Part="1" 
+F 0 "R1004" V 6010 4750 50  0000 C CNN
+F 1 "10" V 6110 4750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 6110 4750 50  0001 C CNN
+F 3 "" H 6110 4750 50  0001 C CNN
+F 4 "0402" V 6210 4750 50  0000 C CNN "display_footprint"
+F 5 "1%" V 6310 4750 50  0000 C CNN "Tolerance"
+F 6 "1/16W" V 6410 4750 50  0000 C CNN "Wattage"
+F 7 "RMCF0402FT10R0CT-ND" H 6410 5150 60  0001 C CNN "Digi-Key PN"
+	1    6110 4750
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

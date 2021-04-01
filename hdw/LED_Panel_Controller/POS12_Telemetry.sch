@@ -5,7 +5,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 3 34
 Title "LED Panel Controller"
-Date "2021-03-24"
+Date "2021-03-31"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""

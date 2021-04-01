@@ -5,7 +5,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 18 34
 Title "LED Panel Controller"
-Date "2021-03-24"
+Date "2021-03-31"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -295,22 +295,22 @@ $EndComp
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5FF40FFF
-P 3170 2470
+P 3170 4930
 AR Path="/5D6B2673/5FF40FFF" Ref="R?"  Part="1" 
 AR Path="/5D6C0D23/5FF40FFF" Ref="R?"  Part="1" 
 AR Path="/5D77A516/5FF40FFF" Ref="R?"  Part="1" 
 AR Path="/5E939CFF/5FF40FFF" Ref="R?"  Part="1" 
 AR Path="/5F581B41/5FF40FFF" Ref="R?"  Part="1" 
 AR Path="/5F582E44/5FF40FFF" Ref="R1808"  Part="1" 
-F 0 "R1808" V 3080 2470 50  0000 C CNN
-F 1 "10k" V 3170 2400 50  0000 L CNN
-F 2 "Resistors_SMD:R_0402" H 3170 2470 50  0001 C CNN
-F 3 "" H 3170 2470 50  0001 C CNN
-F 4 "0402" H 3270 2540 50  0001 L CNN "display_footprint"
-F 5 "1%" H 3270 2440 50  0001 L CNN "Tolerance"
-F 6 "1/16W" H 3270 2340 50  0001 L CNN "Wattage"
-F 7 "RMCF0402FT10K0CT-ND" H 3170 2470 50  0001 C CNN "Digi-Key PN"
-	1    3170 2470
+F 0 "R1808" V 3080 4930 50  0000 C CNN
+F 1 "10k" V 3170 4860 50  0000 L CNN
+F 2 "Resistors_SMD:R_0402" H 3170 4930 50  0001 C CNN
+F 3 "" H 3170 4930 50  0001 C CNN
+F 4 "0402" H 3270 5000 50  0001 L CNN "display_footprint"
+F 5 "1%" H 3270 4900 50  0001 L CNN "Tolerance"
+F 6 "1/16W" H 3270 4800 50  0001 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 3170 4930 50  0001 C CNN "Digi-Key PN"
+	1    3170 4930
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1162,10 +1162,6 @@ Wire Wire Line
 Wire Wire Line
 	2600 3100 3670 3100
 Wire Wire Line
-	2600 2900 3420 2900
-Wire Wire Line
-	2300 2800 3170 2800
-Wire Wire Line
 	2600 2700 2920 2700
 Wire Wire Line
 	2300 4100 4920 4100
@@ -1193,28 +1189,6 @@ F 1 "+3.3V" H 2920 2460 50  0000 C CNN
 F 2 "" H 2920 2320 50  0001 C CNN
 F 3 "" H 2920 2320 50  0001 C CNN
 	1    2920 2320
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR01807
-U 1 1 601EAD65
-P 3170 2320
-F 0 "#PWR01807" H 3170 2170 50  0001 C CNN
-F 1 "+3.3V" H 3170 2460 50  0000 C CNN
-F 2 "" H 3170 2320 50  0001 C CNN
-F 3 "" H 3170 2320 50  0001 C CNN
-	1    3170 2320
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR01809
-U 1 1 601EAF40
-P 3420 2320
-F 0 "#PWR01809" H 3420 2170 50  0001 C CNN
-F 1 "+3.3V" H 3420 2460 50  0000 C CNN
-F 2 "" H 3420 2320 50  0001 C CNN
-F 3 "" H 3420 2320 50  0001 C CNN
-	1    3420 2320
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1271,22 +1245,22 @@ Wire Wire Line
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5FF40FF2
-P 3420 2470
+P 3420 4930
 AR Path="/5D6B2673/5FF40FF2" Ref="R?"  Part="1" 
 AR Path="/5D6C0D23/5FF40FF2" Ref="R?"  Part="1" 
 AR Path="/5D77A516/5FF40FF2" Ref="R?"  Part="1" 
 AR Path="/5E939CFF/5FF40FF2" Ref="R?"  Part="1" 
 AR Path="/5F581B41/5FF40FF2" Ref="R?"  Part="1" 
 AR Path="/5F582E44/5FF40FF2" Ref="R1810"  Part="1" 
-F 0 "R1810" V 3330 2470 50  0000 C CNN
-F 1 "10k" V 3420 2400 50  0000 L CNN
-F 2 "Resistors_SMD:R_0402" H 3420 2470 50  0001 C CNN
-F 3 "" H 3420 2470 50  0001 C CNN
-F 4 "0402" H 3520 2540 50  0001 L CNN "display_footprint"
-F 5 "1%" H 3520 2440 50  0001 L CNN "Tolerance"
-F 6 "1/16W" H 3520 2340 50  0001 L CNN "Wattage"
-F 7 "RMCF0402FT10K0CT-ND" H 3420 2470 50  0001 C CNN "Digi-Key PN"
-	1    3420 2470
+F 0 "R1810" V 3330 4930 50  0000 C CNN
+F 1 "10k" V 3420 4860 50  0000 L CNN
+F 2 "Resistors_SMD:R_0402" H 3420 4930 50  0001 C CNN
+F 3 "" H 3420 4930 50  0001 C CNN
+F 4 "0402" H 3520 5000 50  0001 L CNN "display_footprint"
+F 5 "1%" H 3520 4900 50  0001 L CNN "Tolerance"
+F 6 "1/16W" H 3520 4800 50  0001 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 3420 4930 50  0001 C CNN "Digi-Key PN"
+	1    3420 4930
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1386,18 +1360,44 @@ Connection ~ 3670 3100
 Wire Wire Line
 	3670 3100 5500 3100
 Wire Wire Line
-	3420 2620 3420 2900
-Connection ~ 3420 2900
-Wire Wire Line
-	3420 2900 5500 2900
-Wire Wire Line
-	3170 2620 3170 2800
-Connection ~ 3170 2800
-Wire Wire Line
-	3170 2800 5500 2800
-Wire Wire Line
 	2920 2620 2920 2700
 Connection ~ 2920 2700
 Wire Wire Line
 	2920 2700 5500 2700
+Wire Wire Line
+	2600 2900 3420 2900
+Wire Wire Line
+	2300 2800 3170 2800
+$Comp
+L power:GND #PWR?
+U 1 1 6066FA95
+P 3170 5080
+F 0 "#PWR?" H 3170 4830 50  0001 C CNN
+F 1 "GND" H 3170 4930 50  0000 C CNN
+F 2 "" H 3170 5080 50  0001 C CNN
+F 3 "" H 3170 5080 50  0001 C CNN
+	1    3170 5080
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6066FC95
+P 3420 5080
+F 0 "#PWR?" H 3420 4830 50  0001 C CNN
+F 1 "GND" H 3420 4930 50  0000 C CNN
+F 2 "" H 3420 5080 50  0001 C CNN
+F 3 "" H 3420 5080 50  0001 C CNN
+	1    3420 5080
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3170 4780 3170 2800
+Connection ~ 3170 2800
+Wire Wire Line
+	3170 2800 5500 2800
+Wire Wire Line
+	3420 4780 3420 2900
+Connection ~ 3420 2900
+Wire Wire Line
+	3420 2900 5500 2900
 $EndSCHEMATC
