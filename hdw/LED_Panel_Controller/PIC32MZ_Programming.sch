@@ -356,24 +356,6 @@ F 7 "RMCF0402FT10R0CT-ND" H 5380 5400 60  0001 C CNN "Digi-Key PN"
 	1    5080 5000
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	3170 2160 4040 2160
-Wire Wire Line
-	3170 2260 4140 2260
-$Comp
-L Power_Protection:SP0505BAJT D?
-U 1 1 6067D672
-P 4040 2710
-AR Path="/5F583BFC/6067D672" Ref="D?"  Part="1" 
-AR Path="/5F5829A6/6067D672" Ref="D801"  Part="1" 
-F 0 "D801" H 4340 2810 50  0000 L CNN
-F 1 "SP0505BAJT" H 4340 2735 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-363_SC-70-6" H 4340 2660 50  0001 L CNN
-F 3 "http://www.littelfuse.com/~/media/files/littelfuse/technical%20resources/documents/data%20sheets/sp05xxba.pdf" H 4165 2835 50  0001 C CNN
-F 4 "F3160CT-ND" H 4040 2710 50  0001 C CNN "Digi-Key PN"
-	1    4040 2710
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR0802
 U 1 1 6067E0F5
@@ -388,28 +370,44 @@ $EndComp
 Wire Wire Line
 	3170 1860 3840 1860
 Wire Wire Line
-	3170 1960 3940 1960
-Wire Wire Line
-	3940 2510 3940 1960
-Connection ~ 3940 1960
-Wire Wire Line
-	3940 1960 6620 1960
-Wire Wire Line
-	4040 2510 4040 2160
-Connection ~ 4040 2160
-Wire Wire Line
-	4040 2160 5730 2160
-Wire Wire Line
-	4140 2510 4140 2260
-Connection ~ 4140 2260
-Wire Wire Line
-	4140 2260 5730 2260
-Wire Wire Line
 	3840 2510 3840 1860
 Connection ~ 3840 1860
 Wire Wire Line
 	3840 1860 4970 1860
-NoConn ~ 4240 2510
-Text Notes 3160 3340 0    50   ~ 0
-Double check MCLR voltage during programming
+Wire Wire Line
+	3170 1960 4240 1960
+Wire Wire Line
+	3170 2160 4140 2160
+Wire Wire Line
+	3170 2260 4040 2260
+Wire Wire Line
+	4240 2510 4240 1960
+Connection ~ 4240 1960
+Wire Wire Line
+	4240 1960 6620 1960
+$Comp
+L Power_Protection:SP0505BAJT D?
+U 1 1 6067D672
+P 4040 2710
+AR Path="/5F583BFC/6067D672" Ref="D?"  Part="1" 
+AR Path="/5F5829A6/6067D672" Ref="D801"  Part="1" 
+F 0 "D801" H 4340 2810 50  0000 L CNN
+F 1 "SP0505BAJT" H 4340 2735 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-363_SC-70-6" H 4340 2660 50  0001 L CNN
+F 3 "http://www.littelfuse.com/~/media/files/littelfuse/technical%20resources/documents/data%20sheets/sp05xxba.pdf" H 4165 2835 50  0001 C CNN
+F 4 "F3160CT-ND" H 4040 2710 50  0001 C CNN "Digi-Key PN"
+	1    4040 2710
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4140 2510 4140 2160
+Connection ~ 4140 2160
+Wire Wire Line
+	4140 2160 5730 2160
+Wire Wire Line
+	4040 2510 4040 2260
+Connection ~ 4040 2260
+Wire Wire Line
+	4040 2260 5730 2260
+NoConn ~ 3940 2510
 $EndSCHEMATC
