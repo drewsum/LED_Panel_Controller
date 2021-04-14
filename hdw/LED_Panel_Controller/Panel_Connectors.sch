@@ -69,33 +69,27 @@ Wire Wire Line
 Wire Wire Line
 	4350 3530 4350 4130
 Connection ~ 4350 4130
-Text GLabel 7480 3610 1    50   Input ~ 0
-Row_A_POS5
-Text GLabel 8830 3610 1    50   Input ~ 0
-Row_C_POS5
-Text GLabel 5530 3610 1    50   Input ~ 0
+Text GLabel 5430 3610 1    50   Input ~ 0
 R0_POS5
-Text GLabel 5830 3610 1    50   Input ~ 0
+Text GLabel 5730 3610 1    50   Input ~ 0
 B0_POS5
 Text GLabel 5630 3610 1    50   Input ~ 0
 R1_POS5
-Text GLabel 7080 3610 1    50   Input ~ 0
-B1_POS5
-Text GLabel 8930 3610 1    50   Input ~ 0
+Text GLabel 9130 3610 1    50   Input ~ 0
 Panel_CLK_POS5
-Text GLabel 9130 3610 1    40   Input ~ 0
+Text GLabel 8930 3610 1    40   Input ~ 0
 ~Panel_OE_POS5
-Text GLabel 7380 3610 1    50   Input ~ 0
-Row_B_POS5
 Text GLabel 7280 3610 1    50   Input ~ 0
-Row_D_POS5
-Text GLabel 7180 3610 1    50   Input ~ 0
-Row_E_POS5
+Row_B_POS5
 Text GLabel 8730 3610 1    50   Input ~ 0
+Row_D_POS5
+Text GLabel 7480 3610 1    50   Input ~ 0
+Row_E_POS5
+Text GLabel 9030 3610 1    50   Input ~ 0
 Panel_LAT_POS5
-Text GLabel 5430 3610 1    50   Input ~ 0
+Text GLabel 5830 3610 1    50   Input ~ 0
 G0_POS5
-Text GLabel 5730 3610 1    50   Input ~ 0
+Text GLabel 5530 3610 1    50   Input ~ 0
 G1_POS5
 $Comp
 L Power_Protection:SP0505BAJT D3301
@@ -170,7 +164,6 @@ Wire Wire Line
 	3550 4130 4350 4130
 Wire Wire Line
 	3550 3530 4350 3530
-NoConn ~ 9030 3610
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 5CBDEB4C
@@ -283,4 +276,11 @@ Text Notes 3010 4480 0    50   ~ 0
 Place on Bottom
 Text Notes 3740 5520 0    50   ~ 0
 Add cut in PCB to allow for power harness to pass through to panel
+Text GLabel 7080 3610 1    50   Input ~ 0
+B1_POS5
+Text GLabel 7180 3610 1    50   Input ~ 0
+Row_C_POS5
+Text GLabel 7380 3610 1    50   Input ~ 0
+Row_A_POS5
+NoConn ~ 8830 3610
 $EndSCHEMATC
