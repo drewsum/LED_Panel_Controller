@@ -418,9 +418,9 @@ Wire Wire Line
 Connection ~ 7790 1550
 Wire Wire Line
 	7790 1550 6820 1550
-Text GLabel 3050 1350 0    50   Output ~ 0
+Text GLabel 3050 1550 0    50   Output ~ 0
 PIC32MZ_UART_RX
-Text GLabel 3050 1550 0    50   Input ~ 0
+Text GLabel 3050 1350 0    50   Input ~ 0
 PIC32MZ_UART_TX
 Text GLabel 6020 1150 0    50   Input ~ 0
 POS5_USB_PGOOD
@@ -836,9 +836,9 @@ Wire Wire Line
 Connection ~ 8790 1950
 Wire Wire Line
 	8790 1950 9230 1950
-Text GLabel 3050 1750 0    50   Output ~ 0
+Text GLabel 3050 1950 0    50   Output ~ 0
 WIFI_UART_RX
-Text GLabel 3050 1950 0    50   Input ~ 0
+Text GLabel 3050 1750 0    50   Input ~ 0
 WIFI_UART_TX
 $Comp
 L Custom_Library:R_Custom R?
@@ -940,13 +940,13 @@ Wire Wire Line
 	3990 1750 6020 1750
 Wire Wire Line
 	3490 1950 6020 1950
-Text GLabel 9230 1350 2    50   Input ~ 0
+Text GLabel 9230 1550 2    50   Input ~ 0
 PIC32MZ_UART_RX_BUF
-Text GLabel 9230 1550 2    50   Output ~ 0
+Text GLabel 9230 1350 2    50   Output ~ 0
 PIC32MZ_UART_TX_BUF
-Text GLabel 9230 1750 2    50   Input ~ 0
+Text GLabel 9230 1950 2    50   Input ~ 0
 WIFI_UART_RX_BUF
-Text GLabel 9230 1950 2    50   Output ~ 0
+Text GLabel 9230 1750 2    50   Output ~ 0
 WIFI_UART_TX_BUF
 NoConn ~ 4290 6370
 NoConn ~ 4290 5970

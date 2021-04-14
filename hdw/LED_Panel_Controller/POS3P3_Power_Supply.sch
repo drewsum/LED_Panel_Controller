@@ -14,26 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Custom_Library:L_Custom L?
-U 1 1 5C26EF0D
-P 6330 3040
-AR Path="/5CB7718D/5C26EF0D" Ref="L?"  Part="1" 
-AR Path="/5E0DC082/5C26EF0D" Ref="L?"  Part="1" 
-AR Path="/5E0F263A/5C26EF0D" Ref="L?"  Part="1" 
-AR Path="/5EAE2D8A/5C26EF0D" Ref="L?"  Part="1" 
-AR Path="/5F581B64/5C26EF0D" Ref="L401"  Part="1" 
-F 0 "L401" V 6280 3040 50  0000 C CNN
-F 1 "3.3uH" V 6405 3040 50  0000 C CNN
-F 2 "Inductors_SMD:L_Vishay_IHLP-1212" H 6330 3040 50  0001 C CNN
-F 3 "" H 6330 3040 50  0001 C CNN
-F 4 "541-2567-1-ND" H 6330 3040 50  0001 C CNN "Digi-Key PN"
-F 5 "IHLP1212" V 6480 3040 50  0000 C CNN "display_footprint"
-F 6 "2.7A" V 6580 3040 50  0000 C CNN "Ampacity"
-F 7 "20%" V 6680 3040 50  0000 C CNN "Tolerance"
-	1    6330 3040
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Custom_Library:C_Custom C?
 U 1 1 607862D9
 P 4550 2970
@@ -393,18 +373,6 @@ Text GLabel 1990 6470 2    50   Output ~ 0
 POS3P3_RUN
 Text GLabel 1690 6470 0    50   Input ~ 0
 POS12_PGOOD
-$Comp
-L Custom_Library:TPS62150 U402
-U 1 1 5EB8DB31
-P 5390 3740
-F 0 "U402" H 5390 4990 50  0000 C CNN
-F 1 "TPS62152" H 5390 3740 50  0000 C CNN
-F 2 "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm" H 5390 3740 50  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/symlink/tps62150.pdf?&ts=1589125931316" H 5390 3740 50  0001 C CNN
-F 4 "296-43621-1-ND" H 5390 3740 50  0001 C CNN "Digi-Key PN"
-	1    5390 3740
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8710 3960 8710 4240
 Wire Wire Line
@@ -1128,5 +1096,38 @@ F 2 "" H 4910 6890 50  0001 C CNN
 F 3 "" H 4910 6890 50  0001 C CNN
 	1    4910 6890
 	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:TPS62130 U?
+U 1 1 6076F50F
+P 5390 3740
+AR Path="/6076F50F" Ref="U?"  Part="1" 
+AR Path="/5F581BA3/6076F50F" Ref="U?"  Part="1" 
+AR Path="/5F581B64/6076F50F" Ref="U402"  Part="1" 
+F 0 "U402" H 5390 4990 50  0000 C CNN
+F 1 "TPS62132" H 5390 3740 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm" H 5390 3740 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps62130.pdf" H 5390 3740 50  0001 C CNN
+F 4 "296-29936-1-ND" H 5390 3740 50  0001 C CNN "Digi-Key PN"
+	1    5390 3740
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:L_Custom L?
+U 1 1 60771D26
+P 6330 3040
+AR Path="/60771D26" Ref="L?"  Part="1" 
+AR Path="/5F581BA3/60771D26" Ref="L?"  Part="1" 
+AR Path="/5F581B64/60771D26" Ref="L401"  Part="1" 
+F 0 "L401" V 6280 3040 50  0000 C CNN
+F 1 "2.2uH" V 6405 3040 50  0000 C CNN
+F 2 "Inductors_SMD:L_Vishay_IHLP-2020" H 6330 3040 50  0001 C CNN
+F 3 "" H 6330 3040 50  0001 C CNN
+F 4 "IHLP2020" V 6480 3040 50  0000 C CNN "display_footprint"
+F 5 "6.7A" V 6580 3040 50  0000 C CNN "Ampacity"
+F 6 "20%" V 6680 3040 50  0000 C CNN "Tolerance"
+F 7 "541-1236-1-ND" H 6330 3040 50  0001 C CNN "Digi-Key PN"
+	1    6330 3040
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC
