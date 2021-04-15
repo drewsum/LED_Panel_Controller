@@ -243,22 +243,6 @@ Wire Wire Line
 	2780 5210 2780 5290
 Connection ~ 2780 5290
 $Comp
-L Connector_Generic:Conn_01x01 J3303
-U 1 1 5F73D389
-P 3310 5750
-F 0 "J3303" H 3310 5850 50  0000 C CNN
-F 1 "Keystone_8191" H 3310 5650 50  0000 C CNN
-F 2 "Custom Footprints Library:Keystone_8191" H 3310 5750 50  0001 C CNN
-F 3 "~" H 3310 5750 50  0001 C CNN
-F 4 "36-8191-ND" H 3310 5750 50  0001 C CNN "Digi-Key PN"
-	1    3310 5750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3110 5750 2780 5750
-Wire Wire Line
-	2780 5750 2780 5670
-$Comp
 L power:GND #PWR03303
 U 1 1 5F73DE40
 P 2780 5830
@@ -269,9 +253,6 @@ F 3 "" H 2780 5830 50  0001 C CNN
 	1    2780 5830
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2780 5830 2780 5750
-Connection ~ 2780 5750
 Text Notes 3010 4480 0    50   ~ 0
 Place on Bottom
 Text Notes 3740 5520 0    50   ~ 0
@@ -283,4 +264,6 @@ Row_C_POS5
 Text GLabel 7380 3610 1    50   Input ~ 0
 Row_A_POS5
 NoConn ~ 8830 3610
+Wire Wire Line
+	2780 5670 2780 5830
 $EndSCHEMATC
