@@ -177,59 +177,59 @@ F 3 "" H 5660 3320 50  0001 C CNN
 	1    5660 3320
 	1    0    0    -1  
 $EndComp
-Text GLabel 8500 4250 2    50   Output ~ 0
+Text GLabel 8500 4850 2    50   Output ~ 0
 Row_A_POS5
-Text GLabel 8500 4350 2    50   Output ~ 0
+Text GLabel 8500 4750 2    50   Output ~ 0
 Row_B_POS5
 Text GLabel 8500 4550 2    50   Output ~ 0
 Row_D_POS5
-Text GLabel 8500 4650 2    50   Output ~ 0
+Text GLabel 8500 4950 2    50   Output ~ 0
 Row_E_POS5
-Text GLabel 8500 4450 2    50   Output ~ 0
+Text GLabel 8500 4650 2    50   Output ~ 0
 Row_C_POS5
-Text GLabel 8500 4750 2    50   Output ~ 0
+Text GLabel 8500 4450 2    50   Output ~ 0
 Panel_CLK_POS5
-Text GLabel 8500 4950 2    40   Output ~ 0
+Text GLabel 8500 4250 2    40   Output ~ 0
 ~Panel_OE_POS5
-Text GLabel 8500 4850 2    50   Output ~ 0
+Text GLabel 8500 4350 2    50   Output ~ 0
 Panel_LAT_POS5
-Text GLabel 8500 2250 2    50   Output ~ 0
-B0_POS5
-Text GLabel 8500 1950 2    50   Output ~ 0
-R1_POS5
-Text GLabel 8500 2350 2    50   Output ~ 0
-B1_POS5
-Text GLabel 8500 2050 2    50   Output ~ 0
-G0_POS5
 Text GLabel 8500 2150 2    50   Output ~ 0
-G1_POS5
+B0_POS5
+Text GLabel 8500 2050 2    50   Output ~ 0
+R1_POS5
 Text GLabel 8500 1850 2    50   Output ~ 0
+B1_POS5
+Text GLabel 8500 2250 2    50   Output ~ 0
+G0_POS5
+Text GLabel 8500 1950 2    50   Output ~ 0
+G1_POS5
+Text GLabel 8500 2350 2    50   Output ~ 0
 R0_POS5
-Text GLabel 2060 2150 0    50   Input ~ 0
-G1_POS3P3
-Text GLabel 2060 2050 0    50   Input ~ 0
-G0_POS3P3
-Text GLabel 2060 2350 0    50   Input ~ 0
-B1_POS3P3
 Text GLabel 2060 1950 0    50   Input ~ 0
-R1_POS3P3
+G1_POS3P3
 Text GLabel 2060 2250 0    50   Input ~ 0
-B0_POS3P3
+G0_POS3P3
 Text GLabel 2060 1850 0    50   Input ~ 0
+B1_POS3P3
+Text GLabel 2060 2050 0    50   Input ~ 0
+R1_POS3P3
+Text GLabel 2060 2150 0    50   Input ~ 0
+B0_POS3P3
+Text GLabel 2060 2350 0    50   Input ~ 0
 R0_POS3P3
-Text GLabel 2060 4850 0    50   Input ~ 0
+Text GLabel 2060 4350 0    50   Input ~ 0
 Panel_LAT_POS3P3
-Text GLabel 2060 4750 0    50   Input ~ 0
-Panel_CLK_POS3P3
 Text GLabel 2060 4450 0    50   Input ~ 0
-Row_C_POS3P3
+Panel_CLK_POS3P3
 Text GLabel 2060 4650 0    50   Input ~ 0
+Row_C_POS3P3
+Text GLabel 2060 4950 0    50   Input ~ 0
 Row_E_POS3P3
 Text GLabel 2060 4550 0    50   Input ~ 0
 Row_D_POS3P3
-Text GLabel 2060 4350 0    50   Input ~ 0
+Text GLabel 2060 4750 0    50   Input ~ 0
 Row_B_POS3P3
-Text GLabel 2060 4250 0    50   Input ~ 0
+Text GLabel 2070 4850 0    50   Input ~ 0
 Row_A_POS3P3
 Text GLabel 2060 2750 0    40   Input ~ 0
 ~Panel_Level_Shift_Enable
@@ -1650,21 +1650,21 @@ NoConn ~ 5780 2550
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 60250A10
-P 7630 5380
+P 7630 4020
 AR Path="/5BAAE2B6/60250A10" Ref="R?"  Part="1" 
 AR Path="/5BB6CF6D/60250A10" Ref="R?"  Part="1" 
 AR Path="/5BBE424C/60250A10" Ref="R?"  Part="1" 
 AR Path="/5CB8A16A/60250A10" Ref="R?"  Part="1" 
 AR Path="/5F583BF6/60250A10" Ref="R3248"  Part="1" 
-F 0 "R3248" V 7530 5380 50  0000 C CNN
-F 1 "10K" V 7630 5380 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" H 7630 5380 50  0001 C CNN
-F 3 "" H 7630 5380 50  0001 C CNN
-F 4 "0402" H 7700 5470 50  0001 L CNN "display_footprint"
-F 5 "1%" H 7700 5380 50  0001 L CNN "Tolerance"
-F 6 "1/16W" H 7700 5300 50  0001 L CNN "Wattage"
-F 7 "RMCF0402FT10K0CT-ND" H 7930 5780 60  0001 C CNN "Digi-Key PN"
-	1    7630 5380
+F 0 "R3248" V 7530 4020 50  0000 C CNN
+F 1 "10K" V 7630 4020 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 7630 4020 50  0001 C CNN
+F 3 "" H 7630 4020 50  0001 C CNN
+F 4 "0402" H 7700 4110 50  0001 L CNN "display_footprint"
+F 5 "1%" H 7700 4020 50  0001 L CNN "Tolerance"
+F 6 "1/16W" H 7700 3940 50  0001 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 7930 4420 60  0001 C CNN "Digi-Key PN"
+	1    7630 4020
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1922,8 +1922,6 @@ F 7 "RMCF0402FT10R0CT-ND" H 8350 4750 50  0001 C CNN "Digi-Key PN"
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	8200 4250 7630 4250
-Wire Wire Line
 	8200 4350 7430 4350
 Wire Wire Line
 	8200 4450 7230 4450
@@ -1937,22 +1935,6 @@ Wire Wire Line
 	8200 4850 6430 4850
 Wire Wire Line
 	8200 4950 6230 4950
-$Comp
-L power:GND #PWR?
-U 1 1 60250FDA
-P 7630 5530
-AR Path="/5BAAE2B6/60250FDA" Ref="#PWR?"  Part="1" 
-AR Path="/5BB6CF6D/60250FDA" Ref="#PWR?"  Part="1" 
-AR Path="/5BBE424C/60250FDA" Ref="#PWR?"  Part="1" 
-AR Path="/5CB8A16A/60250FDA" Ref="#PWR?"  Part="1" 
-AR Path="/5F583BF6/60250FDA" Ref="#PWR03246"  Part="1" 
-F 0 "#PWR03246" H 7630 5280 50  0001 C CNN
-F 1 "GND" H 7630 5380 50  0000 C CNN
-F 2 "" H 7630 5530 50  0001 C CNN
-F 3 "" H 7630 5530 50  0001 C CNN
-	1    7630 5530
-	-1   0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 60250FE4
@@ -2065,11 +2047,6 @@ F 3 "" H 6230 5530 50  0001 C CNN
 	1    6230 5530
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	7630 5230 7630 4250
-Connection ~ 7630 4250
-Wire Wire Line
-	7630 4250 5780 4250
 Wire Wire Line
 	7430 5230 7430 4350
 Connection ~ 7430 4350
@@ -2195,7 +2172,7 @@ F 3 "" H 2630 6570 50  0001 C CNN
 $EndComp
 Text GLabel 2880 6670 2    40   Output ~ 0
 ~Panel_OE_DIM_POS3P3
-Text GLabel 2060 4950 0    40   Input ~ 0
+Text GLabel 2060 4250 0    40   Input ~ 0
 ~Panel_OE_DIM_POS3P3
 $Comp
 L Custom_Library:R_Custom R?
@@ -2320,6 +2297,24 @@ F 1 "+3.3V" H 2250 6380 50  0000 C CNN
 F 2 "" H 2250 6240 50  0001 C CNN
 F 3 "" H 2250 6240 50  0001 C CNN
 	1    2250 6240
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5780 4250 7630 4250
+Wire Wire Line
+	7630 4170 7630 4250
+Connection ~ 7630 4250
+Wire Wire Line
+	7630 4250 8200 4250
+$Comp
+L power:+5V #PWR0127
+U 1 1 6079F04B
+P 7630 3870
+F 0 "#PWR0127" H 7630 3720 50  0001 C CNN
+F 1 "+5V" H 7630 4010 50  0000 C CNN
+F 2 "" H 7630 3870 50  0001 C CNN
+F 3 "" H 7630 3870 50  0001 C CNN
+	1    7630 3870
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
