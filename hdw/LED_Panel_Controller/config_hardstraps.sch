@@ -536,198 +536,6 @@ $EndComp
 Text Notes 1360 5070 0    50   ~ 0
 Ambient Temp Sense
 $Comp
-L Connector_Generic:Conn_01x03 J1203
-U 1 1 6020946A
-P 6020 5020
-F 0 "J1203" H 6020 5220 50  0000 C CNN
-F 1 "I2C" H 6020 4820 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6020 5020 50  0001 C CNN
-F 3 "~" H 6020 5020 50  0001 C CNN
-F 4 "DNP" H 6020 5020 50  0001 C CNN "Configuration"
-	1    6020 5020
-	1    0    0    -1  
-$EndComp
-Text GLabel 5820 5020 0    50   UnSpc ~ 0
-I2C_SCL
-Text GLabel 5820 4920 0    50   UnSpc ~ 0
-I2C_SDA
-$Comp
-L power:GND #PWR01216
-U 1 1 6020BCBF
-P 5740 5200
-F 0 "#PWR01216" H 5740 4950 50  0001 C CNN
-F 1 "GND" H 5740 5050 50  0000 C CNN
-F 2 "" H 5740 5200 50  0001 C CNN
-F 3 "" H 5740 5200 50  0001 C CNN
-	1    5740 5200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5740 5200 5740 5120
-Wire Wire Line
-	5740 5120 5820 5120
-$Comp
-L Connector_Generic:Conn_01x04 J1204
-U 1 1 6020E176
-P 7020 5020
-F 0 "J1204" H 7020 5220 50  0000 C CNN
-F 1 "WIFI_SPI" H 7020 4720 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 7020 5020 50  0001 C CNN
-F 3 "~" H 7020 5020 50  0001 C CNN
-F 4 "DNP" H 7020 5020 50  0001 C CNN "Configuration"
-	1    7020 5020
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01219
-U 1 1 6020FEB9
-P 6740 5300
-F 0 "#PWR01219" H 6740 5050 50  0001 C CNN
-F 1 "GND" H 6740 5150 50  0000 C CNN
-F 2 "" H 6740 5300 50  0001 C CNN
-F 3 "" H 6740 5300 50  0001 C CNN
-	1    6740 5300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6740 5300 6740 5220
-Wire Wire Line
-	6740 5220 6820 5220
-Text GLabel 6820 4920 0    50   UnSpc ~ 0
-WIFI_SPI_SCK
-Text GLabel 6820 5020 0    50   UnSpc ~ 0
-WIFI_SPI_MOSI
-Text GLabel 6820 5120 0    50   UnSpc ~ 0
-WIFI_SPI_MISO
-Text GLabel 7820 5020 0    50   UnSpc ~ 0
-SD_SPI_MOSI
-Text GLabel 7820 4920 0    50   UnSpc ~ 0
-SD_SPI_SCK
-Text GLabel 7820 5120 0    50   UnSpc ~ 0
-SD_SPI_MISO
-$Comp
-L Connector_Generic:Conn_01x04 J1205
-U 1 1 602191CA
-P 8020 5020
-F 0 "J1205" H 8020 5220 50  0000 C CNN
-F 1 "SD_SPI" H 8020 4720 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8020 5020 50  0001 C CNN
-F 3 "~" H 8020 5020 50  0001 C CNN
-F 4 "DNP" H 8020 5020 50  0001 C CNN "Configuration"
-	1    8020 5020
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01222
-U 1 1 602193E6
-P 7740 5300
-F 0 "#PWR01222" H 7740 5050 50  0001 C CNN
-F 1 "GND" H 7740 5150 50  0000 C CNN
-F 2 "" H 7740 5300 50  0001 C CNN
-F 3 "" H 7740 5300 50  0001 C CNN
-	1    7740 5300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7740 5300 7740 5220
-Wire Wire Line
-	7740 5220 7820 5220
-$Comp
-L Connector_Generic:Conn_01x04 J1206
-U 1 1 6021A825
-P 9020 5020
-F 0 "J1206" H 9020 5220 50  0000 C CNN
-F 1 "FLASH_SPI" H 9020 4720 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 9020 5020 50  0001 C CNN
-F 3 "~" H 9020 5020 50  0001 C CNN
-F 4 "DNP" H 9020 5020 50  0001 C CNN "Configuration"
-	1    9020 5020
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01223
-U 1 1 6021A82F
-P 8740 5300
-F 0 "#PWR01223" H 8740 5050 50  0001 C CNN
-F 1 "GND" H 8740 5150 50  0000 C CNN
-F 2 "" H 8740 5300 50  0001 C CNN
-F 3 "" H 8740 5300 50  0001 C CNN
-	1    8740 5300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8740 5300 8740 5220
-Wire Wire Line
-	8740 5220 8820 5220
-Text GLabel 8820 4920 0    50   UnSpc ~ 0
-FLASH_SPI_SCK
-Text GLabel 8820 5020 0    50   UnSpc ~ 0
-FLASH_SPI_MOSI
-Text GLabel 8820 5120 0    50   UnSpc ~ 0
-FLASH_SPI_MISO
-$Comp
-L Connector_Generic:Conn_01x03 J1201
-U 1 1 60221638
-P 5020 5020
-F 0 "J1201" H 5020 5220 50  0000 C CNN
-F 1 "PIC_UART" H 5020 4820 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5020 5020 50  0001 C CNN
-F 3 "~" H 5020 5020 50  0001 C CNN
-F 4 "DNP" H 5020 5020 50  0001 C CNN "Configuration"
-	1    5020 5020
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01214
-U 1 1 602218A2
-P 4740 5200
-F 0 "#PWR01214" H 4740 4950 50  0001 C CNN
-F 1 "GND" H 4740 5050 50  0000 C CNN
-F 2 "" H 4740 5200 50  0001 C CNN
-F 3 "" H 4740 5200 50  0001 C CNN
-	1    4740 5200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4740 5200 4740 5120
-Wire Wire Line
-	4740 5120 4820 5120
-Text GLabel 4820 4920 0    50   UnSpc ~ 0
-PIC32MZ_UART_RX
-Text GLabel 4820 5020 0    50   UnSpc ~ 0
-PIC32MZ_UART_TX
-Text GLabel 4820 5670 0    50   UnSpc ~ 0
-WIFI_UART_RX
-Text GLabel 4820 5770 0    50   UnSpc ~ 0
-WIFI_UART_TX
-$Comp
-L Connector_Generic:Conn_01x03 J1202
-U 1 1 6022AEF7
-P 5020 5770
-F 0 "J1202" H 5020 5970 50  0000 C CNN
-F 1 "WIFI_UART" H 5020 5570 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5020 5770 50  0001 C CNN
-F 3 "~" H 5020 5770 50  0001 C CNN
-F 4 "DNP" H 5020 5770 50  0001 C CNN "Configuration"
-	1    5020 5770
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01215
-U 1 1 6022B183
-P 4740 5950
-F 0 "#PWR01215" H 4740 5700 50  0001 C CNN
-F 1 "GND" H 4740 5800 50  0000 C CNN
-F 2 "" H 4740 5950 50  0001 C CNN
-F 3 "" H 4740 5950 50  0001 C CNN
-	1    4740 5950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4740 5950 4740 5870
-Wire Wire Line
-	4740 5870 4820 5870
-$Comp
 L power:GND #PWR?
 U 1 1 60767862
 P 2920 6240
@@ -781,5 +589,197 @@ F 2 "" H 2920 6140 50  0001 C CNN
 F 3 "" H 2920 6140 50  0001 C CNN
 	1    2920 6140
 	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4740 5870 4820 5870
+Wire Wire Line
+	4740 5950 4740 5870
+$Comp
+L power:GND #PWR01215
+U 1 1 6022B183
+P 4740 5950
+F 0 "#PWR01215" H 4740 5700 50  0001 C CNN
+F 1 "GND" H 4740 5800 50  0000 C CNN
+F 2 "" H 4740 5950 50  0001 C CNN
+F 3 "" H 4740 5950 50  0001 C CNN
+	1    4740 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J1202
+U 1 1 6022AEF7
+P 5020 5770
+F 0 "J1202" H 5020 5970 50  0000 C CNN
+F 1 "WIFI_UART" H 5020 5570 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5020 5770 50  0001 C CNN
+F 3 "~" H 5020 5770 50  0001 C CNN
+F 4 "DNP" H 5020 5770 50  0001 C CNN "Configuration"
+	1    5020 5770
+	1    0    0    -1  
+$EndComp
+Text GLabel 4820 5770 0    50   UnSpc ~ 0
+WIFI_UART_TX
+Text GLabel 4820 5670 0    50   UnSpc ~ 0
+WIFI_UART_RX
+Text GLabel 4820 5020 0    50   UnSpc ~ 0
+PIC32MZ_UART_TX
+Text GLabel 4820 4920 0    50   UnSpc ~ 0
+PIC32MZ_UART_RX
+Wire Wire Line
+	4740 5120 4820 5120
+Wire Wire Line
+	4740 5200 4740 5120
+$Comp
+L power:GND #PWR01214
+U 1 1 602218A2
+P 4740 5200
+F 0 "#PWR01214" H 4740 4950 50  0001 C CNN
+F 1 "GND" H 4740 5050 50  0000 C CNN
+F 2 "" H 4740 5200 50  0001 C CNN
+F 3 "" H 4740 5200 50  0001 C CNN
+	1    4740 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J1201
+U 1 1 60221638
+P 5020 5020
+F 0 "J1201" H 5020 5220 50  0000 C CNN
+F 1 "PIC_UART" H 5020 4820 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5020 5020 50  0001 C CNN
+F 3 "~" H 5020 5020 50  0001 C CNN
+F 4 "DNP" H 5020 5020 50  0001 C CNN "Configuration"
+	1    5020 5020
+	1    0    0    -1  
+$EndComp
+Text GLabel 8820 5120 0    50   UnSpc ~ 0
+FLASH_SPI_MISO
+Text GLabel 8820 5020 0    50   UnSpc ~ 0
+FLASH_SPI_MOSI
+Text GLabel 8820 4920 0    50   UnSpc ~ 0
+FLASH_SPI_SCK
+Wire Wire Line
+	8740 5220 8820 5220
+Wire Wire Line
+	8740 5300 8740 5220
+$Comp
+L power:GND #PWR01223
+U 1 1 6021A82F
+P 8740 5300
+F 0 "#PWR01223" H 8740 5050 50  0001 C CNN
+F 1 "GND" H 8740 5150 50  0000 C CNN
+F 2 "" H 8740 5300 50  0001 C CNN
+F 3 "" H 8740 5300 50  0001 C CNN
+	1    8740 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J1206
+U 1 1 6021A825
+P 9020 5020
+F 0 "J1206" H 9020 5220 50  0000 C CNN
+F 1 "FLASH_SPI" H 9020 4720 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 9020 5020 50  0001 C CNN
+F 3 "~" H 9020 5020 50  0001 C CNN
+F 4 "DNP" H 9020 5020 50  0001 C CNN "Configuration"
+	1    9020 5020
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7740 5220 7820 5220
+Wire Wire Line
+	7740 5300 7740 5220
+$Comp
+L power:GND #PWR01222
+U 1 1 602193E6
+P 7740 5300
+F 0 "#PWR01222" H 7740 5050 50  0001 C CNN
+F 1 "GND" H 7740 5150 50  0000 C CNN
+F 2 "" H 7740 5300 50  0001 C CNN
+F 3 "" H 7740 5300 50  0001 C CNN
+	1    7740 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J1205
+U 1 1 602191CA
+P 8020 5020
+F 0 "J1205" H 8020 5220 50  0000 C CNN
+F 1 "SD_SPI" H 8020 4720 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8020 5020 50  0001 C CNN
+F 3 "~" H 8020 5020 50  0001 C CNN
+F 4 "DNP" H 8020 5020 50  0001 C CNN "Configuration"
+	1    8020 5020
+	1    0    0    -1  
+$EndComp
+Text GLabel 7820 5120 0    50   UnSpc ~ 0
+SD_SPI_MISO
+Text GLabel 7820 4920 0    50   UnSpc ~ 0
+SD_SPI_SCK
+Text GLabel 7820 5020 0    50   UnSpc ~ 0
+SD_SPI_MOSI
+Text GLabel 6820 5120 0    50   UnSpc ~ 0
+WIFI_SPI_MISO
+Text GLabel 6820 5020 0    50   UnSpc ~ 0
+WIFI_SPI_MOSI
+Text GLabel 6820 4920 0    50   UnSpc ~ 0
+WIFI_SPI_SCK
+Wire Wire Line
+	6740 5220 6820 5220
+Wire Wire Line
+	6740 5300 6740 5220
+$Comp
+L power:GND #PWR01219
+U 1 1 6020FEB9
+P 6740 5300
+F 0 "#PWR01219" H 6740 5050 50  0001 C CNN
+F 1 "GND" H 6740 5150 50  0000 C CNN
+F 2 "" H 6740 5300 50  0001 C CNN
+F 3 "" H 6740 5300 50  0001 C CNN
+	1    6740 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J1204
+U 1 1 6020E176
+P 7020 5020
+F 0 "J1204" H 7020 5220 50  0000 C CNN
+F 1 "WIFI_SPI" H 7020 4720 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 7020 5020 50  0001 C CNN
+F 3 "~" H 7020 5020 50  0001 C CNN
+F 4 "DNP" H 7020 5020 50  0001 C CNN "Configuration"
+	1    7020 5020
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5740 5120 5820 5120
+Wire Wire Line
+	5740 5200 5740 5120
+$Comp
+L power:GND #PWR01216
+U 1 1 6020BCBF
+P 5740 5200
+F 0 "#PWR01216" H 5740 4950 50  0001 C CNN
+F 1 "GND" H 5740 5050 50  0000 C CNN
+F 2 "" H 5740 5200 50  0001 C CNN
+F 3 "" H 5740 5200 50  0001 C CNN
+	1    5740 5200
+	1    0    0    -1  
+$EndComp
+Text GLabel 5820 4920 0    50   UnSpc ~ 0
+I2C_SDA
+Text GLabel 5820 5020 0    50   UnSpc ~ 0
+I2C_SCL
+$Comp
+L Connector_Generic:Conn_01x03 J1203
+U 1 1 6020946A
+P 6020 5020
+F 0 "J1203" H 6020 5220 50  0000 C CNN
+F 1 "I2C" H 6020 4820 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6020 5020 50  0001 C CNN
+F 3 "~" H 6020 5020 50  0001 C CNN
+F 4 "DNP" H 6020 5020 50  0001 C CNN "Configuration"
+	1    6020 5020
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

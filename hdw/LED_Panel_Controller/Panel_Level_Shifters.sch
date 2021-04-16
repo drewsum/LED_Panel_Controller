@@ -229,7 +229,7 @@ Text GLabel 2060 4550 0    50   Input ~ 0
 Row_D_POS3P3
 Text GLabel 2060 4750 0    50   Input ~ 0
 Row_B_POS3P3
-Text GLabel 2070 4850 0    50   Input ~ 0
+Text GLabel 2060 4850 0    50   Input ~ 0
 Row_A_POS3P3
 Text GLabel 2060 2750 0    40   Input ~ 0
 ~Panel_Level_Shift_Enable
