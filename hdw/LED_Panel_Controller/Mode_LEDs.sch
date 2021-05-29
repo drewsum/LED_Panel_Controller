@@ -618,7 +618,7 @@ F 4 "1727-1772-1-ND" H 2190 3460 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 Text GLabel 1560 3460 0    50   Input ~ 0
-WIFI_Stream_Mode_LED
+MLVDS_Stream_Mode_LED
 $Comp
 L Custom_Library:C_Custom C?
 U 1 1 6031133F

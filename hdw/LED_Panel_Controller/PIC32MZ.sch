@@ -145,22 +145,12 @@ Text GLabel 3020 4800 0    50   Input ~ 0
 PIC32MZ_POSC_EC
 Text GLabel 3020 5000 0    50   Input ~ 0
 PIC32MZ_SOSC_EC
-Text GLabel 7020 1700 2    40   Output ~ 0
-~WIFI_RESET
-Text GLabel 7020 1800 2    50   Output ~ 0
-WIFI_WAKE
-Text GLabel 7020 2200 2    50   Output ~ 0
-WIFI_CHIP_EN
 Text GLabel 7020 2000 2    50   Output ~ 0
 WIFI_SPI_SCK
-Text GLabel 7020 2300 2    40   Output ~ 0
-~WIFI_SPI_SS
 Text GLabel 7020 2100 2    50   Output ~ 0
 WIFI_SPI_MOSI
 Text GLabel 7020 2500 2    50   Input ~ 0
 WIFI_SPI_MISO
-Text GLabel 7020 2400 2    40   Input ~ 0
-~WIFI_IRQN
 $Comp
 L Custom_Library:GNDA_MZ #PWR01103
 U 1 1 5FFB96A6
@@ -440,7 +430,7 @@ Text GLabel 3020 1900 0    40   Output ~ 0
 Text GLabel 3020 2000 0    40   Output ~ 0
 ~FLASH_SPI_CE7
 Text GLabel 3020 3450 0    50   Output ~ 0
-WIFI_Stream_Mode_LED
+MLVDS_Stream_Mode_LED
 Text Notes 9720 1950 0    50   ~ 0
 OC5
 Text Notes 9720 3650 0    50   ~ 0

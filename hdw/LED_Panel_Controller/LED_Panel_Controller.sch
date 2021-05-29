@@ -112,8 +112,8 @@ $EndSheet
 $Sheet
 S 3750 6820 500  150 
 U 5F582E44
-F0 "WiFi Module" 50
-F1 "WiFi_Module.sch" 50
+F0 "MLVDS Port" 50
+F1 "MLVDS_Port.sch" 50
 $EndSheet
 $Sheet
 S 3750 7170 500  150 
@@ -166,7 +166,7 @@ Text Notes 1290 5920 0    100  ~ 20
 Text Notes 1290 6620 0    100  ~ 20
 17. SD Card Slot
 Text Notes 1290 6970 0    100  ~ 20
-18. WiFi Module
+18. MLVDS Port
 Text Notes 1290 7320 0    100  ~ 20
 19. PGOOD LEDs
 Text Notes 1290 7670 0    100  ~ 20

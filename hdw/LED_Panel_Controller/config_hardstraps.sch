@@ -590,37 +590,6 @@ F 3 "" H 2920 6140 50  0001 C CNN
 	1    2920 6140
 	0    1    -1   0   
 $EndComp
-Wire Wire Line
-	4740 5870 4820 5870
-Wire Wire Line
-	4740 5950 4740 5870
-$Comp
-L power:GND #PWR01215
-U 1 1 6022B183
-P 4740 5950
-F 0 "#PWR01215" H 4740 5700 50  0001 C CNN
-F 1 "GND" H 4740 5800 50  0000 C CNN
-F 2 "" H 4740 5950 50  0001 C CNN
-F 3 "" H 4740 5950 50  0001 C CNN
-	1    4740 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x03 J1202
-U 1 1 6022AEF7
-P 5020 5770
-F 0 "J1202" H 5020 5970 50  0000 C CNN
-F 1 "WIFI_UART" H 5020 5570 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5020 5770 50  0001 C CNN
-F 3 "~" H 5020 5770 50  0001 C CNN
-F 4 "DNP" H 5020 5770 50  0001 C CNN "Configuration"
-	1    5020 5770
-	1    0    0    -1  
-$EndComp
-Text GLabel 4820 5770 0    50   UnSpc ~ 0
-WIFI_UART_TX
-Text GLabel 4820 5670 0    50   UnSpc ~ 0
-WIFI_UART_RX
 Text GLabel 4820 5020 0    50   UnSpc ~ 0
 PIC32MZ_UART_TX
 Text GLabel 4820 4920 0    50   UnSpc ~ 0

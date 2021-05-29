@@ -1,0 +1,242 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 18 34
+Title "LED Panel Controller"
+Date "2021-03-31"
+Rev "A"
+Comp "Drew Maatman"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_02x10_Odd_Even J?
+U 1 1 60B77554
+P 7980 3830
+F 0 "J?" H 8030 4330 50  0000 C CNN
+F 1 "Conn_02x10_Odd_Even" H 8030 3230 50  0000 C CNN
+F 2 "" H 7980 3830 50  0001 C CNN
+F 3 "~" H 7980 3830 50  0001 C CNN
+	1    7980 3830
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60B7B0C0
+P 7780 3430
+F 0 "#PWR?" H 7780 3180 50  0001 C CNN
+F 1 "GND" V 7780 3280 50  0000 R CNN
+F 2 "" H 7780 3430 50  0001 C CNN
+F 3 "" H 7780 3430 50  0001 C CNN
+	1    7780 3430
+	0    1    1    0   
+$EndComp
+Text GLabel 7780 3530 0    50   Output ~ 0
+MLVDS_SPI_MOSI-
+Text GLabel 8280 3430 2    50   Output ~ 0
+MLVDS_SPI_MOSI+
+$Comp
+L power:GND #PWR?
+U 1 1 60B7F3E6
+P 8280 3530
+F 0 "#PWR?" H 8280 3280 50  0001 C CNN
+F 1 "GND" V 8280 3380 50  0000 R CNN
+F 2 "" H 8280 3530 50  0001 C CNN
+F 3 "" H 8280 3530 50  0001 C CNN
+	1    8280 3530
+	0    -1   -1   0   
+$EndComp
+Text GLabel 7780 3630 0    50   Output ~ 0
+MLVDS_SPI_SCLK+
+Text GLabel 8280 3630 2    50   Output ~ 0
+MLVDS_SPI_SCLK-
+$Comp
+L power:GND #PWR?
+U 1 1 60B818D6
+P 7780 3730
+F 0 "#PWR?" H 7780 3480 50  0001 C CNN
+F 1 "GND" V 7780 3580 50  0000 R CNN
+F 2 "" H 7780 3730 50  0001 C CNN
+F 3 "" H 7780 3730 50  0001 C CNN
+	1    7780 3730
+	0    1    1    0   
+$EndComp
+Text GLabel 7780 4230 0    50   Output ~ 0
+RS485_UART_RX-
+Text GLabel 8280 4130 2    50   Output ~ 0
+RS485_UART_RX+
+Text GLabel 8280 4230 2    50   Input ~ 0
+RS485_UART_TX+
+Text GLabel 7780 4330 0    50   Input ~ 0
+RS485_UART_TX-
+Text GLabel 8280 4330 2    40   Output ~ 0
+~SYSTEM_SHDN
+$Comp
+L power:GND #PWR?
+U 1 1 60B967CF
+P 8280 4030
+F 0 "#PWR?" H 8280 3780 50  0001 C CNN
+F 1 "GND" V 8280 3880 50  0000 R CNN
+F 2 "" H 8280 4030 50  0001 C CNN
+F 3 "" H 8280 4030 50  0001 C CNN
+	1    8280 4030
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom_Library:THVD1552 U?
+U 1 1 60BA7D5E
+P 4040 5620
+F 0 "U?" H 3740 6270 50  0000 C CNN
+F 1 "THVD1552" H 3590 5070 50  0000 C CNN
+F 2 "Package_SO:VSSOP-10_3x3mm_P0.5mm" H 4040 4720 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/thvd1550.pdf?ts=1601515909374&ref_url=https%253A%252F%252Fwww.google.com%252F" H 3540 5720 50  0001 C CNN
+F 4 "296-51654-1-ND" H 4040 5620 50  0001 C CNN "Digi-Key PN"
+	1    4040 5620
+	1    0    0    -1  
+$EndComp
+Text GLabel 4440 5520 2    50   Input ~ 0
+RS485_UART_RX-
+Text GLabel 4440 5320 2    50   Input ~ 0
+RS485_UART_RX+
+Text GLabel 4440 5720 2    50   Output ~ 0
+RS485_UART_TX-
+Text GLabel 4440 5920 2    50   Output ~ 0
+RS485_UART_TX+
+$Comp
+L power:GND #PWR?
+U 1 1 60BAD3B3
+P 4040 6220
+F 0 "#PWR?" H 4040 5970 50  0001 C CNN
+F 1 "GND" H 4040 6070 50  0000 C CNN
+F 2 "" H 4040 6220 50  0001 C CNN
+F 3 "" H 4040 6220 50  0001 C CNN
+	1    4040 6220
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60BAFAA4
+P 4040 5020
+F 0 "#PWR?" H 4040 4870 50  0001 C CNN
+F 1 "+3.3V" H 4040 5160 50  0000 C CNN
+F 2 "" H 4040 5020 50  0001 C CNN
+F 3 "" H 4040 5020 50  0001 C CNN
+	1    4040 5020
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 60BB7B3B
+P 3720 6930
+F 0 "C?" H 3745 7030 50  0000 L CNN
+F 1 "0.1uF" H 3745 6830 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 3758 6780 50  0001 C CNN
+F 3 "" H 3745 7030 50  0001 C CNN
+F 4 "0402" H 3570 7030 50  0000 R CNN "display_footprint"
+F 5 "50V" H 3570 6930 50  0000 R CNN "Voltage"
+F 6 "X7R" H 3570 6830 50  0000 R CNN "Dielectric"
+F 7 "490-10701-1-ND" H -190 50  50  0001 C CNN "Digi-Key PN"
+	1    3720 6930
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3720 6740 3720 6780
+Wire Wire Line
+	3720 7120 3720 7080
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 60BB7B47
+P 4360 6930
+AR Path="/5CB7718D/60BB7B47" Ref="C?"  Part="1" 
+AR Path="/5E0DC082/60BB7B47" Ref="C?"  Part="1" 
+AR Path="/5E0F9110/60BB7B47" Ref="C?"  Part="1" 
+AR Path="/5A557C58/60BB7B47" Ref="C?"  Part="1" 
+AR Path="/5CB25152/60BB7B47" Ref="C?"  Part="1" 
+AR Path="/5E697934/60BB7B47" Ref="C?"  Part="1" 
+AR Path="/5EAE2F02/60BB7B47" Ref="C?"  Part="1" 
+AR Path="/5F5829B3/60BB7B47" Ref="C?"  Part="1" 
+F 0 "C?" H 4385 7030 50  0000 L CNN
+F 1 "10uF" H 4385 6830 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 4398 6780 50  0001 C CNN
+F 3 "" H 4385 7030 50  0001 C CNN
+F 4 "0402" H 4210 7030 50  0000 R CNN "display_footprint"
+F 5 "6.3V" H 4210 6930 50  0000 R CNN "Voltage"
+F 6 "X5R" H 4210 6830 50  0000 R CNN "Dielectric"
+F 7 "1276-1451-1-ND" H 4360 6930 50  0001 C CNN "Digi-Key PN"
+	1    4360 6930
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60BB7B4D
+P 4040 6700
+F 0 "#PWR?" H 4040 6550 50  0001 C CNN
+F 1 "+3.3V" H 4040 6840 50  0000 C CNN
+F 2 "" H 4040 6700 50  0001 C CNN
+F 3 "" H 4040 6700 50  0001 C CNN
+	1    4040 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4040 7120 4040 7160
+Wire Wire Line
+	4360 7120 4360 7080
+Wire Wire Line
+	4040 7120 4360 7120
+Wire Wire Line
+	3720 7120 4040 7120
+Connection ~ 4040 7120
+Wire Wire Line
+	4040 6700 4040 6740
+Wire Wire Line
+	4360 6740 4360 6780
+Wire Wire Line
+	4040 6740 4360 6740
+Wire Wire Line
+	3720 6740 4040 6740
+Connection ~ 4040 6740
+$Comp
+L power:GND #PWR?
+U 1 1 60BB7B5D
+P 4040 7160
+F 0 "#PWR?" H 4040 6910 50  0001 C CNN
+F 1 "GND" H 4040 7010 50  0000 C CNN
+F 2 "" H 4040 7160 50  0000 C CNN
+F 3 "" H 4040 7160 50  0000 C CNN
+	1    4040 7160
+	1    0    0    -1  
+$EndComp
+Text GLabel 2630 5420 0    50   Output ~ 0
+RS485_UART_RX
+Text GLabel 2630 5820 0    50   Input ~ 0
+RS485_UART_TX
+Text GLabel 7780 4130 0    40   Output ~ 0
+SYSTEM_SPI_~UART
+Text GLabel 8280 3730 2    40   Output ~ 0
+~SYSTEM_SS0
+Text GLabel 8280 3830 2    40   Output ~ 0
+~SYSTEM_SS2
+Text GLabel 8280 3930 2    40   Output ~ 0
+~SYSTEM_SS4
+Text GLabel 7780 3830 0    40   Output ~ 0
+~SYSTEM_SS1
+Text GLabel 7780 3930 0    40   Output ~ 0
+~SYSTEM_SS3
+$Comp
+L power:GND #PWR?
+U 1 1 60BCF892
+P 7780 4030
+F 0 "#PWR?" H 7780 3780 50  0001 C CNN
+F 1 "GND" V 7780 3880 50  0000 R CNN
+F 2 "" H 7780 4030 50  0001 C CNN
+F 3 "" H 7780 4030 50  0001 C CNN
+	1    7780 4030
+	0    1    1    0   
+$EndComp
+Text GLabel 2630 5520 0    40   Input ~ 0
+SYSTEM_SPI_~UART
+$EndSCHEMATC
