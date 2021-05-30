@@ -4,10 +4,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 15 34
-Title "Pulse Oximeter"
-Date "2020-12-31"
-Rev "B"
-Comp "Drew Maatman, Nick Mussoline"
+Title "LED Panel Controller"
+Date "2021-05-30"
+Rev "A"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -1327,10 +1327,6 @@ F 3 "" H 9490 1520 50  0001 C CNN
 	1    9490 1520
 	0    -1   -1   0   
 $EndComp
-Text GLabel 9490 1420 0    50   Output ~ 0
-USB_UART_RX_BUF
-Text GLabel 9490 1320 0    50   Input ~ 0
-USB_UART_TX_BUF
 NoConn ~ 9490 1220
 $Comp
 L Custom_Library:C_Custom C1511
@@ -1418,4 +1414,8 @@ Text GLabel 1400 1440 0    50   Input ~ 0
 PIC32MZ_UART_TX
 Text GLabel 1400 1240 0    50   Output ~ 0
 PIC32MZ_UART_RX
+Text GLabel 9490 1320 0    50   Input ~ 0
+PIC32MZ_UART_TX_BUF
+Text GLabel 9490 1420 0    50   Output ~ 0
+PIC32MZ_UART_RX_BUF
 $EndSCHEMATC

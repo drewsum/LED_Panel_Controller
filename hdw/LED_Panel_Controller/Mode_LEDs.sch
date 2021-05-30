@@ -5,7 +5,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 23 34
 Title "LED Panel Controller"
-Date "2021-03-31"
+Date "2021-05-30"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -438,6 +438,7 @@ F 4 "490-10701-1-ND" H 2505 3270 60  0001 C CNN "Digi-Key PN"
 F 5 "0402" H 1930 2870 50  0000 R CNN "display_footprint"
 F 6 "50V" H 1930 2770 50  0000 R CNN "Voltage"
 F 7 "X7R" H 1930 2670 50  0000 R CNN "Dielectric"
+F 8 "Multidrop" H 2370 2770 50  0000 C CNN "Configuration"
 	1    2080 2770
 	-1   0    0    -1  
 $EndComp
@@ -459,6 +460,7 @@ F 1 "Green" V 2708 3073 50  0000 R CNN
 F 2 "LEDs:LED_0402" H 2760 3190 50  0001 C CNN
 F 3 "~" H 2760 3190 50  0001 C CNN
 F 4 "1497-1219-1-ND" H -2400 -3130 50  0001 C CNN "Digi-Key PN"
+F 5 "Multidrop" V 2620 2890 50  0000 C CNN "Configuration"
 	1    2760 3190
 	0    -1   -1   0   
 $EndComp
@@ -489,6 +491,7 @@ F 4 "0402" H 2830 2970 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2830 2890 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 2830 2820 50  0000 L CNN "Wattage"
 F 7 "RMCF0402FT1K00CT-ND" H 3060 3290 60  0001 C CNN "Digi-Key PN"
+F 8 "Multidrop" H 2520 2810 50  0000 C CNN "Configuration"
 	1    2760 2890
 	-1   0    0    -1  
 $EndComp
@@ -614,6 +617,7 @@ F 1 "74LVC1G97" H 2250 3310 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2240 3460 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2240 3460 50  0001 C CNN
 F 4 "1727-1772-1-ND" H 2190 3460 50  0001 C CNN "Digi-Key PN"
+F 5 "Multidrop" H 2190 3100 50  0000 C CNN "Configuration"
 	1    2190 3460
 	1    0    0    -1  
 $EndComp

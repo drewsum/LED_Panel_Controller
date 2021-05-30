@@ -5,7 +5,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 12 34
 Title "LED Panel Controller"
-Date "2021-03-31"
+Date "2021-05-30"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -199,7 +199,7 @@ F 3 "" H 6000 2690 50  0001 C CNN
 F 4 "0402" H 6100 2760 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6100 2660 50  0000 L CNN "Tolerance"
 F 6 "1/16W" H 6100 2560 50  0000 L CNN "Wattage"
-F 7 "WIFI" H 5840 2600 50  0000 C CNN "Configuration"
+F 7 "Multidrop" H 5730 2600 50  0000 C CNN "Configuration"
 F 8 "RMCF0402FT10R0CT-ND" H 6000 2690 50  0001 C CNN "Digi-Key PN"
 	1    6000 2690
 	-1   0    0    -1  
@@ -229,7 +229,7 @@ $EndComp
 Wire Wire Line
 	6000 2540 6000 2460
 Text GLabel 6080 2460 2    50   Output ~ 0
-~WIFI_Config
+~MLVDS_Config
 Wire Wire Line
 	6080 2460 6000 2460
 Connection ~ 6000 2460
@@ -687,12 +687,6 @@ Text GLabel 7820 4920 0    50   UnSpc ~ 0
 SD_SPI_SCK
 Text GLabel 7820 5020 0    50   UnSpc ~ 0
 SD_SPI_MOSI
-Text GLabel 6820 5120 0    50   UnSpc ~ 0
-WIFI_SPI_MISO
-Text GLabel 6820 5020 0    50   UnSpc ~ 0
-WIFI_SPI_MOSI
-Text GLabel 6820 4920 0    50   UnSpc ~ 0
-WIFI_SPI_SCK
 Wire Wire Line
 	6740 5220 6820 5220
 Wire Wire Line
@@ -751,4 +745,10 @@ F 4 "DNP" H 6020 5020 50  0001 C CNN "Configuration"
 	1    6020 5020
 	1    0    0    -1  
 $EndComp
+Text GLabel 6820 4920 0    50   UnSpc ~ 0
+MLVDS_SPI_SCK
+Text GLabel 6820 5020 0    50   UnSpc ~ 0
+MLVDS_SPI_MOSI
+Text GLabel 6820 5120 0    40   UnSpc ~ 0
+~MODULE_RE
 $EndSCHEMATC
