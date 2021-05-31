@@ -66,11 +66,7 @@ F 3 "" H 8240 4590 50  0001 C CNN
 	1    8240 4590
 	0    1    1    0   
 $EndComp
-Text GLabel 8740 4990 2    50   Output ~ 0
-RS422_UART_RX-
-Text GLabel 8240 4990 0    50   Output ~ 0
-RS422_UART_RX+
-Text GLabel 8740 5090 2    50   Input ~ 0
+Text GLabel 8240 4990 0    50   Input ~ 0
 RS422_UART_TX+
 $Comp
 L power:GND #PWR01834
@@ -1246,7 +1242,7 @@ F 3 "" H 3350 5640 50  0001 C CNN
 	1    3350 5640
 	1    0    0    -1  
 $EndComp
-Text GLabel 8240 5190 0    50   Input ~ 0
+Text GLabel 8740 4990 2    50   Input ~ 0
 RS422_UART_TX-
 $Comp
 L power:GND #PWR01835
@@ -1393,4 +1389,8 @@ Wire Wire Line
 Connection ~ 7410 1390
 Wire Wire Line
 	7410 1390 7330 1390
+Text GLabel 8740 5090 2    50   Output ~ 0
+RS422_UART_RX+
+Text GLabel 8240 5190 0    50   Output ~ 0
+RS422_UART_RX-
 $EndSCHEMATC
