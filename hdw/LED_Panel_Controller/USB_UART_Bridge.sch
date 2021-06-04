@@ -1288,134 +1288,16 @@ Wire Wire Line
 	6610 4700 8140 4700
 Wire Wire Line
 	6950 3470 6950 4500
-$Comp
-L Connector_Generic:Conn_01x06 J1502
-U 1 1 5FEF27B0
-P 9690 1420
-F 0 "J1502" H 9800 1490 50  0000 L CNN
-F 1 "OSEPP_FTDI_01" H 9800 1390 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9690 1420 50  0001 C CNN
-F 3 "~" H 9690 1420 50  0001 C CNN
-F 4 "~USB" H 9800 1290 50  0000 L CNN "Configuration"
-	1    9690 1420
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01541
-U 1 1 5FF04965
-P 9410 1800
-F 0 "#PWR01541" H 9410 1550 50  0001 C CNN
-F 1 "GND" H 9410 1650 50  0000 C CNN
-F 2 "" H 9410 1800 50  0001 C CNN
-F 3 "" H 9410 1800 50  0001 C CNN
-	1    9410 1800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9410 1800 9410 1720
-Wire Wire Line
-	9410 1720 9490 1720
-NoConn ~ 9490 1620
-$Comp
-L Custom_Library:+3.3V_USB #PWR01542
-U 1 1 5FF0AAFA
-P 9490 1520
-F 0 "#PWR01542" H 9490 1370 50  0001 C CNN
-F 1 "+3.3V_USB" V 9490 1660 50  0000 L CNN
-F 2 "" H 9490 1520 50  0001 C CNN
-F 3 "" H 9490 1520 50  0001 C CNN
-	1    9490 1520
-	0    -1   -1   0   
-$EndComp
-NoConn ~ 9490 1220
-$Comp
-L Custom_Library:C_Custom C1511
-U 1 1 5FF1CC79
-P 8340 1560
-F 0 "C1511" H 8365 1660 50  0000 L CNN
-F 1 "0.1uF" H 8365 1460 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0402" H 8378 1410 50  0001 C CNN
-F 3 "" H 8365 1660 50  0001 C CNN
-F 4 "0402" H 8190 1660 50  0000 R CNN "display_footprint"
-F 5 "25V" H 8190 1560 50  0000 R CNN "Voltage"
-F 6 "X7R" H 8190 1460 50  0000 R CNN "Dielectric"
-F 7 "490-10698-1-ND" H 8340 1560 50  0001 C CNN "Digi-Key PN"
-	1    8340 1560
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01538
-U 1 1 5FF1D1ED
-P 8340 1710
-F 0 "#PWR01538" H 8340 1460 50  0001 C CNN
-F 1 "GND" H 8340 1560 50  0000 C CNN
-F 2 "" H 8340 1710 50  0001 C CNN
-F 3 "" H 8340 1710 50  0001 C CNN
-	1    8340 1710
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:+3.3V_USB #PWR01537
-U 1 1 5FF1D1F7
-P 8340 1410
-F 0 "#PWR01537" H 8340 1260 50  0001 C CNN
-F 1 "+3.3V_USB" H 8340 1550 50  0000 C CNN
-F 2 "" H 8340 1410 50  0001 C CNN
-F 3 "" H 8340 1410 50  0001 C CNN
-	1    8340 1410
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	6300 470  6300 2360
 Wire Notes Line
 	6300 2360 470  2360
 Text Notes 630  2250 0    50   ~ 0
 Note: All components within box appear on all configurations
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5FF25591
-P 8470 800
-AR Path="/5EAE2EF2/5FF25591" Ref="R?"  Part="1" 
-AR Path="/5EAE30C7/5FF25591" Ref="R?"  Part="1" 
-AR Path="/5EAE2D8A/5FF25591" Ref="R?"  Part="1" 
-AR Path="/5EAE2D66/5FF25591" Ref="R?"  Part="1" 
-AR Path="/5EAE2F97/5FF25591" Ref="R1218"  Part="1" 
-AR Path="/5F582AA0/5FF25591" Ref="R1518"  Part="1" 
-F 0 "R1518" V 8370 800 50  0000 C CNN
-F 1 "0" V 8470 800 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" H 8470 800 50  0001 C CNN
-F 3 "" H 8470 800 50  0001 C CNN
-F 4 "0402" V 8570 800 50  0001 C CNN "display_footprint"
-F 5 "1%" V 8670 800 50  0001 C CNN "Tolerance"
-F 6 "1/16W" V 8770 800 50  0001 C CNN "Wattage"
-F 7 "~USB" V 8570 800 50  0000 C CNN "Configuration"
-F 8 "2019-RK73Z1ETTPCT-ND" H 8470 800 50  0001 C CNN "Digi-Key PN"
-	1    8470 800 
-	0    -1   1    0   
-$EndComp
-$Comp
-L Custom_Library:+3.3V_USB #PWR01540
-U 1 1 5FF25AF5
-P 8620 800
-F 0 "#PWR01540" H 8620 650 50  0001 C CNN
-F 1 "+3.3V_USB" V 8620 940 50  0000 L CNN
-F 2 "" H 8620 800 50  0001 C CNN
-F 3 "" H 8620 800 50  0001 C CNN
-	1    8620 800 
-	0    1    1    0   
-$EndComp
-Text Notes 7350 2630 0    50   ~ 0
-Note: Plugging in an OSEPP FTDI_01 module\non non-USB configs will drive +3.3V onto \n+3.3V_USB net, and force POS5_USB_PGOOD\nhigh in order to enable UART buffer. Module\nVCCIO must be set to +3.3V. This allows a serial\nconnection without any USB components placed\nin the design.
-Text GLabel 8320 800  0    50   Output ~ 0
-POS5_USB_PGOOD
 Text GLabel 3720 6640 2    50   Output ~ 0
 POS5_USB_PGOOD
 Text GLabel 1400 1440 0    50   Input ~ 0
 PIC32MZ_UART_TX
 Text GLabel 1400 1240 0    50   Output ~ 0
 PIC32MZ_UART_RX
-Text GLabel 9490 1320 0    50   Input ~ 0
-PIC32MZ_UART_TX_BUF
-Text GLabel 9490 1420 0    50   Output ~ 0
-PIC32MZ_UART_RX_BUF
 $EndSCHEMATC
