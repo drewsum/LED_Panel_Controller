@@ -1,4 +1,4 @@
-update=5/4/2021 8:08:00 PM
+update=6/4/2021 9:58:47 PM
 version=1
 last_client=kicad
 [general]
@@ -42,7 +42,7 @@ TrackWidth1=0.254
 ViaDiameter1=0.4318
 ViaDrill1=0.2
 dPairWidth1=0.254
-dPairGap1=0.127
+dPairGap1=0.508
 dPairViaGap1=0.25
 SilkLineWidth=0.15
 SilkTextSizeV=1
@@ -244,7 +244,7 @@ ViaDrill=0.2
 uViaDiameter=0.3
 uViaDrill=0.1
 dPairWidth=0.254
-dPairGap=0.127
+dPairGap=0.508
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Power
@@ -254,8 +254,8 @@ ViaDiameter=0.4318
 ViaDrill=0.2
 uViaDiameter=0.3
 uViaDrill=0.1
-dPairWidth=0.2
-dPairGap=0.25
+dPairWidth=0.254
+dPairGap=0.508
 dPairViaGap=0.25
 [pcbnew/Netclasses/2]
 Name=Signal
@@ -266,5 +266,5 @@ ViaDrill=0.2
 uViaDiameter=0.3
 uViaDrill=0.1
 dPairWidth=0.254
-dPairGap=0.127
+dPairGap=0.508
 dPairViaGap=0.25
