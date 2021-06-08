@@ -22,6 +22,7 @@ F 1 "Multidrop Expansion" H 8490 4090 50  0000 C CNN
 F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 8440 4690 50  0001 C CNN
 F 3 "~" H 8440 4690 50  0001 C CNN
 F 4 "Multidrop" H 8510 4000 50  0000 C CNN "Configuration"
+F 5 "732-2096-ND" H 8440 4690 50  0001 C CNN "Digi-Key PN"
 	1    8440 4690
 	1    0    0    -1  
 $EndComp
@@ -513,6 +514,7 @@ F 1 "74LVC1G97" H 3970 4980 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3960 5130 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 3960 5130 50  0001 C CNN
 F 4 "Multidrop" H 4200 4900 50  0000 C CNN "Configuration"
+F 5 "1727-1772-1-ND" H 3910 5130 50  0001 C CNN "Digi-Key PN"
 	1    3910 5130
 	1    0    0    -1  
 $EndComp
@@ -714,6 +716,7 @@ F 4 "0402" V 4720 6760 50  0001 C CNN "display_footprint"
 F 5 "1%" V 4820 6760 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 4920 6760 50  0001 C CNN "Wattage"
 F 7 "Term" V 4460 6850 50  0000 R CNN "Configuration"
+F 8 "RMCF0402FT120RCT-ND" H 4620 6760 50  0001 C CNN "Digi-Key PN"
 	1    4620 6760
 	0    1    1    0   
 $EndComp
@@ -749,6 +752,7 @@ F 4 "0402" V 4720 6360 50  0001 C CNN "display_footprint"
 F 5 "1%" V 4820 6360 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 4920 6360 50  0001 C CNN "Wattage"
 F 7 "Term" V 4460 6450 50  0000 R CNN "Configuration"
+F 8 "RMCF0402FT120RCT-ND" H 4620 6360 50  0001 C CNN "Digi-Key PN"
 	1    4620 6360
 	0    1    1    0   
 $EndComp
@@ -784,6 +788,7 @@ F 4 "0402" V 4720 1300 50  0001 C CNN "display_footprint"
 F 5 "1%" V 4820 1300 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 4920 1300 50  0001 C CNN "Wattage"
 F 7 "Term" V 4460 1390 50  0000 R CNN "Configuration"
+F 8 "RMCF0402FT120RCT-ND" H 4620 1300 50  0001 C CNN "Digi-Key PN"
 	1    4620 1300
 	0    1    1    0   
 $EndComp
@@ -819,6 +824,7 @@ F 4 "0402" V 4720 2910 50  0001 C CNN "display_footprint"
 F 5 "1%" V 4820 2910 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 4920 2910 50  0001 C CNN "Wattage"
 F 7 "Term" V 4460 3000 50  0000 R CNN "Configuration"
+F 8 "RMCF0402FT120RCT-ND" H 4620 2910 50  0001 C CNN "Digi-Key PN"
 	1    4620 2910
 	0    1    1    0   
 $EndComp
@@ -953,6 +959,7 @@ F 1 "74LVC1G97" H 3970 4340 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3960 4490 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 3960 4490 50  0001 C CNN
 F 4 "Multidrop" H 4190 4260 50  0000 C CNN "Configuration"
+F 5 "1727-1772-1-ND" H 3910 4490 50  0001 C CNN "Digi-Key PN"
 	1    3910 4490
 	1    0    0    -1  
 $EndComp

@@ -493,6 +493,7 @@ F 0 "U1102" H 2480 7540 50  0000 L CNN
 F 1 "74LVC1G97" H 2480 7240 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2470 7390 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 2470 7390 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 2420 7390 50  0001 C CNN "Digi-Key PN"
 	1    2420 7390
 	-1   0    0    -1  
 $EndComp
