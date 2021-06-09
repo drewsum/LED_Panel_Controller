@@ -529,7 +529,7 @@ F 4 "0402" H 2370 7150 50  0000 R CNN "display_footprint"
 F 5 "50V" H 2370 7050 50  0000 R CNN "Voltage"
 F 6 "X7R" H 2370 6950 50  0000 R CNN "Dielectric"
 F 7 "Telemetry" H 2370 7240 50  0000 R CNN "Configuration"
-F 8 "490-10701-1-ND" H 2520 7090 50  0001 C CNN "Digi-Key PN"
+F 8 "490-10698-1-ND" H 2520 7090 50  0001 C CNN "Digi-Key PN"
 	1    2520 7090
 	1    0    0    -1  
 $EndComp

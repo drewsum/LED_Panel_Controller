@@ -134,7 +134,7 @@ F 3 "" H 1655 7550 50  0001 C CNN
 F 4 "0402" H 1480 7550 50  0000 R CNN "display_footprint"
 F 5 "50V" H 1480 7450 50  0000 R CNN "Voltage"
 F 6 "X7R" H 1480 7350 50  0000 R CNN "Dielectric"
-F 7 "490-10701-1-ND" H -2280 570 50  0001 C CNN "Digi-Key PN"
+F 7 "490-10698-1-ND" H -2280 570 50  0001 C CNN "Digi-Key PN"
 F 8 "Multidrop" H 1120 7450 50  0000 C CNN "Configuration"
 	1    1630 7450
 	1    0    0    -1  
@@ -988,7 +988,7 @@ F 3 "" H 4535 2210 50  0001 C CNN
 F 4 "0402" H 4360 2210 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4360 2110 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4360 2010 50  0000 R CNN "Dielectric"
-F 7 "490-10701-1-ND" H 600 -4770 50  0001 C CNN "Digi-Key PN"
+F 7 "490-10698-1-ND" H 600 -4770 50  0001 C CNN "Digi-Key PN"
 	1    4510 2110
 	1    0    0    -1  
 $EndComp
@@ -1071,7 +1071,7 @@ F 3 "" H 4535 3830 50  0001 C CNN
 F 4 "0402" H 4360 3830 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4360 3730 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4360 3630 50  0000 R CNN "Dielectric"
-F 7 "490-10701-1-ND" H 600 -3150 50  0001 C CNN "Digi-Key PN"
+F 7 "490-10698-1-ND" H 600 -3150 50  0001 C CNN "Digi-Key PN"
 	1    4510 3730
 	1    0    0    -1  
 $EndComp
@@ -1222,7 +1222,7 @@ F 3 "" H 3375 5590 50  0001 C CNN
 F 4 "0402" H 3200 5590 50  0000 R CNN "display_footprint"
 F 5 "50V" H 3200 5490 50  0000 R CNN "Voltage"
 F 6 "X7R" H 3200 5390 50  0000 R CNN "Dielectric"
-F 7 "490-10701-1-ND" H -560 -1390 50  0001 C CNN "Digi-Key PN"
+F 7 "490-10698-1-ND" H -560 -1390 50  0001 C CNN "Digi-Key PN"
 F 8 "Multidrop" H 3640 5490 50  0000 C CNN "Configuration"
 	1    3350 5490
 	1    0    0    -1  
@@ -1309,7 +1309,7 @@ F 3 "" H 3375 4220 50  0001 C CNN
 F 4 "0402" H 3200 4220 50  0000 R CNN "display_footprint"
 F 5 "50V" H 3200 4120 50  0000 R CNN "Voltage"
 F 6 "X7R" H 3200 4020 50  0000 R CNN "Dielectric"
-F 7 "490-10701-1-ND" H -560 -2760 50  0001 C CNN "Digi-Key PN"
+F 7 "490-10698-1-ND" H -560 -2760 50  0001 C CNN "Digi-Key PN"
 F 8 "Multidrop" H 3640 4120 50  0000 C CNN "Configuration"
 	1    3350 4120
 	1    0    0    -1  

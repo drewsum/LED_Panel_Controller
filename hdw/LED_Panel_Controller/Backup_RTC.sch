@@ -352,7 +352,7 @@ F 4 "0402" H 3150 4950 50  0000 R CNN "display_footprint"
 F 5 "50V" H 3150 4850 50  0000 R CNN "Voltage"
 F 6 "X7R" H 3150 4750 50  0000 R CNN "Dielectric"
 F 7 "BACKUP_RTC" H 3680 4850 50  0000 C CNN "Configuration"
-F 8 "490-10701-1-ND" H 3300 4850 50  0001 C CNN "Digi-Key PN"
+F 8 "490-10698-1-ND" H 3300 4850 50  0001 C CNN "Digi-Key PN"
 	1    3300 4850
 	-1   0    0    -1  
 $EndComp
@@ -501,7 +501,7 @@ F 4 "0402" H 5840 6060 50  0000 R CNN "display_footprint"
 F 5 "50V" H 5840 5960 50  0000 R CNN "Voltage"
 F 6 "X7R" H 5840 5860 50  0000 R CNN "Dielectric"
 F 7 "BACKUP_RTC" H 6370 5960 50  0000 C CNN "Configuration"
-F 8 "490-10701-1-ND" H 5990 5960 50  0001 C CNN "Digi-Key PN"
+F 8 "490-10698-1-ND" H 5990 5960 50  0001 C CNN "Digi-Key PN"
 	1    5990 5960
 	-1   0    0    -1  
 $EndComp
@@ -517,7 +517,7 @@ F 4 "0402" H 5700 3290 50  0000 R CNN "display_footprint"
 F 5 "50V" H 5700 3190 50  0000 R CNN "Voltage"
 F 6 "X7R" H 5700 3090 50  0000 R CNN "Dielectric"
 F 7 "BACKUP_RTC" H 6230 3190 50  0000 C CNN "Configuration"
-F 8 "490-10701-1-ND" H 5850 3190 50  0001 C CNN "Digi-Key PN"
+F 8 "490-10698-1-ND" H 5850 3190 50  0001 C CNN "Digi-Key PN"
 	1    5850 3190
 	-1   0    0    -1  
 $EndComp
@@ -533,7 +533,7 @@ F 4 "0402" H 4590 3290 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4590 3190 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4590 3090 50  0000 R CNN "Dielectric"
 F 7 "BACKUP_RTC" H 5120 3190 50  0000 C CNN "Configuration"
-F 8 "490-10701-1-ND" H 4740 3190 50  0001 C CNN "Digi-Key PN"
+F 8 "490-10698-1-ND" H 4740 3190 50  0001 C CNN "Digi-Key PN"
 	1    4740 3190
 	-1   0    0    -1  
 $EndComp

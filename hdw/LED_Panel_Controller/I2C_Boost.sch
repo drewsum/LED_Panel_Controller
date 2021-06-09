@@ -95,7 +95,7 @@ F 3 "" H 4365 3880 50  0001 C CNN
 F 4 "0402" H 4190 3880 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4190 3780 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4190 3680 50  0000 R CNN "Dielectric"
-F 7 "490-10701-1-ND" H 4765 4280 60  0001 C CNN "Digi-Key PN"
+F 7 "490-10698-1-ND" H 4765 4280 60  0001 C CNN "Digi-Key PN"
 F 8 "DNP" H 4110 3970 50  0000 C CNN "Configuration"
 	1    4340 3780
 	1    0    0    -1  
@@ -186,7 +186,7 @@ F 3 "" H 4365 5520 50  0001 C CNN
 F 4 "0402" H 4190 5520 50  0000 R CNN "display_footprint"
 F 5 "50V" H 4190 5420 50  0000 R CNN "Voltage"
 F 6 "X7R" H 4190 5320 50  0000 R CNN "Dielectric"
-F 7 "490-10701-1-ND" H 4765 5920 60  0001 C CNN "Digi-Key PN"
+F 7 "490-10698-1-ND" H 4765 5920 60  0001 C CNN "Digi-Key PN"
 F 8 "" H 4110 5610 50  0001 C CNN "Configuration"
 	1    4340 5420
 	1    0    0    -1  
