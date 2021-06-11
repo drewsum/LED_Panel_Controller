@@ -1,0 +1,222 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 13 34
+Title "LED Panel Controller"
+Date "2021-05-30"
+Rev "A"
+Comp "Drew Maatman"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Custom_Library:LTC1694 U1301
+U 1 1 5F6A42D0
+P 5300 3760
+F 0 "U1301" H 5300 3410 60  0000 C CNN
+F 1 "LTC1694" H 5300 4110 60  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5200 4060 60  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/1694fa.pdf" H 5200 4060 60  0001 C CNN
+F 4 "LTC1694CS5#TRPBFCT-ND" H 5400 3510 60  0001 C CNN "Digi-Key PN"
+F 5 "DNP" H 5300 3300 50  0000 C CNN "Configuration"
+	1    5300 3760
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR01305
+U 1 1 5F6A5589
+P 4820 3480
+F 0 "#PWR01305" H 4820 3330 50  0001 C CNN
+F 1 "+3.3V" H 4820 3620 50  0000 C CNN
+F 2 "" H 4820 3480 50  0001 C CNN
+F 3 "" H 4820 3480 50  0001 C CNN
+	1    4820 3480
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4820 3480 4820 3560
+Wire Wire Line
+	4820 3560 4900 3560
+$Comp
+L power:GND #PWR01306
+U 1 1 5F6A5AAB
+P 4820 4040
+F 0 "#PWR01306" H 4820 3790 50  0001 C CNN
+F 1 "GND" H 4820 3890 50  0000 C CNN
+F 2 "" H 4820 4040 50  0001 C CNN
+F 3 "" H 4820 4040 50  0001 C CNN
+	1    4820 4040
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4820 4040 4820 3960
+Wire Wire Line
+	4820 3960 4900 3960
+$Comp
+L power:GND #PWR01302
+U 1 1 5F6A9D7C
+P 4340 3930
+F 0 "#PWR01302" H 4340 3680 50  0001 C CNN
+F 1 "GND" H 4340 3780 50  0000 C CNN
+F 2 "" H 4340 3930 50  0001 C CNN
+F 3 "" H 4340 3930 50  0001 C CNN
+	1    4340 3930
+	1    0    0    -1  
+$EndComp
+Text GLabel 5700 3860 2    50   Input ~ 0
+I2C_SCL
+Text GLabel 5700 3960 2    50   BiDi ~ 0
+I2C_SDA
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5F6A9DE1
+P 4340 3780
+AR Path="/5BAAE16C/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5BB181D8/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5BB2595E/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5BAAE0FA/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5BB86F23/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5C1D5C9E/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5E939CFF/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5E9E0E87/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5EAE2D66/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5EAE3021/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5F582A92/5F6A9DE1" Ref="C?"  Part="1" 
+AR Path="/5F582A7C/5F6A9DE1" Ref="C1301"  Part="1" 
+F 0 "C1301" H 4365 3880 50  0000 L CNN
+F 1 "0.1uF" H 4365 3680 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 4378 3630 50  0001 C CNN
+F 3 "" H 4365 3880 50  0001 C CNN
+F 4 "0402" H 4190 3880 50  0000 R CNN "display_footprint"
+F 5 "50V" H 4190 3780 50  0000 R CNN "Voltage"
+F 6 "X7R" H 4190 3680 50  0000 R CNN "Dielectric"
+F 7 "490-10698-1-ND" H 4765 4280 60  0001 C CNN "Digi-Key PN"
+F 8 "DNP" H 4110 3970 50  0000 C CNN "Configuration"
+	1    4340 3780
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR01301
+U 1 1 5F6AB1EB
+P 4340 3630
+F 0 "#PWR01301" H 4340 3480 50  0001 C CNN
+F 1 "+3.3V" H 4340 3770 50  0000 C CNN
+F 2 "" H 4340 3630 50  0001 C CNN
+F 3 "" H 4340 3630 50  0001 C CNN
+	1    4340 3630
+	1    0    0    -1  
+$EndComp
+$Comp
+L Memory_EEPROM:AT24CS32-STUM U?
+U 1 1 601A8ABF
+P 5330 5380
+AR Path="/5F5829EF/601A8ABF" Ref="U?"  Part="1" 
+AR Path="/5F582A7C/601A8ABF" Ref="U1302"  Part="1" 
+F 0 "U1302" H 5030 5630 50  0000 C CNN
+F 1 "AT24CS32-STUM" H 5430 5130 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5330 5380 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8869-SEEPROM-AT24CS32-Datasheet.pdf" H 5330 5380 50  0001 C CNN
+F 4 "AT24CS32-STUM-T" H 5330 5380 50  0001 C CNN "Digi-Key PN"
+	1    5330 5380
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 601A8AC5
+P 5330 5680
+AR Path="/5F5829EF/601A8AC5" Ref="#PWR?"  Part="1" 
+AR Path="/5F582A7C/601A8AC5" Ref="#PWR01308"  Part="1" 
+F 0 "#PWR01308" H 5330 5430 50  0001 C CNN
+F 1 "GND" H 5330 5530 50  0000 C CNN
+F 2 "" H 5330 5680 50  0001 C CNN
+F 3 "" H 5330 5680 50  0001 C CNN
+	1    5330 5680
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 601A8ACB
+P 5330 5080
+AR Path="/5F5829EF/601A8ACB" Ref="#PWR?"  Part="1" 
+AR Path="/5F582A7C/601A8ACB" Ref="#PWR01307"  Part="1" 
+F 0 "#PWR01307" H 5330 4930 50  0001 C CNN
+F 1 "+3.3V" H 5330 5220 50  0000 C CNN
+F 2 "" H 5330 5080 50  0001 C CNN
+F 3 "" H 5330 5080 50  0001 C CNN
+	1    5330 5080
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01304
+U 1 1 601A97E7
+P 4340 5570
+F 0 "#PWR01304" H 4340 5320 50  0001 C CNN
+F 1 "GND" H 4340 5420 50  0000 C CNN
+F 2 "" H 4340 5570 50  0001 C CNN
+F 3 "" H 4340 5570 50  0001 C CNN
+	1    4340 5570
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 601A97F2
+P 4340 5420
+AR Path="/5BAAE16C/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5BB181D8/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5BB2595E/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5BAAE0FA/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5BB86F23/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5C1D5C9E/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5CB6F1ED/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5E939CFF/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5E9E0E87/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5EAE2D66/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5EAE3021/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5F582A92/601A97F2" Ref="C?"  Part="1" 
+AR Path="/5F582A7C/601A97F2" Ref="C1302"  Part="1" 
+F 0 "C1302" H 4365 5520 50  0000 L CNN
+F 1 "0.1uF" H 4365 5320 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 4378 5270 50  0001 C CNN
+F 3 "" H 4365 5520 50  0001 C CNN
+F 4 "0402" H 4190 5520 50  0000 R CNN "display_footprint"
+F 5 "50V" H 4190 5420 50  0000 R CNN "Voltage"
+F 6 "X7R" H 4190 5320 50  0000 R CNN "Dielectric"
+F 7 "490-10698-1-ND" H 4765 5920 60  0001 C CNN "Digi-Key PN"
+F 8 "" H 4110 5610 50  0001 C CNN "Configuration"
+	1    4340 5420
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR01303
+U 1 1 601A97F8
+P 4340 5270
+F 0 "#PWR01303" H 4340 5120 50  0001 C CNN
+F 1 "+3.3V" H 4340 5410 50  0000 C CNN
+F 2 "" H 4340 5270 50  0001 C CNN
+F 3 "" H 4340 5270 50  0001 C CNN
+	1    4340 5270
+	1    0    0    -1  
+$EndComp
+Text GLabel 5730 5380 2    50   Input ~ 0
+I2C_SCL
+Text GLabel 5730 5280 2    50   BiDi ~ 0
+I2C_SDA
+$Comp
+L power:GND #PWR?
+U 1 1 601AB410
+P 5730 5480
+AR Path="/5F5829EF/601AB410" Ref="#PWR?"  Part="1" 
+AR Path="/5F582A7C/601AB410" Ref="#PWR01313"  Part="1" 
+F 0 "#PWR01313" H 5730 5230 50  0001 C CNN
+F 1 "GND" V 5730 5350 50  0000 R CNN
+F 2 "" H 5730 5480 50  0001 C CNN
+F 3 "" H 5730 5480 50  0001 C CNN
+	1    5730 5480
+	0    -1   -1   0   
+$EndComp
+$EndSCHEMATC

@@ -1,0 +1,874 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 19 34
+Title "LED Panel Controller"
+Date "2021-05-30"
+Rev "A"
+Comp "Drew Maatman"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:LED D?
+U 1 1 5CB89785
+P 3550 2600
+AR Path="/5BB844FD/5CB89785" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/5CB89785" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/5CB89785" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/5CB89785" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/5CB89785" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/5CB89785" Ref="D?"  Part="1" 
+AR Path="/5E93CC4E/5CB89785" Ref="D?"  Part="1" 
+AR Path="/5F582E4A/5CB89785" Ref="D1901"  Part="1" 
+F 0 "D1901" V 3589 2483 50  0000 R CNN
+F 1 "Green" V 3498 2483 50  0000 R CNN
+F 2 "LEDs:LED_0402" H 3550 2600 50  0001 C CNN
+F 3 "~" H 3550 2600 50  0001 C CNN
+F 4 "1497-1219-1-ND" H -1610 -3720 50  0001 C CNN "Digi-Key PN"
+	1    3550 2600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3230 2870 3550 2870
+Wire Wire Line
+	3550 2870 3550 2750
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5CB89791
+P 3550 2300
+AR Path="/5BAAE1F3/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5E93CC4E/5CB89791" Ref="R?"  Part="1" 
+AR Path="/5F582E4A/5CB89791" Ref="R1902"  Part="1" 
+F 0 "R1902" H 3490 2300 50  0000 R CNN
+F 1 "1k" V 3550 2300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 3550 2300 50  0001 C CNN
+F 3 "" H 3550 2300 50  0001 C CNN
+F 4 "0402" H 3620 2380 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3620 2300 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 3620 2230 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT1K00CT-ND" H 3850 2700 60  0001 C CNN "Digi-Key PN"
+	1    3550 2300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CB897A9
+P 2980 2970
+AR Path="/5CB7A8BC/5CB897A9" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5CB897A9" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5CB897A9" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5CB897A9" Ref="#PWR01907"  Part="1" 
+F 0 "#PWR01907" H 2980 2720 50  0001 C CNN
+F 1 "GND" H 2980 2820 50  0000 C CNN
+F 2 "" H 2980 2970 50  0001 C CNN
+F 3 "" H 2980 2970 50  0001 C CNN
+	1    2980 2970
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5CB97030
+P 8870 2180
+AR Path="/5BAAE1F3/5CB97030" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/5CB97030" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/5CB97030" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/5CB97030" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/5CB97030" Ref="C?"  Part="1" 
+AR Path="/5CB7A8C3/5CB97030" Ref="C?"  Part="1" 
+AR Path="/5E93CC4E/5CB97030" Ref="C?"  Part="1" 
+AR Path="/5F582E4A/5CB97030" Ref="C1905"  Part="1" 
+F 0 "C1905" H 8895 2280 50  0000 L CNN
+F 1 "0.1uF" H 8895 2080 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 8908 2030 50  0001 C CNN
+F 3 "" H 8895 2280 50  0001 C CNN
+F 4 "490-10698-1-ND" H 9295 2680 60  0001 C CNN "Digi-Key PN"
+F 5 "0402" H 8720 2280 50  0000 R CNN "display_footprint"
+F 6 "50V" H 8720 2180 50  0000 R CNN "Voltage"
+F 7 "X7R" H 8720 2080 50  0000 R CNN "Dielectric"
+	1    8870 2180
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5CB9703B
+P 9550 2600
+AR Path="/5BB844FD/5CB9703B" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/5CB9703B" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/5CB9703B" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/5CB9703B" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/5CB9703B" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/5CB9703B" Ref="D?"  Part="1" 
+AR Path="/5E93CC4E/5CB9703B" Ref="D?"  Part="1" 
+AR Path="/5F582E4A/5CB9703B" Ref="D1905"  Part="1" 
+F 0 "D1905" V 9589 2483 50  0000 R CNN
+F 1 "Green" V 9498 2483 50  0000 R CNN
+F 2 "LEDs:LED_0402" H 9550 2600 50  0001 C CNN
+F 3 "~" H 9550 2600 50  0001 C CNN
+F 4 "1497-1219-1-ND" H 4390 -3720 50  0001 C CNN "Digi-Key PN"
+	1    9550 2600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9230 2870 9550 2870
+Wire Wire Line
+	9550 2870 9550 2750
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5CB9704B
+P 9550 2300
+AR Path="/5BAAE1F3/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5E93CC4E/5CB9704B" Ref="R?"  Part="1" 
+AR Path="/5F582E4A/5CB9704B" Ref="R1906"  Part="1" 
+F 0 "R1906" H 9490 2300 50  0000 R CNN
+F 1 "1k" V 9550 2300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 9550 2300 50  0001 C CNN
+F 3 "" H 9550 2300 50  0001 C CNN
+F 4 "0402" H 9620 2380 50  0000 L CNN "display_footprint"
+F 5 "1%" H 9620 2300 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 9620 2230 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT1K00CT-ND" H 9850 2700 60  0001 C CNN "Digi-Key PN"
+	1    9550 2300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CB9705F
+P 8980 2770
+AR Path="/5CB7A8BC/5CB9705F" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5CB9705F" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5CB9705F" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5CB9705F" Ref="#PWR01924"  Part="1" 
+F 0 "#PWR01924" H 8980 2620 50  0001 C CNN
+F 1 "+3.3V" H 8980 2910 50  0000 C CNN
+F 2 "" H 8980 2770 50  0001 C CNN
+F 3 "" H 8980 2770 50  0001 C CNN
+	1    8980 2770
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CB97069
+P 8870 2030
+AR Path="/5CB7A8BC/5CB97069" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5CB97069" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5CB97069" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5CB97069" Ref="#PWR01922"  Part="1" 
+F 0 "#PWR01922" H 8870 1880 50  0001 C CNN
+F 1 "+3.3V" H 8870 2170 50  0000 C CNN
+F 2 "" H 8870 2030 50  0001 C CNN
+F 3 "" H 8870 2030 50  0001 C CNN
+	1    8870 2030
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CB97073
+P 8980 2970
+AR Path="/5CB7A8BC/5CB97073" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5CB97073" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5CB97073" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5CB97073" Ref="#PWR01925"  Part="1" 
+F 0 "#PWR01925" H 8980 2720 50  0001 C CNN
+F 1 "GND" H 8980 2820 50  0000 C CNN
+F 2 "" H 8980 2970 50  0001 C CNN
+F 3 "" H 8980 2970 50  0001 C CNN
+	1    8980 2970
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CB9707D
+P 8870 2330
+AR Path="/5CB7A8BC/5CB9707D" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5CB9707D" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5CB9707D" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5CB9707D" Ref="#PWR01923"  Part="1" 
+F 0 "#PWR01923" H 8870 2080 50  0001 C CNN
+F 1 "GND" H 8870 2180 50  0000 C CNN
+F 2 "" H 8870 2330 50  0001 C CNN
+F 3 "" H 8870 2330 50  0001 C CNN
+	1    8870 2330
+	1    0    0    -1  
+$EndComp
+Text GLabel 2680 2820 0    50   Input ~ 0
+POS12_PGOOD
+Text GLabel 8680 2820 0    50   Input ~ 0
+POS3P3_PGOOD
+Text GLabel 6680 2920 0    50   Input ~ 0
+VBAT_PGOOD
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5E3A3719
+P 6870 2180
+AR Path="/5BAAE1F3/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5E93CC4E/5E3A3719" Ref="C?"  Part="1" 
+AR Path="/5F582E4A/5E3A3719" Ref="C1904"  Part="1" 
+F 0 "C1904" H 6895 2280 50  0000 L CNN
+F 1 "0.1uF" H 6895 2080 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 6908 2030 50  0001 C CNN
+F 3 "" H 6895 2280 50  0001 C CNN
+F 4 "490-10698-1-ND" H 7295 2680 60  0001 C CNN "Digi-Key PN"
+F 5 "0402" H 6720 2280 50  0000 R CNN "display_footprint"
+F 6 "50V" H 6720 2180 50  0000 R CNN "Voltage"
+F 7 "X7R" H 6720 2080 50  0000 R CNN "Dielectric"
+	1    6870 2180
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E3A3724
+P 7550 2600
+AR Path="/5BB844FD/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5E93CC4E/5E3A3724" Ref="D?"  Part="1" 
+AR Path="/5F582E4A/5E3A3724" Ref="D1904"  Part="1" 
+F 0 "D1904" V 7589 2483 50  0000 R CNN
+F 1 "Red" V 7498 2483 50  0000 R CNN
+F 2 "LEDs:LED_0402" H 7550 2600 50  0001 C CNN
+F 3 "~" H 7550 2600 50  0001 C CNN
+F 4 "1497-1174-1-ND" H 7550 2600 50  0001 C CNN "Digi-Key PN"
+	1    7550 2600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7230 2870 7550 2870
+Wire Wire Line
+	7550 2870 7550 2750
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E3A3734
+P 7550 2300
+AR Path="/5BAAE1F3/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5E93CC4E/5E3A3734" Ref="R?"  Part="1" 
+AR Path="/5F582E4A/5E3A3734" Ref="R1905"  Part="1" 
+F 0 "R1905" H 7490 2300 50  0000 R CNN
+F 1 "1k" V 7550 2300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 7550 2300 50  0001 C CNN
+F 3 "" H 7550 2300 50  0001 C CNN
+F 4 "0402" H 7620 2380 50  0000 L CNN "display_footprint"
+F 5 "1%" H 7620 2300 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 7620 2230 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT1K00CT-ND" H 7850 2700 60  0001 C CNN "Digi-Key PN"
+	1    7550 2300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E3A3748
+P 6980 2770
+AR Path="/5CB7A8BC/5E3A3748" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3748" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E3A3748" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E3A3748" Ref="#PWR01919"  Part="1" 
+F 0 "#PWR01919" H 6980 2620 50  0001 C CNN
+F 1 "+3.3V" H 6980 2910 50  0000 C CNN
+F 2 "" H 6980 2770 50  0001 C CNN
+F 3 "" H 6980 2770 50  0001 C CNN
+	1    6980 2770
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E3A3752
+P 6870 2030
+AR Path="/5CB7A8BC/5E3A3752" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3752" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E3A3752" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E3A3752" Ref="#PWR01917"  Part="1" 
+F 0 "#PWR01917" H 6870 1880 50  0001 C CNN
+F 1 "+3.3V" H 6870 2170 50  0000 C CNN
+F 2 "" H 6870 2030 50  0001 C CNN
+F 3 "" H 6870 2030 50  0001 C CNN
+	1    6870 2030
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3A375C
+P 6980 2970
+AR Path="/5CB7A8BC/5E3A375C" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A375C" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E3A375C" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E3A375C" Ref="#PWR01920"  Part="1" 
+F 0 "#PWR01920" H 6980 2720 50  0001 C CNN
+F 1 "GND" H 6980 2820 50  0000 C CNN
+F 2 "" H 6980 2970 50  0001 C CNN
+F 3 "" H 6980 2970 50  0001 C CNN
+	1    6980 2970
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E3A3766
+P 6870 2330
+AR Path="/5CB7A8BC/5E3A3766" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E3A3766" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E3A3766" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E3A3766" Ref="#PWR01918"  Part="1" 
+F 0 "#PWR01918" H 6870 2080 50  0001 C CNN
+F 1 "GND" H 6870 2180 50  0000 C CNN
+F 2 "" H 6870 2330 50  0001 C CNN
+F 3 "" H 6870 2330 50  0001 C CNN
+	1    6870 2330
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5F29D78B
+P 2870 2180
+AR Path="/5BAAE1F3/5F29D78B" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/5F29D78B" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/5F29D78B" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/5F29D78B" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/5F29D78B" Ref="C?"  Part="1" 
+AR Path="/5CB7A8C3/5F29D78B" Ref="C?"  Part="1" 
+AR Path="/5E93CC4E/5F29D78B" Ref="C?"  Part="1" 
+AR Path="/5F582E4A/5F29D78B" Ref="C1901"  Part="1" 
+F 0 "C1901" H 2895 2280 50  0000 L CNN
+F 1 "0.1uF" H 2895 2080 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 2908 2030 50  0001 C CNN
+F 3 "" H 2895 2280 50  0001 C CNN
+F 4 "490-10698-1-ND" H 3295 2680 60  0001 C CNN "Digi-Key PN"
+F 5 "0402" H 2720 2280 50  0000 R CNN "display_footprint"
+F 6 "50V" H 2720 2180 50  0000 R CNN "Voltage"
+F 7 "X7R" H 2720 2080 50  0000 R CNN "Dielectric"
+	1    2870 2180
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F29D797
+P 2870 2330
+AR Path="/5CB7A8BC/5F29D797" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5F29D797" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5F29D797" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5F29D797" Ref="#PWR01903"  Part="1" 
+F 0 "#PWR01903" H 2870 2080 50  0001 C CNN
+F 1 "GND" H 2870 2180 50  0000 C CNN
+F 2 "" H 2870 2330 50  0001 C CNN
+F 3 "" H 2870 2330 50  0001 C CNN
+	1    2870 2330
+	1    0    0    -1  
+$EndComp
+Text GLabel 2680 4320 0    50   Input ~ 0
+POS5_PGOOD
+$Comp
+L power:GND #PWR?
+U 1 1 5E1829F1
+P 2870 3830
+AR Path="/5CB7A8BC/5E1829F1" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E1829F1" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E1829F1" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E1829F1" Ref="#PWR01905"  Part="1" 
+F 0 "#PWR01905" H 2870 3580 50  0001 C CNN
+F 1 "GND" H 2870 3680 50  0000 C CNN
+F 2 "" H 2870 3830 50  0001 C CNN
+F 3 "" H 2870 3830 50  0001 C CNN
+	1    2870 3830
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E1829E7
+P 2980 4470
+AR Path="/5CB7A8BC/5E1829E7" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E1829E7" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E1829E7" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E1829E7" Ref="#PWR01909"  Part="1" 
+F 0 "#PWR01909" H 2980 4220 50  0001 C CNN
+F 1 "GND" H 2980 4320 50  0000 C CNN
+F 2 "" H 2980 4470 50  0001 C CNN
+F 3 "" H 2980 4470 50  0001 C CNN
+	1    2980 4470
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E1829DD
+P 2870 3530
+AR Path="/5CB7A8BC/5E1829DD" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E1829DD" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E1829DD" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E1829DD" Ref="#PWR01904"  Part="1" 
+F 0 "#PWR01904" H 2870 3380 50  0001 C CNN
+F 1 "+3.3V" H 2870 3670 50  0000 C CNN
+F 2 "" H 2870 3530 50  0001 C CNN
+F 3 "" H 2870 3530 50  0001 C CNN
+	1    2870 3530
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E1829D3
+P 2980 4270
+AR Path="/5CB7A8BC/5E1829D3" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E1829D3" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E1829D3" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E1829D3" Ref="#PWR01908"  Part="1" 
+F 0 "#PWR01908" H 2980 4120 50  0001 C CNN
+F 1 "+3.3V" H 2980 4410 50  0000 C CNN
+F 2 "" H 2980 4270 50  0001 C CNN
+F 3 "" H 2980 4270 50  0001 C CNN
+	1    2980 4270
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E1829BF
+P 3550 3800
+AR Path="/5BAAE1F3/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5E93CC4E/5E1829BF" Ref="R?"  Part="1" 
+AR Path="/5F582E4A/5E1829BF" Ref="R1903"  Part="1" 
+F 0 "R1903" H 3490 3800 50  0000 R CNN
+F 1 "1k" V 3550 3800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 3550 3800 50  0001 C CNN
+F 3 "" H 3550 3800 50  0001 C CNN
+F 4 "0402" H 3620 3880 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3620 3800 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 3620 3730 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT1K00CT-ND" H 3850 4200 60  0001 C CNN "Digi-Key PN"
+	1    3550 3800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 4370 3550 4250
+Wire Wire Line
+	3230 4370 3550 4370
+$Comp
+L Device:LED D?
+U 1 1 5E1829AF
+P 3550 4100
+AR Path="/5BB844FD/5E1829AF" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/5E1829AF" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/5E1829AF" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/5E1829AF" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/5E1829AF" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/5E1829AF" Ref="D?"  Part="1" 
+AR Path="/5E93CC4E/5E1829AF" Ref="D?"  Part="1" 
+AR Path="/5F582E4A/5E1829AF" Ref="D1902"  Part="1" 
+F 0 "D1902" V 3589 3983 50  0000 R CNN
+F 1 "Green" V 3498 3983 50  0000 R CNN
+F 2 "LEDs:LED_0402" H 3550 4100 50  0001 C CNN
+F 3 "~" H 3550 4100 50  0001 C CNN
+F 4 "1497-1219-1-ND" H -1610 -2220 50  0001 C CNN "Digi-Key PN"
+	1    3550 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5E1829A4
+P 2870 3680
+AR Path="/5BAAE1F3/5E1829A4" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/5E1829A4" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/5E1829A4" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/5E1829A4" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/5E1829A4" Ref="C?"  Part="1" 
+AR Path="/5CB7A8C3/5E1829A4" Ref="C?"  Part="1" 
+AR Path="/5E93CC4E/5E1829A4" Ref="C?"  Part="1" 
+AR Path="/5F582E4A/5E1829A4" Ref="C1902"  Part="1" 
+F 0 "C1902" H 2895 3780 50  0000 L CNN
+F 1 "0.1uF" H 2895 3580 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 2908 3530 50  0001 C CNN
+F 3 "" H 2895 3780 50  0001 C CNN
+F 4 "490-10698-1-ND" H 3295 4180 60  0001 C CNN "Digi-Key PN"
+F 5 "0402" H 2720 3780 50  0000 R CNN "display_footprint"
+F 6 "50V" H 2720 3680 50  0000 R CNN "Voltage"
+F 7 "X7R" H 2720 3580 50  0000 R CNN "Dielectric"
+	1    2870 3680
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CD1D8
+P 4980 2770
+AR Path="/5CB7A8BC/5E9CD1D8" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E9CD1D8" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E9CD1D8" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E9CD1D8" Ref="#PWR01914"  Part="1" 
+F 0 "#PWR01914" H 4980 2620 50  0001 C CNN
+F 1 "+3.3V" H 4980 2910 50  0000 C CNN
+F 2 "" H 4980 2770 50  0001 C CNN
+F 3 "" H 4980 2770 50  0001 C CNN
+	1    4980 2770
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CCE69
+P 4870 2330
+AR Path="/5CB7A8BC/5E9CCE69" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E9CCE69" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E9CCE69" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E9CCE69" Ref="#PWR01913"  Part="1" 
+F 0 "#PWR01913" H 4870 2080 50  0001 C CNN
+F 1 "GND" H 4870 2180 50  0000 C CNN
+F 2 "" H 4870 2330 50  0001 C CNN
+F 3 "" H 4870 2330 50  0001 C CNN
+	1    4870 2330
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CBDE7
+P 4870 2030
+AR Path="/5CB7A8BC/5E9CBDE7" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E9CBDE7" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E9CBDE7" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E9CBDE7" Ref="#PWR01912"  Part="1" 
+F 0 "#PWR01912" H 4870 1880 50  0001 C CNN
+F 1 "+3.3V" H 4870 2170 50  0000 C CNN
+F 2 "" H 4870 2030 50  0001 C CNN
+F 3 "" H 4870 2030 50  0001 C CNN
+	1    4870 2030
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CB67B
+P 4980 2970
+AR Path="/5CB7A8BC/5E9CB67B" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5E9CB67B" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5E9CB67B" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5E9CB67B" Ref="#PWR01915"  Part="1" 
+F 0 "#PWR01915" H 4980 2720 50  0001 C CNN
+F 1 "GND" H 4980 2820 50  0000 C CNN
+F 2 "" H 4980 2970 50  0001 C CNN
+F 3 "" H 4980 2970 50  0001 C CNN
+	1    4980 2970
+	1    0    0    -1  
+$EndComp
+Text GLabel 4680 2820 0    50   Input ~ 0
+POS5_USB_PGOOD
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E1D0087
+P 5550 2300
+AR Path="/5BAAE1F3/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5CB7A8C3/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5E93CC4E/5E1D0087" Ref="R?"  Part="1" 
+AR Path="/5F582E4A/5E1D0087" Ref="R1904"  Part="1" 
+F 0 "R1904" H 5490 2300 50  0000 R CNN
+F 1 "1k" V 5550 2300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 5550 2300 50  0001 C CNN
+F 3 "" H 5550 2300 50  0001 C CNN
+F 4 "0402" H 5620 2380 50  0000 L CNN "display_footprint"
+F 5 "1%" H 5620 2300 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 5620 2230 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT1K00CT-ND" H 5850 2700 60  0001 C CNN "Digi-Key PN"
+	1    5550 2300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 2870 5550 2750
+Wire Wire Line
+	5230 2870 5550 2870
+$Comp
+L Device:LED D?
+U 1 1 5E1D0077
+P 5550 2600
+AR Path="/5BB844FD/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5BF346B3/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5BAAE1F3/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5CAD2D97/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5CB7A8BC/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5CB7A8C3/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5E93CC4E/5E1D0077" Ref="D?"  Part="1" 
+AR Path="/5F582E4A/5E1D0077" Ref="D1903"  Part="1" 
+F 0 "D1903" V 5589 2483 50  0000 R CNN
+F 1 "Green" V 5498 2483 50  0000 R CNN
+F 2 "LEDs:LED_0402" H 5550 2600 50  0001 C CNN
+F 3 "~" H 5550 2600 50  0001 C CNN
+F 4 "1497-1219-1-ND" H 390 -3720 50  0001 C CNN "Digi-Key PN"
+	1    5550 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Custom_Library:C_Custom C?
+U 1 1 5E1D006C
+P 4870 2180
+AR Path="/5BAAE1F3/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5BAAE1CB/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5BE48F98/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5CAD2D97/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5CB7A8BC/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5CB7A8C3/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5E93CC4E/5E1D006C" Ref="C?"  Part="1" 
+AR Path="/5F582E4A/5E1D006C" Ref="C1903"  Part="1" 
+F 0 "C1903" H 4895 2280 50  0000 L CNN
+F 1 "0.1uF" H 4895 2080 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 4908 2030 50  0001 C CNN
+F 3 "" H 4895 2280 50  0001 C CNN
+F 4 "490-10698-1-ND" H 5295 2680 60  0001 C CNN "Digi-Key PN"
+F 5 "0402" H 4720 2280 50  0000 R CNN "display_footprint"
+F 6 "50V" H 4720 2180 50  0000 R CNN "Voltage"
+F 7 "X7R" H 4720 2080 50  0000 R CNN "Dielectric"
+	1    4870 2180
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE6EA81
+P 3550 2150
+AR Path="/5CB7A8BC/5FE6EA81" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5FE6EA81" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5FE6EA81" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5FE6EA81" Ref="#PWR01910"  Part="1" 
+F 0 "#PWR01910" H 3550 2000 50  0001 C CNN
+F 1 "+3.3V" H 3550 2290 50  0000 C CNN
+F 2 "" H 3550 2150 50  0001 C CNN
+F 3 "" H 3550 2150 50  0001 C CNN
+	1    3550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE6ED48
+P 2870 2030
+AR Path="/5CB7A8BC/5FE6ED48" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5FE6ED48" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5FE6ED48" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5FE6ED48" Ref="#PWR01902"  Part="1" 
+F 0 "#PWR01902" H 2870 1880 50  0001 C CNN
+F 1 "+3.3V" H 2870 2170 50  0000 C CNN
+F 2 "" H 2870 2030 50  0001 C CNN
+F 3 "" H 2870 2030 50  0001 C CNN
+	1    2870 2030
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE6EF4B
+P 5550 2150
+AR Path="/5CB7A8BC/5FE6EF4B" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5FE6EF4B" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5FE6EF4B" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5FE6EF4B" Ref="#PWR01916"  Part="1" 
+F 0 "#PWR01916" H 5550 2000 50  0001 C CNN
+F 1 "+3.3V" H 5550 2290 50  0000 C CNN
+F 2 "" H 5550 2150 50  0001 C CNN
+F 3 "" H 5550 2150 50  0001 C CNN
+	1    5550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE6F23D
+P 7550 2150
+AR Path="/5CB7A8BC/5FE6F23D" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5FE6F23D" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5FE6F23D" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5FE6F23D" Ref="#PWR01921"  Part="1" 
+F 0 "#PWR01921" H 7550 2000 50  0001 C CNN
+F 1 "+3.3V" H 7550 2290 50  0000 C CNN
+F 2 "" H 7550 2150 50  0001 C CNN
+F 3 "" H 7550 2150 50  0001 C CNN
+	1    7550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE6F59F
+P 9550 2150
+AR Path="/5CB7A8BC/5FE6F59F" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5FE6F59F" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5FE6F59F" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5FE6F59F" Ref="#PWR01926"  Part="1" 
+F 0 "#PWR01926" H 9550 2000 50  0001 C CNN
+F 1 "+3.3V" H 9550 2290 50  0000 C CNN
+F 2 "" H 9550 2150 50  0001 C CNN
+F 3 "" H 9550 2150 50  0001 C CNN
+	1    9550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE6F915
+P 3550 3650
+AR Path="/5CB7A8BC/5FE6F915" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5FE6F915" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5FE6F915" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5FE6F915" Ref="#PWR01911"  Part="1" 
+F 0 "#PWR01911" H 3550 3500 50  0001 C CNN
+F 1 "+3.3V" H 3550 3790 50  0000 C CNN
+F 2 "" H 3550 3650 50  0001 C CNN
+F 3 "" H 3550 3650 50  0001 C CNN
+	1    3550 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power_NAND_INV U1901
+U 1 1 5FE86DCB
+P 2980 2870
+F 0 "U1901" H 3040 3020 50  0000 L CNN
+F 1 "74LVC1G97" H 3040 2720 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3030 2870 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 3030 2870 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 2980 2870 50  0001 C CNN "Digi-Key PN"
+	1    2980 2870
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE88818
+P 2980 2770
+AR Path="/5CB7A8BC/5FE88818" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5FE88818" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5FE88818" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5FE88818" Ref="#PWR01906"  Part="1" 
+F 0 "#PWR01906" H 2980 2620 50  0001 C CNN
+F 1 "+3.3V" H 2980 2910 50  0000 C CNN
+F 2 "" H 2980 2770 50  0001 C CNN
+F 3 "" H 2980 2770 50  0001 C CNN
+	1    2980 2770
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power_NAND_INV U1902
+U 1 1 5FE89CCB
+P 2980 4370
+F 0 "U1902" H 3040 4520 50  0000 L CNN
+F 1 "74LVC1G97" H 3040 4220 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 3030 4370 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 3030 4370 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 2980 4370 50  0001 C CNN "Digi-Key PN"
+	1    2980 4370
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power_NAND_INV U1903
+U 1 1 5FE8A129
+P 4980 2870
+F 0 "U1903" H 5040 3020 50  0000 L CNN
+F 1 "74LVC1G97" H 5040 2720 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 5030 2870 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 5030 2870 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 4980 2870 50  0001 C CNN "Digi-Key PN"
+	1    4980 2870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power_NAND_INV U1905
+U 1 1 5FE8A937
+P 8980 2870
+F 0 "U1905" H 9040 3020 50  0000 L CNN
+F 1 "74LVC1G97" H 9040 2720 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 9030 2870 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 9030 2870 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 8980 2870 50  0001 C CNN "Digi-Key PN"
+	1    8980 2870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:74LVC1G97_Power_AND_INV U1904
+U 1 1 5FE8B108
+P 6980 2870
+F 0 "U1904" H 7040 3020 50  0000 L CNN
+F 1 "74LVC1G97" H 7040 2720 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 7030 2870 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc1g97.pdf" H 7030 2870 50  0001 C CNN
+F 4 "1727-1772-1-ND" H 6980 2870 50  0001 C CNN "Digi-Key PN"
+	1    6980 2870
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5FE8DBF9
+P 2520 3150
+AR Path="/5D6B2673/5FE8DBF9" Ref="R?"  Part="1" 
+AR Path="/5D6C0D23/5FE8DBF9" Ref="R?"  Part="1" 
+AR Path="/5D77A516/5FE8DBF9" Ref="R?"  Part="1" 
+AR Path="/5E939CFF/5FE8DBF9" Ref="R?"  Part="1" 
+AR Path="/5F581B41/5FE8DBF9" Ref="R?"  Part="1" 
+AR Path="/5F582E4A/5FE8DBF9" Ref="R1901"  Part="1" 
+F 0 "R1901" H 2430 3150 50  0000 R CNN
+F 1 "10k" V 2520 3080 50  0000 L CNN
+F 2 "Resistors_SMD:R_0402" H 2520 3150 50  0001 C CNN
+F 3 "" H 2520 3150 50  0001 C CNN
+F 4 "0402" H 2620 3220 50  0000 L CNN "display_footprint"
+F 5 "1%" H 2620 3120 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 2620 3020 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 2820 3550 60  0001 C CNN "Digi-Key PN"
+	1    2520 3150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FE8DC85
+P 2520 3300
+AR Path="/5CB7A8BC/5FE8DC85" Ref="#PWR?"  Part="1" 
+AR Path="/5CB7A8C3/5FE8DC85" Ref="#PWR?"  Part="1" 
+AR Path="/5E93CC4E/5FE8DC85" Ref="#PWR?"  Part="1" 
+AR Path="/5F582E4A/5FE8DC85" Ref="#PWR01901"  Part="1" 
+F 0 "#PWR01901" H 2520 3050 50  0001 C CNN
+F 1 "GND" H 2520 3150 50  0000 C CNN
+F 2 "" H 2520 3300 50  0001 C CNN
+F 3 "" H 2520 3300 50  0001 C CNN
+	1    2520 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2680 2920 2520 2920
+Wire Wire Line
+	2520 2920 2520 3000
+Text GLabel 2440 2920 0    50   Input ~ 0
+PGOOD_LED_SHDN
+Wire Wire Line
+	2440 2920 2520 2920
+Connection ~ 2520 2920
+Text GLabel 4680 2920 0    50   Input ~ 0
+PGOOD_LED_SHDN
+Text GLabel 6680 2820 0    50   Input ~ 0
+PGOOD_LED_SHDN
+Text GLabel 8680 2920 0    50   Input ~ 0
+PGOOD_LED_SHDN
+Text GLabel 2680 4420 0    50   Input ~ 0
+PGOOD_LED_SHDN
+$EndSCHEMATC
