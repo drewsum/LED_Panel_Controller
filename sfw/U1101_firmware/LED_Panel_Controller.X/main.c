@@ -25,7 +25,7 @@
 //#include "cause_of_reset.h"
 
 // GPIO
-//#include "pin_macros.h"
+#include "pin_macros.h"
 //#include "gpio_setup.h"
 
 // Application

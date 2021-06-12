@@ -9,6 +9,9 @@
         <itemPath>device_control.h</itemPath>
         <itemPath>32mz_interrupt_control.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
+        <itemPath>pin_macros.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
       </logicalFolder>
