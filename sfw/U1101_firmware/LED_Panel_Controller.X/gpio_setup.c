@@ -34,9 +34,9 @@ void portBGPIOInitialize (void) {
     gpioPinSetup(gpio_port_b, 7, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_b, 8, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_b, 9, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RB9 to SDI3
+    SDI3Rbits.SDI3R = RPB9_PPS_INPUT;  // assign RB9 to SDI3
     gpioPinSetup(gpio_port_b, 10, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RB10 to SDO3
+    RPB10Rbits.RPB10R = SDO3_PPS_OUTPUT; // assign RB10 to SDO3
     gpioPinSetup(gpio_port_b, 11, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_b, 12, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_b, 13, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
@@ -49,13 +49,13 @@ void portBGPIOInitialize (void) {
 void portCGPIOInitialize (void) {
 
     gpioPinSetup(gpio_port_c, 1, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RC1 to SDI5
+    SDI5Rbits.SDI5R = RPC1_PPS_INPUT; // assign RC1 to SDI5
     gpioPinSetup(gpio_port_c, 2, TRIS_OUTPUT, LAT_HIGH, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_c, 3, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_c, 4, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_c, 12, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_c, 13, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RC13 to REFCLK1
+    RPC13Rbits.RPC13R = REFCLKO1_PPS_OUTPUT; // assign RC13 to REFCLK1
     gpioPinSetup(gpio_port_c, 14, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_c, 15, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     
@@ -67,21 +67,21 @@ void portDGPIOInitialize (void) {
     gpioPinSetup(gpio_port_d, 0, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_d, 1, TRIS_OUTPUT, LAT_HIGH, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_d, 2, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RD2 to U1RX
+    U1RXRbits.U1RXR = RPD2_PPS_INPUT; // assign RD2 to U1RX
     gpioPinSetup(gpio_port_d, 3, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RD3 to U1TX
+    RPD3Rbits.RPD3R = U1TX_PPS_OUTPUT; // assign RD3 to U1TX
     gpioPinSetup(gpio_port_d, 4, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_d, 5, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_d, 9, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RD9 to OC5
+    RPD9Rbits.RPD9R = OC5_PPS_OUTPUT; // assign RD9 to OC5
     gpioPinSetup(gpio_port_d, 10, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_d, 11, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_d, 12, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RD12 to SS4
+    SS4Rbits.SS4R = RPD12_PPS_INPUT; // assign RD12 to SS4
     gpioPinSetup(gpio_port_d, 13, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_d, 14, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_d, 15, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RD15 to SDI4
+    SDI4Rbits.SDI4R = RPD15_PPS_INPUT; // assign RD15 to SDI4
     
 }
 
@@ -106,7 +106,7 @@ void portFGPIOInitialize (void) {
     
     gpioPinSetup(gpio_port_f, 0, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_f, 1, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RF1 to SDO5
+    RPF1Rbits.RPF1R = SDO5_PPS_OUTPUT; // assign RF1 to SDO5
     gpioPinSetup(gpio_port_f, 2, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_f, 3, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_f, 4, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
@@ -123,11 +123,11 @@ void portGGPIOInitialize (void) {
     gpioPinSetup(gpio_port_g, 0, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_g, 1, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_g, 6, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RG1 to INT2
+    INT2Rbits.INT2R = RPG6_PPS_INPUT; // assign RG1 to INT2
     gpioPinSetup(gpio_port_g, 7, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RG1 to INT4
+    INT4Rbits.INT4R = RPG7_PPS_INPUT; // assign RG7 to INT4
     gpioPinSetup(gpio_port_g, 8, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-    #warning "unfinished PPS" // assign RG8 to OC3    
+    RPG8Rbits.RPG8R = OC3_PPS_OUTPUT; // assign RG8 to OC3    
     gpioPinSetup(gpio_port_g, 9, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_g, 12, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_g, 13, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
