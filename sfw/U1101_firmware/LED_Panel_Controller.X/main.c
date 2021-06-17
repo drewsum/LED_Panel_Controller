@@ -26,7 +26,7 @@
 
 // GPIO
 #include "pin_macros.h"
-//#include "gpio_setup.h"
+#include "gpio_setup.h"
 
 // Application
 //#include "heartbeat_services.h"

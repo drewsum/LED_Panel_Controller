@@ -11,6 +11,7 @@
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>pin_macros.h</itemPath>
+        <itemPath>gpio_setup.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
@@ -26,6 +27,9 @@
       <logicalFolder name="f1" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>
         <itemPath>32mz_interrupt_control.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
+        <itemPath>gpio_setup.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.c</itemPath>
