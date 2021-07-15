@@ -107,24 +107,24 @@ void main(void) {
 //    printf("Beginning Host Initialization:\r\n");
 //    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    
-//    // setup GPIO pins
-//    gpioInitialize();
-//    printf("    GPIO Pins Initialized\n\r");
-//    
-//    // Disable global interrupts so clocks can be initialized properly
-//    disableGlobalInterrupts();
-//    
-//    // Initialize system clocks
-//    clockInitialize();
-//    printf("    Oscillators, Phase-Locked Loop, and System Clocks Initialized\n\r");
-//    
-//    // Configure interrupt controller
-//    interruptControllerInitialize();
-//    
-//    // Enable Global Interrupts
-//    enableGlobalInterrupts();
-//    printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
-//    
+    // setup GPIO pins
+    gpioInitialize();
+    printf("    GPIO Pins Initialized\n\r");
+    
+    // Disable global interrupts so clocks can be initialized properly
+    disableGlobalInterrupts();
+    
+    // Initialize system clocks
+    clockInitialize();
+    printf("    Oscillators, Phase-Locked Loop, and System Clocks Initialized\n\r");
+    
+    // Configure interrupt controller
+    interruptControllerInitialize();
+    
+    // Enable Global Interrupts
+    enableGlobalInterrupts();
+    printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
+    
 //    // Setup error handling
 //    errorHandlerInitialize();
 //    printf("    Error Handler Initialized\n\r");
@@ -210,7 +210,7 @@ void main(void) {
 //    powerCapTouchPushbuttonInitialize();
 //    
 //    // Disable reset LED
-//    RESET_LED_PIN = LOW;
+    RESET_LED_PIN = LOW;
 //    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    printf("    Reset LED Disabled, boot complete\r\n");
 //    while(usbUartCheckIfBusy());
@@ -335,6 +335,7 @@ void main(void) {
 //        if (ui_wake_request) uiDeviceWakeup();
 //        if (ui_sleep_request) uiDeviceSleep();
 //        
+        Nop();
     }
     
 }

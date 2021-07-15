@@ -156,8 +156,8 @@ void clockInitialize(void) {
     // This sets FRCDIV frequency to 8 MHz
     OSCCONbits.FRCDIV = 0b000;
     
-    // Set new clock source as Internal FRC
-    OSCCONbits.NOSC = 0b000;
+    // Set new clock source as External Clock (POSC)
+    OSCCONbits.NOSC = 0b010;
     
     // Initiate clock switch
     OSCCONbits.OSWEN = 1;
@@ -197,8 +197,8 @@ void PLLInitialize(void) {
     // Set PLL input range as 5-10 MHz
     SPLLCONbits.PLLRANGE = 0b001;
     
-    // Set the input to the PLL as FRC
-    SPLLCONbits.PLLICLK = 1;
+    // Set the input to the PLL as POSC
+    SPLLCONbits.PLLICLK = 0;
     
     // Set PLL input divider to 2
     SPLLCONbits.PLLIDIV = 0b001;
