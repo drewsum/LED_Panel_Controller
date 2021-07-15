@@ -8,6 +8,9 @@
         <itemPath>configuration.h</itemPath>
         <itemPath>device_control.h</itemPath>
         <itemPath>32mz_interrupt_control.h</itemPath>
+        <itemPath>heartbeat_timer.h</itemPath>
+        <itemPath>watchdog_timer.h</itemPath>
+        <itemPath>error_handler.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>pin_macros.h</itemPath>
@@ -15,6 +18,9 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
+        <itemPath>usb_uart.h</itemPath>
+        <itemPath>usb_uart_rx_lookup_table.h</itemPath>
+        <itemPath>uthash.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -27,12 +33,17 @@
       <logicalFolder name="f1" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>
         <itemPath>32mz_interrupt_control.c</itemPath>
+        <itemPath>heartbeat_timer.c</itemPath>
+        <itemPath>watchdog_timer.c</itemPath>
+        <itemPath>error_handler.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.c</itemPath>
+        <itemPath>usb_uart.c</itemPath>
+        <itemPath>usb_uart_rx_lookup_table.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -154,7 +165,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value=""/>
+        <property key="heap-size" value="1024"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>

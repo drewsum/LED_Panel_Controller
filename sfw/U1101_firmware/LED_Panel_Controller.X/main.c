@@ -18,9 +18,9 @@
 #include "configuration.h"
 #include "device_control.h"
 #include "32mz_interrupt_control.h"
-//#include "heartbeat_timer.h"
-//#include "watchdog_timer.h"
-//#include "error_handler.h"
+#include "heartbeat_timer.h"
+#include "watchdog_timer.h"
+#include "error_handler.h"
 //#include "prefetch.h"
 //#include "cause_of_reset.h"
 
@@ -44,10 +44,10 @@
 //#include "algorithm_by_RF.h"
 
 // USB
-//#include "terminal_control.h"
-//#include "uthash.h"
-//#include "usb_uart.h"
-//#include "usb_uart_rx_lookup_table.h"
+#include "terminal_control.h"
+#include "uthash.h"
+#include "usb_uart.h"
+#include "usb_uart_rx_lookup_table.h"
 
 // ADC
 //#include "adc.h"
@@ -61,17 +61,17 @@ void main(void) {
     // reset_cause = getResetCause();
     
     // Clear the terminal
-//    terminalClearScreen();
-//    terminalSetCursorHome();
-//    terminalSetTitle("Pulse Oximeter Serial Terminal");
-//    
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//    printf("Pulse Oximeter\r\n");
-//    printf("Host Firmware Version: %s, Platform Hardware Revision: %s\r\n", FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
-//    printf("Created by Drew Maatman, %s\r\n", PROJECT_DATE_STR);
-//    terminalTextAttributesReset();
-//    
+    terminalClearScreen();
+    terminalSetCursorHome();
+    terminalSetTitle("LED Panel Controller Serial Terminal");
+    
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("LED Panel Controller\r\n");
+    // printf("Host Firmware Version: %s, Platform Hardware Revision: %s\r\n", FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
+    // printf("Created by Drew Maatman, %s\r\n", PROJECT_DATE_STR);
+    terminalTextAttributesReset();
+    
      // Print cause of reset
 //    if (    reset_cause == Undefined ||
 //            reset_cause == Primary_Config_Registers_Error ||
@@ -102,11 +102,11 @@ void main(void) {
 //    
 //    printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
 //    terminalTextAttributesReset();
-//    
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//    printf("Beginning Host Initialization:\r\n");
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Beginning Host Initialization:\r\n");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    
     // setup GPIO pins
     gpioInitialize();
     printf("    GPIO Pins Initialized\n\r");
@@ -125,15 +125,15 @@ void main(void) {
     enableGlobalInterrupts();
     printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
     
-//    // Setup error handling
-//    errorHandlerInitialize();
-//    printf("    Error Handler Initialized\n\r");
-//    
-//    // Setup USB UART debugging
-//    usbUartInitialize();
-//    printf("    USB UART Initialized, DMA buffer method used\n\r");
-//    while(usbUartCheckIfBusy());
-//    
+    // Setup error handling
+    errorHandlerInitialize();
+    printf("    Error Handler Initialized\n\r");
+    
+    // Setup USB UART debugging
+    usbUartInitialize();
+    printf("    USB UART Initialized, DMA buffer method used\n\r");
+    while(usbUartCheckIfBusy());
+    
 //    // Setup prefetch module
 //    prefetchInitialize();
 //    printf("    CPU Instruction Prefetch Module Enabled\r\n");
@@ -143,17 +143,17 @@ void main(void) {
 //    PMDInitialize();
 //    printf("    Unused Peripheral Modules Disabled\n\r");
 //    while(usbUartCheckIfBusy());
-//
-//    // Setup heartbeat timer
-//    heartbeatTimerInitialize();
-//    printf("    Heartbeat Timer Initialized\n\r");
-//    while(usbUartCheckIfBusy());
-//    
-//    // setup watchdog timer
-//    watchdogTimerInitialize();
-//    printf("    Watchdog Timer Initialized\n\r");
-//    while(usbUartCheckIfBusy());
-//    
+
+    // Setup heartbeat timer
+    heartbeatTimerInitialize();
+    printf("    Heartbeat Timer Initialized\n\r");
+    while(usbUartCheckIfBusy());
+    
+    // setup watchdog timer
+    watchdogTimerInitialize();
+    printf("    Watchdog Timer Initialized\n\r");
+    while(usbUartCheckIfBusy());
+    
 //    // setup I2C
 //    I2CMaster_Initialize();
 //    printf("    I2C Bus Master Initialized\r\n");
@@ -201,25 +201,20 @@ void main(void) {
 //        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    }
 //    
-//    lcdInitialize();
-//    lcdClear();
-//    printf("    LCD Controller Initialized\r\n");
-//    while(usbUartCheckIfBusy());
-//    
 //    // setup power pushbutton
 //    powerCapTouchPushbuttonInitialize();
 //    
 //    // Disable reset LED
     RESET_LED_PIN = LOW;
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("    Reset LED Disabled, boot complete\r\n");
-//    while(usbUartCheckIfBusy());
-//    
-//    // Print end of boot message, reset terminal for user input
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("\n\rType 'Help' for list of supported commands\n\r\n\r");
-//    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Reset LED Disabled, boot complete\r\n");
+    while(usbUartCheckIfBusy());
+    
+    // Print end of boot message, reset terminal for user input
+    terminalTextAttributesReset();
+    terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("\n\rType 'Help' for list of supported commands\n\r\n\r");
+    
 //    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    printf("Entering IDLE mode\r\n");
 //    terminalTextAttributesReset();
@@ -280,12 +275,12 @@ void main(void) {
 //        // get power monitor data
 //        if (power_monitor_data_request) powerMonitorsGetData();
 //        
-//        // clear the watchdog if we need to
-//        if (wdt_clear_request) {
-//            kickTheDog();
-//            wdt_clear_request = 0;
-//        }
-//        
+        // clear the watchdog if we need to
+        if (wdt_clear_request) {
+            kickTheDog();
+            wdt_clear_request = 0;
+        }
+        
 //        // parse received USB strings if we have a new one received
 //        if (usb_uart_rx_ready) {
 //            usbUartRxLUTInterface(usb_uart_rx_buffer);
