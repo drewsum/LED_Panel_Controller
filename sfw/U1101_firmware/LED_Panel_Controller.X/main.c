@@ -12,7 +12,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-// #include "main.h"
+#include "main.h"
 
 // Core Drivers
 #include "configuration.h"
@@ -61,13 +61,19 @@ void main(void) {
     // Clear the terminal
     terminalClearScreen();
     terminalSetCursorHome();
-    terminalSetTitle("LED Panel Controller Serial Terminal");
+    
+    // set serial terminal window name
+    char *terminal_title_str;
+    terminal_title_str = (char *) malloc(64);
+    sprintf(terminal_title_str, "%s Serial Terminal", PROJECT_NAME_STR);
+    terminalSetTitle(terminal_title_str);
+    free(terminal_title_str);
     
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-    printf("LED Panel Controller\r\n");
-    // printf("Host Firmware Version: %s, Platform Hardware Revision: %s\r\n", FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
-    // printf("Created by Drew Maatman, %s\r\n", PROJECT_DATE_STR);
+    printf("%s\r\n", PROJECT_NAME_STR);
+    printf("Host Firmware Version: %s, Platform Hardware Revision: %s\r\n", FIRMWARE_VERSION_STR, PLATFORM_REVISION_STR);
+    printf("Created by Drew Maatman, %s\r\n", PROJECT_DATE_STR);
     terminalTextAttributesReset();
     
      // Print cause of reset

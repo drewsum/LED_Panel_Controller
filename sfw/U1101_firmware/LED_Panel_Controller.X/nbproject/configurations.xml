@@ -22,6 +22,7 @@
         <itemPath>usb_uart_rx_lookup_table.h</itemPath>
         <itemPath>uthash.h</itemPath>
       </logicalFolder>
+      <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

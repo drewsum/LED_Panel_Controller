@@ -8,7 +8,7 @@
 #include "usb_uart.h"
 #include "uthash.h"
 
-// #include "main.h"
+#include "main.h"
 #include "terminal_control.h"
 #include "device_control.h"
 // #include "cause_of_reset.h"
@@ -65,21 +65,24 @@ usb_uart_command_function_t clearCommand(char * input_str) {
     terminalSetCursorHome();
     
 }
-//
-//usb_uart_command_function_t idnCommand(char * input_str) {
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("Pulse Oximeter by Drew Maatman, %s, FW version %s\r\n", PROJECT_DATE_STR, FIRMWARE_VERSION_STR);
-//    terminalTextAttributesReset();
-//}
-//
-//usb_uart_command_function_t repositoryCommand(char * input_str) {
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("Project Git repository is hosted at: https://github.com/drewsum/pulse_oximeter\r\n");
-//    terminalTextAttributesReset();    
-//}
-//
+
+usb_uart_command_function_t idnCommand(char * input_str) {
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("%s by Drew Maatman, %s, FW version %s\r\n", 
+            PROJECT_NAME_STR, 
+            PROJECT_DATE_STR, 
+            FIRMWARE_VERSION_STR);
+    terminalTextAttributesReset();
+}
+
+usb_uart_command_function_t repositoryCommand(char * input_str) {
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Project Git repository is hosted at: https://github.com/drewsum/LED_Panel_Controller\r\n");
+    terminalTextAttributesReset();    
+}
+
 //usb_uart_command_function_t hostStatusCommand(char * input_str) {
 //
 //    terminalTextAttributesReset();
@@ -318,12 +321,12 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Clear Screen", 
             "Clears the serial port terminal", 
             clearCommand);
-//    usbUartAddCommand("*IDN?", 
-//            "Prints identification string", 
-//            idnCommand);
-//    usbUartAddCommand("Repository?",
-//            "Prints project Git repo location",
-//            repositoryCommand);
+    usbUartAddCommand("*IDN?", 
+            "Prints identification string", 
+            idnCommand);
+    usbUartAddCommand("Repository?",
+            "Prints project Git repo location",
+            repositoryCommand);
 //    usbUartAddCommand("Host Status?",
 //            "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
 //            hostStatusCommand);
