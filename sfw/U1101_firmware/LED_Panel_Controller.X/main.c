@@ -40,8 +40,6 @@
 //#include "temperature_sensors.h"
 //#include "power_monitors.h"
 //#include "misc_i2c_devices.h"
-//#include "max30102.h"
-//#include "algorithm_by_RF.h"
 
 // USB
 #include "terminal_control.h"
@@ -214,6 +212,7 @@ void main(void) {
     terminalTextAttributesReset();
     terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("\n\rType 'Help' for list of supported commands\n\r\n\r");
+    terminalTextAttributesReset();
     
 //    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    printf("Entering IDLE mode\r\n");
@@ -281,19 +280,19 @@ void main(void) {
             wdt_clear_request = 0;
         }
         
-//        // parse received USB strings if we have a new one received
-//        if (usb_uart_rx_ready) {
-//            usbUartRxLUTInterface(usb_uart_rx_buffer);
-//            // Determine length of received string
-//            uint32_t length = strlen(usb_uart_rx_buffer);
-//        
-//            // clear rx buffer
-//            uint32_t index;
-//            for (index = 0; index < length; index++) {
-//                usb_uart_rx_buffer[index] = '\0';
-//            }
-//        }
-//        
+        // parse received USB strings if we have a new one received
+        if (usb_uart_rx_ready) {
+            usbUartRxLUTInterface(usb_uart_rx_buffer);
+            // Determine length of received string
+            uint32_t length = strlen(usb_uart_rx_buffer);
+        
+            // clear rx buffer
+            uint32_t index;
+            for (index = 0; index < length; index++) {
+                usb_uart_rx_buffer[index] = '\0';
+            }
+        }
+        
 //        if (live_telemetry_print_request && live_telemetry_enable) {
 //
 //            // Clear the terminal
@@ -314,23 +313,16 @@ void main(void) {
 //            
 //        }
 //        
-//        // check to see if a clock fail has occurred and latch it
-//        clockFailCheck();
-//        
-//        // update error LEDs if needed
-//        if (update_error_leds_flag) updateErrorLEDs();
-//        
-//        // Start POX DAQ state machine if we need to
-//        if (pox_daq_request_flag) poxAcquireStart();
-//            
-//        // get new POX data if we need to
-//        if (pox_daq_callback_request) poxAcquireInterruptHandler();
-//        
+        // check to see if a clock fail has occurred and latch it
+        clockFailCheck();
+        
+        // update error LEDs if needed
+        if (update_error_leds_flag) updateErrorLEDs();
+        
 //        // decide if we need to startup or shutdown
 //        if (ui_wake_request) uiDeviceWakeup();
 //        if (ui_sleep_request) uiDeviceSleep();
-//        
-        Nop();
+        
     }
     
 }

@@ -206,8 +206,8 @@ void PLLInitialize(void) {
     // Set PLL multiplier to 100
     SPLLCONbits.PLLMULT = 0b1100011; // (99 in binary, 0b0000000 => PLL X 1)
     
-    // Set PLL output divider to 3
-    SPLLCONbits.PLLODIV = 0b010;
+    // Set PLL output divider to 2
+    SPLLCONbits.PLLODIV = 0b001;
     
 }
 
