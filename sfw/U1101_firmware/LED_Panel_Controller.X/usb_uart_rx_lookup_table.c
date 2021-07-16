@@ -14,7 +14,7 @@
 #include "cause_of_reset.h"
 #include "prefetch.h"
 #include "error_handler.h"
-// #include "heartbeat_services.h"
+#include "heartbeat_services.h"
 #include "pin_macros.h"
 //#include "telemetry.h"
 //#include "adc.h"
@@ -138,44 +138,43 @@ usb_uart_command_function_t hostStatusCommand(char * input_str) {
     
     printf("Cause of most recent device reset: %s\r\n", getResetCauseString(reset_cause));
     terminalTextAttributesReset();
-    
-    #warning "fix me"
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//    printf("Up time since last device reset: %s\n\r", 
-//            getStringSecondsAsTime(device_on_time_counter));
-//    terminalTextAttributesReset();
+
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Up time since last device reset: %s\n\r",
+            getStringSecondsAsTime(device_on_time_counter));
+    terminalTextAttributesReset();
 
 }
 
-//usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
-// 
-//    // Snipe out received arguments
-//    char rx_peripheral_name[32];
-//    sscanf(input_str, "Peripheral Status? %[^\t\n\r]", rx_peripheral_name);
-//
-//    // Determine the rail we're enabling or disabling
-//    if (strcmp(rx_peripheral_name, "Interrupts") == 0) {
-//        printInterruptStatus();
-//    }
-//    else if (strcmp(rx_peripheral_name, "Clocks") == 0) {
-//        printClockStatus(SYSCLK_INT);
-//    }
-//    else if (strcmp(rx_peripheral_name, "PMD") == 0) {
-//        printPMDStatus();
-//    }
-//    else if (strcmp(rx_peripheral_name, "WDT") == 0) {
-//        printWatchdogStatus();
-//    }
-//    else if (strcmp(rx_peripheral_name, "DMT") == 0) {
-//        printDeadmanStatus();
-//    }
-//    else if (strcmp(rx_peripheral_name, "Prefetch") == 0) {
-//       printPrefetchStatus();
-//    }
-//    else if (strcmp(rx_peripheral_name, "DMA") == 0) {
-//        printDMAStatus();
-//    }
+usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
+ 
+    // Snipe out received arguments
+    char rx_peripheral_name[32];
+    sscanf(input_str, "Peripheral Status? %[^\t\n\r]", rx_peripheral_name);
+
+    // Determine the rail we're enabling or disabling
+    if (strcmp(rx_peripheral_name, "Interrupts") == 0) {
+        printInterruptStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "Clocks") == 0) {
+        printClockStatus(SYSCLK_INT);
+    }
+    else if (strcmp(rx_peripheral_name, "PMD") == 0) {
+        printPMDStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "WDT") == 0) {
+        printWatchdogStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "DMT") == 0) {
+        printDeadmanStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "Prefetch") == 0) {
+       printPrefetchStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "DMA") == 0) {
+        printDMAStatus();
+    }
 //    else if (strcmp(rx_peripheral_name, "ADC Channels") == 0) {
 //        printADCChannelStatus();
 //    }
@@ -187,39 +186,39 @@ usb_uart_command_function_t hostStatusCommand(char * input_str) {
 //        printf("I2C Bus Master Controller Status:\r\n");
 //        printI2CMasterStatus();
 //    }
-//    else if (strcomp(rx_peripheral_name, "Timer ") == 0) {
-//        uint32_t read_timer_number;
-//        sscanf(rx_peripheral_name, "Timer %u", &read_timer_number);
-//        if (read_timer_number < 1 || read_timer_number > 9) {
-//            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("Please enter a timer number between 1 and 9, user entered %u\r\n", read_timer_number);
-//            terminalTextAttributesReset();
-//        }
-//        else {
-//            printTimerStatus((uint8_t) read_timer_number);
-//        }
-//    }
-//    else {
-//        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        printf("Please enter a peripheral to view status. Received %s as peripheral name\r\n", rx_peripheral_name);
-//        printf("Peripherals that can be monitored include:\r\n"
-//                "   Interrupts\r\n"
-//                "   Clocks\r\n"
-//                "   PMD\r\n"
-//                "   WDT\r\n"
-//                "   DMT\r\n"
-//                "   ADC\r\n"
-//                "   ADC Channels\r\n"
-//                "   Prefetch\r\n"
-//                "   DMA\r\n"
-//                "   I2C Master\r\n"
-//                "   RTCC\r\n"
-//                "   Timer <x> (x = 1-9)\r\n");
-//        terminalTextAttributesReset();
-//        return;
-//    }
-//
-//}
+    else if (strcomp(rx_peripheral_name, "Timer ") == 0) {
+        uint32_t read_timer_number;
+        sscanf(rx_peripheral_name, "Timer %u", &read_timer_number);
+        if (read_timer_number < 1 || read_timer_number > 9) {
+            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("Please enter a timer number between 1 and 9, user entered %u\r\n", read_timer_number);
+            terminalTextAttributesReset();
+        }
+        else {
+            printTimerStatus((uint8_t) read_timer_number);
+        }
+    }
+    else {
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a peripheral to view status. Received %s as peripheral name\r\n", rx_peripheral_name);
+        printf("Peripherals that can be monitored include:\r\n"
+                "   Interrupts\r\n"
+                "   Clocks\r\n"
+                "   PMD\r\n"
+                "   WDT\r\n"
+                "   DMT\r\n"
+                "   ADC\r\n"
+                "   ADC Channels\r\n"
+                "   Prefetch\r\n"
+                "   DMA\r\n"
+                "   I2C Master\r\n"
+                "   RTCC\r\n"
+                "   Timer <x> (x = 1-9)\r\n");
+        terminalTextAttributesReset();
+        return;
+    }
+
+}
 
 usb_uart_command_function_t errorStatusCommand(char * input_str) {
  
@@ -332,20 +331,20 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Host Status?",
             "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
             hostStatusCommand);
-//    usbUartAddCommand("Peripheral Status?",
-//            "\b\b <peripheral_name>: Prints status of passed host peripheral. Available peripherals:\r\n"
-//            "       Interrupts\r\n"
-//            "       Clocks\r\n"
-//            "       PMD\r\n"
-//            "       WDT\r\n"
-//            "       DMT\r\n"
-//            "       Prefetch\r\n"
-//            "       DMA\r\n"
-//            "       ADC\r\n"
-//            "       ADC Channels\r\n"
-//            "       I2C Master\r\n"
-//            "       Timer <x> (x = 1-9)",
-//            peripheralStatusCommand);
+    usbUartAddCommand("Peripheral Status?",
+            "\b\b <peripheral_name>: Prints status of passed host peripheral. Available peripherals:\r\n"
+            "       Interrupts\r\n"
+            "       Clocks\r\n"
+            "       PMD\r\n"
+            "       WDT\r\n"
+            "       DMT\r\n"
+            "       Prefetch\r\n"
+            "       DMA\r\n"
+            "       ADC\r\n"
+            "       ADC Channels\r\n"
+            "       I2C Master\r\n"
+            "       Timer <x> (x = 1-9)",
+            peripheralStatusCommand);
     usbUartAddCommand("Error Status?",
             "Prints the status of various error handler flags",
             errorStatusCommand);

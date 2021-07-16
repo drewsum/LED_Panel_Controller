@@ -123,8 +123,7 @@ void __ISR(_TIMER_1_VECTOR, IPL6SRS) hearbeatTimerISR(void) {
     heartbeat_systick++;
     
     // Set flags to execute recurring function calls
-#warning "heartbeat services"
-    // heartbeatServices();
+    heartbeatServices();
     
     // Clear interrupt flag
     clearInterruptFlag(Timer1);

@@ -1517,32 +1517,7 @@ void printDMAStatus(void) {
     if (DCRCCONbits.CRCEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA CRC is currently %s\n\r", DCRCCONbits.CRCEN ? "enabled" : "disabled");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA CRC Byte Order: ");
-    switch (DCRCCONbits.BYTO) {
-        case 0b11:
-            printf("Endian byte swap on half-word boundaries (i.e., source half-word order with reverse source byte order"
-                    "per half-word)\r\n");
-            break;
-        case 0b10:
-            printf("Swap half-words on word boundaries (i.e., reverse source half-word order with source byte order per"
-                    "half-word)\r\n");
-            break;
-        case 0b01:
-            printf("Endian byte swap on word boundaries (i.e., reverse source byte order)\r\n");
-            break;
-        case 0b00:
-            printf("No swapping (i.e., source byte order)\r\n");
-            break;
-    }
-    printf("    CRC Write Byte Order: %s\r\n", DCRCCONbits.WBO ? 
-        "Source data is written to the destination re-ordered as defined by BYTO<1:0>" : 
-        "Source data is written to the destination unaltered");
-    printf("    CRC bit order: %s\r\n", DCRCCONbits.BITO ? "LSb first" : "MSb first");
-    printf("    CRC polynomial length: %u\r\n", DCRCCONbits.PLEN);
-    printf("    CRC append mode: %s\r\n", DCRCCONbits.CRCAPP ? "back to source" : "write to destination");
-    printf("    CRC Data: 0x%08X\r\n", DCRCDATA);
-    printf("    CRC XOR: 0x%08x\r\n", DCRCXOR);
+    terminalTextAttributesReset();
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // print out stuff for DMA 0
@@ -1559,57 +1534,7 @@ void printDMAStatus(void) {
     if (DCH0CONbits.CHPIGNEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 0 Pattern Match: %s\n\r", DCH0CONbits.CHPIGNEN ? "Enable" : "Disable");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Pattern Length: %s\n\r", DCH0CONbits.CHPATLEN ? "2 bytes" : "1 byte");
-    printf("    DMA Channel 0 Force Events: %s\n\r", DCH0CONbits.CHAED ? "True" : "False");
-    if (DCH0CONbits.CHCHN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Chain Enable: %s\n\r", DCH0CONbits.CHCHN ? "Enable" : "Disable");
-    if (DCH0CONbits.CHAEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Automatic Enable: %s\n\r", DCH0CONbits.CHAEN ? "True" : "False");
-    if (DCH0CONbits.CHEDET) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Event Detect: %s\n\r", DCH0CONbits.CHEDET ? "True" : "False");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Priority: %u\n\r", DCH0CONbits.CHPRI);
-    // DCH0ECON
-    printf("    DMA Channel 0 Start IRQ: %u\r\n", DCH0ECONbits.CHSIRQ);
-    printf("    DMA Channel 0 Abort IRQ: %u\r\n", DCH0ECONbits.CHAIRQ);
-    if (DCH0ECONbits.PATEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Pattern Match: %s\n\r", DCH0ECONbits.PATEN ? "Enable" : "Disable");
-    if (DCH0ECONbits.SIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Start IRQ Enable: %s\n\r", DCH0ECONbits.SIRQEN ? "True" : "False");
-    if (DCH0ECONbits.AIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Abort IRQ Enable: %s\n\r", DCH0ECONbits.AIRQEN ? "True" : "False");
-    // DCH0 INT register
-    if (DCH0INTbits.CHSDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Source Done IRQ: %s, %s\n\r", DCH0INTbits.CHSDIE ? "Enabled" : "Disabled", DCH0INTbits.CHSDIF ? "Triggered" : "Not Triggered");
-    if (DCH0INTbits.CHSHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Source Half Empty IRQ: %s, %s\n\r", DCH0INTbits.CHSHIE ? "Enabled" : "Disabled", DCH0INTbits.CHSHIF ? "Triggered" : "Not Triggered");
-    if (DCH0INTbits.CHDDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Destination Done IRQ: %s, %s\n\r", DCH0INTbits.CHDDIE ? "Enabled" : "Disabled", DCH0INTbits.CHDDIF ? "Triggered" : "Not Triggered");
-    if (DCH0INTbits.CHDHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Destination Half Full IRQ: %s, %s\n\r", DCH0INTbits.CHDHIE ? "Enabled" : "Disabled", DCH0INTbits.CHDHIF ? "Triggered" : "Not Triggered");
-    if (DCH0INTbits.CHBCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Block Transfer Complete IRQ: %s, %s\n\r", DCH0INTbits.CHBCIE ? "Enabled" : "Disabled", DCH0INTbits.CHBCIF ? "Triggered" : "Not Triggered");
-    if (DCH0INTbits.CHCCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Cell Transfer Complete IRQ: %s, %s\n\r", DCH0INTbits.CHCCIE ? "Enabled" : "Disabled", DCH0INTbits.CHCCIF ? "Triggered" : "Not Triggered");
-    if (DCH0INTbits.CHTAIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Transfer Abort IRQ: %s, %s\n\r", DCH0INTbits.CHTAIE ? "Enabled" : "Disabled", DCH0INTbits.CHTAIF ? "Triggered" : "Not Triggered");
-    if (DCH0INTbits.CHERIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 0 Address Error IRQ: %s, %s\n\r", DCH0INTbits.CHERIE ? "Enabled" : "Disabled", DCH0INTbits.CHERIF ? "Triggered" : "Not Triggered");
+    
     // Channel Addressing
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 0 Source Start: 0x%08X\r\n", DCH0SSA);
@@ -1637,57 +1562,7 @@ void printDMAStatus(void) {
     if (DCH1CONbits.CHPIGNEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 1 Pattern Match: %s\n\r", DCH1CONbits.CHPIGNEN ? "Enable" : "Disable");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Pattern Length: %s\n\r", DCH1CONbits.CHPATLEN ? "2 bytes" : "1 byte");
-    printf("    DMA Channel 1 Force Events: %s\n\r", DCH1CONbits.CHAED ? "True" : "False");
-    if (DCH1CONbits.CHCHN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Chain Enable: %s\n\r", DCH1CONbits.CHCHN ? "Enable" : "Disable");
-    if (DCH1CONbits.CHAEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Automatic Enable: %s\n\r", DCH1CONbits.CHAEN ? "True" : "False");
-    if (DCH1CONbits.CHEDET) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Event Detect: %s\n\r", DCH1CONbits.CHEDET ? "True" : "False");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Priority: %u\n\r", DCH1CONbits.CHPRI);
-    // DCH0ECON
-    printf("    DMA Channel 1 Start IRQ: %u\r\n", DCH1ECONbits.CHSIRQ);
-    printf("    DMA Channel 1 Abort IRQ: %u\r\n", DCH1ECONbits.CHAIRQ);
-    if (DCH1ECONbits.PATEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Pattern Match: %s\n\r", DCH1ECONbits.PATEN ? "Enable" : "Disable");
-    if (DCH1ECONbits.SIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Start IRQ Enable: %s\n\r", DCH1ECONbits.SIRQEN ? "True" : "False");
-    if (DCH1ECONbits.AIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Abort IRQ Enable: %s\n\r", DCH1ECONbits.AIRQEN ? "True" : "False");
-    // DCH0 INT register
-    if (DCH1INTbits.CHSDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Source Done IRQ: %s, %s\n\r", DCH1INTbits.CHSDIE ? "Enabled" : "Disabled", DCH1INTbits.CHSDIF ? "Triggered" : "Not Triggered");
-    if (DCH1INTbits.CHSHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Source Half Empty IRQ: %s, %s\n\r", DCH1INTbits.CHSHIE ? "Enabled" : "Disabled", DCH1INTbits.CHSHIF ? "Triggered" : "Not Triggered");
-    if (DCH1INTbits.CHDDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Destination Done IRQ: %s, %s\n\r", DCH1INTbits.CHDDIE ? "Enabled" : "Disabled", DCH1INTbits.CHDDIF ? "Triggered" : "Not Triggered");
-    if (DCH1INTbits.CHDHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Destination Half Full IRQ: %s, %s\n\r", DCH1INTbits.CHDHIE ? "Enabled" : "Disabled", DCH1INTbits.CHDHIF ? "Triggered" : "Not Triggered");
-    if (DCH1INTbits.CHBCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Block Transfer Complete IRQ: %s, %s\n\r", DCH1INTbits.CHBCIE ? "Enabled" : "Disabled", DCH1INTbits.CHBCIF ? "Triggered" : "Not Triggered");
-    if (DCH1INTbits.CHCCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Cell Transfer Complete IRQ: %s, %s\n\r", DCH1INTbits.CHCCIE ? "Enabled" : "Disabled", DCH1INTbits.CHCCIF ? "Triggered" : "Not Triggered");
-    if (DCH1INTbits.CHTAIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Transfer Abort IRQ: %s, %s\n\r", DCH1INTbits.CHTAIE ? "Enabled" : "Disabled", DCH1INTbits.CHTAIF ? "Triggered" : "Not Triggered");
-    if (DCH1INTbits.CHERIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 1 Address Error IRQ: %s, %s\n\r", DCH1INTbits.CHERIE ? "Enabled" : "Disabled", DCH1INTbits.CHERIF ? "Triggered" : "Not Triggered");
+    
     // Channel Addressing
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 1 Source Start: 0x%08X\r\n", DCH1SSA);
@@ -1715,57 +1590,7 @@ void printDMAStatus(void) {
     if (DCH2CONbits.CHPIGNEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 2 Pattern Match: %s\n\r", DCH2CONbits.CHPIGNEN ? "Enable" : "Disable");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Pattern Length: %s\n\r", DCH2CONbits.CHPATLEN ? "2 bytes" : "1 byte");
-    printf("    DMA Channel 2 Force Events: %s\n\r", DCH2CONbits.CHAED ? "True" : "False");
-    if (DCH2CONbits.CHCHN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Chain Enable: %s\n\r", DCH2CONbits.CHCHN ? "Enable" : "Disable");
-    if (DCH2CONbits.CHAEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Automatic Enable: %s\n\r", DCH2CONbits.CHAEN ? "True" : "False");
-    if (DCH2CONbits.CHEDET) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Event Detect: %s\n\r", DCH2CONbits.CHEDET ? "True" : "False");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Priority: %u\n\r", DCH2CONbits.CHPRI);
-    // DCH0ECON
-    printf("    DMA Channel 2 Start IRQ: %u\r\n", DCH2ECONbits.CHSIRQ);
-    printf("    DMA Channel 2 Abort IRQ: %u\r\n", DCH2ECONbits.CHAIRQ);
-    if (DCH2ECONbits.PATEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Pattern Match: %s\n\r", DCH2ECONbits.PATEN ? "Enable" : "Disable");
-    if (DCH2ECONbits.SIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Start IRQ Enable: %s\n\r", DCH2ECONbits.SIRQEN ? "True" : "False");
-    if (DCH2ECONbits.AIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Abort IRQ Enable: %s\n\r", DCH2ECONbits.AIRQEN ? "True" : "False");
-    // DCH0 INT register
-    if (DCH2INTbits.CHSDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Source Done IRQ: %s, %s\n\r", DCH2INTbits.CHSDIE ? "Enabled" : "Disabled", DCH2INTbits.CHSDIF ? "Triggered" : "Not Triggered");
-    if (DCH2INTbits.CHSHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Source Half Empty IRQ: %s, %s\n\r", DCH2INTbits.CHSHIE ? "Enabled" : "Disabled", DCH2INTbits.CHSHIF ? "Triggered" : "Not Triggered");
-    if (DCH2INTbits.CHDDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Destination Done IRQ: %s, %s\n\r", DCH2INTbits.CHDDIE ? "Enabled" : "Disabled", DCH2INTbits.CHDDIF ? "Triggered" : "Not Triggered");
-    if (DCH2INTbits.CHDHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Destination Half Full IRQ: %s, %s\n\r", DCH2INTbits.CHDHIE ? "Enabled" : "Disabled", DCH2INTbits.CHDHIF ? "Triggered" : "Not Triggered");
-    if (DCH2INTbits.CHBCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Block Transfer Complete IRQ: %s, %s\n\r", DCH2INTbits.CHBCIE ? "Enabled" : "Disabled", DCH2INTbits.CHBCIF ? "Triggered" : "Not Triggered");
-    if (DCH2INTbits.CHCCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Cell Transfer Complete IRQ: %s, %s\n\r", DCH2INTbits.CHCCIE ? "Enabled" : "Disabled", DCH2INTbits.CHCCIF ? "Triggered" : "Not Triggered");
-    if (DCH2INTbits.CHTAIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Transfer Abort IRQ: %s, %s\n\r", DCH2INTbits.CHTAIE ? "Enabled" : "Disabled", DCH2INTbits.CHTAIF ? "Triggered" : "Not Triggered");
-    if (DCH2INTbits.CHERIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 2 Address Error IRQ: %s, %s\n\r", DCH2INTbits.CHERIE ? "Enabled" : "Disabled", DCH2INTbits.CHERIF ? "Triggered" : "Not Triggered");
+    
     // Channel Addressing
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 2 Source Start: 0x%08X\r\n", DCH2SSA);
@@ -1793,57 +1618,7 @@ void printDMAStatus(void) {
     if (DCH3CONbits.CHPIGNEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 3 Pattern Match: %s\n\r", DCH3CONbits.CHPIGNEN ? "Enable" : "Disable");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Pattern Length: %s\n\r", DCH3CONbits.CHPATLEN ? "2 bytes" : "1 byte");
-    printf("    DMA Channel 3 Force Events: %s\n\r", DCH3CONbits.CHAED ? "True" : "False");
-    if (DCH3CONbits.CHCHN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Chain Enable: %s\n\r", DCH3CONbits.CHCHN ? "Enable" : "Disable");
-    if (DCH3CONbits.CHAEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Automatic Enable: %s\n\r", DCH3CONbits.CHAEN ? "True" : "False");
-    if (DCH3CONbits.CHEDET) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Event Detect: %s\n\r", DCH3CONbits.CHEDET ? "True" : "False");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Priority: %u\n\r", DCH3CONbits.CHPRI);
-    // DCH0ECON
-    printf("    DMA Channel 3 Start IRQ: %u\r\n", DCH3ECONbits.CHSIRQ);
-    printf("    DMA Channel 3 Abort IRQ: %u\r\n", DCH3ECONbits.CHAIRQ);
-    if (DCH3ECONbits.PATEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Pattern Match: %s\n\r", DCH3ECONbits.PATEN ? "Enable" : "Disable");
-    if (DCH3ECONbits.SIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Start IRQ Enable: %s\n\r", DCH3ECONbits.SIRQEN ? "True" : "False");
-    if (DCH3ECONbits.AIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Abort IRQ Enable: %s\n\r", DCH3ECONbits.AIRQEN ? "True" : "False");
-    // DCH0 INT register
-    if (DCH3INTbits.CHSDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Source Done IRQ: %s, %s\n\r", DCH3INTbits.CHSDIE ? "Enabled" : "Disabled", DCH3INTbits.CHSDIF ? "Triggered" : "Not Triggered");
-    if (DCH3INTbits.CHSHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Source Half Empty IRQ: %s, %s\n\r", DCH3INTbits.CHSHIE ? "Enabled" : "Disabled", DCH3INTbits.CHSHIF ? "Triggered" : "Not Triggered");
-    if (DCH3INTbits.CHDDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Destination Done IRQ: %s, %s\n\r", DCH3INTbits.CHDDIE ? "Enabled" : "Disabled", DCH3INTbits.CHDDIF ? "Triggered" : "Not Triggered");
-    if (DCH3INTbits.CHDHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Destination Half Full IRQ: %s, %s\n\r", DCH3INTbits.CHDHIE ? "Enabled" : "Disabled", DCH3INTbits.CHDHIF ? "Triggered" : "Not Triggered");
-    if (DCH3INTbits.CHBCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Block Transfer Complete IRQ: %s, %s\n\r", DCH3INTbits.CHBCIE ? "Enabled" : "Disabled", DCH3INTbits.CHBCIF ? "Triggered" : "Not Triggered");
-    if (DCH3INTbits.CHCCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Cell Transfer Complete IRQ: %s, %s\n\r", DCH3INTbits.CHCCIE ? "Enabled" : "Disabled", DCH3INTbits.CHCCIF ? "Triggered" : "Not Triggered");
-    if (DCH3INTbits.CHTAIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Transfer Abort IRQ: %s, %s\n\r", DCH3INTbits.CHTAIE ? "Enabled" : "Disabled", DCH3INTbits.CHTAIF ? "Triggered" : "Not Triggered");
-    if (DCH3INTbits.CHERIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 3 Address Error IRQ: %s, %s\n\r", DCH3INTbits.CHERIE ? "Enabled" : "Disabled", DCH3INTbits.CHERIF ? "Triggered" : "Not Triggered");
+    
     // Channel Addressing
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 3 Source Start: 0x%08X\r\n", DCH3SSA);
@@ -1871,57 +1646,7 @@ void printDMAStatus(void) {
     if (DCH4CONbits.CHPIGNEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 4 Pattern Match: %s\n\r", DCH4CONbits.CHPIGNEN ? "Enable" : "Disable");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Pattern Length: %s\n\r", DCH4CONbits.CHPATLEN ? "2 bytes" : "1 byte");
-    printf("    DMA Channel 4 Force Events: %s\n\r", DCH4CONbits.CHAED ? "True" : "False");
-    if (DCH4CONbits.CHCHN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Chain Enable: %s\n\r", DCH4CONbits.CHCHN ? "Enable" : "Disable");
-    if (DCH4CONbits.CHAEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Automatic Enable: %s\n\r", DCH4CONbits.CHAEN ? "True" : "False");
-    if (DCH4CONbits.CHEDET) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Event Detect: %s\n\r", DCH4CONbits.CHEDET ? "True" : "False");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Priority: %u\n\r", DCH4CONbits.CHPRI);
-    // DCH0ECON
-    printf("    DMA Channel 4 Start IRQ: %u\r\n", DCH4ECONbits.CHSIRQ);
-    printf("    DMA Channel 4 Abort IRQ: %u\r\n", DCH4ECONbits.CHAIRQ);
-    if (DCH4ECONbits.PATEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Pattern Match: %s\n\r", DCH4ECONbits.PATEN ? "Enable" : "Disable");
-    if (DCH4ECONbits.SIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Start IRQ Enable: %s\n\r", DCH4ECONbits.SIRQEN ? "True" : "False");
-    if (DCH4ECONbits.AIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Abort IRQ Enable: %s\n\r", DCH4ECONbits.AIRQEN ? "True" : "False");
-    // DCH0 INT register
-    if (DCH4INTbits.CHSDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Source Done IRQ: %s, %s\n\r", DCH4INTbits.CHSDIE ? "Enabled" : "Disabled", DCH4INTbits.CHSDIF ? "Triggered" : "Not Triggered");
-    if (DCH4INTbits.CHSHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Source Half Empty IRQ: %s, %s\n\r", DCH4INTbits.CHSHIE ? "Enabled" : "Disabled", DCH4INTbits.CHSHIF ? "Triggered" : "Not Triggered");
-    if (DCH4INTbits.CHDDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Destination Done IRQ: %s, %s\n\r", DCH4INTbits.CHDDIE ? "Enabled" : "Disabled", DCH4INTbits.CHDDIF ? "Triggered" : "Not Triggered");
-    if (DCH4INTbits.CHDHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Destination Half Full IRQ: %s, %s\n\r", DCH4INTbits.CHDHIE ? "Enabled" : "Disabled", DCH4INTbits.CHDHIF ? "Triggered" : "Not Triggered");
-    if (DCH4INTbits.CHBCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Block Transfer Complete IRQ: %s, %s\n\r", DCH4INTbits.CHBCIE ? "Enabled" : "Disabled", DCH4INTbits.CHBCIF ? "Triggered" : "Not Triggered");
-    if (DCH4INTbits.CHCCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Cell Transfer Complete IRQ: %s, %s\n\r", DCH4INTbits.CHCCIE ? "Enabled" : "Disabled", DCH4INTbits.CHCCIF ? "Triggered" : "Not Triggered");
-    if (DCH4INTbits.CHTAIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Transfer Abort IRQ: %s, %s\n\r", DCH4INTbits.CHTAIE ? "Enabled" : "Disabled", DCH4INTbits.CHTAIF ? "Triggered" : "Not Triggered");
-    if (DCH4INTbits.CHERIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 4 Address Error IRQ: %s, %s\n\r", DCH4INTbits.CHERIE ? "Enabled" : "Disabled", DCH4INTbits.CHERIF ? "Triggered" : "Not Triggered");
+    
     // Channel Addressing
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 4 Source Start: 0x%08X\r\n", DCH4SSA);
@@ -1949,57 +1674,7 @@ void printDMAStatus(void) {
     if (DCH5CONbits.CHPIGNEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 5 Pattern Match: %s\n\r", DCH5CONbits.CHPIGNEN ? "Enable" : "Disable");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Pattern Length: %s\n\r", DCH5CONbits.CHPATLEN ? "2 bytes" : "1 byte");
-    printf("    DMA Channel 5 Force Events: %s\n\r", DCH5CONbits.CHAED ? "True" : "False");
-    if (DCH5CONbits.CHCHN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Chain Enable: %s\n\r", DCH5CONbits.CHCHN ? "Enable" : "Disable");
-    if (DCH5CONbits.CHAEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Automatic Enable: %s\n\r", DCH5CONbits.CHAEN ? "True" : "False");
-    if (DCH5CONbits.CHEDET) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Event Detect: %s\n\r", DCH5CONbits.CHEDET ? "True" : "False");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Priority: %u\n\r", DCH5CONbits.CHPRI);
-    // DCH0ECON
-    printf("    DMA Channel 5 Start IRQ: %u\r\n", DCH5ECONbits.CHSIRQ);
-    printf("    DMA Channel 5 Abort IRQ: %u\r\n", DCH5ECONbits.CHAIRQ);
-    if (DCH5ECONbits.PATEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Pattern Match: %s\n\r", DCH5ECONbits.PATEN ? "Enable" : "Disable");
-    if (DCH5ECONbits.SIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Start IRQ Enable: %s\n\r", DCH5ECONbits.SIRQEN ? "True" : "False");
-    if (DCH5ECONbits.AIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Abort IRQ Enable: %s\n\r", DCH5ECONbits.AIRQEN ? "True" : "False");
-    // DCH0 INT register
-    if (DCH5INTbits.CHSDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Source Done IRQ: %s, %s\n\r", DCH5INTbits.CHSDIE ? "Enabled" : "Disabled", DCH5INTbits.CHSDIF ? "Triggered" : "Not Triggered");
-    if (DCH5INTbits.CHSHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Source Half Empty IRQ: %s, %s\n\r", DCH5INTbits.CHSHIE ? "Enabled" : "Disabled", DCH5INTbits.CHSHIF ? "Triggered" : "Not Triggered");
-    if (DCH5INTbits.CHDDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Destination Done IRQ: %s, %s\n\r", DCH5INTbits.CHDDIE ? "Enabled" : "Disabled", DCH5INTbits.CHDDIF ? "Triggered" : "Not Triggered");
-    if (DCH5INTbits.CHDHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Destination Half Full IRQ: %s, %s\n\r", DCH5INTbits.CHDHIE ? "Enabled" : "Disabled", DCH5INTbits.CHDHIF ? "Triggered" : "Not Triggered");
-    if (DCH5INTbits.CHBCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Block Transfer Complete IRQ: %s, %s\n\r", DCH5INTbits.CHBCIE ? "Enabled" : "Disabled", DCH5INTbits.CHBCIF ? "Triggered" : "Not Triggered");
-    if (DCH5INTbits.CHCCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Cell Transfer Complete IRQ: %s, %s\n\r", DCH5INTbits.CHCCIE ? "Enabled" : "Disabled", DCH5INTbits.CHCCIF ? "Triggered" : "Not Triggered");
-    if (DCH5INTbits.CHTAIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Transfer Abort IRQ: %s, %s\n\r", DCH5INTbits.CHTAIE ? "Enabled" : "Disabled", DCH5INTbits.CHTAIF ? "Triggered" : "Not Triggered");
-    if (DCH5INTbits.CHERIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 5 Address Error IRQ: %s, %s\n\r", DCH5INTbits.CHERIE ? "Enabled" : "Disabled", DCH5INTbits.CHERIF ? "Triggered" : "Not Triggered");
+    
     // Channel Addressing
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 5 Source Start: 0x%08X\r\n", DCH5SSA);
@@ -2027,57 +1702,7 @@ void printDMAStatus(void) {
     if (DCH6CONbits.CHPIGNEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 6 Pattern Match: %s\n\r", DCH6CONbits.CHPIGNEN ? "Enable" : "Disable");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Pattern Length: %s\n\r", DCH6CONbits.CHPATLEN ? "2 bytes" : "1 byte");
-    printf("    DMA Channel 6 Force Events: %s\n\r", DCH6CONbits.CHAED ? "True" : "False");
-    if (DCH6CONbits.CHCHN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Chain Enable: %s\n\r", DCH6CONbits.CHCHN ? "Enable" : "Disable");
-    if (DCH6CONbits.CHAEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Automatic Enable: %s\n\r", DCH6CONbits.CHAEN ? "True" : "False");
-    if (DCH6CONbits.CHEDET) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Event Detect: %s\n\r", DCH6CONbits.CHEDET ? "True" : "False");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Priority: %u\n\r", DCH6CONbits.CHPRI);
-    // DCH0ECON
-    printf("    DMA Channel 6 Start IRQ: %u\r\n", DCH6ECONbits.CHSIRQ);
-    printf("    DMA Channel 6 Abort IRQ: %u\r\n", DCH6ECONbits.CHAIRQ);
-    if (DCH6ECONbits.PATEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Pattern Match: %s\n\r", DCH6ECONbits.PATEN ? "Enable" : "Disable");
-    if (DCH6ECONbits.SIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Start IRQ Enable: %s\n\r", DCH6ECONbits.SIRQEN ? "True" : "False");
-    if (DCH6ECONbits.AIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Abort IRQ Enable: %s\n\r", DCH6ECONbits.AIRQEN ? "True" : "False");
-    // DCH0 INT register
-    if (DCH6INTbits.CHSDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Source Done IRQ: %s, %s\n\r", DCH6INTbits.CHSDIE ? "Enabled" : "Disabled", DCH6INTbits.CHSDIF ? "Triggered" : "Not Triggered");
-    if (DCH6INTbits.CHSHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Source Half Empty IRQ: %s, %s\n\r", DCH6INTbits.CHSHIE ? "Enabled" : "Disabled", DCH6INTbits.CHSHIF ? "Triggered" : "Not Triggered");
-    if (DCH6INTbits.CHDDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Destination Done IRQ: %s, %s\n\r", DCH6INTbits.CHDDIE ? "Enabled" : "Disabled", DCH6INTbits.CHDDIF ? "Triggered" : "Not Triggered");
-    if (DCH6INTbits.CHDHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Destination Half Full IRQ: %s, %s\n\r", DCH6INTbits.CHDHIE ? "Enabled" : "Disabled", DCH6INTbits.CHDHIF ? "Triggered" : "Not Triggered");
-    if (DCH6INTbits.CHBCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Block Transfer Complete IRQ: %s, %s\n\r", DCH6INTbits.CHBCIE ? "Enabled" : "Disabled", DCH6INTbits.CHBCIF ? "Triggered" : "Not Triggered");
-    if (DCH6INTbits.CHCCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Cell Transfer Complete IRQ: %s, %s\n\r", DCH6INTbits.CHCCIE ? "Enabled" : "Disabled", DCH6INTbits.CHCCIF ? "Triggered" : "Not Triggered");
-    if (DCH6INTbits.CHTAIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Transfer Abort IRQ: %s, %s\n\r", DCH6INTbits.CHTAIE ? "Enabled" : "Disabled", DCH6INTbits.CHTAIF ? "Triggered" : "Not Triggered");
-    if (DCH6INTbits.CHERIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 6 Address Error IRQ: %s, %s\n\r", DCH6INTbits.CHERIE ? "Enabled" : "Disabled", DCH6INTbits.CHERIF ? "Triggered" : "Not Triggered");
+    
     // Channel Addressing
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 6 Source Start: 0x%08X\r\n", DCH6SSA);
@@ -2105,57 +1730,7 @@ void printDMAStatus(void) {
     if (DCH7CONbits.CHPIGNEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 7 Pattern Match: %s\n\r", DCH7CONbits.CHPIGNEN ? "Enable" : "Disable");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Pattern Length: %s\n\r", DCH7CONbits.CHPATLEN ? "2 bytes" : "1 byte");
-    printf("    DMA Channel 7 Force Events: %s\n\r", DCH7CONbits.CHAED ? "True" : "False");
-    if (DCH7CONbits.CHCHN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Chain Enable: %s\n\r", DCH7CONbits.CHCHN ? "Enable" : "Disable");
-    if (DCH7CONbits.CHAEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Automatic Enable: %s\n\r", DCH7CONbits.CHAEN ? "True" : "False");
-    if (DCH7CONbits.CHEDET) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Event Detect: %s\n\r", DCH7CONbits.CHEDET ? "True" : "False");
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Priority: %u\n\r", DCH7CONbits.CHPRI);
-    // DCH0ECON
-    printf("    DMA Channel 7 Start IRQ: %u\r\n", DCH7ECONbits.CHSIRQ);
-    printf("    DMA Channel 7 Abort IRQ: %u\r\n", DCH7ECONbits.CHAIRQ);
-    if (DCH7ECONbits.PATEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Pattern Match: %s\n\r", DCH7ECONbits.PATEN ? "Enable" : "Disable");
-    if (DCH7ECONbits.SIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Start IRQ Enable: %s\n\r", DCH7ECONbits.SIRQEN ? "True" : "False");
-    if (DCH7ECONbits.AIRQEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Abort IRQ Enable: %s\n\r", DCH7ECONbits.AIRQEN ? "True" : "False");
-    // DCH0 INT register
-    if (DCH7INTbits.CHSDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Source Done IRQ: %s, %s\n\r", DCH7INTbits.CHSDIE ? "Enabled" : "Disabled", DCH7INTbits.CHSDIF ? "Triggered" : "Not Triggered");
-    if (DCH7INTbits.CHSHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Source Half Empty IRQ: %s, %s\n\r", DCH7INTbits.CHSHIE ? "Enabled" : "Disabled", DCH7INTbits.CHSHIF ? "Triggered" : "Not Triggered");
-    if (DCH7INTbits.CHDDIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Destination Done IRQ: %s, %s\n\r", DCH7INTbits.CHDDIE ? "Enabled" : "Disabled", DCH7INTbits.CHDDIF ? "Triggered" : "Not Triggered");
-    if (DCH7INTbits.CHDHIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Destination Half Full IRQ: %s, %s\n\r", DCH7INTbits.CHDHIE ? "Enabled" : "Disabled", DCH7INTbits.CHDHIF ? "Triggered" : "Not Triggered");
-    if (DCH7INTbits.CHBCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Block Transfer Complete IRQ: %s, %s\n\r", DCH7INTbits.CHBCIE ? "Enabled" : "Disabled", DCH7INTbits.CHBCIF ? "Triggered" : "Not Triggered");
-    if (DCH7INTbits.CHCCIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Cell Transfer Complete IRQ: %s, %s\n\r", DCH7INTbits.CHCCIE ? "Enabled" : "Disabled", DCH7INTbits.CHCCIF ? "Triggered" : "Not Triggered");
-    if (DCH7INTbits.CHTAIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Transfer Abort IRQ: %s, %s\n\r", DCH7INTbits.CHTAIE ? "Enabled" : "Disabled", DCH7INTbits.CHTAIF ? "Triggered" : "Not Triggered");
-    if (DCH7INTbits.CHERIE) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    DMA Channel 7 Address Error IRQ: %s, %s\n\r", DCH7INTbits.CHERIE ? "Enabled" : "Disabled", DCH7INTbits.CHERIF ? "Triggered" : "Not Triggered");
+    
     // Channel Addressing
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    DMA Channel 7 Source Start: 0x%08X\r\n", DCH7SSA);
