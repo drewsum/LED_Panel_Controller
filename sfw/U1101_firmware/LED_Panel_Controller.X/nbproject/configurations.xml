@@ -22,6 +22,10 @@
         <itemPath>pin_macros.h</itemPath>
         <itemPath>gpio_setup.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f5" displayName="I2C" projectFiles="true">
+        <itemPath>plib_i2c.h</itemPath>
+        <itemPath>plib_i2c_master.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
         <itemPath>usb_uart.h</itemPath>
@@ -52,6 +56,9 @@
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="I2C" projectFiles="true">
+        <itemPath>plib_i2c.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.c</itemPath>
@@ -237,6 +244,7 @@
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
         <property key="wpo-lto" value="false"/>
+        <appendMe value="-O"/>
       </C32Global>
       <pk4hybrid>
         <property key="ADC" value="true"/>

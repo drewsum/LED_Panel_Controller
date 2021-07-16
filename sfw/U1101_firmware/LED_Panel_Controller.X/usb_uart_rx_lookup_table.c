@@ -181,11 +181,11 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
 //    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
 //        printADCStatus();
 //    }
-//    else if (strcmp(rx_peripheral_name, "I2C Master") == 0) {    
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("I2C Bus Master Controller Status:\r\n");
-//        printI2CMasterStatus();
-//    }
+    else if (strcmp(rx_peripheral_name, "I2C Master") == 0) {    
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("I2C Bus Master Controller Status:\r\n");
+        printI2CMasterStatus();
+    }
     else if (strcomp(rx_peripheral_name, "Timer ") == 0) {
         uint32_t read_timer_number;
         sscanf(rx_peripheral_name, "Timer %u", &read_timer_number);

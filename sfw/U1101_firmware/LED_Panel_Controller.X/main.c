@@ -32,11 +32,10 @@
 #include "heartbeat_services.h"
 #include "power_saving.h"
 //#include "telemetry.h"
-//#include "user_interface.h"
 
 // I2C
-//#include "plib_i2c.h"
-//#include "plib_i2c_master.h"
+#include "plib_i2c.h"
+#include "plib_i2c_master.h"
 //#include "temperature_sensors.h"
 //#include "power_monitors.h"
 //#include "misc_i2c_devices.h"
@@ -158,11 +157,11 @@ void main(void) {
     printf("    Watchdog Timer Initialized\n\r");
     while(usbUartCheckIfBusy());
     
-//    // setup I2C
-//    I2CMaster_Initialize();
-//    printf("    I2C Bus Master Initialized\r\n");
-//    while(usbUartCheckIfBusy());
-//    
+    // setup I2C
+    I2CMaster_Initialize();
+    printf("    I2C Bus Master Initialized\r\n");
+    while(usbUartCheckIfBusy());
+    
 //    if (nTELEMETRY_CONFIG_PIN == LOW) {
 //        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
 //        printf("    Telemetry Configuration Detected\r\n");
