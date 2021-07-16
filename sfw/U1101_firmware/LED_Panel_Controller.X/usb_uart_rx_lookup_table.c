@@ -11,7 +11,8 @@
 #include "main.h"
 #include "terminal_control.h"
 #include "device_control.h"
-// #include "cause_of_reset.h"
+#include "cause_of_reset.h"
+#include "prefetch.h"
 #include "error_handler.h"
 // #include "heartbeat_services.h"
 #include "pin_macros.h"
@@ -83,69 +84,70 @@ usb_uart_command_function_t repositoryCommand(char * input_str) {
     terminalTextAttributesReset();    
 }
 
-//usb_uart_command_function_t hostStatusCommand(char * input_str) {
-//
-//    terminalTextAttributesReset();
-//    
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("Host Firmware Version: %s\r\n", FIRMWARE_VERSION_STR);
-//    
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//    printf("Host Device IDs:\r\n");
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    
-//    // Print serial number
-//    printf("    PIC32MZ Serial Number retrieved from Flash: %s\n\r",
-//                getStringSerialNumber());
-//        
-//    // Print device ID
-//    printf("    Device ID retrieved from Flash: %s (0x%X)\n\r", 
-//        getDeviceIDString(getDeviceID()), 
-//        getDeviceID());
-//
-//        // Print revision ID
-//    printf("    Revision ID retrieved from Flash: %s (0x%X)\n\r", 
-//        getRevisionIDString(getRevisionID()), 
-//        getRevisionID());
-//
-//    terminalTextAttributesReset();
-//    
-//    printWatchdogStatus();
-//    printDeadmanStatus();
-//    printPrefetchStatus();
-//    
-//    // Print cause of reset
-//    if (    reset_cause == Undefined ||
-//            reset_cause == Primary_Config_Registers_Error ||
-//            reset_cause == Primary_Secondary_Config_Registers_Error ||
-//            reset_cause == Config_Mismatch ||
-//            reset_cause == DMT_Reset ||
-//            reset_cause == WDT_Reset ||
-//            reset_cause == Software_Reset ||
-//            reset_cause == External_Reset ||
-//            reset_cause == BOR_Reset) {
-//    
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
-//        
-//    }
-//    
-//    else {
-//     
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//        
-//    }
-//    
-//    printf("Cause of most recent device reset: %s\r\n", getResetCauseString(reset_cause));
-//    terminalTextAttributesReset();
-//    
+usb_uart_command_function_t hostStatusCommand(char * input_str) {
+
+    terminalTextAttributesReset();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Host Firmware Version: %s\r\n", FIRMWARE_VERSION_STR);
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Host Device IDs:\r\n");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    
+    // Print serial number
+    printf("    PIC32MZ Serial Number retrieved from Flash: %s\n\r",
+                getStringSerialNumber());
+        
+    // Print device ID
+    printf("    Device ID retrieved from Flash: %s (0x%X)\n\r", 
+        getDeviceIDString(getDeviceID()), 
+        getDeviceID());
+
+        // Print revision ID
+    printf("    Revision ID retrieved from Flash: %s (0x%X)\n\r", 
+        getRevisionIDString(getRevisionID()), 
+        getRevisionID());
+
+    terminalTextAttributesReset();
+    
+    printWatchdogStatus();
+    printDeadmanStatus();
+    printPrefetchStatus();
+
+    // Print cause of reset
+    if (    reset_cause == Undefined ||
+            reset_cause == Primary_Config_Registers_Error ||
+            reset_cause == Primary_Secondary_Config_Registers_Error ||
+            reset_cause == Config_Mismatch ||
+            reset_cause == DMT_Reset ||
+            reset_cause == WDT_Reset ||
+            reset_cause == Software_Reset ||
+            reset_cause == External_Reset ||
+            reset_cause == BOR_Reset) {
+    
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        
+    }
+    
+    else {
+     
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        
+    }
+    
+    printf("Cause of most recent device reset: %s\r\n", getResetCauseString(reset_cause));
+    terminalTextAttributesReset();
+    
+    #warning "fix me"
 //    terminalTextAttributesReset();
 //    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
 //    printf("Up time since last device reset: %s\n\r", 
 //            getStringSecondsAsTime(device_on_time_counter));
 //    terminalTextAttributesReset();
-//
-//}
-//
+
+}
+
 //usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
 // 
 //    // Snipe out received arguments
@@ -327,9 +329,9 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Repository?",
             "Prints project Git repo location",
             repositoryCommand);
-//    usbUartAddCommand("Host Status?",
-//            "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
-//            hostStatusCommand);
+    usbUartAddCommand("Host Status?",
+            "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
+            hostStatusCommand);
 //    usbUartAddCommand("Peripheral Status?",
 //            "\b\b <peripheral_name>: Prints status of passed host peripheral. Available peripherals:\r\n"
 //            "       Interrupts\r\n"

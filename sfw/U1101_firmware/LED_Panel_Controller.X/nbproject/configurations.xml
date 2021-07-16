@@ -11,6 +11,8 @@
         <itemPath>heartbeat_timer.h</itemPath>
         <itemPath>watchdog_timer.h</itemPath>
         <itemPath>error_handler.h</itemPath>
+        <itemPath>cause_of_reset.h</itemPath>
+        <itemPath>prefetch.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>pin_macros.h</itemPath>
@@ -37,6 +39,8 @@
         <itemPath>heartbeat_timer.c</itemPath>
         <itemPath>watchdog_timer.c</itemPath>
         <itemPath>error_handler.c</itemPath>
+        <itemPath>cause_of_reset.c</itemPath>
+        <itemPath>prefetch.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>

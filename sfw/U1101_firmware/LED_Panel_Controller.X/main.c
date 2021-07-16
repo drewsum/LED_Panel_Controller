@@ -21,8 +21,8 @@
 #include "heartbeat_timer.h"
 #include "watchdog_timer.h"
 #include "error_handler.h"
-//#include "prefetch.h"
-//#include "cause_of_reset.h"
+#include "prefetch.h"
+#include "cause_of_reset.h"
 
 // GPIO
 #include "pin_macros.h"
@@ -55,8 +55,7 @@ void main(void) {
     
     // Save the cause of the most recent device reset
     // This also checks for configuration errors
-#warning "reset cause"
-    // reset_cause = getResetCause();
+    reset_cause = getResetCause();
     
     // Clear the terminal
     terminalClearScreen();
@@ -77,35 +76,36 @@ void main(void) {
     terminalTextAttributesReset();
     
      // Print cause of reset
-//    if (    reset_cause == Undefined ||
-//            reset_cause == Primary_Config_Registers_Error ||
-//            reset_cause == Primary_Secondary_Config_Registers_Error ||
-//            reset_cause == Config_Mismatch ||
-//            reset_cause == DMT_Reset ||
-//            reset_cause == WDT_Reset ||
-//            reset_cause == Software_Reset ||
-//            reset_cause == External_Reset ||
-//            reset_cause == BOR_Reset) {
-//    
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        
-//    }
-//    
-//    else {
-//     
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        
-//    }
-//    
-//    // only clear persistent error flags if we've seen a POR... keep old values after other resets
-//    if (reset_cause == POR_Reset) {
-//        clearErrorHandler();
-//    }
+    if (    reset_cause == Undefined ||
+            reset_cause == Primary_Config_Registers_Error ||
+            reset_cause == Primary_Secondary_Config_Registers_Error ||
+            reset_cause == Config_Mismatch ||
+            reset_cause == DMT_Reset ||
+            reset_cause == WDT_Reset ||
+            reset_cause == Software_Reset ||
+            reset_cause == External_Reset ||
+            reset_cause == BOR_Reset) {
+    
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+    }
+    
+    else {
+     
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+    }
+    
+    // only clear persistent error flags if we've seen a POR... keep old values after other resets
+    if (reset_cause == POR_Reset) {
+        clearErrorHandler();
+    }
+#warning "telemetry"
 //    live_telemetry_enable = 0;
 //    live_telemetry_print_request = 0;
-//    
-//    printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
-//    terminalTextAttributesReset();
+    
+    printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
+    terminalTextAttributesReset();
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("Beginning Host Initialization:\r\n");
@@ -138,11 +138,11 @@ void main(void) {
     printf("    USB UART Initialized, DMA buffer method used\n\r");
     while(usbUartCheckIfBusy());
     
-//    // Setup prefetch module
-//    prefetchInitialize();
-//    printf("    CPU Instruction Prefetch Module Enabled\r\n");
-//    while(usbUartCheckIfBusy());
-//    
+    // Setup prefetch module
+    prefetchInitialize();
+    printf("    CPU Instruction Prefetch Module Enabled\r\n");
+    while(usbUartCheckIfBusy());
+    
 //    // Disable unused peripherals for power savings
 //    PMDInitialize();
 //    printf("    Unused Peripheral Modules Disabled\n\r");
