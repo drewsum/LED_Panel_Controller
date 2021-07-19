@@ -4,6 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f6" displayName="ADC" projectFiles="true">
+        <itemPath>adc.h</itemPath>
+        <itemPath>adc_channels.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f4" displayName="Application" projectFiles="true">
         <itemPath>power_saving.h</itemPath>
         <itemPath>heartbeat_services.h</itemPath>
@@ -49,6 +53,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f6" displayName="ADC" projectFiles="true">
+        <itemPath>adc.c</itemPath>
+        <itemPath>adc_channels.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="f4" displayName="Application" projectFiles="true">
         <itemPath>power_saving.c</itemPath>
         <itemPath>heartbeat_services.c</itemPath>

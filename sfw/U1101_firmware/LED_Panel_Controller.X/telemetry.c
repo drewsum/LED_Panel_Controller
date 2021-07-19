@@ -6,6 +6,7 @@
 #include <stdio.h>
 
 #include "terminal_control.h"
+#include "pin_macros.h"
 
 // This prints all telemetry data in an easily digested format
 void printCurrentTelemetry(void) {
@@ -66,6 +67,10 @@ void printCurrentTelemetry(void) {
     printf("\t\tHost Die Temperature: %.3fC\033[K\r\n", telemetry.mcu_die_temp);
     printf("\t\tHost ADC Reference Voltage: %.3fV\033[K\r\n", telemetry.adc_vref_voltage);
     printf("\t\tAmbient Temperature: %.3fC\033[K\r\n", telemetry.ambient_temperature);
+    if (nBACKUP_RTC_CONFIG_PIN == LOW){
+        printf("\t\tBackup RTC Die Temperature: %.3fC\033[K\r\n", telemetry.backup_rtc_temperature);
+        printf("\t\tBackup Battery Voltage: %.3fV\033[K\r\n", telemetry.backup_battery_voltage);
+    }
     
     terminalTextAttributesReset();
 

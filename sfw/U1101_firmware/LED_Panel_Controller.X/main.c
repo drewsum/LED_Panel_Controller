@@ -48,8 +48,8 @@
 #include "usb_uart_rx_lookup_table.h"
 
 // ADC
-//#include "adc.h"
-//#include "adc_channels.h"
+#include "adc.h"
+#include "adc_channels.h"
 
 void main(void) {
     
@@ -175,11 +175,10 @@ void main(void) {
         powerMonitorsInitialize();
         printf("    Power Monitors Initialized\r\n");
         while(usbUartCheckIfBusy());
-#warning "telemetry"
-//        // Enable ADC
-//        ADCInitialize();
-//        printf("    Analog to Digital Converter Initialized\n\r");
-//        while(usbUartCheckIfBusy());
+        // Enable ADC
+        ADCInitialize();
+        printf("    Analog to Digital Converter Initialized\n\r");
+        while(usbUartCheckIfBusy());
     }
     
     else {

@@ -17,8 +17,8 @@
 #include "heartbeat_services.h"
 #include "pin_macros.h"
 #include "telemetry.h"
-//#include "adc.h"
-//#include "adc_channels.h"
+#include "adc.h"
+#include "adc_channels.h"
 //#include "misc_i2c_devices.h"
 #include "pgood_monitor.h"
 
@@ -175,12 +175,12 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "DMA") == 0) {
         printDMAStatus();
     }
-//    else if (strcmp(rx_peripheral_name, "ADC Channels") == 0) {
-//        printADCChannelStatus();
-//    }
-//    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
-//        printADCStatus();
-//    }
+    else if (strcmp(rx_peripheral_name, "ADC Channels") == 0) {
+        printADCChannelStatus();
+    }
+    else if (strcmp(rx_peripheral_name, "ADC") == 0) {
+        printADCStatus();
+    }
     else if (strcmp(rx_peripheral_name, "I2C Master") == 0) {    
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("I2C Bus Master Controller Status:\r\n");
