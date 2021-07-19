@@ -19,7 +19,7 @@
 #include "telemetry.h"
 #include "adc.h"
 #include "adc_channels.h"
-//#include "misc_i2c_devices.h"
+#include "misc_i2c_devices.h"
 #include "pgood_monitor.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
@@ -253,25 +253,24 @@ usb_uart_command_function_t platformStatusCommand(char * input_str) {
     printf("Platform Revision: %s\r\n", PLATFORM_REVISION_STR);
     
     printPGOODStatus();
-    
-#warning "fixme"
-//    if (nETC_CONFIG_PIN == LOW) {
-//        double logic_tof_temp = platformGetTOF();
-//        uint32_t logic_tof_temp_int = (uint32_t) floor(logic_tof_temp);
-//        uint32_t logic_power_cycle_temp = platformGetPowerCycles();
-//
-//        // first print stuff for logic board
-//        terminalTextAttributesReset();
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        
-//         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("\r\nPlatform Elapsed Time Data:\r\n");
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        
-//        printf("    Platform Elapsed Time is %s\r\n", getStringSecondsAsTime(logic_tof_temp_int));
-//        printf("    Platform has power cycled %u times\r\n", logic_power_cycle_temp);
-//
-//    }
+
+    if (nETC_CONFIG_PIN == LOW) {
+        double tof_temp = platformGetETC();
+        uint32_t tof_temp_int = (uint32_t) floor(tof_temp);
+        uint32_t power_cycle_temp = platformGetPowerCycles();
+
+        // first print stuff for logic board
+        terminalTextAttributesReset();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("\r\nPlatform Elapsed Time Data:\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        printf("    Platform Elapsed Time is %s\r\n", getStringSecondsAsTime(tof_temp_int));
+        printf("    Platform has power cycled %u times\r\n", power_cycle_temp);
+
+    }
     
     terminalTextAttributesReset();
     
@@ -282,8 +281,8 @@ usb_uart_command_function_t platformStatusCommand(char * input_str) {
         printTemperatureSensorStatus();
         printPowerMonitorStatus();
     }
-    #warning "fixme"
-    // miscI2CDevicesPrintStatus();
+
+    miscI2CDevicesPrintStatus();
     
 }
 

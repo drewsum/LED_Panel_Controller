@@ -32,11 +32,13 @@
         <logicalFolder name="f1" displayName="Device Drivers" projectFiles="true">
           <itemPath>mcp9804_temp_sensor.h</itemPath>
           <itemPath>ina219_power_monitor.h</itemPath>
+          <itemPath>ds1683_time_of_flight.h</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.h</itemPath>
         <itemPath>plib_i2c_master.h</itemPath>
         <itemPath>temperature_sensors.h</itemPath>
         <itemPath>power_monitors.h</itemPath>
+        <itemPath>misc_i2c_devices.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
@@ -79,10 +81,12 @@
         <logicalFolder name="f1" displayName="Device Drivers" projectFiles="true">
           <itemPath>mcp9804_temp_sensor.c</itemPath>
           <itemPath>ina219_power_monitor.c</itemPath>
+          <itemPath>ds1683_time_of_flight.c</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.c</itemPath>
         <itemPath>temperature_sensors.c</itemPath>
         <itemPath>power_monitors.c</itemPath>
+        <itemPath>misc_i2c_devices.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.c</itemPath>

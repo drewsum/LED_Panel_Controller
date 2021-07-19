@@ -39,7 +39,7 @@
 #include "plib_i2c_master.h"
 #include "temperature_sensors.h"
 #include "power_monitors.h"
-//#include "misc_i2c_devices.h"
+#include "misc_i2c_devices.h"
 
 // USB
 #include "terminal_control.h"
@@ -188,23 +188,23 @@ void main(void) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     }
     
-//    if (nETC_CONFIG_PIN == LOW) {
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("    Elapsed Time Configuration Detected\r\n");
-//        while(usbUartCheckIfBusy());
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        platformTOFInitialize();
-//        printf("    Platform Elapsed Time Counter Initialized\r\n");
-//        while(usbUartCheckIfBusy());
-//    }
-//    
-//    else {
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("    Platform Elapsed Time Configuration Not Detected\r\n");
-//        while(usbUartCheckIfBusy());
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    }
-//    
+    if (nETC_CONFIG_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("    Elapsed Time Configuration Detected\r\n");
+        while(usbUartCheckIfBusy());
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        platformETCInitialize();
+        printf("    Platform Elapsed Time Counter Initialized\r\n");
+        while(usbUartCheckIfBusy());
+    }
+    
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("    Platform Elapsed Time Configuration Not Detected\r\n");
+        while(usbUartCheckIfBusy());
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
 //    // setup power pushbutton
 //    powerCapTouchPushbuttonInitialize();
 //    
