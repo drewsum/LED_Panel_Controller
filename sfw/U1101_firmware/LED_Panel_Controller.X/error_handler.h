@@ -25,7 +25,7 @@
 // set this flag high to update the error LEDs the next loop through main()
 volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
 
-#define ERROR_HANDLER_NUM_FLAGS  17
+#define ERROR_HANDLER_NUM_FLAGS  26
 
 // Error handler structure
 // Follow the convention in XC32 user's guide section 8.6.2
@@ -53,7 +53,16 @@ volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
         uint8_t i2c_bus_collision;
         uint8_t ADC_configuration_error;
         uint8_t ADC_reference_fault;
-    
+        uint8_t pos12_temp;
+        uint8_t pos3p3_temp;
+        uint8_t pos5_temp;
+        uint8_t usb_temp;
+        uint8_t amb_temp;
+        uint8_t pos12_mon;
+        uint8_t pos3p3_mon;
+        uint8_t pos5_mon;
+        uint8_t usb_mon;
+        
     } flags;
 
     uint8_t flag_array[ERROR_HANDLER_NUM_FLAGS];
@@ -79,8 +88,16 @@ const char *  error_handler_flag_names[] = {
     "MCU VDD Brownout",
     "I2C Bus Collision",
     "ADC configuration error",
-    "ADC reference fault"
-    
+    "ADC reference fault",
+    "+12V Input Temperature Sensor",
+    "+3.3V Supply Temperature Sensor",
+    "+5V Supply Temperature Sensor",
+    "USB Port Temperature Sensor",
+    "Ambient Temperature Sensor",
+    "+12V Input Power Monitor",
+    "+3.3V Supply Power Monitor",
+    "+5V Supply Power Monitor",
+    "USB Port Power Monitor"
     
 };
 

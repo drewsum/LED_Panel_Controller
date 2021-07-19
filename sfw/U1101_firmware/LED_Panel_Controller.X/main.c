@@ -23,6 +23,7 @@
 #include "error_handler.h"
 #include "prefetch.h"
 #include "cause_of_reset.h"
+// #include "rtcc.h"
 
 // GPIO
 #include "pin_macros.h"
@@ -31,13 +32,13 @@
 // Application
 #include "heartbeat_services.h"
 #include "power_saving.h"
-//#include "telemetry.h"
+#include "telemetry.h"
 
 // I2C
 #include "plib_i2c.h"
 #include "plib_i2c_master.h"
-//#include "temperature_sensors.h"
-//#include "power_monitors.h"
+#include "temperature_sensors.h"
+#include "power_monitors.h"
 //#include "misc_i2c_devices.h"
 
 // USB
@@ -99,9 +100,9 @@ void main(void) {
     if (reset_cause == POR_Reset) {
         clearErrorHandler();
     }
-#warning "telemetry"
-//    live_telemetry_enable = 0;
-//    live_telemetry_print_request = 0;
+
+    live_telemetry_enable = 0;
+    live_telemetry_print_request = 0;
     
     printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
     terminalTextAttributesReset();
@@ -162,31 +163,32 @@ void main(void) {
     printf("    I2C Bus Master Initialized\r\n");
     while(usbUartCheckIfBusy());
     
-//    if (nTELEMETRY_CONFIG_PIN == LOW) {
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("    Telemetry Configuration Detected\r\n");
-//        while(usbUartCheckIfBusy());
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        // setup I2C slaves
-//        tempSensorsInitialize();
-//        printf("    Temperature Sensors Initialized\r\n");
-//        while(usbUartCheckIfBusy());
-//        powerMonitorsInitialize();
-//        printf("    Power Monitors Initialized\r\n");
-//        while(usbUartCheckIfBusy());
+    if (nTELEMETRY_CONFIG_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("    Telemetry Configuration Detected\r\n");
+        while(usbUartCheckIfBusy());
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        // setup I2C slaves
+        tempSensorsInitialize();
+        printf("    Temperature Sensors Initialized\r\n");
+        while(usbUartCheckIfBusy());
+        powerMonitorsInitialize();
+        printf("    Power Monitors Initialized\r\n");
+        while(usbUartCheckIfBusy());
+#warning "telemetry"
 //        // Enable ADC
 //        ADCInitialize();
 //        printf("    Analog to Digital Converter Initialized\n\r");
 //        while(usbUartCheckIfBusy());
-//    }
-//    
-//    else {
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("    Telemetry Configuration Not Detected\r\n");
-//        while(usbUartCheckIfBusy());
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    }
-//    
+    }
+    
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("    Telemetry Configuration Not Detected\r\n");
+        while(usbUartCheckIfBusy());
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
 //    if (nETC_CONFIG_PIN == LOW) {
 //        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
 //        printf("    Elapsed Time Configuration Detected\r\n");
@@ -272,13 +274,13 @@ void main(void) {
 //    
     // endless loop
     while(1) {
-//        
-//         // get temperature sensor data
-//        if (temp_sense_data_request) tempSensorsRetrieveData();
-//
-//        // get power monitor data
-//        if (power_monitor_data_request) powerMonitorsGetData();
-//        
+        
+         // get temperature sensor data
+        if (temp_sense_data_request) tempSensorsRetrieveData();
+
+        // get power monitor data
+        if (power_monitor_data_request) powerMonitorsGetData();
+        
         // clear the watchdog if we need to
         if (wdt_clear_request) {
             kickTheDog();
@@ -298,26 +300,26 @@ void main(void) {
             }
         }
         
-//        if (live_telemetry_print_request && live_telemetry_enable) {
-//
-//            // Clear the terminal
-//            //terminalClearScreen();
-//            terminalSetCursorHome();
-//            
-//            terminalTextAttributesReset();
-//            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
-//            printf("Live system telemetry:\033[K\n\r\033[K");
-//            
-//            printCurrentTelemetry();
-//            
-//            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("Call 'Live Telemetry' command to disable\033[K\n\r");
-//            terminalTextAttributesReset();
-//            
-//            live_telemetry_print_request = 0;
-//            
-//        }
-//        
+        if (live_telemetry_print_request && live_telemetry_enable) {
+
+            // Clear the terminal
+            //terminalClearScreen();
+            terminalSetCursorHome();
+            
+            terminalTextAttributesReset();
+            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
+            printf("Live system telemetry:\033[K\n\r\033[K");
+            
+            printCurrentTelemetry();
+            
+            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("Call 'Live Telemetry' command to disable\033[K\n\r");
+            terminalTextAttributesReset();
+            
+            live_telemetry_print_request = 0;
+            
+        }
+        
         // check to see if a clock fail has occurred and latch it
         clockFailCheck();
         

@@ -16,11 +16,11 @@
 #include "error_handler.h"
 #include "heartbeat_services.h"
 #include "pin_macros.h"
-//#include "telemetry.h"
+#include "telemetry.h"
 //#include "adc.h"
 //#include "adc_channels.h"
 //#include "misc_i2c_devices.h"
-//#include "pgood_monitor.h"
+#include "pgood_monitor.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -246,14 +246,15 @@ usb_uart_command_function_t clearErrorsCommand(char * input_str) {
     terminalTextAttributesReset();
     
 }
-//
-//usb_uart_command_function_t platformStatusCommand(char * input_str) {
-// 
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("Platform Revision: %s\r\n", PLATFORM_REVISION_STR);
-//    
-//    printPGOODStatus();
-//    
+
+usb_uart_command_function_t platformStatusCommand(char * input_str) {
+ 
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Platform Revision: %s\r\n", PLATFORM_REVISION_STR);
+    
+    printPGOODStatus();
+    
+#warning "fixme"
 //    if (nETC_CONFIG_PIN == LOW) {
 //        double logic_tof_temp = platformGetTOF();
 //        uint32_t logic_tof_temp_int = (uint32_t) floor(logic_tof_temp);
@@ -271,43 +272,44 @@ usb_uart_command_function_t clearErrorsCommand(char * input_str) {
 //        printf("    Platform has power cycled %u times\r\n", logic_power_cycle_temp);
 //
 //    }
-//    
-//    terminalTextAttributesReset();
-//    
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
-//    printf("\r\nI2C Bus Slave Device Status:\r\n");
-//    terminalTextAttributesReset();
-//    if (nTELEMETRY_CONFIG_PIN == LOW) {
-//        printTemperatureSensorStatus();
-//        printPowerMonitorStatus();
-//    }
-//    miscI2CDevicesPrintStatus();
-//    
-//}
-//
-//usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
-// 
-//    terminalTextAttributesReset();
-//    
-//    if (live_telemetry_enable == 0) {
-//        terminalClearScreen();
-//        terminalSetCursorHome();
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("Enabling Live Telemetry\n\r");
-//        live_telemetry_enable = 1;
-//        // Disable pushbuttons
-//    }
-//    else {
-//        terminalClearScreen();
-//        terminalSetCursorHome();
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("Disabling Live Telemetry\n\r");
-//        live_telemetry_enable = 0;
-//    }
-//    
-//    terminalTextAttributesReset();
-//    
-//}
+    
+    terminalTextAttributesReset();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
+    printf("\r\nI2C Bus Slave Device Status:\r\n");
+    terminalTextAttributesReset();
+    if (nTELEMETRY_CONFIG_PIN == LOW) {
+        printTemperatureSensorStatus();
+        printPowerMonitorStatus();
+    }
+    #warning "fixme"
+    // miscI2CDevicesPrintStatus();
+    
+}
+
+usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
+ 
+    terminalTextAttributesReset();
+    
+    if (live_telemetry_enable == 0) {
+        terminalClearScreen();
+        terminalSetCursorHome();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Enabling Live Telemetry\n\r");
+        live_telemetry_enable = 1;
+        // Disable pushbuttons
+    }
+    else {
+        terminalClearScreen();
+        terminalSetCursorHome();
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Disabling Live Telemetry\n\r");
+        live_telemetry_enable = 0;
+    }
+    
+    terminalTextAttributesReset();
+    
+}
 
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
@@ -351,13 +353,13 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Clear Errors",
             "Clears all error handler flags",
             clearErrorsCommand);
-//    usbUartAddCommand("Platform Status?",
-//        "Prints current state of surrounding circuitry, including PGOOD, time of flight, I2C slaves",
-//        platformStatusCommand);
-//    if (nTELEMETRY_CONFIG_PIN == LOW) {
-//        usbUartAddCommand("Live Telemetry",
-//                "Toggles live updates of system level telemetry",
-//                liveTelemetryCommand);
-//    }
+    usbUartAddCommand("Platform Status?",
+        "Prints current state of surrounding circuitry, including PGOOD, time of flight, I2C slaves",
+        platformStatusCommand);
+    if (nTELEMETRY_CONFIG_PIN == LOW) {
+        usbUartAddCommand("Live Telemetry",
+                "Toggles live updates of system level telemetry",
+                liveTelemetryCommand);
+    }
 
 }
