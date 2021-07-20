@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=power_saving.c heartbeat_services.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c cause_of_reset.c prefetch.c gpio_setup.c plib_i2c.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c pgood_monitor.c telemetry.c temperature_sensors.c mcp9804_temp_sensor.c power_monitors.c ina219_power_monitor.c adc.c adc_channels.c ds1683_time_of_flight.c misc_i2c_devices.c rtcc.c ds3231_rtc.c capacitive_pushbuttons.c
+SOURCEFILES_QUOTED_IF_SPACED=power_saving.c heartbeat_services.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c cause_of_reset.c prefetch.c gpio_setup.c plib_i2c.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c pgood_monitor.c telemetry.c temperature_sensors.c mcp9804_temp_sensor.c power_monitors.c ina219_power_monitor.c adc.c adc_channels.c ds1683_time_of_flight.c misc_i2c_devices.c rtcc.c ds3231_rtc.c capacitive_pushbuttons.c panel_control.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/capacitive_pushbuttons.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/heartbeat_services.o.d ${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/plib_i2c.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/telemetry.o.d ${OBJECTDIR}/temperature_sensors.o.d ${OBJECTDIR}/mcp9804_temp_sensor.o.d ${OBJECTDIR}/power_monitors.o.d ${OBJECTDIR}/ina219_power_monitor.o.d ${OBJECTDIR}/adc.o.d ${OBJECTDIR}/adc_channels.o.d ${OBJECTDIR}/ds1683_time_of_flight.o.d ${OBJECTDIR}/misc_i2c_devices.o.d ${OBJECTDIR}/rtcc.o.d ${OBJECTDIR}/ds3231_rtc.o.d ${OBJECTDIR}/capacitive_pushbuttons.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/capacitive_pushbuttons.o ${OBJECTDIR}/panel_control.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/heartbeat_services.o.d ${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/plib_i2c.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/telemetry.o.d ${OBJECTDIR}/temperature_sensors.o.d ${OBJECTDIR}/mcp9804_temp_sensor.o.d ${OBJECTDIR}/power_monitors.o.d ${OBJECTDIR}/ina219_power_monitor.o.d ${OBJECTDIR}/adc.o.d ${OBJECTDIR}/adc_channels.o.d ${OBJECTDIR}/ds1683_time_of_flight.o.d ${OBJECTDIR}/misc_i2c_devices.o.d ${OBJECTDIR}/rtcc.o.d ${OBJECTDIR}/ds3231_rtc.o.d ${OBJECTDIR}/capacitive_pushbuttons.o.d ${OBJECTDIR}/panel_control.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/capacitive_pushbuttons.o
+OBJECTFILES=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/capacitive_pushbuttons.o ${OBJECTDIR}/panel_control.o
 
 # Source Files
-SOURCEFILES=power_saving.c heartbeat_services.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c cause_of_reset.c prefetch.c gpio_setup.c plib_i2c.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c pgood_monitor.c telemetry.c temperature_sensors.c mcp9804_temp_sensor.c power_monitors.c ina219_power_monitor.c adc.c adc_channels.c ds1683_time_of_flight.c misc_i2c_devices.c rtcc.c ds3231_rtc.c capacitive_pushbuttons.c
+SOURCEFILES=power_saving.c heartbeat_services.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c cause_of_reset.c prefetch.c gpio_setup.c plib_i2c.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c pgood_monitor.c telemetry.c temperature_sensors.c mcp9804_temp_sensor.c power_monitors.c ina219_power_monitor.c adc.c adc_channels.c ds1683_time_of_flight.c misc_i2c_devices.c rtcc.c ds3231_rtc.c capacitive_pushbuttons.c panel_control.c
 
 
 CFLAGS=
@@ -274,6 +274,12 @@ ${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makef
 	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
 	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
+${OBJECTDIR}/panel_control.o: panel_control.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/panel_control.o.d 
+	@${RM} ${OBJECTDIR}/panel_control.o 
+	@${FIXDEPS} "${OBJECTDIR}/panel_control.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/panel_control.o.d" -o ${OBJECTDIR}/panel_control.o panel_control.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
 else
 ${OBJECTDIR}/power_saving.o: power_saving.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -442,6 +448,12 @@ ${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makef
 	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
 	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
 	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/panel_control.o: panel_control.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/panel_control.o.d 
+	@${RM} ${OBJECTDIR}/panel_control.o 
+	@${FIXDEPS} "${OBJECTDIR}/panel_control.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/panel_control.o.d" -o ${OBJECTDIR}/panel_control.o panel_control.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
 endif
 

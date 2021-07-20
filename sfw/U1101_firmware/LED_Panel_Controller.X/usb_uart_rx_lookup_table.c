@@ -23,6 +23,8 @@
 #include "pgood_monitor.h"
 #include "rtcc.h"
 
+#include "panel_control.h"
+
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
     terminalTextAttributesReset();
@@ -476,6 +478,47 @@ usb_uart_command_function_t setRTCCCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t setPanelPowerCommand(char * input_str) {
+    
+    // Snipe out received arguments
+    char read_string[32];
+    sscanf(input_str, "Set Panel Power: %[^\t\n\r]", read_string);
+    
+    if (strcmp(read_string, "On") == 0) {
+     
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Setting up LED Panel\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        LEDPanelSetup();
+
+        terminalTextAttributesReset();
+        
+    }
+    
+    else if (strcmp(read_string, "Off") == 0) {
+     
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Turning off LED Panel\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        LEDPanelTeardown();
+        
+        terminalTextAttributesReset();
+        
+    }
+    
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter 'On' or 'Off'\r\n");
+        terminalTextAttributesReset();
+        
+    }
+    
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -539,5 +582,8 @@ void usbUartHashTableInitialize(void) {
                 "       Unix Time: <decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC",
                 setRTCCCommand);
     }
+    usbUartAddCommand("Set Panel Power: ",
+            "\b\b<Panel State>: Turns LED Panel on and off manually",
+            setPanelPowerCommand);
 
 }
