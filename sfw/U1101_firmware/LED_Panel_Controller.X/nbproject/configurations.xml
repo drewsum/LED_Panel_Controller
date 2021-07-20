@@ -13,6 +13,7 @@
         <itemPath>heartbeat_services.h</itemPath>
         <itemPath>pgood_monitor.h</itemPath>
         <itemPath>telemetry.h</itemPath>
+        <itemPath>capacitive_pushbuttons.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Core Drivers" projectFiles="true">
         <itemPath>configuration.h</itemPath>
@@ -66,6 +67,7 @@
         <itemPath>heartbeat_services.c</itemPath>
         <itemPath>pgood_monitor.c</itemPath>
         <itemPath>telemetry.c</itemPath>
+        <itemPath>capacitive_pushbuttons.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>

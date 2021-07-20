@@ -33,6 +33,7 @@
 #include "heartbeat_services.h"
 #include "power_saving.h"
 #include "telemetry.h"
+#include "capacitive_pushbuttons.h"
 
 // I2C
 #include "plib_i2c.h"
@@ -235,10 +236,12 @@ void main(void) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     }
     
-//    // setup power pushbutton
-//    powerCapTouchPushbuttonInitialize();
-//    
-//    // Disable reset LED
+    // setup power pushbutton
+    capTouchPushbuttonsInitialize();
+    printf("    Capacitive Pushbuttons Initialized\r\n");
+    while(usbUartCheckIfBusy());
+    
+    // Disable reset LED
     RESET_LED_PIN = LOW;
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Reset LED Disabled, boot complete\r\n");
@@ -249,58 +252,7 @@ void main(void) {
     terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("\n\rType 'Help' for list of supported commands\n\r\n\r");
     terminalTextAttributesReset();
-    
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("Entering IDLE mode\r\n");
-//    terminalTextAttributesReset();
-//    
-//    // check to see if a clock fail has occurred and latch it
-//    clockFailCheck();
-//    
-//    // wait for USB UART TX DMA to complete (flush TX buffer)
-//    while (USB_UART_TX_DMA_CON_BITFIELD.CHBUSY);
-//    
-//    // get ready to wake up when user presses power button
-//    ui_sleep_request = false;
-//    ui_state_machine = sleep_state;
-//    
-//    lcdPowerDown();
-//    
-//    // stop WDT
-//    kickTheDog();
-//    WDTCONbits.ON = 0;
-//    
-//    // stop heartbeat timer
-//    T1CONbits.ON = 0;
-//    TMR1 = 0;
-//    HEARTBEAT_LED_PIN = LOW;
-//    
-//    // turn off PGOOD LEDs
-//    PGOOD_LED_SHDN_PIN = 1;
-//    
-//    // disable I2C in sleep
-//    I2C5CONbits.SIDL = 1;
-//    // disable ADC in sleep
-//    ADCCON1bits.SIDL = 1;
-//    // disable LCD PWM in sleep
-//    OC3CONbits.SIDL = 0;
-//    T2CONbits.SIDL = 1;
-//    // enable USB UART in sleep
-//    U1MODEbits.SIDL = 0;
-//    
-//    asm volatile ( "wait" ); // Put device into Idle mode
-//    
-//    // turn on PGOOD LEDs
-//    PGOOD_LED_SHDN_PIN = 0;
-//    
-//    // this code executes on a wake from sleep (power pushbutton pressed, or serial commands received)
-//    // start WDT
-//    kickTheDog();
-//    heartbeatTimerInitialize();
-//    
-//    // setup watchdog timer
-//    watchdogTimerInitialize();
-//    
+
     // endless loop
     while(1) {
         
@@ -354,10 +306,6 @@ void main(void) {
         
         // update error LEDs if needed
         if (update_error_leds_flag) updateErrorLEDs();
-        
-//        // decide if we need to startup or shutdown
-//        if (ui_wake_request) uiDeviceWakeup();
-//        if (ui_sleep_request) uiDeviceSleep();
         
     }
     

@@ -31,7 +31,7 @@ void tempSensorsRetrieveData(void) {
     telemetry.usb.temperature           = MCP9804GetTemperature(USB_TEMP_SNS_ADDR, &error_handler.flags.usb_temp);
     telemetry.ambient_temperature       = MCP9804GetTemperature(AMB_TEMP_SNS_ADDR, &error_handler.flags.amb_temp);
     
-    telemetry.backup_rtc_temperature    = DS3231MRTCGetTemperature(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    if (nBACKUP_RTC_CONFIG_PIN == LOW) telemetry.backup_rtc_temperature    = DS3231MRTCGetTemperature(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
     
     temp_sense_data_request = 0;
     
