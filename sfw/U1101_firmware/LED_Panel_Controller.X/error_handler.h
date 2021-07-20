@@ -25,7 +25,7 @@
 // set this flag high to update the error LEDs the next loop through main()
 volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
 
-#define ERROR_HANDLER_NUM_FLAGS  27
+#define ERROR_HANDLER_NUM_FLAGS  28
 
 // Error handler structure
 // Follow the convention in XC32 user's guide section 8.6.2
@@ -63,6 +63,7 @@ volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
         uint8_t pos5_mon;
         uint8_t usb_mon;
         uint8_t platform_etc;
+        uint8_t backup_rtc;
         
     } flags;
 
@@ -99,7 +100,8 @@ const char *  error_handler_flag_names[] = {
     "+3.3V Supply Power Monitor",
     "+5V Supply Power Monitor",
     "USB Port Power Monitor",
-    "Platform Elapsed Time Counter"
+    "Platform Elapsed Time Counter",
+    "Backup RTC"
     
 };
 

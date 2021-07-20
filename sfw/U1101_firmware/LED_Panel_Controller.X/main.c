@@ -23,7 +23,7 @@
 #include "error_handler.h"
 #include "prefetch.h"
 #include "cause_of_reset.h"
-// #include "rtcc.h"
+#include "rtcc.h"
 
 // GPIO
 #include "pin_macros.h"
@@ -115,6 +115,11 @@ void main(void) {
     gpioInitialize();
     printf("    GPIO Pins Initialized\n\r");
     
+    // block on POS3P3 and POS12 power stability
+    while(POS3P3_PGOOD_PIN == LOW);
+    while(POS12_PGOOD_PIN == LOW);
+    printf("    Input power is stable\r\n");
+    
     // Disable global interrupts so clocks can be initialized properly
     disableGlobalInterrupts();
     
@@ -147,7 +152,7 @@ void main(void) {
     PMDInitialize();
     printf("    Unused Peripheral Modules Disabled\n\r");
     while(usbUartCheckIfBusy());
-
+        
     // Setup heartbeat timer
     heartbeatTimerInitialize();
     printf("    Heartbeat Timer Initialized\n\r");
@@ -201,6 +206,31 @@ void main(void) {
     else {
         terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("    Platform Elapsed Time Configuration Not Detected\r\n");
+        while(usbUartCheckIfBusy());
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
+    // Setup the real time clock-calendar
+    if (nBACKUP_RTC_CONFIG_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("    Real Time Clock Configuration Detected\r\n");
+        while(usbUartCheckIfBusy());
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        rtccInitialize();
+        if (reset_cause == POR_Reset) rtccClear();
+        printf("    Real Time Clock-Calendar Initialized\r\n");
+        
+        backupRTCInitialize();
+        printf("    Backup Real-Time Clock Initialized\r\n");
+        backupRTCRestoreTime();
+        printf("    Restored time backup from previous sessions\r\n");
+        
+    }
+    
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("    Real Time Clock Configuration Not Detected\r\n");
         while(usbUartCheckIfBusy());
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     }

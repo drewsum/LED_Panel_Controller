@@ -7,6 +7,9 @@
 #include "telemetry.h"
 #include "terminal_control.h"
 #include "error_handler.h"
+#include "misc_i2c_devices.h"
+#include "ds3231_rtc.h"
+
 
 // This function initializes all temperature sensors in the project, if available
 void tempSensorsInitialize(void) {
@@ -24,9 +27,11 @@ void tempSensorsRetrieveData(void) {
 
     telemetry.pos12.temperature         = MCP9804GetTemperature(POS12_TEMP_SNS_ADDR, &error_handler.flags.pos12_temp);
     telemetry.pos3p3.temperature        = MCP9804GetTemperature(POS3P3_TEMP_SNS_ADDR, &error_handler.flags.pos3p3_temp);
-    telemetry.pos5.temperature        = MCP9804GetTemperature(POS5_TEMP_SNS_ADDR, &error_handler.flags.pos5_temp);
+    telemetry.pos5.temperature          = MCP9804GetTemperature(POS5_TEMP_SNS_ADDR, &error_handler.flags.pos5_temp);
     telemetry.usb.temperature           = MCP9804GetTemperature(USB_TEMP_SNS_ADDR, &error_handler.flags.usb_temp);
     telemetry.ambient_temperature       = MCP9804GetTemperature(AMB_TEMP_SNS_ADDR, &error_handler.flags.amb_temp);
+    
+    telemetry.backup_rtc_temperature    = DS3231MRTCGetTemperature(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
     
     temp_sense_data_request = 0;
     

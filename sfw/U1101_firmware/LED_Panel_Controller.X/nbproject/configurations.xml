@@ -23,6 +23,7 @@
         <itemPath>error_handler.h</itemPath>
         <itemPath>cause_of_reset.h</itemPath>
         <itemPath>prefetch.h</itemPath>
+        <itemPath>rtcc.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>pin_macros.h</itemPath>
@@ -33,6 +34,7 @@
           <itemPath>mcp9804_temp_sensor.h</itemPath>
           <itemPath>ina219_power_monitor.h</itemPath>
           <itemPath>ds1683_time_of_flight.h</itemPath>
+          <itemPath>ds3231_rtc.h</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.h</itemPath>
         <itemPath>plib_i2c_master.h</itemPath>
@@ -73,6 +75,7 @@
         <itemPath>error_handler.c</itemPath>
         <itemPath>cause_of_reset.c</itemPath>
         <itemPath>prefetch.c</itemPath>
+        <itemPath>rtcc.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>
@@ -82,6 +85,7 @@
           <itemPath>mcp9804_temp_sensor.c</itemPath>
           <itemPath>ina219_power_monitor.c</itemPath>
           <itemPath>ds1683_time_of_flight.c</itemPath>
+          <itemPath>ds3231_rtc.c</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.c</itemPath>
         <itemPath>temperature_sensors.c</itemPath>
