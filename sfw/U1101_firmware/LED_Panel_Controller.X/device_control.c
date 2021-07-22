@@ -1511,7 +1511,7 @@ void printDMAStatus(void) {
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Last DMA error detected (if detected) was a DMA %s\r\n", DMASTATbits.RDWR ? "Read" : "Write");
-    printf("    DMA Channel active if error was detected: %s\r\n", DMASTATbits.DMACH);
+    printf("    DMA Channel active if error was detected: %d\r\n", DMASTATbits.DMACH);
     printf("    Last DMA access address if/when error occurred: 0x%08X\r\n", DMAADDR);
     
     if (DCRCCONbits.CRCEN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);

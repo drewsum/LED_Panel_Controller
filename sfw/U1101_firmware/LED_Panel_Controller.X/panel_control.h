@@ -57,6 +57,21 @@ void panelDriveDMAInitialize(void);
 // This interrupt is triggered after shifting 64 bytes into panel
 void __ISR(_DMA2_VECTOR, IPL3SRS) panelDriveDMAFinsihedISR(void);
 
+// This function initializes Timer5 for panel multiplexing
+void panelMultiplexingTimerInitialize(void);
+
+// Start muxing timer function
+void panelMultiplexingTimerStart(void);
+
+// Stpo muxing timer function
+void panelMultiplexingTimerStop(void);
+
+// Clear muxing timer function
+void panelMultiplexingTimerClear(void);
+
+// Function for multiplexing timer ISR
+void __ISR(_TIMER_5_VECTOR, IPL3SRS) panelMultiplexingTimerISR(void);
+
 // this function sets up PMP, DMA, and multiplexing timers
 void LEDPanelInitialize(void);
 

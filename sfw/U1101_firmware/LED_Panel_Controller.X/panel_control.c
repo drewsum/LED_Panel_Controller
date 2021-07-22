@@ -390,6 +390,71 @@ void __ISR(_DMA2_VECTOR, IPL3SRS) panelDriveDMAFinsihedISR(void) {
     clearInterruptFlag(DMA_Channel_2);
 }
 
+// This function initializes Timer5 for panel multiplexing
+void panelMultiplexingTimerInitialize(void) {
+ 
+    // Disable Timer5 interrupt
+    disableInterrupt(Timer5);
+    setInterruptPriority(Timer5, 3);
+    setInterruptSubpriority(Timer5, 3);
+    clearInterruptFlag(Timer5);
+    
+    // Stop timer 5
+    T5CONbits.ON = 0;
+    
+    // Stop timer 5 in idle
+    T5CONbits.SIDL = 1;
+    
+    // Disable gated time accumulation
+    T5CONbits.TGATE = 0;
+    
+    // Set timer 5 prescalar to 1
+    T5CONbits.TCKPS = 0b000;
+    
+    // Set timer clock input as PBCLK3 (12.5MHz)
+    T5CONbits.TCS = 0;
+    
+    // Clear timer 5
+    TMR5 = 0x0000;
+    
+    // Set timer 5 period match to 2us (25 counts)
+    PR5 = 25;
+    
+    // Enable timer5 interrupt
+    enableInterrupt(Timer5);
+    
+}
+
+// Function for multiplexing timer ISR
+void __ISR(_TIMER_5_VECTOR, IPL3SRS) panelMultiplexingTimerISR(void) {
+    
+    #warning "add On-Time Timer IRQ code here"
+    
+    clearInterruptFlag(Timer5);
+    
+}
+
+// Start muxing timer function
+inline void panelMultiplexingTimerStart(void) {
+    
+    T5CONbits.ON = 1;
+    
+}
+
+// Stop muxing timer function
+inline void panelMultiplexingTimerStop(void) {
+    
+    T5CONbits.ON = 0;
+    
+}
+
+// Clear muxing timer function
+inline void panelMultiplexingTimerClear(void) {
+    
+    TMR5 = 0;
+    
+}
+
 // this function sets up PMP, DMA, and multiplexing timers
 void LEDPanelInitialize(void) {
  
@@ -398,6 +463,9 @@ void LEDPanelInitialize(void) {
     
     // set up DMA channel 2 to shove data into PMP
     panelDriveDMAInitialize();
+    
+    // set up panel on-time timer
+    panelMultiplexingTimerInitialize();
     
 }
 
