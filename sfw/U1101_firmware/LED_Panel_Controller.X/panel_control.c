@@ -6,11 +6,16 @@
 // These are macros needed for defining ISRs, included in XC32
 #include <sys/attribs.h>
 
+// These macros are needed for switching between physical and virtual memory locations
+#include <sys/kmem.h>
+
 #include "32mz_interrupt_control.h"
 
 #include "pin_macros.h"
 #include "terminal_control.h"
 #include "error_handler.h"
+
+#include "panel_control.h"
 
 
 // this function sets up PMP for use
@@ -301,11 +306,98 @@ void printPMPStatus(void) {
     
 }
 
+// this function sets up panel drive DMA
+void panelDriveDMAInitialize(void) {
+    
+    // Set up DMA2 for PMP write
+    // From reference manual example 31-2
+    // Disable DMA0 interrupt
+    disableInterrupt(DMA_Channel_2);
+    clearInterruptFlag(DMA_Channel_2);
+    
+    // Enable DMA controller
+    DMACONbits.ON = 0;
+    // Disable DMA CRC
+    DCRCCONbits.CRCEN = 0;
+    // Turn off channel 2
+    DCH2CONbits.CHEN = 0;
+    // Set channel 2 priority to 3 (highest)
+    DCH2CONbits.CHPRI = 3;
+    // Disable DMA chaining
+    DCH2CONbits.CHCHN = 0;
+    
+    // Start interrupt request is PMP TX done
+    DCH2ECONbits.CHSIRQ = Parallel_Master_Port;
+    // configure DMA0 to start on an IRQ matching CHSIRQ
+    DCH2ECONbits.SIRQEN = 1;
+    // no pattern abort
+    DCH2ECONbits.PATEN = 0;
+    
+    // Set DMA0 source location
+    DCH2SSA = KVA_TO_PA((void *) panel_direct_data_array);
+    #warning "above line is a placeholder, this will need to be changed every row written"
+    // Set DMA0 destination location
+    DCH2DSA = KVA_TO_PA((void*)&PMDIN);
+    // Set source size to size of transmit buffer
+    DCH2SSIZ = 64;
+    // Set destination size to 1, since USB_UART_TX_REG is one byte long
+    DCH2DSIZ = 1;
+    // 1 byte transferred per event (cell size = 1)
+    DCH2CSIZ = 1;
+    
+    // clear existing events, disable all interrupts
+    DCH2INTCLR = 0xFFFFFFFF;
+    #warning "I changed this from all 0"
+    // enable Block Complete and error interrupts
+    DCH2INTbits.CHBCIF = 0;
+    DCH2INTbits.CHBCIE = 1;
+    DCH2INTbits.CHERIF = 0;
+    DCH2INTbits.CHERIE = 1;
+    
+    // Set up DMA2 interrupts
+    setInterruptPriority(DMA_Channel_2, 3);
+    setInterruptSubpriority(DMA_Channel_2, 3);
+    clearInterruptFlag(DMA_Channel_2);
+    enableInterrupt(DMA_Channel_2);
+    
+    // Turn on DMA
+    DMACONbits.ON = 1;
+    
+}
+
+// This interrupt is triggered after shifting 64 bytes into panel
+void __ISR(_DMA2_VECTOR, IPL3SRS) panelDriveDMAFinsihedISR(void) {
+    
+    // Determine source of DMA 2 interrupt
+    // Channel block transfer complete interrupt flag
+    if (DCH2INT.CHBCIF) {
+        
+        #warning "add DMA/PMP complete IRQ here"
+        
+    }
+    
+    // channel error
+    else if (DCH2INT.CHERIF) {
+        
+        error_handler.flags.panel_DMA = 1;
+        
+    }
+    
+    // Clear DMA controller interrupt flags
+    DCH2INTCLR=0x000000ff;
+    
+    // clear interrupt flag
+    clearInterruptFlag(DMA_Channel_2);
+}
+
 // this function sets up PMP, DMA, and multiplexing timers
 void LEDPanelInitialize(void) {
  
     // set up hardware interface for clocking data into panel
     PMPInitialize();
+    
+    // set up DMA channel 2 to shove data into PMP
+    panelDriveDMAInitialize();
     
 }
 
