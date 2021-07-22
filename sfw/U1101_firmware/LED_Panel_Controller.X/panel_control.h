@@ -18,10 +18,17 @@
 #ifndef _PANEL_CONTROL_H    /* Guard against multiple inclusion */
 #define _PANEL_CONTROL_H
 
+#include <xc.h>
+
+// These are macros needed for defining ISRs, included in XC32
+#include <sys/attribs.h>
+
+
 // this is the raw output data that is fed into the shift registers in the 64x64 LED panel
 // meant for HUB75-E interface
 // 1byte * 64 cols * 32 rows * 8 color_frames = 16,384 bytes
-volatile __attribute__((coherent)) uint8_t panel_direct_data_array[16384];
+#define PANEL_DIRECT_DATA_BUFFER_SIZE           16384
+volatile __attribute__((coherent)) uint8_t panel_direct_data_buffer[PANEL_DIRECT_DATA_BUFFER_SIZE];
 
 // this structure holds variables needed for drawing images on the panel
 // PMP and DMA handle shifting data into panel for 64 columms

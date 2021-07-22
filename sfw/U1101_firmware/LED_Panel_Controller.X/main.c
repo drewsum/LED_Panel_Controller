@@ -35,6 +35,7 @@
 #include "telemetry.h"
 #include "capacitive_pushbuttons.h"
 #include "panel_control.h"
+#include "generic_buffer_fills.h"
 
 // I2C
 #include "plib_i2c.h"
@@ -245,6 +246,8 @@ void main(void) {
     // setup peripherals for driving LED panel
     LEDPanelInitialize();
     printf("    LED Panel Driving Peripherals Initialized\r\n");
+    #warning "remove this eventually, this is just to get something into the buffer"
+    fillPanelBufferWhite();
     while(usbUartCheckIfBusy());
     
     // Disable reset LED

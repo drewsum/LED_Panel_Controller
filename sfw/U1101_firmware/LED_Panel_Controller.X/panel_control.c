@@ -334,7 +334,7 @@ void panelDriveDMAInitialize(void) {
     DCH2ECONbits.PATEN = 0;
     
     // Set DMA0 source location
-    DCH2SSA = KVA_TO_PA((void *) panel_direct_data_array);
+    DCH2SSA = KVA_TO_PA((void *) panel_direct_data_buffer);
     #warning "above line is a placeholder, this will need to be changed every row written"
     // Set DMA0 destination location
     DCH2DSA = KVA_TO_PA((void*)&PMDIN);
@@ -370,14 +370,14 @@ void __ISR(_DMA2_VECTOR, IPL3SRS) panelDriveDMAFinsihedISR(void) {
     
     // Determine source of DMA 2 interrupt
     // Channel block transfer complete interrupt flag
-    if (DCH2INT.CHBCIF) {
+    if (DCH2INTbits.CHBCIF) {
         
         #warning "add DMA/PMP complete IRQ here"
         
     }
     
     // channel error
-    else if (DCH2INT.CHERIF) {
+    else if (DCH2INTbits.CHERIF) {
         
         error_handler.flags.panel_DMA = 1;
         
