@@ -34,6 +34,7 @@
 #include "power_saving.h"
 #include "telemetry.h"
 #include "capacitive_pushbuttons.h"
+#include "panel_control.h"
 
 // I2C
 #include "plib_i2c.h"
@@ -241,6 +242,11 @@ void main(void) {
     printf("    Capacitive Pushbuttons Initialized\r\n");
     while(usbUartCheckIfBusy());
     
+    // setup peripherals for driving LED panel
+    LEDPanelInitialize();
+    printf("    LED Panel Driving Peripherals Initialized\r\n");
+    while(usbUartCheckIfBusy());
+    
     // Disable reset LED
     RESET_LED_PIN = LOW;
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -284,7 +290,7 @@ void main(void) {
         if (live_telemetry_print_request && live_telemetry_enable) {
 
             // Clear the terminal
-            //terminalClearScreen();
+            terminalClearScreen();
             terminalSetCursorHome();
             
             terminalTextAttributesReset();
