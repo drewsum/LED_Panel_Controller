@@ -81,6 +81,9 @@ void LEDPanelSetup(void);
 // this function disables the +5V power supply and stops multiplexing
 void LEDPanelTeardown(void);
 
+// This function prints the contents of the internal RAM buffer holding frame data
+void panelDirectDataBufferPrint(void);
+
 #endif /* _PANEL_CONTROL_H */
 
 /* *****************************************************************************

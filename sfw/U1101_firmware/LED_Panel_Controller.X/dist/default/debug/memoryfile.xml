@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/production/LED_Panel_Controller.X.production.elf">                 
+  <executable name="dist/default/debug/LED_Panel_Controller.X.debug.elf">                 
     <memory name="program">                 
       <units>bytes</units>                 
       <length>2098304</length>                 
-      <used>242104</used>                     
-      <free>1856200</free>                     
+      <used>242116</used>                     
+      <free>1856188</free>                     
     </memory>                              
     <memory name="data">              
       <units>bytes</units>                 
-      <length>524288</length>                 
-      <used>140775</used>                     
-      <free>383513</free>                     
+      <length>525184</length>                 
+      <used>142567</used>                     
+      <free>382617</free>                     
     </memory>                              
   </executable>                            
 </project>                                 

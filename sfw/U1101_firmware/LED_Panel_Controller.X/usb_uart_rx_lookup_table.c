@@ -523,6 +523,12 @@ usb_uart_command_function_t setPanelPowerCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t printPanelDirectDataContentsCommand(char * input_str) {
+    
+    panelDirectDataBufferPrint();
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -590,5 +596,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Set Panel Power: ",
             "\b\b<Panel State>: Turns LED Panel on and off manually",
             setPanelPowerCommand);
+    usbUartAddCommand("Print Panel Direct Data Buffer",
+            "Prints the contents of the raw data being shifted into the panel",
+            printPanelDirectDataContentsCommand);
 
 }

@@ -334,20 +334,19 @@ void panelDriveDMAInitialize(void) {
     DCH2ECONbits.PATEN = 0;
     
     // Set DMA0 source location
-    DCH2SSA = KVA_TO_PA((void *) panel_direct_data_buffer);
+    DCH2SSA = KVA_TO_PA((void *) &panel_direct_data_buffer);
     #warning "above line is a placeholder, this will need to be changed every row written"
     // Set DMA0 destination location
-    DCH2DSA = KVA_TO_PA((void*)&PMDIN);
+    DCH2DSA = KVA_TO_PA((void*)&PMDOUT);
     // Set source size to size of transmit buffer
     DCH2SSIZ = 64;
     // Set destination size to 1, since USB_UART_TX_REG is one byte long
     DCH2DSIZ = 1;
-    // 1 byte transferred per event (cell size = 1)
-    DCH2CSIZ = 1;
+    // 1 byte transferred per event (cell size = 64)
+    DCH2CSIZ = 64;
     
     // clear existing events, disable all interrupts
-    DCH2INTCLR = 0xFFFFFFFF;
-    #warning "I changed this from all 0"
+    DCH2INTCLR = 0x00000000;
     // enable Block Complete and error interrupts
     DCH2INTbits.CHBCIF = 0;
     DCH2INTbits.CHBCIE = 1;
@@ -372,7 +371,16 @@ void __ISR(_DMA2_VECTOR, IPL3SRS) panelDriveDMAFinsihedISR(void) {
     // Channel block transfer complete interrupt flag
     if (DCH2INTbits.CHBCIF) {
         
-        #warning "add DMA/PMP complete IRQ here"
+        // latch data into LED panel
+        PANEL_LAT_PIN = HIGH;
+        
+        // enable output drivers on LED panel
+        nPANEL_OE_PIN = LOW;
+        
+        DCH2CONbits.CHEN = 0;
+        
+        // start on-time timer
+        panelMultiplexingTimerStart();
         
     }
     
@@ -428,7 +436,44 @@ void panelMultiplexingTimerInitialize(void) {
 // Function for multiplexing timer ISR
 void __ISR(_TIMER_5_VECTOR, IPL3SRS) panelMultiplexingTimerISR(void) {
     
-    #warning "add On-Time Timer IRQ code here"
+    // stop, clear on-time timer
+    panelMultiplexingTimerStop();
+    panelMultiplexingTimerClear();
+    
+    // get ready to shift another round of data in
+    PANEL_LAT_PIN = LOW;
+
+    // disable output drivers on LED panel
+    nPANEL_OE_PIN = HIGH;
+    
+    // increment row
+    panel_data_vars.current_row++;
+    
+    // Reset current_row counter
+    if (panel_data_vars.current_row == 32) {
+    
+        panel_data_vars.current_row = 0;
+        panel_data_vars.current_color_frame++;
+        
+    }
+    
+    // Reset current_PWM_frame counter
+    if (panel_data_vars.current_color_frame == 8) {
+    
+        panel_data_vars.current_color_frame = 0;
+        
+    }
+    
+    // start DMA transactions at next location
+    DCH2SSA = KVA_TO_PA((void *) &panel_direct_data_buffer[(panel_data_vars.current_row * 64) * (panel_data_vars.current_color_frame)]);
+    
+    // clear and set row bits based on panel_data_vars.current_row
+    LATBCLR = 0b1111;
+    LATBSET = (panel_data_vars.current_row & 0b11111);
+    
+    // force DMA to start
+    DCH2CONbits.CHEN = 1;
+    DCH2ECONbits.CFORCE = 1;
     
     clearInterruptFlag(Timer5);
     
@@ -491,6 +536,22 @@ void LEDPanelSetup() {
         terminalTextAttributesReset();
     }
     
+    // clear multiplexing variables
+    panel_data_vars.current_row = 0;
+    panel_data_vars.current_color_frame = 0;
+    
+    // get ready to shift another round of data in
+    PANEL_LAT_PIN = LOW;
+
+    // disable output drivers on LED panel
+    nPANEL_OE_PIN = HIGH;
+    
+    // start DMA transactions at beginning of panel_direct_data_buffer
+    DCH2SSA = KVA_TO_PA((void *) &panel_direct_data_buffer[0]);
+    
+    // start and force DMA
+    DCH2CONbits.CHEN = 1;
+    DCH2ECONbits.CFORCE = 1;
     
 }
 
@@ -504,7 +565,69 @@ void LEDPanelTeardown() {
     POS5_RUN_PIN = LOW;
     printf("    +5V Power Supply Disabled\r\n");
     
+    // get ready to shift another round of data in
+    PANEL_LAT_PIN = HIGH;
+
+    // disable output drivers on LED panel
+    nPANEL_OE_PIN = HIGH;
+    
+    // disable DMA
+    DCH2CONbits.CHEN = 0;
     
     terminalTextAttributesReset();
+    
+}
+
+// This function prints the contents of the internal RAM buffer holding frame data
+void panelDirectDataBufferPrint(void) {
+
+    // print title of data table
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Contents of first kB of Internal Static Random Access Memory Buffer holding Display Data:\n\r");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Starting    Lower Nibble\n\r");
+    printf("    Address:    0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F\n\r");
+    
+    // Access address
+    uint32_t loop_address;
+    
+    // wait for it
+    for (loop_address = 0 ; loop_address < PANEL_DIRECT_DATA_BUFFER_SIZE / 64; loop_address += 16) {
+        
+        if (loop_address % 32 == 0) {
+         
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            
+        }
+        
+        else {
+         
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
+            
+        }
+        
+        printf("    0x%08X: 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X\n\r", loop_address,
+               panel_direct_data_buffer[loop_address + 0],
+               panel_direct_data_buffer[loop_address + 1], 
+               panel_direct_data_buffer[loop_address + 2], 
+               panel_direct_data_buffer[loop_address + 3], 
+               panel_direct_data_buffer[loop_address + 4], 
+               panel_direct_data_buffer[loop_address + 5], 
+               panel_direct_data_buffer[loop_address + 6], 
+               panel_direct_data_buffer[loop_address + 7], 
+               panel_direct_data_buffer[loop_address + 8], 
+               panel_direct_data_buffer[loop_address + 9], 
+               panel_direct_data_buffer[loop_address + 0xA], 
+               panel_direct_data_buffer[loop_address + 0xB], 
+               panel_direct_data_buffer[loop_address + 0xC], 
+               panel_direct_data_buffer[loop_address + 0xD], 
+               panel_direct_data_buffer[loop_address + 0xE], 
+               panel_direct_data_buffer[loop_address + 0xF]);
+        
+    }
+    
+    terminalTextAttributesReset();
+    
     
 }
