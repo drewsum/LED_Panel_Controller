@@ -334,7 +334,7 @@ void panelDriveDMAInitialize(void) {
     DCH2ECONbits.PATEN = 0;
     
     // Set DMA0 source location
-    DCH2SSA = KVA_TO_PA((void *) &panel_direct_data_buffer);
+    DCH2SSA = KVA_TO_PA((void *) &panel_direct_data_buffer[0]);
     #warning "above line is a placeholder, this will need to be changed every row written"
     // Set DMA0 destination location
     DCH2DSA = KVA_TO_PA((void*)&PMDOUT);
@@ -342,14 +342,14 @@ void panelDriveDMAInitialize(void) {
     DCH2SSIZ = 64;
     // Set destination size to 1, since USB_UART_TX_REG is one byte long
     DCH2DSIZ = 1;
-    // 1 byte transferred per event (cell size = 64)
-    DCH2CSIZ = 64;
+    // 64 bytes transferred per event (cell size = 64)
+    DCH2CSIZ = 1;
     
     // clear existing events, disable all interrupts
     DCH2INTCLR = 0x00000000;
     // enable Block Complete and error interrupts
-    DCH2INTbits.CHBCIF = 0;
-    DCH2INTbits.CHBCIE = 1;
+    DCH2INTbits.CHSDIF = 0;
+    DCH2INTbits.CHSDIE = 1;
     DCH2INTbits.CHERIF = 0;
     DCH2INTbits.CHERIE = 1;
     
@@ -369,7 +369,7 @@ void __ISR(_DMA2_VECTOR, IPL3SRS) panelDriveDMAFinsihedISR(void) {
     
     // Determine source of DMA 2 interrupt
     // Channel block transfer complete interrupt flag
-    if (DCH2INTbits.CHBCIF) {
+    if (DCH2INTbits.CHSDIF) {
         
         // latch data into LED panel
         PANEL_LAT_PIN = HIGH;
@@ -468,7 +468,7 @@ void __ISR(_TIMER_5_VECTOR, IPL3SRS) panelMultiplexingTimerISR(void) {
     DCH2SSA = KVA_TO_PA((void *) &panel_direct_data_buffer[(panel_data_vars.current_row * 64) * (panel_data_vars.current_color_frame)]);
     
     // clear and set row bits based on panel_data_vars.current_row
-    LATBCLR = 0b1111;
+    LATBCLR = 0b11111;
     LATBSET = (panel_data_vars.current_row & 0b11111);
     
     // force DMA to start
@@ -573,6 +573,10 @@ void LEDPanelTeardown() {
     
     // disable DMA
     DCH2CONbits.CHEN = 0;
+    
+    // turn off on-time timer
+    panelMultiplexingTimerStop();
+    panelMultiplexingTimerClear();
     
     terminalTextAttributesReset();
     

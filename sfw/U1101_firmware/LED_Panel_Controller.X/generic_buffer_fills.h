@@ -23,6 +23,9 @@
 // this fills panel_direct_data_buffer with data for a white screen
 void fillPanelBufferWhite(void);
 
+// this fills panel_direct_data_buffer with an RGB column pattern
+void fillPanelBufferRGBStripes(void);
+
 #endif /* _GENERIC_BUFFER_FILLS_H */
 
 /* *****************************************************************************

@@ -247,7 +247,7 @@ void main(void) {
     LEDPanelInitialize();
     printf("    LED Panel Driving Peripherals Initialized\r\n");
     #warning "remove this eventually, this is just to get something into the buffer"
-    fillPanelBufferWhite();
+    fillPanelBufferRGBStripes();
     while(usbUartCheckIfBusy());
     
     // Disable reset LED
