@@ -238,6 +238,12 @@ void main(void) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     }
     
+    
+    // setup random number generator
+    RNGInitialize();
+    printf("    Hardware Random number Generator Initialized\r\n");
+    while(usbUartCheckIfBusy());
+    
     // setup power pushbutton
     capTouchPushbuttonsInitialize();
     printf("    Capacitive Pushbuttons Initialized\r\n");
@@ -247,7 +253,7 @@ void main(void) {
     LEDPanelInitialize();
     printf("    LED Panel Driving Peripherals Initialized\r\n");
     #warning "remove this eventually, this is just to get something into the buffer"
-    fillPanelBufferRGBStripes();
+    fillPanelBufferRand();
     while(usbUartCheckIfBusy());
     
     // Disable reset LED

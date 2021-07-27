@@ -26,6 +26,9 @@ void fillPanelBufferWhite(void);
 // this fills panel_direct_data_buffer with an RGB column pattern
 void fillPanelBufferRGBStripes(void);
 
+// this fills panel_direct_data_buffer with a randomized pixel pattern
+void fillPanelBufferRand(void);
+
 #endif /* _GENERIC_BUFFER_FILLS_H */
 
 /* *****************************************************************************

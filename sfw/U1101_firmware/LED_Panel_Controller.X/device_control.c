@@ -1029,8 +1029,8 @@ void printClockStatus(uint32_t input_sysclk) {
 // This function initializes the random number generator
 void RNGInitialize(void) {
  
-    // Enable ring oscillator bias correction mode
-    RNGCONbits.TRNGMODE = 1;
+    // Disable ring oscillator bias correction mode
+    RNGCONbits.TRNGMODE = 0;
     
     // Change numbers continously
     RNGCONbits.CONT = 1;
