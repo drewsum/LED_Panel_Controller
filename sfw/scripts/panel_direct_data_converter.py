@@ -4,9 +4,19 @@ from PIL import Image
 import argparse
 import pathlib
 import os
+import numpy as np
 
 def scale_image(input_image):
     return input_image.resize((64, 64))
+
+def image_gamma_correction(input_image):
+    im = np.array(input_image)
+
+    Corrected = ((im / 255)**1.5) * 255
+    
+    pil_img = Image.fromarray(np.uint8(Corrected))
+
+    return pil_img
 
 # must already be 64x64 pixels
 def image_to_byte_array(input_image):
@@ -117,13 +127,11 @@ def main():
     scaled_image = scale_image(im)
     
     # conert scaled image to bytes
-    image_byte_array = image_to_byte_array(scaled_image)
+    image_byte_array = image_to_byte_array(image_gamma_correction(scaled_image))
 
     # write to an output file
     # make this a passable parameter with file name
     write_output_file(image_byte_array)
-
-    scaled_image.show()
 
 if __name__ == "__main__":
     main()
