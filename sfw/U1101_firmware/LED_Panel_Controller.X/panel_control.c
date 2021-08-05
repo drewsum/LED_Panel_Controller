@@ -465,7 +465,7 @@ void __ISR(_TIMER_5_VECTOR, IPL3SRS) panelMultiplexingTimerISR(void) {
     }
     
     // start DMA transactions at next location
-    DCH2SSA = KVA_TO_PA((void *) &panel_direct_data_buffer[(panel_data_vars.current_row * 32) + 
+    DCH2SSA = KVA_TO_PA((uint8_t *) &panel_direct_data_buffer[(panel_data_vars.current_row * 64) + 
             (panel_data_vars.current_color_frame * 2048)]);
     
     // clear and set row bits based on panel_data_vars.current_row

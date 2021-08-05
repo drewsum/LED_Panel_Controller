@@ -16,6 +16,7 @@
         <itemPath>capacitive_pushbuttons.h</itemPath>
         <itemPath>panel_control.h</itemPath>
         <itemPath>generic_buffer_fills.h</itemPath>
+        <itemPath>splash_screen.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Core Drivers" projectFiles="true">
         <itemPath>configuration.h</itemPath>
@@ -72,6 +73,7 @@
         <itemPath>capacitive_pushbuttons.c</itemPath>
         <itemPath>panel_control.c</itemPath>
         <itemPath>generic_buffer_fills.c</itemPath>
+        <itemPath>splash_screen.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>

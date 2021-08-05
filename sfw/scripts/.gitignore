@@ -1,2 +1,4 @@
 venv
-test_image.png
+*.jpg
+*.png
+*.dru

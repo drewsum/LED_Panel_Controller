@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=power_saving.c heartbeat_services.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c cause_of_reset.c prefetch.c gpio_setup.c plib_i2c.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c pgood_monitor.c telemetry.c temperature_sensors.c mcp9804_temp_sensor.c power_monitors.c ina219_power_monitor.c adc.c adc_channels.c ds1683_time_of_flight.c misc_i2c_devices.c rtcc.c ds3231_rtc.c capacitive_pushbuttons.c panel_control.c generic_buffer_fills.c
+SOURCEFILES_QUOTED_IF_SPACED=adc.c adc_channels.c power_saving.c heartbeat_services.c pgood_monitor.c telemetry.c capacitive_pushbuttons.c panel_control.c generic_buffer_fills.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c cause_of_reset.c prefetch.c rtcc.c gpio_setup.c mcp9804_temp_sensor.c ina219_power_monitor.c ds1683_time_of_flight.c ds3231_rtc.c plib_i2c.c temperature_sensors.c power_monitors.c misc_i2c_devices.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c splash_screen.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/capacitive_pushbuttons.o ${OBJECTDIR}/panel_control.o ${OBJECTDIR}/generic_buffer_fills.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/heartbeat_services.o.d ${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/plib_i2c.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/telemetry.o.d ${OBJECTDIR}/temperature_sensors.o.d ${OBJECTDIR}/mcp9804_temp_sensor.o.d ${OBJECTDIR}/power_monitors.o.d ${OBJECTDIR}/ina219_power_monitor.o.d ${OBJECTDIR}/adc.o.d ${OBJECTDIR}/adc_channels.o.d ${OBJECTDIR}/ds1683_time_of_flight.o.d ${OBJECTDIR}/misc_i2c_devices.o.d ${OBJECTDIR}/rtcc.o.d ${OBJECTDIR}/ds3231_rtc.o.d ${OBJECTDIR}/capacitive_pushbuttons.o.d ${OBJECTDIR}/panel_control.o.d ${OBJECTDIR}/generic_buffer_fills.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/capacitive_pushbuttons.o ${OBJECTDIR}/panel_control.o ${OBJECTDIR}/generic_buffer_fills.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/splash_screen.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/adc.o.d ${OBJECTDIR}/adc_channels.o.d ${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/heartbeat_services.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/telemetry.o.d ${OBJECTDIR}/capacitive_pushbuttons.o.d ${OBJECTDIR}/panel_control.o.d ${OBJECTDIR}/generic_buffer_fills.o.d ${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/rtcc.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/mcp9804_temp_sensor.o.d ${OBJECTDIR}/ina219_power_monitor.o.d ${OBJECTDIR}/ds1683_time_of_flight.o.d ${OBJECTDIR}/ds3231_rtc.o.d ${OBJECTDIR}/plib_i2c.o.d ${OBJECTDIR}/temperature_sensors.o.d ${OBJECTDIR}/power_monitors.o.d ${OBJECTDIR}/misc_i2c_devices.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/splash_screen.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/power_saving.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/capacitive_pushbuttons.o ${OBJECTDIR}/panel_control.o ${OBJECTDIR}/generic_buffer_fills.o
+OBJECTFILES=${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/capacitive_pushbuttons.o ${OBJECTDIR}/panel_control.o ${OBJECTDIR}/generic_buffer_fills.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/splash_screen.o
 
 # Source Files
-SOURCEFILES=power_saving.c heartbeat_services.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c cause_of_reset.c prefetch.c gpio_setup.c plib_i2c.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c pgood_monitor.c telemetry.c temperature_sensors.c mcp9804_temp_sensor.c power_monitors.c ina219_power_monitor.c adc.c adc_channels.c ds1683_time_of_flight.c misc_i2c_devices.c rtcc.c ds3231_rtc.c capacitive_pushbuttons.c panel_control.c generic_buffer_fills.c
+SOURCEFILES=adc.c adc_channels.c power_saving.c heartbeat_services.c pgood_monitor.c telemetry.c capacitive_pushbuttons.c panel_control.c generic_buffer_fills.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c cause_of_reset.c prefetch.c rtcc.c gpio_setup.c mcp9804_temp_sensor.c ina219_power_monitor.c ds1683_time_of_flight.c ds3231_rtc.c plib_i2c.c temperature_sensors.c power_monitors.c misc_i2c_devices.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c splash_screen.c
 
 
 CFLAGS=
@@ -106,6 +106,18 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/adc.o: adc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/adc.o.d 
+	@${RM} ${OBJECTDIR}/adc.o 
+	@${FIXDEPS} "${OBJECTDIR}/adc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc.o.d" -o ${OBJECTDIR}/adc.o adc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/adc_channels.o: adc_channels.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/adc_channels.o.d 
+	@${RM} ${OBJECTDIR}/adc_channels.o 
+	@${FIXDEPS} "${OBJECTDIR}/adc_channels.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc_channels.o.d" -o ${OBJECTDIR}/adc_channels.o adc_channels.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
 ${OBJECTDIR}/power_saving.o: power_saving.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/power_saving.o.d 
@@ -117,6 +129,36 @@ ${OBJECTDIR}/heartbeat_services.o: heartbeat_services.c  nbproject/Makefile-${CN
 	@${RM} ${OBJECTDIR}/heartbeat_services.o.d 
 	@${RM} ${OBJECTDIR}/heartbeat_services.o 
 	@${FIXDEPS} "${OBJECTDIR}/heartbeat_services.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/heartbeat_services.o.d" -o ${OBJECTDIR}/heartbeat_services.o heartbeat_services.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/pgood_monitor.o: pgood_monitor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pgood_monitor.o.d 
+	@${RM} ${OBJECTDIR}/pgood_monitor.o 
+	@${FIXDEPS} "${OBJECTDIR}/pgood_monitor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/pgood_monitor.o.d" -o ${OBJECTDIR}/pgood_monitor.o pgood_monitor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/telemetry.o: telemetry.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/telemetry.o.d 
+	@${RM} ${OBJECTDIR}/telemetry.o 
+	@${FIXDEPS} "${OBJECTDIR}/telemetry.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/telemetry.o.d" -o ${OBJECTDIR}/telemetry.o telemetry.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
+	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
+	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/panel_control.o: panel_control.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/panel_control.o.d 
+	@${RM} ${OBJECTDIR}/panel_control.o 
+	@${FIXDEPS} "${OBJECTDIR}/panel_control.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/panel_control.o.d" -o ${OBJECTDIR}/panel_control.o panel_control.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/generic_buffer_fills.o: generic_buffer_fills.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/generic_buffer_fills.o.d 
+	@${RM} ${OBJECTDIR}/generic_buffer_fills.o 
+	@${FIXDEPS} "${OBJECTDIR}/generic_buffer_fills.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/generic_buffer_fills.o.d" -o ${OBJECTDIR}/generic_buffer_fills.o generic_buffer_fills.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
 ${OBJECTDIR}/device_control.o: device_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -160,17 +202,65 @@ ${OBJECTDIR}/prefetch.o: prefetch.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/prefetch.o 
 	@${FIXDEPS} "${OBJECTDIR}/prefetch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/prefetch.o.d" -o ${OBJECTDIR}/prefetch.o prefetch.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
+${OBJECTDIR}/rtcc.o: rtcc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/rtcc.o.d 
+	@${RM} ${OBJECTDIR}/rtcc.o 
+	@${FIXDEPS} "${OBJECTDIR}/rtcc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/rtcc.o.d" -o ${OBJECTDIR}/rtcc.o rtcc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
 ${OBJECTDIR}/gpio_setup.o: gpio_setup.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/gpio_setup.o.d 
 	@${RM} ${OBJECTDIR}/gpio_setup.o 
 	@${FIXDEPS} "${OBJECTDIR}/gpio_setup.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/gpio_setup.o.d" -o ${OBJECTDIR}/gpio_setup.o gpio_setup.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
+${OBJECTDIR}/mcp9804_temp_sensor.o: mcp9804_temp_sensor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o.d 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o 
+	@${FIXDEPS} "${OBJECTDIR}/mcp9804_temp_sensor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcp9804_temp_sensor.o.d" -o ${OBJECTDIR}/mcp9804_temp_sensor.o mcp9804_temp_sensor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/ina219_power_monitor.o: ina219_power_monitor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ina219_power_monitor.o.d 
+	@${RM} ${OBJECTDIR}/ina219_power_monitor.o 
+	@${FIXDEPS} "${OBJECTDIR}/ina219_power_monitor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ina219_power_monitor.o.d" -o ${OBJECTDIR}/ina219_power_monitor.o ina219_power_monitor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/ds1683_time_of_flight.o: ds1683_time_of_flight.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o.d 
+	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o 
+	@${FIXDEPS} "${OBJECTDIR}/ds1683_time_of_flight.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds1683_time_of_flight.o.d" -o ${OBJECTDIR}/ds1683_time_of_flight.o ds1683_time_of_flight.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/ds3231_rtc.o: ds3231_rtc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ds3231_rtc.o.d 
+	@${RM} ${OBJECTDIR}/ds3231_rtc.o 
+	@${FIXDEPS} "${OBJECTDIR}/ds3231_rtc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds3231_rtc.o.d" -o ${OBJECTDIR}/ds3231_rtc.o ds3231_rtc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
 ${OBJECTDIR}/plib_i2c.o: plib_i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/plib_i2c.o.d 
 	@${RM} ${OBJECTDIR}/plib_i2c.o 
 	@${FIXDEPS} "${OBJECTDIR}/plib_i2c.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/plib_i2c.o.d" -o ${OBJECTDIR}/plib_i2c.o plib_i2c.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/temperature_sensors.o: temperature_sensors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o.d 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o 
+	@${FIXDEPS} "${OBJECTDIR}/temperature_sensors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/temperature_sensors.o.d" -o ${OBJECTDIR}/temperature_sensors.o temperature_sensors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/power_monitors.o: power_monitors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/power_monitors.o.d 
+	@${RM} ${OBJECTDIR}/power_monitors.o 
+	@${FIXDEPS} "${OBJECTDIR}/power_monitors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/power_monitors.o.d" -o ${OBJECTDIR}/power_monitors.o power_monitors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/misc_i2c_devices.o: misc_i2c_devices.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/misc_i2c_devices.o.d 
+	@${RM} ${OBJECTDIR}/misc_i2c_devices.o 
+	@${FIXDEPS} "${OBJECTDIR}/misc_i2c_devices.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/misc_i2c_devices.o.d" -o ${OBJECTDIR}/misc_i2c_devices.o misc_i2c_devices.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
 ${OBJECTDIR}/terminal_control.o: terminal_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -196,97 +286,25 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o 
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
-${OBJECTDIR}/pgood_monitor.o: pgood_monitor.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/splash_screen.o: splash_screen.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/pgood_monitor.o.d 
-	@${RM} ${OBJECTDIR}/pgood_monitor.o 
-	@${FIXDEPS} "${OBJECTDIR}/pgood_monitor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/pgood_monitor.o.d" -o ${OBJECTDIR}/pgood_monitor.o pgood_monitor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	@${RM} ${OBJECTDIR}/splash_screen.o.d 
+	@${RM} ${OBJECTDIR}/splash_screen.o 
+	@${FIXDEPS} "${OBJECTDIR}/splash_screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/splash_screen.o.d" -o ${OBJECTDIR}/splash_screen.o splash_screen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
-${OBJECTDIR}/telemetry.o: telemetry.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/telemetry.o.d 
-	@${RM} ${OBJECTDIR}/telemetry.o 
-	@${FIXDEPS} "${OBJECTDIR}/telemetry.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/telemetry.o.d" -o ${OBJECTDIR}/telemetry.o telemetry.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/temperature_sensors.o: temperature_sensors.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/temperature_sensors.o.d 
-	@${RM} ${OBJECTDIR}/temperature_sensors.o 
-	@${FIXDEPS} "${OBJECTDIR}/temperature_sensors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/temperature_sensors.o.d" -o ${OBJECTDIR}/temperature_sensors.o temperature_sensors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/mcp9804_temp_sensor.o: mcp9804_temp_sensor.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o.d 
-	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o 
-	@${FIXDEPS} "${OBJECTDIR}/mcp9804_temp_sensor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcp9804_temp_sensor.o.d" -o ${OBJECTDIR}/mcp9804_temp_sensor.o mcp9804_temp_sensor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/power_monitors.o: power_monitors.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/power_monitors.o.d 
-	@${RM} ${OBJECTDIR}/power_monitors.o 
-	@${FIXDEPS} "${OBJECTDIR}/power_monitors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/power_monitors.o.d" -o ${OBJECTDIR}/power_monitors.o power_monitors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/ina219_power_monitor.o: ina219_power_monitor.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ina219_power_monitor.o.d 
-	@${RM} ${OBJECTDIR}/ina219_power_monitor.o 
-	@${FIXDEPS} "${OBJECTDIR}/ina219_power_monitor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ina219_power_monitor.o.d" -o ${OBJECTDIR}/ina219_power_monitor.o ina219_power_monitor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
+else
 ${OBJECTDIR}/adc.o: adc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/adc.o.d 
 	@${RM} ${OBJECTDIR}/adc.o 
-	@${FIXDEPS} "${OBJECTDIR}/adc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc.o.d" -o ${OBJECTDIR}/adc.o adc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	@${FIXDEPS} "${OBJECTDIR}/adc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc.o.d" -o ${OBJECTDIR}/adc.o adc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
 ${OBJECTDIR}/adc_channels.o: adc_channels.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/adc_channels.o.d 
 	@${RM} ${OBJECTDIR}/adc_channels.o 
-	@${FIXDEPS} "${OBJECTDIR}/adc_channels.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc_channels.o.d" -o ${OBJECTDIR}/adc_channels.o adc_channels.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	@${FIXDEPS} "${OBJECTDIR}/adc_channels.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc_channels.o.d" -o ${OBJECTDIR}/adc_channels.o adc_channels.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
-${OBJECTDIR}/ds1683_time_of_flight.o: ds1683_time_of_flight.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o.d 
-	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o 
-	@${FIXDEPS} "${OBJECTDIR}/ds1683_time_of_flight.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds1683_time_of_flight.o.d" -o ${OBJECTDIR}/ds1683_time_of_flight.o ds1683_time_of_flight.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/misc_i2c_devices.o: misc_i2c_devices.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/misc_i2c_devices.o.d 
-	@${RM} ${OBJECTDIR}/misc_i2c_devices.o 
-	@${FIXDEPS} "${OBJECTDIR}/misc_i2c_devices.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/misc_i2c_devices.o.d" -o ${OBJECTDIR}/misc_i2c_devices.o misc_i2c_devices.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/rtcc.o: rtcc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/rtcc.o.d 
-	@${RM} ${OBJECTDIR}/rtcc.o 
-	@${FIXDEPS} "${OBJECTDIR}/rtcc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/rtcc.o.d" -o ${OBJECTDIR}/rtcc.o rtcc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/ds3231_rtc.o: ds3231_rtc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ds3231_rtc.o.d 
-	@${RM} ${OBJECTDIR}/ds3231_rtc.o 
-	@${FIXDEPS} "${OBJECTDIR}/ds3231_rtc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds3231_rtc.o.d" -o ${OBJECTDIR}/ds3231_rtc.o ds3231_rtc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
-	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
-	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/panel_control.o: panel_control.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/panel_control.o.d 
-	@${RM} ${OBJECTDIR}/panel_control.o 
-	@${FIXDEPS} "${OBJECTDIR}/panel_control.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/panel_control.o.d" -o ${OBJECTDIR}/panel_control.o panel_control.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/generic_buffer_fills.o: generic_buffer_fills.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/generic_buffer_fills.o.d 
-	@${RM} ${OBJECTDIR}/generic_buffer_fills.o 
-	@${FIXDEPS} "${OBJECTDIR}/generic_buffer_fills.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/generic_buffer_fills.o.d" -o ${OBJECTDIR}/generic_buffer_fills.o generic_buffer_fills.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-else
 ${OBJECTDIR}/power_saving.o: power_saving.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/power_saving.o.d 
@@ -298,6 +316,36 @@ ${OBJECTDIR}/heartbeat_services.o: heartbeat_services.c  nbproject/Makefile-${CN
 	@${RM} ${OBJECTDIR}/heartbeat_services.o.d 
 	@${RM} ${OBJECTDIR}/heartbeat_services.o 
 	@${FIXDEPS} "${OBJECTDIR}/heartbeat_services.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/heartbeat_services.o.d" -o ${OBJECTDIR}/heartbeat_services.o heartbeat_services.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/pgood_monitor.o: pgood_monitor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/pgood_monitor.o.d 
+	@${RM} ${OBJECTDIR}/pgood_monitor.o 
+	@${FIXDEPS} "${OBJECTDIR}/pgood_monitor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/pgood_monitor.o.d" -o ${OBJECTDIR}/pgood_monitor.o pgood_monitor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/telemetry.o: telemetry.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/telemetry.o.d 
+	@${RM} ${OBJECTDIR}/telemetry.o 
+	@${FIXDEPS} "${OBJECTDIR}/telemetry.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/telemetry.o.d" -o ${OBJECTDIR}/telemetry.o telemetry.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
+	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
+	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/panel_control.o: panel_control.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/panel_control.o.d 
+	@${RM} ${OBJECTDIR}/panel_control.o 
+	@${FIXDEPS} "${OBJECTDIR}/panel_control.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/panel_control.o.d" -o ${OBJECTDIR}/panel_control.o panel_control.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/generic_buffer_fills.o: generic_buffer_fills.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/generic_buffer_fills.o.d 
+	@${RM} ${OBJECTDIR}/generic_buffer_fills.o 
+	@${FIXDEPS} "${OBJECTDIR}/generic_buffer_fills.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/generic_buffer_fills.o.d" -o ${OBJECTDIR}/generic_buffer_fills.o generic_buffer_fills.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
 ${OBJECTDIR}/device_control.o: device_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -341,17 +389,65 @@ ${OBJECTDIR}/prefetch.o: prefetch.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/prefetch.o 
 	@${FIXDEPS} "${OBJECTDIR}/prefetch.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/prefetch.o.d" -o ${OBJECTDIR}/prefetch.o prefetch.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
+${OBJECTDIR}/rtcc.o: rtcc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/rtcc.o.d 
+	@${RM} ${OBJECTDIR}/rtcc.o 
+	@${FIXDEPS} "${OBJECTDIR}/rtcc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/rtcc.o.d" -o ${OBJECTDIR}/rtcc.o rtcc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
 ${OBJECTDIR}/gpio_setup.o: gpio_setup.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/gpio_setup.o.d 
 	@${RM} ${OBJECTDIR}/gpio_setup.o 
 	@${FIXDEPS} "${OBJECTDIR}/gpio_setup.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/gpio_setup.o.d" -o ${OBJECTDIR}/gpio_setup.o gpio_setup.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
+${OBJECTDIR}/mcp9804_temp_sensor.o: mcp9804_temp_sensor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o.d 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o 
+	@${FIXDEPS} "${OBJECTDIR}/mcp9804_temp_sensor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcp9804_temp_sensor.o.d" -o ${OBJECTDIR}/mcp9804_temp_sensor.o mcp9804_temp_sensor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/ina219_power_monitor.o: ina219_power_monitor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ina219_power_monitor.o.d 
+	@${RM} ${OBJECTDIR}/ina219_power_monitor.o 
+	@${FIXDEPS} "${OBJECTDIR}/ina219_power_monitor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ina219_power_monitor.o.d" -o ${OBJECTDIR}/ina219_power_monitor.o ina219_power_monitor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/ds1683_time_of_flight.o: ds1683_time_of_flight.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o.d 
+	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o 
+	@${FIXDEPS} "${OBJECTDIR}/ds1683_time_of_flight.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds1683_time_of_flight.o.d" -o ${OBJECTDIR}/ds1683_time_of_flight.o ds1683_time_of_flight.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/ds3231_rtc.o: ds3231_rtc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ds3231_rtc.o.d 
+	@${RM} ${OBJECTDIR}/ds3231_rtc.o 
+	@${FIXDEPS} "${OBJECTDIR}/ds3231_rtc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds3231_rtc.o.d" -o ${OBJECTDIR}/ds3231_rtc.o ds3231_rtc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
 ${OBJECTDIR}/plib_i2c.o: plib_i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/plib_i2c.o.d 
 	@${RM} ${OBJECTDIR}/plib_i2c.o 
 	@${FIXDEPS} "${OBJECTDIR}/plib_i2c.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/plib_i2c.o.d" -o ${OBJECTDIR}/plib_i2c.o plib_i2c.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/temperature_sensors.o: temperature_sensors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o.d 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o 
+	@${FIXDEPS} "${OBJECTDIR}/temperature_sensors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/temperature_sensors.o.d" -o ${OBJECTDIR}/temperature_sensors.o temperature_sensors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/power_monitors.o: power_monitors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/power_monitors.o.d 
+	@${RM} ${OBJECTDIR}/power_monitors.o 
+	@${FIXDEPS} "${OBJECTDIR}/power_monitors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/power_monitors.o.d" -o ${OBJECTDIR}/power_monitors.o power_monitors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	
+${OBJECTDIR}/misc_i2c_devices.o: misc_i2c_devices.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/misc_i2c_devices.o.d 
+	@${RM} ${OBJECTDIR}/misc_i2c_devices.o 
+	@${FIXDEPS} "${OBJECTDIR}/misc_i2c_devices.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/misc_i2c_devices.o.d" -o ${OBJECTDIR}/misc_i2c_devices.o misc_i2c_devices.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
 ${OBJECTDIR}/terminal_control.o: terminal_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -377,95 +473,11 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o 
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
-${OBJECTDIR}/pgood_monitor.o: pgood_monitor.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/splash_screen.o: splash_screen.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/pgood_monitor.o.d 
-	@${RM} ${OBJECTDIR}/pgood_monitor.o 
-	@${FIXDEPS} "${OBJECTDIR}/pgood_monitor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/pgood_monitor.o.d" -o ${OBJECTDIR}/pgood_monitor.o pgood_monitor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/telemetry.o: telemetry.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/telemetry.o.d 
-	@${RM} ${OBJECTDIR}/telemetry.o 
-	@${FIXDEPS} "${OBJECTDIR}/telemetry.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/telemetry.o.d" -o ${OBJECTDIR}/telemetry.o telemetry.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/temperature_sensors.o: temperature_sensors.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/temperature_sensors.o.d 
-	@${RM} ${OBJECTDIR}/temperature_sensors.o 
-	@${FIXDEPS} "${OBJECTDIR}/temperature_sensors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/temperature_sensors.o.d" -o ${OBJECTDIR}/temperature_sensors.o temperature_sensors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/mcp9804_temp_sensor.o: mcp9804_temp_sensor.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o.d 
-	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o 
-	@${FIXDEPS} "${OBJECTDIR}/mcp9804_temp_sensor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcp9804_temp_sensor.o.d" -o ${OBJECTDIR}/mcp9804_temp_sensor.o mcp9804_temp_sensor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/power_monitors.o: power_monitors.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/power_monitors.o.d 
-	@${RM} ${OBJECTDIR}/power_monitors.o 
-	@${FIXDEPS} "${OBJECTDIR}/power_monitors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/power_monitors.o.d" -o ${OBJECTDIR}/power_monitors.o power_monitors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/ina219_power_monitor.o: ina219_power_monitor.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ina219_power_monitor.o.d 
-	@${RM} ${OBJECTDIR}/ina219_power_monitor.o 
-	@${FIXDEPS} "${OBJECTDIR}/ina219_power_monitor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ina219_power_monitor.o.d" -o ${OBJECTDIR}/ina219_power_monitor.o ina219_power_monitor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/adc.o: adc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/adc.o.d 
-	@${RM} ${OBJECTDIR}/adc.o 
-	@${FIXDEPS} "${OBJECTDIR}/adc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc.o.d" -o ${OBJECTDIR}/adc.o adc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/adc_channels.o: adc_channels.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/adc_channels.o.d 
-	@${RM} ${OBJECTDIR}/adc_channels.o 
-	@${FIXDEPS} "${OBJECTDIR}/adc_channels.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/adc_channels.o.d" -o ${OBJECTDIR}/adc_channels.o adc_channels.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/ds1683_time_of_flight.o: ds1683_time_of_flight.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o.d 
-	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o 
-	@${FIXDEPS} "${OBJECTDIR}/ds1683_time_of_flight.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds1683_time_of_flight.o.d" -o ${OBJECTDIR}/ds1683_time_of_flight.o ds1683_time_of_flight.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/misc_i2c_devices.o: misc_i2c_devices.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/misc_i2c_devices.o.d 
-	@${RM} ${OBJECTDIR}/misc_i2c_devices.o 
-	@${FIXDEPS} "${OBJECTDIR}/misc_i2c_devices.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/misc_i2c_devices.o.d" -o ${OBJECTDIR}/misc_i2c_devices.o misc_i2c_devices.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/rtcc.o: rtcc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/rtcc.o.d 
-	@${RM} ${OBJECTDIR}/rtcc.o 
-	@${FIXDEPS} "${OBJECTDIR}/rtcc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/rtcc.o.d" -o ${OBJECTDIR}/rtcc.o rtcc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/ds3231_rtc.o: ds3231_rtc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ds3231_rtc.o.d 
-	@${RM} ${OBJECTDIR}/ds3231_rtc.o 
-	@${FIXDEPS} "${OBJECTDIR}/ds3231_rtc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds3231_rtc.o.d" -o ${OBJECTDIR}/ds3231_rtc.o ds3231_rtc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
-	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
-	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/panel_control.o: panel_control.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/panel_control.o.d 
-	@${RM} ${OBJECTDIR}/panel_control.o 
-	@${FIXDEPS} "${OBJECTDIR}/panel_control.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/panel_control.o.d" -o ${OBJECTDIR}/panel_control.o panel_control.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
-	
-${OBJECTDIR}/generic_buffer_fills.o: generic_buffer_fills.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/generic_buffer_fills.o.d 
-	@${RM} ${OBJECTDIR}/generic_buffer_fills.o 
-	@${FIXDEPS} "${OBJECTDIR}/generic_buffer_fills.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/generic_buffer_fills.o.d" -o ${OBJECTDIR}/generic_buffer_fills.o generic_buffer_fills.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
+	@${RM} ${OBJECTDIR}/splash_screen.o.d 
+	@${RM} ${OBJECTDIR}/splash_screen.o 
+	@${FIXDEPS} "${OBJECTDIR}/splash_screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/splash_screen.o.d" -o ${OBJECTDIR}/splash_screen.o splash_screen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O
 	
 endif
 
