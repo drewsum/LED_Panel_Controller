@@ -12,7 +12,7 @@ def scale_image(input_image):
 def image_gamma_correction(input_image):
     im = np.array(input_image)
 
-    Corrected = ((im / 255)**1.5) * 255
+    Corrected = ((im / 255)**3.0) * 255
     
     pil_img = Image.fromarray(np.uint8(Corrected))
 
@@ -25,6 +25,10 @@ def image_to_byte_array(input_image):
     output_byte_array = bytearray(size)
 
     rgb_im = input_image.convert("RGB")
+
+    # add at least one white pixel
+    for byte in range (2048):
+        output_byte_array[byte + 10240] |= 63
 
     # iterate over rows and columns in image
     for row in range(32):
