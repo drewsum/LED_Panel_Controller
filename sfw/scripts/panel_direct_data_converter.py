@@ -12,7 +12,7 @@ def scale_image(input_image):
 def image_gamma_correction(input_image):
     im = np.array(input_image)
 
-    Corrected = ((im / 255)**3.0) * 255
+    Corrected = ((im / 255) ** (1 / 0.3)) * 255
     
     pil_img = Image.fromarray(np.uint8(Corrected))
 

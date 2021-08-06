@@ -18,17 +18,13 @@ void heartbeatServices(void) {
     if (live_telemetry_enable) {
 
         // get new telemetry data every 200ms
-        if ((heartbeat_systick + 5) % 20 == 0) {        
-            // Get new temperature sensor data
-            temp_sense_data_request = 1;
+        if ((heartbeat_systick + 5) % 20 == 0) temp_sense_data_request = 1;
 
-            // Get new power monitor data
-            power_monitor_data_request = 1;
-            
-        }
+        // get new telemetry data every 200ms
+        if ((heartbeat_systick + 10) % 20 == 0) power_monitor_data_request = 1;
         
         /* Trigger an ADC conversion scan */
-        if ((heartbeat_systick + 10) % 20 == 0) ADCCON3bits.GSWTRG = 1;
+        if ((heartbeat_systick + 15) % 20 == 0) ADCCON3bits.GSWTRG = 1;
         
         // print new telemetry to terminal every second
         if (heartbeat_systick % 100 == 0) live_telemetry_print_request = 1;
