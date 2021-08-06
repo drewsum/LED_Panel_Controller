@@ -84,11 +84,10 @@ void PMPInitialize(void) {
     // Set mode as Master mode 2 (PMCSx, PMRD, PMWR, PMA<x:0>, PMD<7:0> and PMD<8:15>(3))
     PMMODEbits.MODE = 0b10;
     
-    // Most conservative timing options for now
-    #warning "optimize this timing"
-    PMMODEbits.WAITB = 0b11;
-    PMMODEbits.WAITM = 0b1111;
-    PMMODEbits.WAITE = 0b11;
+    // Set up PMP bus timing
+    PMMODEbits.WAITB = 0b10;
+    PMMODEbits.WAITM = 0b0011;
+    PMMODEbits.WAITE = 0b10;
     
     // setup PMP pins
     // No address used
