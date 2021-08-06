@@ -529,6 +529,36 @@ usb_uart_command_function_t printPanelDirectDataContentsCommand(char * input_str
     
 }
 
+// Set panel brightness
+usb_uart_command_function_t setPanelBrightnessCommand(char * input_str) {
+
+    // Get which chip we're erasing
+    uint32_t set_brightness;
+    sscanf(input_str, "Set Panel Brightness: %u", &set_brightness);
+
+    if (set_brightness > 100 || set_brightness < 75) {
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a brightness between 75%% and 100%%, user entered %u%%\n\r", set_brightness);
+        terminalTextAttributesReset();
+
+
+    }
+
+    else {
+
+        panelPWMSetBrightness((uint8_t) set_brightness);
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set Panel Brightness to %u%%\n\r", set_brightness);
+        terminalTextAttributesReset();
+
+    }
+
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -599,5 +629,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Print Panel Direct Data Buffer",
             "Prints the contents of the raw data being shifted into the panel",
             printPanelDirectDataContentsCommand);
+    usbUartAddCommand("Set Panel Brightness: ",
+            "\b\b<Brightness Value>: Sets percent brightness of LED panel",
+            setPanelBrightnessCommand);
 
 }

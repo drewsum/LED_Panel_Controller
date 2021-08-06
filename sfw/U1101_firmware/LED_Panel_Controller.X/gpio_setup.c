@@ -127,8 +127,7 @@ void portGGPIOInitialize (void) {
     gpioPinSetup(gpio_port_g, 7, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     INT4Rbits.INT4R = RPG7_PPS_INPUT; // assign RG7 to INT4
     gpioPinSetup(gpio_port_g, 8, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
-#warning "panel dim PWM"
-    // RPG8Rbits.RPG8R = OC3_PPS_OUTPUT; // assign RG8 to OC3    
+    RPG8Rbits.RPG8R = OC3_PPS_OUTPUT; // assign RG8 to OC3    
     gpioPinSetup(gpio_port_g, 9, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_g, 12, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(gpio_port_g, 13, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
