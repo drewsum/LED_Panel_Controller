@@ -5,6 +5,8 @@
 
 #include "terminal_control.h"
 
+#include "pin_macros.h"
+
 // this function initializes the capacitive pushbutton interrupts
 void capTouchPushbuttonsInitialize(void) {
     
@@ -34,6 +36,18 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL7SRS) powerCapTouchPushbuttonISR(void) {
     terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("User pressed power button\r\n");
     terminalTextAttributesReset();
+    
+    // we're currently off, need to turn on
+    if (POS5_PGOOD_PIN == LOW) {
+        
+        LEDPanelSetup();
+        
+    }
+    
+    // we're currently on, need to turn off
+    else {
+        LEDPanelTeardown();
+    }
     
     clearInterruptFlag(External_Interrupt_2);
     
