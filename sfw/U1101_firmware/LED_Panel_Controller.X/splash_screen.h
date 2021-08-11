@@ -16411,8 +16411,6 @@ const uint8_t splash_screen_array[PANEL_DIRECT_DATA_BUFFER_SIZE] =
 0b0
 };
 
-
-
 // fill ram buffer with Splash Screen function
 void fillPanelBufferSplashScreen(void);
 

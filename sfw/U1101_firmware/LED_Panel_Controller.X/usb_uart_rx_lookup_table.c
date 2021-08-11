@@ -536,11 +536,11 @@ usb_uart_command_function_t setPanelBrightnessCommand(char * input_str) {
     uint32_t set_brightness;
     sscanf(input_str, "Set Panel Brightness: %u", &set_brightness);
 
-    if (set_brightness > 100 || set_brightness < 75) {
+    if (set_brightness > 100 || set_brightness < 0) {
 
         terminalTextAttributesReset();
         terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("Please enter a brightness between 75%% and 100%%, user entered %u%%\n\r", set_brightness);
+        printf("Please enter a brightness between 0%% and 100%%, user entered %u%%\n\r", set_brightness);
         terminalTextAttributesReset();
 
 
@@ -557,6 +557,44 @@ usb_uart_command_function_t setPanelBrightnessCommand(char * input_str) {
 
     }
 
+}
+
+usb_uart_command_function_t fillPanelScratchpadCommand(char * input_str) {
+ 
+    // Get which chip we're erasing
+    char * rx_data_str;
+    rx_data_str = (char *) malloc(2048);
+    uint32_t starting_address;
+    sscanf(input_str, "Fill Panel Scratchpad: %d, %2048c", &starting_address, &rx_data_str);
+    
+    uint32_t index;
+    for (index = 0; index < 2048; index++) {
+        panel_direct_data_scratchpad[starting_address + index] = (uint8_t) rx_data_str[index] - 14;
+    }
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Received Data!\r\n");
+    terminalTextAttributesReset();
+    
+    free(rx_data_str);
+    
+}
+
+usb_uart_command_function_t printPanelScratchpadContentsCommand(char * input_str) {
+    
+    panelScratchpadPrint();
+    
+}
+
+usb_uart_command_function_t copyPanelScratchpadCommand(char * input_str) {
+ 
+    panelDataCopyScratchpad();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Copied Data!\r\n");
+    terminalTextAttributesReset();
+    
+    
 }
 
 // This function must be called to set up the usb_uart_commands hash table
@@ -632,5 +670,14 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Set Panel Brightness: ",
             "\b\b<Brightness Value>: Sets percent brightness of LED panel",
             setPanelBrightnessCommand);
+    usbUartAddCommand("Fill Panel Scratchpad: ",
+            "\b\b<Starting_Address>, <data>: Fills internal panel data scratchpad (meant for use with scripts)",
+            fillPanelScratchpadCommand);
+    usbUartAddCommand("Print Panel Scratchpad",
+            "Prints the contents of the raw data in the panel data scratchpad",
+            printPanelScratchpadContentsCommand);
+    usbUartAddCommand("Copy Panel Scratchpad Contents",
+            "Moves data from the scratchpad into the panel direct data buffer",
+            copyPanelScratchpadCommand);
 
 }

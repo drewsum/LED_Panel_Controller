@@ -29,6 +29,7 @@
 // 1byte * 64 cols * 32 rows * 8 color_frames = 16,384 bytes
 #define PANEL_DIRECT_DATA_BUFFER_SIZE           16384
 volatile __attribute__((coherent)) uint8_t panel_direct_data_buffer[PANEL_DIRECT_DATA_BUFFER_SIZE];
+volatile __attribute__((coherent)) uint8_t panel_direct_data_scratchpad[PANEL_DIRECT_DATA_BUFFER_SIZE];
 
 // this structure holds variables needed for drawing images on the panel
 // PMP and DMA handle shifting data into panel for 64 columms
@@ -83,6 +84,20 @@ void LEDPanelTeardown(void);
 
 // This function prints the contents of the internal RAM buffer holding frame data
 void panelDirectDataBufferPrint(void);
+
+// This function initializes output compare 3 for dimming the display
+void panelPWMInitialize(void);
+
+// This function sets panel brightness
+// Pass an integer between 0 and 100
+// Larger numbers correspond to a brighter display
+void panelPWMSetBrightness(uint8_t set_brightness);
+
+// this function copies data from scratchpad into direct data buffer
+void panelDataCopyScratchpad(void);
+
+// This function prints the contents of the internal RAM buffer holding frame data scratchpad
+void panelScratchpadPrint(void);
 
 #endif /* _PANEL_CONTROL_H */
 

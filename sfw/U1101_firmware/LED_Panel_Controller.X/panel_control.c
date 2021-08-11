@@ -703,6 +703,74 @@ void panelPWMSetBrightness(uint8_t set_brightness) {
     set_brightness = 100 - set_brightness;
     
     // Set duty cycle
-    OC3RS = (set_brightness * PR4) / 10;
+    OC3RS = ((set_brightness * 0.25) + 75 * PR4) / 10;
+    
+}
+
+#warning "replace this with a DMA function eventually"
+// this function copies data from scratchpad into direct data buffer
+void panelDataCopyScratchpad(void) {
+ 
+    uint32_t address_index;
+    
+    for (address_index = 0; address_index < PANEL_DIRECT_DATA_BUFFER_SIZE; address_index++) {
+    
+        panel_direct_data_buffer[address_index] = panel_direct_data_scratchpad[address_index];
+        
+    }
+    
+}
+
+// This function prints the contents of the internal RAM buffer holding frame data scratchpad
+void panelScratchpadPrint(void) {
+
+    // print title of data table
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Contents of first kB of Internal Panel Data Scratchpad:\n\r");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Starting    Lower Nibble\n\r");
+    printf("    Address:    0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F\n\r");
+    
+    // Access address
+    uint32_t loop_address;
+    
+    // wait for it
+    for (loop_address = 0 ; loop_address < PANEL_DIRECT_DATA_BUFFER_SIZE / 64; loop_address += 16) {
+        
+        if (loop_address % 32 == 0) {
+         
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            
+        }
+        
+        else {
+         
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
+            
+        }
+        
+        printf("    0x%08X: 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X\n\r", loop_address,
+               panel_direct_data_scratchpad[loop_address + 0],
+               panel_direct_data_scratchpad[loop_address + 1], 
+               panel_direct_data_scratchpad[loop_address + 2], 
+               panel_direct_data_scratchpad[loop_address + 3], 
+               panel_direct_data_scratchpad[loop_address + 4], 
+               panel_direct_data_scratchpad[loop_address + 5], 
+               panel_direct_data_scratchpad[loop_address + 6], 
+               panel_direct_data_scratchpad[loop_address + 7], 
+               panel_direct_data_scratchpad[loop_address + 8], 
+               panel_direct_data_scratchpad[loop_address + 9], 
+               panel_direct_data_scratchpad[loop_address + 0xA], 
+               panel_direct_data_scratchpad[loop_address + 0xB], 
+               panel_direct_data_scratchpad[loop_address + 0xC], 
+               panel_direct_data_scratchpad[loop_address + 0xD], 
+               panel_direct_data_scratchpad[loop_address + 0xE], 
+               panel_direct_data_scratchpad[loop_address + 0xF]);
+        
+    }
+    
+    terminalTextAttributesReset();
+    
     
 }
