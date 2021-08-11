@@ -1,3 +1,4 @@
-Pillow
-argparse
-numpy
+Pillow == 8.3.1
+argparse == 1.4.0
+numpy == 1.21.1
+pyserial == 3.5

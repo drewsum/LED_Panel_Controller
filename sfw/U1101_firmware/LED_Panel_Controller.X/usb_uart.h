@@ -26,7 +26,7 @@
 
 // Sizes of TX and RX ring buffers
 #define USB_UART_TX_BUFFER_SIZE 16384
-#define USB_UART_RX_BUFFER_SIZE 1024
+#define USB_UART_RX_BUFFER_SIZE 4096
 
 // these macros are used to switch which UART module is used for USB_UART,
 // since this is project configurable

@@ -298,7 +298,7 @@ void main(void) {
         }
         
         if (live_telemetry_print_request && live_telemetry_enable) {
-
+            
             // Clear the terminal
             terminalClearScreen();
             terminalSetCursorHome();

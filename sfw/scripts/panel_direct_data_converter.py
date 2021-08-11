@@ -5,6 +5,78 @@ import argparse
 import pathlib
 import os
 import numpy as np
+import serial
+import re
+import signal
+import sys
+
+# This method returns a list of the available COM ports to talk on
+def serial_ports():
+    """ Lists serial port names
+        :raises EnvironmentError:
+            On unsupported or unknown platforms
+        :returns:
+            A list of the serial ports available on the system
+    """
+    if sys.platform.startswith('win'):
+        ports = ['COM%s' % (i + 1) for i in range(256)]
+    elif sys.platform.startswith('linux') or sys.platform.startswith('cygwin'):
+        # this excludes your current terminal "/dev/tty"
+        ports = glob.glob('/dev/tty[A-Za-z]*')
+    elif sys.platform.startswith('darwin'):
+        ports = glob.glob('/dev/tty.*')
+    else:
+        raise EnvironmentError('Unsupported platform')
+
+    result = []
+    for port in ports:
+        try:
+            s = serial.Serial(port)
+            s.close()
+            result.append(port)
+        except (OSError, serial.SerialException):
+            pass
+    return result
+
+# this method removes ANSI escape sequnces from a string
+def trim_escape_codes(input_str):
+    reaesc = re.compile(r'\x1b[^m]*m')
+    return reaesc.sub('', input_str)
+
+# This method tries to find a pulse oximeter on available COM ports
+def find_device():
+    for com_port in serial_ports():
+        try:
+            # open a connection on this COM port at 115.2kBaud
+            dev = serial.Serial(com_port, 115200, timeout=1)
+            # Ask device for identification string
+            # Only end lines with carriage return character '\r' since that's what PutTy does and firmware expects
+            dev.write(b"*IDN?\r")
+            # Read response, decode into ascii, and remove all ANSI escape characters
+            response = dev.readline().decode('ascii')
+            response = trim_escape_codes(response)
+
+            # Close active COM port
+            dev.close()
+
+            # check if response to *IDN? starts with "Pulse Oximeter"
+            if (response.startswith("LED Panel Controller")):
+                return com_port
+
+        except:
+            print(f"Attemp failed on {com_port}")
+            dev.close()
+
+# https://stackoverflow.com/questions/18114560/python-catch-ctrl-c-command-prompt-really-want-to-quit-y-n-resume-executi
+def exit_gracefully(signum, frame):
+    # restore the original signal handler as otherwise evil things will happen
+    # in raw_input when CTRL+C is pressed, and our signal handler is not re-entrant
+    signal.signal(signal.SIGINT, original_sigint)
+
+    sys.exit(1)
+
+    # restore the exit gracefully handler here    
+    signal.signal(signal.SIGINT, exit_gracefully)
 
 def scale_image(input_image):
     return input_image.resize((64, 64))
@@ -122,20 +194,59 @@ def write_output_file(input_array):
 
 def main():
     # set up arguments to pass
-    parser = argparse.ArgumentParser(description='Scales and converts passed image to panel_direct_data_buffer[] format')
-    parser.add_argument('Image_Path', type=pathlib.Path, help='The path to the image file to scale and convert')
+    parser = argparse.ArgumentParser(description='Scales and converts passed image to panel_direct_data_buffer[] format, with optional outputs')
+    parser.add_argument('Input_Image_Path', type=pathlib.Path, help='The path to the image file to scale and convert')
+    parser.add_argument('--output', required=True, help="Type of script output (serial or file)")
     args = parser.parse_args()
 
     # open passed image
-    im = Image.open(args.Image_Path)
+    im = Image.open(args.Input_Image_Path)
     scaled_image = scale_image(im)
     
     # conert scaled image to bytes
     image_byte_array = image_to_byte_array(image_gamma_correction(scaled_image))
 
-    # write to an output file
-    # make this a passable parameter with file name
-    write_output_file(image_byte_array)
+    # determine action based on passed output type
+    # write to file
+    if (args.output == "file"):
+        # write to an output file
+        # make this a passable parameter with file name
+        write_output_file(image_byte_array)
+    # write to serial port
+    elif (args.output == "serial"):
+        # Find pulse oximeter on its COM port first
+        com_port = find_device()
+        if (com_port): print(f"Found LED Panel Controller on {com_port}")
+        else: print("Could not find LED Panel Controller")
+        
+        # open a connection on this COM port at 115.2kBaud        
+        with serial.Serial(com_port, 115200, timeout=10) as dev:
+
+            values = list(image_byte_array[0:2048])
+            # create output sting to send to device
+            output_str = "Fill Panel Scratchpad: " + "0" + ", "
+            for byte in values:
+                output_str = output_str + chr(byte)
+            output_str = output_str + "\r"
+            # write to device
+            print(bytes(output_str, 'utf-8'))
+            dev.write(bytes(output_str, 'utf-8'))
+
+            response = dev.readline().decode('ascii')
+            response = trim_escape_codes(response)
+
+            # Close active COM port
+            dev.close()
+
+            # check if response to *IDN? starts with "Pulse Oximeter"
+            if (response.startswith("Received Data!")):
+                print("got response")
+
+
 
 if __name__ == "__main__":
+
+    original_sigint = signal.getsignal(signal.SIGINT)
+    signal.signal(signal.SIGINT, exit_gracefully)
+
     main()
