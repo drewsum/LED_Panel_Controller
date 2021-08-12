@@ -703,7 +703,7 @@ void panelPWMSetBrightness(uint8_t set_brightness) {
     set_brightness = 100 - set_brightness;
     
     // Set duty cycle
-    OC3RS = ((set_brightness * 0.25) + 75 * PR4) / 10;
+    OC3RS = (set_brightness * PR4) / 10;
     
 }
 

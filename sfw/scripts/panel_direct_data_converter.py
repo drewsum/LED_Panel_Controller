@@ -195,12 +195,13 @@ def write_output_file(input_array):
 def main():
     # set up arguments to pass
     parser = argparse.ArgumentParser(description='Scales and converts passed image to panel_direct_data_buffer[] format, with optional outputs')
-    parser.add_argument('Input_Image_Path', type=pathlib.Path, help='The path to the image file to scale and convert')
+    parser.add_argument('--input_path', type=pathlib.Path, required=True, help='The path to the image file to scale and convert')
     parser.add_argument('--output', required=True, help="Type of script output (serial or file)")
+    parser.add_argument('-d', '--display', action="store_true", help="Force transferred image to be displayed")
     args = parser.parse_args()
 
     # open passed image
-    im = Image.open(args.Input_Image_Path)
+    im = Image.open(args.input_path)
     scaled_image = scale_image(im)
     
     # conert scaled image to bytes
@@ -219,30 +220,45 @@ def main():
         if (com_port): print(f"Found LED Panel Controller on {com_port}")
         else: print("Could not find LED Panel Controller")
         
-        # open a connection on this COM port at 115.2kBaud        
+        # open a connection on this COM port at 115.2kBaud
         with serial.Serial(com_port, 115200, timeout=10) as dev:
 
-            values = list(image_byte_array[0:2048])
-            # create output sting to send to device
-            output_str = "Fill Panel Scratchpad: " + "0" + ", "
-            for byte in values:
-                output_str = output_str + chr(byte)
-            output_str = output_str + "\r"
-            # write to device
-            print(bytes(output_str, 'utf-8'))
-            dev.write(bytes(output_str, 'utf-8'))
+            # loop over frames, send 2kB at a time
+            for frame in range(8):
+                values = list(image_byte_array[((frame)*2048):((frame+1)*2048)])
+                # create output sting to send to device
+                output_str = "Fill Panel Scratchpad: " + str(frame*2048) + ", "
+                for byte in values:
+                    output_str = output_str + chr(byte+14)
+                output_str = output_str + "\r"
+                # write to device
+                dev.write(bytes(output_str, 'utf-8'))
 
-            response = dev.readline().decode('ascii')
-            response = trim_escape_codes(response)
+                response = dev.readline().decode('utf-8')
+                response = trim_escape_codes(response)
+
+                dev.reset_input_buffer()
+
+                # check if response to *IDN? starts with "Pulse Oximeter"
+                if (response.startswith("Received Data!")):
+                    dev.reset_output_buffer()
+
+            # tell MCU to load scratchpad into active buffer
+            if args.display:
+                dev.write(b"Copy Panel Scratchpad Contents\r")
+                response = dev.readline().decode('utf-8')
+                response = trim_escape_codes(response)
+
+                dev.reset_input_buffer()
+
+                # check if response to *IDN? starts with "Pulse Oximeter"
+                if (response.startswith("Copied Data!")):
+                    dev.reset_output_buffer()
+
+                dev.write(b"Set Panel Power: On\r")
 
             # Close active COM port
             dev.close()
-
-            # check if response to *IDN? starts with "Pulse Oximeter"
-            if (response.startswith("Received Data!")):
-                print("got response")
-
-
 
 if __name__ == "__main__":
 
