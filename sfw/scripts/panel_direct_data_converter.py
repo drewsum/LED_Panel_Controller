@@ -9,6 +9,7 @@ import serial
 import re
 import signal
 import sys
+import warnings
 
 # This method returns a list of the available COM ports to talk on
 def serial_ports():
@@ -192,6 +193,19 @@ def write_output_file(input_array):
 
     f.close()
 
+def enable_panel(dev):
+    dev.write(b"Copy Panel Scratchpad Contents\r")
+    response = dev.readline().decode('utf-8')
+    response = trim_escape_codes(response)
+
+    dev.reset_input_buffer()
+
+    # check if response to *IDN? starts with "Pulse Oximeter"
+    if (response.startswith("Copied Data!")):
+        dev.reset_output_buffer()
+
+    dev.write(b"Set Panel Power: On\r")
+
 def main():
     # set up arguments to pass
     parser = argparse.ArgumentParser(description='Scales and converts passed image to panel_direct_data_buffer[] format, with optional outputs')
@@ -201,7 +215,7 @@ def main():
     args = parser.parse_args()
 
     # open passed image
-    im = Image.open(args.input_path)
+    im = Image.open(args.input_path).convert('RGB')
     scaled_image = scale_image(im)
     
     # conert scaled image to bytes
@@ -221,7 +235,7 @@ def main():
         else: print("Could not find LED Panel Controller")
         
         # open a connection on this COM port at 115.2kBaud
-        with serial.Serial(com_port, 115200, timeout=10) as dev:
+        with serial.Serial(com_port, 115200) as dev:
 
             # loop over frames, send 2kB at a time
             for frame in range(8):
@@ -245,17 +259,7 @@ def main():
 
             # tell MCU to load scratchpad into active buffer
             if args.display:
-                dev.write(b"Copy Panel Scratchpad Contents\r")
-                response = dev.readline().decode('utf-8')
-                response = trim_escape_codes(response)
-
-                dev.reset_input_buffer()
-
-                # check if response to *IDN? starts with "Pulse Oximeter"
-                if (response.startswith("Copied Data!")):
-                    dev.reset_output_buffer()
-
-                dev.write(b"Set Panel Power: On\r")
+                enable_panel(dev)
 
             # Close active COM port
             dev.close()
@@ -265,4 +269,7 @@ if __name__ == "__main__":
     original_sigint = signal.getsignal(signal.SIGINT)
     signal.signal(signal.SIGINT, exit_gracefully)
 
-    main()
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+
+        main()

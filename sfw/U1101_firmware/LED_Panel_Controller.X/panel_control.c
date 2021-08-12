@@ -699,8 +699,7 @@ void panelPWMInitialize(void) {
 // Larger numbers correspond to a brighter display
 void panelPWMSetBrightness(uint8_t set_brightness) {
 
-    // Invert since OE pin is active low
-    set_brightness = 100 - set_brightness;
+    set_brightness = (uint8_t) 25 - (set_brightness >> 2);
     
     // Set duty cycle
     OC3RS = (set_brightness * PR4) / 10;
