@@ -239,11 +239,11 @@ def main():
 
             # loop over frames, send 2kB at a time
             for frame in range(8):
-                values = list(image_byte_array[((frame)*2048):((frame+1)*2048)])
+                values = list(image_byte_array[(frame*2048):((frame+1)*2048)])
                 # create output sting to send to device
                 output_str = "Fill Panel Scratchpad: " + str(frame*2048) + ", "
-                for byte in values:
-                    output_str = output_str + chr(byte+14)
+                for value in values:
+                    output_str = output_str + chr(value+14)
                 output_str = output_str + "\r"
                 # write to device
                 dev.write(bytes(output_str, 'utf-8'))

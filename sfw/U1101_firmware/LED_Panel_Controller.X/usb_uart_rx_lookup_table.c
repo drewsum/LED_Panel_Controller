@@ -561,9 +561,11 @@ usb_uart_command_function_t setPanelBrightnessCommand(char * input_str) {
 
 usb_uart_command_function_t fillPanelScratchpadCommand(char * input_str) {
  
-    char rx_data_str[2050];
+    
+    char * rx_data_str;
+    rx_data_str = (char *) malloc(2050);
     uint32_t starting_address;
-    sscanf(input_str, "Fill Panel Scratchpad: %d, %2048s", &starting_address, rx_data_str);
+    sscanf(input_str, "Fill Panel Scratchpad: %d, %2048c", &starting_address, rx_data_str);
     
     uint32_t index;
     for (index = 0; index < 2048; index++) {
@@ -573,6 +575,8 @@ usb_uart_command_function_t fillPanelScratchpadCommand(char * input_str) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Received Data!\r\n");
     terminalTextAttributesReset();
+    
+    free(rx_data_str);
     
 }
 
