@@ -9,6 +9,7 @@
 #include "ds1683_time_of_flight.h"
 #include "rtcc.h"
 #include "ds3231_rtc.h"
+#include "24AA02UID_eeprom.h"
 
 // this function initializes the logic board ETC counter
 void platformETCInitialize(void) {
@@ -38,6 +39,8 @@ void miscI2CDevicesPrintStatus(void) {
     if (nETC_CONFIG_PIN == LOW) DS1683PrintStatus(PLATFORM_ETC_ADDR, &error_handler.flags.platform_etc);
     
     if (nBACKUP_RTC_CONFIG_PIN == LOW) DS3231PrintStatus(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    
+    _24AA02UIDprintStatus(_24AA02UID_EEPROM_ADDR, &error_handler.flags.i2c_eeprom);
     
 }
 

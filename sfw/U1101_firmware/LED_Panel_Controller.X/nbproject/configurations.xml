@@ -39,6 +39,7 @@
           <itemPath>ina219_power_monitor.h</itemPath>
           <itemPath>ds1683_time_of_flight.h</itemPath>
           <itemPath>ds3231_rtc.h</itemPath>
+          <itemPath>24AA02UID_eeprom.h</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.h</itemPath>
         <itemPath>plib_i2c_master.h</itemPath>
@@ -94,6 +95,7 @@
           <itemPath>ina219_power_monitor.c</itemPath>
           <itemPath>ds1683_time_of_flight.c</itemPath>
           <itemPath>ds3231_rtc.c</itemPath>
+          <itemPath>24AA02UID_eeprom.c</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.c</itemPath>
         <itemPath>temperature_sensors.c</itemPath>

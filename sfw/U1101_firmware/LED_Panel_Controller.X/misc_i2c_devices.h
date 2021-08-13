@@ -30,6 +30,7 @@
 // misc device I2C addresses
 #define PLATFORM_ETC_ADDR           0x6B
 #define BACKUP_RTC_ADDR             0x68
+#define _24AA02UID_EEPROM_ADDR      0x50
 
 // this function initializes the logic board ETC counter
 void platformETCInitialize(void);
