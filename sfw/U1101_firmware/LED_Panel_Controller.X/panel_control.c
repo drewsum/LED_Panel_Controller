@@ -85,9 +85,9 @@ void PMPInitialize(void) {
     PMMODEbits.MODE = 0b10;
     
     // Set up PMP bus timing
-    PMMODEbits.WAITB = 0b10;
-    PMMODEbits.WAITM = 0b0011;
-    PMMODEbits.WAITE = 0b10;
+    PMMODEbits.WAITB = 0b11;
+    PMMODEbits.WAITM = 0b1111;
+    PMMODEbits.WAITE = 0b11;
     
     // setup PMP pins
     // No address used

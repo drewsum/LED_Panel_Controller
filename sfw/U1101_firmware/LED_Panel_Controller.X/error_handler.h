@@ -25,7 +25,7 @@
 // set this flag high to update the error LEDs the next loop through main()
 volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
 
-#define ERROR_HANDLER_NUM_FLAGS  30
+#define ERROR_HANDLER_NUM_FLAGS  31
 
 // Error handler structure
 // Follow the convention in XC32 user's guide section 8.6.2
@@ -68,6 +68,7 @@ volatile __attribute__((coherent))  uint8_t update_error_leds_flag;
         uint8_t parallel_master_port;
         uint8_t panel_DMA;
         uint8_t i2c_eeprom;
+        uint8_t flash_spi;
         
     } flags;
 
@@ -109,7 +110,8 @@ const char *  error_handler_flag_names[] = {
     "+5V Supply Regulation",
     "Parallel Master Port",
     "Panel Direct Memory Access",
-    "I2C EEPROM"
+    "I2C EEPROM",
+    "Flash SPI"
     
 };
 

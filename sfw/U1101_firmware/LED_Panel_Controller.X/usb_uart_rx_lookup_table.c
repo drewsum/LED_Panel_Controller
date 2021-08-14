@@ -22,6 +22,7 @@
 #include "misc_i2c_devices.h"
 #include "pgood_monitor.h"
 #include "rtcc.h"
+#include "spi_flash.h"
 
 #include "panel_control.h"
 
@@ -207,6 +208,9 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "PMP") == 0) {
         printPMPStatus();
     }
+    else if (strcmp(rx_peripheral_name, "SPI Flash") == 0) {
+        printSPIFlashStatus();
+    }
     else {
         terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
         printf("Please enter a peripheral to view status. Received %s as peripheral name\r\n", rx_peripheral_name);
@@ -223,6 +227,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   I2C Master\r\n"
                 "   RTCC\r\n"
                 "   PMP\r\n"
+                "   SPI Flash\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
         return;
@@ -633,6 +638,7 @@ void usbUartHashTableInitialize(void) {
             "       I2C Master\r\n"
             "       RTCC\r\n"
             "       PMP\r\n"
+            "       SPI Flash\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",

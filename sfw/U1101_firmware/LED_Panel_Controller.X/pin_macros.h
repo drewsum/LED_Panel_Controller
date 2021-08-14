@@ -11,14 +11,14 @@
 // signal names from the hardware schematic
 
 // Port A
-#define nFLASH_CPI_CE0_PIN              LATAbits.LATA0
-#define nFLASH_CPI_CE1_PIN              LATAbits.LATA1
-#define nFLASH_CPI_CE2_PIN              LATAbits.LATA2
-#define nFLASH_CPI_CE3_PIN              LATAbits.LATA3
-#define nFLASH_CPI_CE4_PIN              LATAbits.LATA4
-#define nFLASH_CPI_CE5_PIN              LATAbits.LATA5
-#define nFLASH_CPI_CE6_PIN              LATAbits.LATA6
-#define nFLASH_CPI_CE7_PIN              LATAbits.LATA7
+#define nFLASH_SPI_CE0_PIN              LATAbits.LATA0
+#define nFLASH_SPI_CE1_PIN              LATAbits.LATA1
+#define nFLASH_SPI_CE2_PIN              LATAbits.LATA2
+#define nFLASH_SPI_CE3_PIN              LATAbits.LATA3
+#define nFLASH_SPI_CE4_PIN              LATAbits.LATA4
+#define nFLASH_SPI_CE5_PIN              LATAbits.LATA5
+#define nFLASH_SPI_CE6_PIN              LATAbits.LATA6
+#define nFLASH_SPI_CE7_PIN              LATAbits.LATA7
 #define nETC_CONFIG_PIN                 PORTAbits.RA9
 #define nMLVDS_CONFIG_PIN               PORTAbits.RA10
 #define ERROR_LED_PIN                   LATAbits.LATA14

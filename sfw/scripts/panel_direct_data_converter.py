@@ -209,13 +209,13 @@ def enable_panel(dev):
 def main():
     # set up arguments to pass
     parser = argparse.ArgumentParser(description='Scales and converts passed image to panel_direct_data_buffer[] format, with optional outputs')
-    parser.add_argument('--input_path', type=pathlib.Path, required=True, help='The path to the image file to scale and convert')
-    parser.add_argument('--output', required=True, help="Type of script output (serial or file)")
-    parser.add_argument('-d', '--display', action="store_true", help="Force transferred image to be displayed")
+    parser.add_argument('--input', type=pathlib.Path, required=True, help='The path to the image file to scale and convert')
+    parser.add_argument('--output', required=True, help="Type of script output (serial or ascii)")
+    parser.add_argument('-d', '--display', action="store_true", help="Force image to be displayed after serial transfer")
     args = parser.parse_args()
 
     # open passed image
-    im = Image.open(args.input_path).convert('RGB')
+    im = Image.open(args.input).convert('RGB')
     scaled_image = scale_image(im)
     
     # conert scaled image to bytes
@@ -223,7 +223,7 @@ def main():
 
     # determine action based on passed output type
     # write to file
-    if (args.output == "file"):
+    if (args.output == "ascii"):
         # write to an output file
         # make this a passable parameter with file name
         write_output_file(image_byte_array)

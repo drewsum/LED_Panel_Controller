@@ -55,6 +55,9 @@
 #include "adc.h"
 #include "adc_channels.h"
 
+// External Storage
+#include "spi_flash.h"
+
 void main(void) {
     
     // Save the cause of the most recent device reset
@@ -229,12 +232,33 @@ void main(void) {
         printf("    Backup Real-Time Clock Initialized\r\n");
         backupRTCRestoreTime();
         printf("    Restored time backup from previous sessions\r\n");
+        error_handler.flags.backup_rtc = 0;
         
     }
     
     else {
         terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("    Real Time Clock Configuration Not Detected\r\n");
+        while(usbUartCheckIfBusy());
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
+    // Setup the real time clock-calendar
+    if (nBACKUP_RTC_CONFIG_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("    SPI Flash Storage Configuration Detected\r\n");
+        while(usbUartCheckIfBusy());
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        spiFlashInit();
+        printf("    Flash SPI Bus Initialized\r\n");
+        while(usbUartCheckIfBusy());
+        
+    }
+    
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("    SPI Flash Storage Configuration Not Detected\r\n");
         while(usbUartCheckIfBusy());
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     }

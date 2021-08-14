@@ -29,6 +29,9 @@
         <itemPath>prefetch.h</itemPath>
         <itemPath>rtcc.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f7" displayName="External Storage" projectFiles="true">
+        <itemPath>spi_flash.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>pin_macros.h</itemPath>
         <itemPath>gpio_setup.h</itemPath>
@@ -85,6 +88,9 @@
         <itemPath>cause_of_reset.c</itemPath>
         <itemPath>prefetch.c</itemPath>
         <itemPath>rtcc.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7" displayName="External Storage" projectFiles="true">
+        <itemPath>spi_flash.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>
