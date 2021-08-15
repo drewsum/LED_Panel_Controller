@@ -63,21 +63,18 @@ void spiFlashInit(void)
     
     // Turn on module after configuration
     SPI3CONbits.ON = 1;
-    spi_flash_state = idle;
     
     enableInterrupt(SPI3_Fault);
-    
-    spi_flash_state = idle;
     
     spiFlashGPIOReset();
     
 }
 
 // Function to set GPIO pins for ~CE and ~WP
-void spiFlashGPIOSet(void) {
+void spiFlashGPIOSet(uint8_t input_chip_select) {
     
-    switch(spi_flash_state) {
-        case flash0_write:
+    switch(input_chip_select) {
+        case 0:
             // ~CE Pins
             nFLASH_SPI_CE0_PIN = 0;
             nFLASH_SPI_CE1_PIN = 1;
@@ -90,20 +87,7 @@ void spiFlashGPIOSet(void) {
             
             break;
             
-        case flash0_read:
-            // ~CE Pins
-            nFLASH_SPI_CE0_PIN = 0;
-            nFLASH_SPI_CE1_PIN = 1;
-            nFLASH_SPI_CE2_PIN = 1;
-            nFLASH_SPI_CE3_PIN = 1;
-            nFLASH_SPI_CE4_PIN = 1;
-            nFLASH_SPI_CE5_PIN = 1;
-            nFLASH_SPI_CE6_PIN = 1;
-            nFLASH_SPI_CE7_PIN = 1;
-
-            break;
-            
-        case flash1_write:
+        case 1:
             // ~CE Pins
             nFLASH_SPI_CE0_PIN = 1;
             nFLASH_SPI_CE1_PIN = 0;
@@ -116,20 +100,7 @@ void spiFlashGPIOSet(void) {
 
             break;
             
-        case flash1_read:
-            // ~CE Pins
-            nFLASH_SPI_CE0_PIN = 1;
-            nFLASH_SPI_CE1_PIN = 0;
-            nFLASH_SPI_CE2_PIN = 1;
-            nFLASH_SPI_CE3_PIN = 1;
-            nFLASH_SPI_CE4_PIN = 1;
-            nFLASH_SPI_CE5_PIN = 1;
-            nFLASH_SPI_CE6_PIN = 1;
-            nFLASH_SPI_CE7_PIN = 1;
-
-            break;
-            
-        case flash2_write:
+        case 2:
             // ~CE Pins
             nFLASH_SPI_CE0_PIN = 1;
             nFLASH_SPI_CE1_PIN = 1;
@@ -142,20 +113,7 @@ void spiFlashGPIOSet(void) {
 
             break;
             
-        case flash2_read:
-            // ~CE Pins
-            nFLASH_SPI_CE0_PIN = 1;
-            nFLASH_SPI_CE1_PIN = 1;
-            nFLASH_SPI_CE2_PIN = 0;
-            nFLASH_SPI_CE3_PIN = 1;
-            nFLASH_SPI_CE4_PIN = 1;
-            nFLASH_SPI_CE5_PIN = 1;
-            nFLASH_SPI_CE6_PIN = 1;
-            nFLASH_SPI_CE7_PIN = 1;
-
-            break;
-            
-        case flash3_write:
+        case 3:
             // ~CE Pins
             nFLASH_SPI_CE0_PIN = 1;
             nFLASH_SPI_CE1_PIN = 1;
@@ -168,20 +126,7 @@ void spiFlashGPIOSet(void) {
 
             break;
             
-        case flash3_read:
-            // ~CE Pins
-            nFLASH_SPI_CE0_PIN = 1;
-            nFLASH_SPI_CE1_PIN = 1;
-            nFLASH_SPI_CE2_PIN = 1;
-            nFLASH_SPI_CE3_PIN = 0;
-            nFLASH_SPI_CE4_PIN = 1;
-            nFLASH_SPI_CE5_PIN = 1;
-            nFLASH_SPI_CE6_PIN = 1;
-            nFLASH_SPI_CE7_PIN = 1;
-
-            break;
-            
-        case flash4_write:
+        case 4:
             // ~CE Pins
             nFLASH_SPI_CE0_PIN = 1;
             nFLASH_SPI_CE1_PIN = 1;
@@ -194,20 +139,7 @@ void spiFlashGPIOSet(void) {
 
             break;
             
-        case flash4_read:
-            // ~CE Pins
-            nFLASH_SPI_CE0_PIN = 1;
-            nFLASH_SPI_CE1_PIN = 1;
-            nFLASH_SPI_CE2_PIN = 1;
-            nFLASH_SPI_CE3_PIN = 1;
-            nFLASH_SPI_CE4_PIN = 0;
-            nFLASH_SPI_CE5_PIN = 1;
-            nFLASH_SPI_CE6_PIN = 1;
-            nFLASH_SPI_CE7_PIN = 1;
-
-            break;
-            
-        case flash5_write:
+        case 5:
             // ~CE Pins
             nFLASH_SPI_CE0_PIN = 1;
             nFLASH_SPI_CE1_PIN = 1;
@@ -220,20 +152,7 @@ void spiFlashGPIOSet(void) {
 
             break;
             
-        case flash5_read:
-            // ~CE Pins
-            nFLASH_SPI_CE0_PIN = 1;
-            nFLASH_SPI_CE1_PIN = 1;
-            nFLASH_SPI_CE2_PIN = 1;
-            nFLASH_SPI_CE3_PIN = 1;
-            nFLASH_SPI_CE4_PIN = 1;
-            nFLASH_SPI_CE5_PIN = 0;
-            nFLASH_SPI_CE6_PIN = 1;
-            nFLASH_SPI_CE7_PIN = 1;
-
-            break;
-            
-        case flash6_write:
+        case 6:
             // ~CE Pins
             nFLASH_SPI_CE0_PIN = 1;
             nFLASH_SPI_CE1_PIN = 1;
@@ -246,33 +165,7 @@ void spiFlashGPIOSet(void) {
 
             break;
         
-        case flash6_read:
-            // ~CE Pins
-            nFLASH_SPI_CE0_PIN = 1;
-            nFLASH_SPI_CE1_PIN = 1;
-            nFLASH_SPI_CE2_PIN = 1;
-            nFLASH_SPI_CE3_PIN = 1;
-            nFLASH_SPI_CE4_PIN = 1;
-            nFLASH_SPI_CE5_PIN = 1;
-            nFLASH_SPI_CE6_PIN = 0;
-            nFLASH_SPI_CE7_PIN = 1;
-
-            break;
-        
-        case flash7_write:
-            // ~CE Pins
-            nFLASH_SPI_CE0_PIN = 1;
-            nFLASH_SPI_CE1_PIN = 1;
-            nFLASH_SPI_CE2_PIN = 1;
-            nFLASH_SPI_CE3_PIN = 1;
-            nFLASH_SPI_CE4_PIN = 1;
-            nFLASH_SPI_CE5_PIN = 1;
-            nFLASH_SPI_CE6_PIN = 1;
-            nFLASH_SPI_CE7_PIN = 0;
-
-            break;
-        
-        case flash7_read:
+        case 7:
             // ~CE Pins
             nFLASH_SPI_CE0_PIN = 1;
             nFLASH_SPI_CE1_PIN = 1;
@@ -481,6 +374,8 @@ void __ISR(_SPI3_FAULT_VECTOR, ipl1SRS) spi3FaultISR(void) {
 inline void SPI3_writeByte(uint8_t write_byte) {
     
     SPI3BUF = write_byte;
+    while(SPI3STATbits.SPIBUSY);
+    SPI3BUF;    // dummy read
     
 }
 
@@ -488,297 +383,43 @@ inline void SPI3_writeByte(uint8_t write_byte) {
 // Function to read single byte from receive FIFO
 inline uint8_t SPI3_readByte(void) {
     
+    SPI3BUF = 0xFF;
+    while(SPI3STATbits.SPIBUSY);
     return SPI3BUF;
     
 }
 
 // This function erases a spi flash chip
 void SPI_FLASH_chipErase(uint8_t chip_select) {
-
-    // Enable spi_flash_state corresponding to chip_select
-    switch (chip_select) {
-        case 0:
-            spi_flash_state = flash0_write;
-            break;
-        case 1:
-            spi_flash_state = flash1_write;
-            break;
-        case 2:
-            spi_flash_state = flash2_write;
-            break;
-        case 3:
-            spi_flash_state = flash3_write;
-            break;
-        case 4:
-            spi_flash_state = flash4_write;
-            break;
-        case 5:
-            spi_flash_state = flash5_write;
-            break;
-        case 6:
-            spi_flash_state = flash6_write;
-            break;
-        case 7:
-            spi_flash_state = flash7_write;
-            break;
-        default:
-            break;
-    }
     
     // Set CS and WP signals
-    spiFlashGPIOSet();
+    spiFlashGPIOSet(chip_select);
     
     disableInterrupt(SPI3_Transfer_Done);
     
     // Write chip erase opcode to SPI3
     SPI3_writeByte(0x60);
     
-    // Wait for transfer to complete
-    while(SPI3STATbits.SPIBUSY);
-        
-    // Clear state machine
-    spi_flash_state = idle;
-    
     // Clear CS and WP signals
     spiFlashGPIOReset();
     
     softwareDelay(2500000);
     
-    clearInterruptFlag(SPI3_Transfer_Done);
-    clearInterruptFlag(SPI3_Receive_Done);
-    
-}
-
-// This function reads from a spi flash chip
-void SPI_FLASH_beginRead(uint8_t chip_select) {
-//    
-//    // panelMultiplexingSuspend();
-//    
-//    // Enable spi_flash_state corresponding to chip_select
-//    switch (chip_select) {
-//        case 0:
-//            spi_flash_state = flash1_read;
-//            break;
-//        case 1:
-//            spi_flash_state = flash2_read;
-//            break;
-//        case 2:
-//            spi_flash_state = flash3_read;
-//            break;
-//        case 3:
-//            spi_flash_state = flash4_read;
-//            break;
-//        case 4:
-//            spi_flash_state = flash5_read;
-//            break;
-//        case 5:
-//            spi_flash_state = flash6_read;
-//            break;
-//        case 6:
-//            spi_flash_state = flash7_read;
-//            break;
-//        case 7:
-//            spi_flash_state = flash8_read;
-//            break;
-//        default:
-//            break;
-//    }
-//    
-//    // Set CS and WP signals
-//    spiFlashGPIOSet();
-//    
-//    // Set addr index to 0
-//    sram_addr_index = 0;
-//      
-//    // Write chip read opcode to SPI3 (0x0B for high speed read, 0x03 for standard read))
-//    SPI3_writeByte(0x0B);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Write addr1 byte
-//    SPI3_writeByte(0x00);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Write addr2 byte
-//    SPI3_writeByte(0x00);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Write addr3 byte
-//    SPI3_writeByte(0x00);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Write dummy byte (needed for high speed read)
-//    SPI3_writeByte(0xDD);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Enable receive interrupt and wait
-//    clearInterruptFlag(SPI3_Receive_Done);
-//    clearInterruptFlag(SPI3_Transfer_Done);
-//    disableInterrupt(SPI3_Transfer_Done);
-//    enableInterrupt(SPI3_Receive_Done);
-//    
-//    // write another dummy byte to start read
-//    SPI3_writeByte(0x00);
-//    
-//    // Enable overrun error detection
-//    // SPI3STATbits.SPIROV = 0;
-//    // SPI3CON2bits.SPIROVEN = 1;  // Receive Overrun triggers a fault interrupt
-    
-}
-
-// This function writes to a spi flash chip
-void SPI_FLASH_beginWrite(uint8_t chip_select) {
-    
-//    
-//    SPI_Flash_writeEnable(chip_select);
-//    
-//    SPI_Flash_blockProtectionDisable(chip_select);
-//    
-//    SPI_Flash_writeEnable(chip_select);
-//    
-//    // Be sure chip is in erased state
-//    SPI_FLASH_chipErase(chip_select);
-//    
-//    SPI_Flash_writeEnable(chip_select);
-//    
-    
-    // Enable spi_flash_state corresponding to chip_select
-    switch (chip_select) {
-        case 0:
-            spi_flash_state = flash0_write;
-            break;
-        case 1:
-            spi_flash_state = flash1_write;
-            break;
-        case 2:
-            spi_flash_state = flash2_write;
-            break;
-        case 3:
-            spi_flash_state = flash3_write;
-            break;
-        case 4:
-            spi_flash_state = flash4_write;
-            break;
-        case 5:
-            spi_flash_state = flash5_write;
-            break;
-        case 6:
-            spi_flash_state = flash6_write;
-            break;
-        case 7:
-            spi_flash_state = flash7_write;
-            break;
-        default:
-            break;
-    }
-//    
-//    // Set CS and WP signals
-//    spiFlashGPIOSet();
-//    
-//    // Set addr index to 0
-//    sram_addr_index = 0;
-//    
-//    // Send AAI programming opcode
-//    SPI3_writeByte(0xAD);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Send addr2
-//    SPI3_writeByte(0x00);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Send addr1
-//    SPI3_writeByte(0x00);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//        
-//    // Send addr0
-//    SPI3_writeByte(0x00);
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Send first byte of data to be programmed
-//    SPI3_writeByte(ebi_sram_array[sram_addr_index]);
-//    sram_addr_index++;
-//    
-//    // Wait for transfer to complete
-//    while(SPI3STATbits.SPIBUSY);
-//    
-//    // Write next byte, we'll send the next group of two bytes on next TX interrupt
-//    SPI3_writeByte(ebi_sram_array[sram_addr_index]);
-//    sram_addr_index++;
-//    
-//    clearInterruptFlag(SPI3_Transfer_Done);
-//    enableInterrupt(SPI3_Transfer_Done);
-//       
 }
 
 // This function enables write enable
 void SPI_Flash_writeEnable(uint8_t chip_select){
     
-    // Enable spi_flash_state corresponding to chip_select
-    switch (chip_select) {
-        case 0:
-            spi_flash_state = flash0_write;
-            break;
-        case 1:
-            spi_flash_state = flash1_write;
-            break;
-        case 2:
-            spi_flash_state = flash2_write;
-            break;
-        case 3:
-            spi_flash_state = flash3_write;
-            break;
-        case 4:
-            spi_flash_state = flash4_write;
-            break;
-        case 5:
-            spi_flash_state = flash5_write;
-            break;
-        case 6:
-            spi_flash_state = flash6_write;
-            break;
-        case 7:
-            spi_flash_state = flash7_write;
-            break;
-        default:
-            break;
-    }
-    
     // Set CS and WP signals
-    spiFlashGPIOSet();
+    spiFlashGPIOSet(chip_select);
     
     // Send write enable opcode
     SPI3_writeByte(0x06);
-    
-    // Wait for transfer to complete
-    while(SPI3STATbits.SPIBUSY);
-    
-    // reset state machine
-    spi_flash_state = idle;
     
     // Clear CE and WP signals
     spiFlashGPIOReset();
     
     softwareDelay(30000);
-    
-    clearInterruptFlag(SPI3_Transfer_Done);
-    clearInterruptFlag(SPI3_Receive_Done);
     
 }
 
@@ -787,132 +428,41 @@ void SPI_Flash_writeEnable(uint8_t chip_select){
 // The write enable functions must be called beforehand
 void SPI_Flash_blockProtectionDisable(uint8_t chip_select) {
  
-    // Enable spi_flash_state corresponding to chip_select
-    switch (chip_select) {
-        case 0:
-            spi_flash_state = flash0_write;
-            break;
-        case 1:
-            spi_flash_state = flash1_write;
-            break;
-        case 2:
-            spi_flash_state = flash2_write;
-            break;
-        case 3:
-            spi_flash_state = flash3_write;
-            break;
-        case 4:
-            spi_flash_state = flash4_write;
-            break;
-        case 5:
-            spi_flash_state = flash5_write;
-            break;
-        case 6:
-            spi_flash_state = flash6_write;
-            break;
-        case 7:
-            spi_flash_state = flash7_write;
-            break;
-        default:
-            break;
-    }
-    
     // Set CS and WP signals
-    spiFlashGPIOSet();
+    spiFlashGPIOSet(chip_select);
     
     // Send status register opcode
     SPI3_writeByte(0x01);
-    
-    // Wait for transfer to complete
-    while(SPI3STATbits.SPIBUSY);
-    
     // Write all zeros to status register
     SPI3_writeByte(0x00);
-    
-    // Wait for transfer to complete
-    while(SPI3STATbits.SPIBUSY);
-    
-    // reset state machine
-    spi_flash_state = idle;
     
     // Clear CE and WP signals
     spiFlashGPIOReset();
     
     softwareDelay(30000);
-    
-    clearInterruptFlag(SPI3_Transfer_Done);
-    clearInterruptFlag(SPI3_Receive_Done);
-    
     
 }
 
 // this function gets the MFG ID and Device ID from SPI Flash
 void SPI_Flash_readID(uint8_t chip_select, uint8_t* read_mfg_id, uint8_t* read_dev_id) {
- 
-    // Enable spi_flash_state corresponding to chip_select
-    switch (chip_select) {
-        case 0:
-            spi_flash_state = flash0_write;
-            break;
-        case 1:
-            spi_flash_state = flash1_write;
-            break;
-        case 2:
-            spi_flash_state = flash2_write;
-            break;
-        case 3:
-            spi_flash_state = flash3_write;
-            break;
-        case 4:
-            spi_flash_state = flash4_write;
-            break;
-        case 5:
-            spi_flash_state = flash5_write;
-            break;
-        case 6:
-            spi_flash_state = flash6_write;
-            break;
-        case 7:
-            spi_flash_state = flash7_write;
-            break;
-        default:
-            break;
-    }
     
     // Set CS and WP signals
-    spiFlashGPIOSet();
+    spiFlashGPIOSet(chip_select);
     
     // Send read id register opcode
     SPI3_writeByte(0x90);
-    while(SPI3STATbits.SPIBUSY);
     
     // Send three bytes for address
     SPI3_writeByte(0x00);
-    while(SPI3STATbits.SPIBUSY);
     SPI3_writeByte(0x00);
-    while(SPI3STATbits.SPIBUSY);
     SPI3_writeByte(0x00);
-    while(SPI3STATbits.SPIBUSY);
-    SPI3_readByte();
     
     // read mfg id
-    SPI3_writeByte(0x00);
-    while(SPI3STATbits.SPIBUSY);
     *read_mfg_id = SPI3_readByte();
     
     // read device id
-    SPI3_writeByte(0x00);
-    while(SPI3STATbits.SPIBUSY);
     *read_dev_id = SPI3_readByte();
-    
-//    // read mfg id
-//    SPI3_writeByte(0x00);
-//    while(SPI3STATbits.SPIBUSY);
-//    *read_mfg_id = SPI3_readByte();
-//    
-    // reset state machine
-    spi_flash_state = idle;
-    
+
     // Clear CE and WP signals
     spiFlashGPIOReset();
     
@@ -920,5 +470,181 @@ void SPI_Flash_readID(uint8_t chip_select, uint8_t* read_mfg_id, uint8_t* read_d
     
     clearInterruptFlag(SPI3_Transfer_Done);
     clearInterruptFlag(SPI3_Receive_Done);
+    
+}
+
+// this function erases 4 kB sector, starting at the passed address
+void SPI_flash_eraseSector(uint8_t chip_select, uint32_t start_address) {
+    
+    // Set CS and WP signals
+    spiFlashGPIOSet(chip_select);
+    
+    uint8_t addr_msb = (uint8_t) (start_address >> 16) & 0xFF;
+    uint8_t addr_mb = (uint8_t) (start_address >> 8) & 0xFF;
+    uint8_t addr_lsb = (uint8_t) start_address & 0xFF;
+    
+    // Send sector erase opcode
+    SPI3_writeByte(0x20);
+    
+    // send address of 4kB sector to erase
+    SPI3_writeByte(addr_msb);
+    SPI3_writeByte(addr_mb);
+    SPI3_writeByte(addr_lsb);
+    
+    // Clear CE and WP signals
+    spiFlashGPIOReset();
+    
+    softwareDelay(600000);
+    
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// APPLICATION SPECIFIC
+
+
+// this function disables write protection on all external flash chips
+void externalFlashInitialize(void) {
+ 
+    #warning "if number of external flash is configurable, this will need to change"
+    uint8_t active_chip;
+    for (active_chip = 0; active_chip < 8; active_chip++) {
+        SPI_Flash_writeEnable(active_chip);
+        SPI_Flash_blockProtectionDisable(active_chip);
+    }
+    
+    
+}
+
+// this function erases one image worth of external flash memory, beginning at the passed address
+// (this erases 16384 bytes = 16kB, so four complete flash sectors
+void externalFlashEraseImageSlot(uint8_t chip_select, uint32_t start_address) {
+    
+    SPI_flash_eraseSector(chip_select, start_address);
+    SPI_flash_eraseSector(chip_select, start_address + 4096);
+    SPI_flash_eraseSector(chip_select, start_address + 8192);
+    SPI_flash_eraseSector(chip_select, start_address + 12288);
+    
+}
+
+// this function copies contents of panel_direct_data_scratchpad to an image slot
+// this function is blocking - REALLY blocking
+// start address must be mod 16384
+void externalFlashWriteImageSlot(uint8_t chip_select, uint8_t start_address) {
+
+    SPI_Flash_writeEnable(chip_select);
+    
+    SPI_Flash_blockProtectionDisable(chip_select);
+    
+    SPI_Flash_writeEnable(chip_select);
+    
+    // erase four 4kB sectors, starting at start_address
+    externalFlashEraseImageSlot(chip_select, start_address);
+    
+    SPI_Flash_writeEnable(chip_select);
+    
+    // Set CS and WP signals
+    spiFlashGPIOSet(chip_select);
+    
+    uint32_t current_data_write_address = 0;
+    
+    uint8_t addr_msb = (uint8_t) (start_address >> 16) & 0xFF;
+    uint8_t addr_mb = (uint8_t) (start_address >> 8) & 0xFF;
+    uint8_t addr_lsb = (uint8_t) start_address & 0xFF;
+    
+    // Send AAI programming opcode
+    SPI3_writeByte(0xAD);
+    
+    // write the address we want to start at
+    SPI3_writeByte(addr_msb);
+    SPI3_writeByte(addr_mb);
+    SPI3_writeByte(addr_lsb);
+    
+    // Send first byte of data to be programmed
+    SPI3_writeByte(panel_direct_data_scratchpad[current_data_write_address]);
+    current_data_write_address++;
+    
+    // send second byte
+    SPI3_writeByte(panel_direct_data_scratchpad[current_data_write_address]);
+    current_data_write_address++;
+    
+    // reset CS signal
+    spiFlashGPIOReset();
+    
+    softwareDelay(2000);
+    
+    // loop through this until all data to be written has been sent
+    while (current_data_write_address < 16384) {
+     
+        // Set CS and WP signals
+        spiFlashGPIOSet(chip_select);
+        
+        // Send AAI programming opcode
+        SPI3_writeByte(0xAD);
+        
+        // Send first byte of data to be programmed
+        SPI3_writeByte(panel_direct_data_scratchpad[current_data_write_address]);
+        current_data_write_address++;
+
+        // send second byte
+        SPI3_writeByte(panel_direct_data_scratchpad[current_data_write_address]);
+        current_data_write_address++;
+        
+        // reset CS signal
+        spiFlashGPIOReset();
+        
+        softwareDelay(30000);
+        
+    }
+    
+     // Toggle CE
+    spiFlashGPIOSet(chip_select);
+
+    // Send Write Disable opcode
+    SPI3_writeByte(0x04);
+    spiFlashGPIOReset();
+    softwareDelay(2000);
+    
+    spiFlashGPIOSet(chip_select);
+    
+    // Send read status register opcode
+    SPI3_writeByte(0x05);
+    
+    // Send garbage data to read back status register, we're not doing anything with this though
+    SPI3_writeByte(0x00);
+    
+    spiFlashGPIOReset();
+    
+}
+
+// this function copies contents of spi flash slot into panel_direct_data_scratchpad
+// this function is blocking - REALLY blocking
+// start address must be mod 16384
+void externalFlashReadImageSlot(uint8_t chip_select, uint8_t start_address) {
+ 
+    spiFlashGPIOSet(chip_select);
+    
+    uint32_t current_data_read_address;
+    
+    uint8_t addr_msb = (uint8_t) (start_address >> 16) & 0xFF;
+    uint8_t addr_mb = (uint8_t) (start_address >> 8) & 0xFF;
+    uint8_t addr_lsb = (uint8_t) start_address & 0xFF;
+    
+    // Write chip read opcode to SPI3 (0x0B for high speed read, 0x03 for standard read))
+    SPI3_writeByte(0x03);
+    
+    // write the address we want to start at
+    SPI3_writeByte(addr_msb);
+    SPI3_writeByte(addr_mb);
+    SPI3_writeByte(addr_lsb);
+    
+    // loop through this until all data to be read has been received
+    for (current_data_read_address = 0; current_data_read_address < 16384; current_data_read_address++) {
+     
+        panel_direct_data_scratchpad[current_data_read_address] = SPI3_readByte();
+        
+    }
+    
+    spiFlashGPIOReset();
     
 }

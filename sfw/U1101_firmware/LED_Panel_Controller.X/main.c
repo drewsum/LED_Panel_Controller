@@ -254,6 +254,11 @@ void main(void) {
         printf("    Flash SPI Bus Initialized\r\n");
         while(usbUartCheckIfBusy());
         
+        externalFlashInitialize();
+        printf("    External Flash Write Protection Disabled\r\n");
+        while(usbUartCheckIfBusy());
+        
+        
     }
     
     else {

@@ -537,7 +537,6 @@ usb_uart_command_function_t printPanelDirectDataContentsCommand(char * input_str
 // Set panel brightness
 usb_uart_command_function_t setPanelBrightnessCommand(char * input_str) {
 
-    // Get which chip we're erasing
     uint32_t set_brightness;
     sscanf(input_str, "Set Panel Brightness: %u", &set_brightness);
 
@@ -599,6 +598,38 @@ usb_uart_command_function_t copyPanelScratchpadCommand(char * input_str) {
     printf("Copied Data!\r\n");
     terminalTextAttributesReset();
     
+    
+}
+
+usb_uart_command_function_t writeStratchpadExternalFlashCommand(char * input_str) {
+ 
+    
+    uint32_t target_slot;
+    sscanf(input_str, "Write Scratchpad Slot: %d", &target_slot);
+    
+    #warning "eventually fix this to allow for writing to slots, not just spi flash chips"
+    externalFlashWriteImageSlot((uint8_t) target_slot, 0x000000);
+        
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Transfer from Scratchpad to External Flash complete\n\r");
+    terminalTextAttributesReset();
+    
+    
+}
+
+usb_uart_command_function_t readStratchpadExternalFlashCommand(char * input_str) {
+    
+    uint32_t target_slot;
+    sscanf(input_str, "Read Slot to Scratchpad: %d", &target_slot);
+    
+    #warning "eventually fix this to allow for reading from slots, not just spi flash chips"
+    externalFlashReadImageSlot((uint8_t) target_slot, 0x000000);
+    
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Transfer from External Flash to Scratchpad complete\n\r");
+    terminalTextAttributesReset();
     
 }
 
@@ -685,5 +716,12 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Copy Panel Scratchpad Contents",
             "Moves data from the scratchpad into the panel direct data buffer",
             copyPanelScratchpadCommand);
+    
+        usbUartAddCommand("Write Scratchpad to Slot: ",
+                "\b\b<Target Slot>: Copies data in image scratchpad to external storage (SPI Flash)",
+                writeStratchpadExternalFlashCommand);
+        usbUartAddCommand("Read Slot to Scratchpad: ",
+                "\b\b<Target Slot>: Copies data in external storage (SPI Flash) to image scratchpad",
+                readStratchpadExternalFlashCommand);
 
 }

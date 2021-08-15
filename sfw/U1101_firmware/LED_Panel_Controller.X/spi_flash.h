@@ -22,29 +22,7 @@
 
 #include <xc.h>
 
-
-// enumerate SPI flash state type
-enum spi_flash_state_t {
-
-    idle,
-    flash0_write,
-    flash0_read,
-    flash1_write,
-    flash1_read,
-    flash2_write,
-    flash2_read,
-    flash3_write,
-    flash3_read,
-    flash4_write,
-    flash4_read,
-    flash5_write,
-    flash5_read,
-    flash6_write,
-    flash6_read,
-    flash7_write,
-    flash7_read
-            
-} spi_flash_state;
+#include "panel_control.h"
 
 // This flag signifies that a SPI flash read operation has completed
 // Used for standard operation state machine
@@ -57,7 +35,7 @@ uint32_t sram_addr_index;
 void spiFlashInit(void);
 
 // Function to set GPIO pins for ~CE and ~WP
-void spiFlashGPIOSet(void);
+void spiFlashGPIOSet(uint8_t input_chip_select);
 
 // Function to reset GPIO pins for ~CE and ~WP
 void spiFlashGPIOReset(void);
@@ -93,6 +71,32 @@ void SPI_Flash_blockProtectionDisable(uint8_t chip_select);
 
 // this function gets the MFG ID and Device ID from SPI Flash
 void SPI_Flash_readID(uint8_t chip_select, uint8_t* read_mfg_id, uint8_t* read_dev_id);
+
+// this function erases 4 kB sector, starting at the passed address
+void SPI_flash_eraseSector(uint8_t chip_select, uint32_t start_address);
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// APPLICATION SPECIFIC
+
+
+// this function disables write protection on all external flash chips
+void externalFlashInitialize(void);
+
+
+// this function erases one image worth of external flash memory, beginning at the passed address
+// (this erases 16384 bytes = 16kB, so four complete flash sectors
+// start address must be mod 16384
+void externalFlashEraseImageSlot(uint8_t chip_select, uint32_t start_address);
+
+// this function copies contents of panel_direct_data_scratchpad to an image slot
+// this function is blocking - REALLY blocking
+// start address must be mod 16384
+void externalFlashWriteImageSlot(uint8_t chip_select, uint8_t start_address);
+
+// this function copies contents of spi flash slot into panel_direct_data_scratchpad
+// this function is blocking - REALLY blocking
+// start address must be mod 16384
+void externalFlashReadImageSlot(uint8_t chip_select, uint8_t start_address);
 
 #endif /* _SPI_FLASH_H */
 
