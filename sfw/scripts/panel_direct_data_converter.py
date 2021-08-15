@@ -194,7 +194,7 @@ def write_output_file(input_array):
     f.close()
 
 def enable_panel(dev):
-    dev.write(b"Copy Panel Scratchpad Contents\r")
+    dev.write(b"Copy Panel Scratchpad to Buffer\r")
     response = dev.readline().decode('utf-8')
     response = trim_escape_codes(response)
 

@@ -109,6 +109,9 @@ void externalStorageWriteImageSlot(uint32_t slot);
 // can pass slot as between 0 and 511 (512 total slots)
 void externalStorageReadImageSlot(uint32_t slot);
 
+// this function erases all external storage
+// use with caution
+void externalStorageEraseAll(void);
 
 
 #endif /* _SPI_FLASH_H */

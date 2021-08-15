@@ -26,7 +26,7 @@ void spiFlashInit(void)
     SPI3CONbits.ON = 0;         
     SPI3BUF = 0;                
     SPI3CONbits.ENHBUF = 0;     // Disable enhanced buffer
-    SPI3BRG = 5;                // Baud Rate configuration: PBCLK2 = 66.67MHz
+    SPI3BRG = 3;                // Baud Rate configuration: PBCLK2 = 66.67MHz
     #warning "speed this up eventually"
     SPI3STATbits.SPIROV = 0;
     SPI3CONbits.MSTEN = 1;      // Master mode
@@ -466,7 +466,7 @@ void SPI_Flash_readID(uint8_t chip_select, uint8_t* read_mfg_id, uint8_t* read_d
     // Clear CE and WP signals
     spiFlashGPIOReset();
     
-    softwareDelay(30000);
+    // softwareDelay(30000);
     
     clearInterruptFlag(SPI3_Transfer_Done);
     clearInterruptFlag(SPI3_Receive_Done);
@@ -494,7 +494,7 @@ void SPI_flash_eraseSector(uint8_t chip_select, uint32_t start_address) {
     // Clear CE and WP signals
     spiFlashGPIOReset();
     
-    softwareDelay(2500000);
+    softwareDelay(1200000);
     
 }
 
@@ -571,7 +571,7 @@ void externalFlashWriteImageSlot(uint8_t chip_select, uint32_t start_address) {
     // reset CS signal
     spiFlashGPIOReset();
     
-    softwareDelay(2000);
+    softwareDelay(1000);
     
     // loop through this until all data to be written has been sent
     while (current_data_write_address < 16384) {
@@ -593,7 +593,7 @@ void externalFlashWriteImageSlot(uint8_t chip_select, uint32_t start_address) {
         // reset CS signal
         spiFlashGPIOReset();
         
-        softwareDelay(30000);
+        softwareDelay(1000);
         
     }
     
@@ -688,4 +688,23 @@ void externalStorageReadImageSlot(uint32_t slot) {
     
     externalFlashReadImageSlot(active_chip_select, active_start_address);
     
+}
+
+// this function erases all external storage
+// use with caution
+void externalStorageEraseAll(void) {
+ 
+    uint8_t chip_select;
+    for (chip_select = 0; chip_select < 8; chip_select++) {
+        
+        SPI_Flash_writeEnable(chip_select);
+
+        SPI_Flash_blockProtectionDisable(chip_select);
+
+        SPI_Flash_writeEnable(chip_select);
+
+        // erase entire chip
+        SPI_FLASH_chipErase(chip_select);
+    
+    }
 }

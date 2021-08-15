@@ -610,7 +610,7 @@ usb_uart_command_function_t writeStratchpadExternalFlashCommand(char * input_str
     if (target_slot >= 512) {
 
         terminalTextAttributesReset();
-        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
         printf("Please enter a target slot between 0 and 511, user entered %u\n\r", target_slot);
         terminalTextAttributesReset();
 
@@ -635,7 +635,7 @@ usb_uart_command_function_t readStratchpadExternalFlashCommand(char * input_str)
     if (target_slot >= 512) {
 
         terminalTextAttributesReset();
-        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
         printf("Please enter a target slot between 0 and 511, user entered %u\n\r", target_slot);
         terminalTextAttributesReset();
 
@@ -649,6 +649,19 @@ usb_uart_command_function_t readStratchpadExternalFlashCommand(char * input_str)
         printf("Transfer from External Flash to Scratchpad complete\n\r");
         terminalTextAttributesReset();
     }
+    
+}
+
+usb_uart_command_function_t eraseAllExternalStorageCommand(char * input_str) {
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Erasing All External Storage\n\r");
+    
+    externalStorageEraseAll();
+    
+    printf("External storage erased\r\n");
+    terminalTextAttributesReset();
+    
     
 }
 
@@ -732,7 +745,7 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Print Panel Scratchpad",
             "Prints the contents of the raw data in the panel data scratchpad",
             printPanelScratchpadContentsCommand);
-    usbUartAddCommand("Copy Panel Scratchpad Contents",
+    usbUartAddCommand("Copy Panel Scratchpad to Buffer",
             "Moves data from the scratchpad into the panel direct data buffer",
             copyPanelScratchpadCommand);
     if (nSPI_FLASH_CONFIG_PIN == LOW) {
@@ -742,5 +755,8 @@ void usbUartHashTableInitialize(void) {
         usbUartAddCommand("Read Slot to Scratchpad: ",
                 "\b\b<Target Slot>: Copies data in external storage (SPI Flash) to image scratchpad",
                 readStratchpadExternalFlashCommand);
+        usbUartAddCommand("Erase All Slots",
+                "Clears the contents of all external flash/image slots",
+                eraseAllExternalStorageCommand);
     }
 }
