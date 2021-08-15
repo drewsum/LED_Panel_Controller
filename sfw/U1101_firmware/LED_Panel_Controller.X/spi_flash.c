@@ -530,7 +530,7 @@ void externalFlashEraseImageSlot(uint8_t chip_select, uint32_t start_address) {
 // this function copies contents of panel_direct_data_scratchpad to an image slot
 // this function is blocking - REALLY blocking
 // start address must be mod 16384
-void externalFlashWriteImageSlot(uint8_t chip_select, uint8_t start_address) {
+void externalFlashWriteImageSlot(uint8_t chip_select, uint32_t start_address) {
     
     SPI_Flash_writeEnable(chip_select);
     
@@ -620,7 +620,7 @@ void externalFlashWriteImageSlot(uint8_t chip_select, uint8_t start_address) {
 // this function copies contents of spi flash slot into panel_direct_data_scratchpad
 // this function is blocking - REALLY blocking
 // start address must be mod 16384
-void externalFlashReadImageSlot(uint8_t chip_select, uint8_t start_address) {
+void externalFlashReadImageSlot(uint8_t chip_select, uint32_t start_address) {
  
     spiFlashGPIOSet(chip_select);
     
@@ -646,5 +646,46 @@ void externalFlashReadImageSlot(uint8_t chip_select, uint8_t start_address) {
     }
     
     spiFlashGPIOReset();
+    
+}
+
+// this function abstracts slot writing across all flash chips, so instead of 
+// passing chip_select and start_address, the same can be accomplished by
+// "slot number"
+void externalStorageWriteImageSlot(uint32_t slot) {
+ 
+    // each flash chip can store 64 images
+    // With 8 spi flash chips, that's 512 images total
+    // (512 slots)
+    if (slot >= 512) return;
+    
+    
+    // determine active_chip_select and active_start_address from slot number
+    uint32_t active_chip_select, active_start_address;
+    active_chip_select = slot / 64;
+    active_start_address = (slot % 64) * 16384;
+    
+    // write data to target slot
+    externalFlashWriteImageSlot(active_chip_select, active_start_address);
+    
+    
+}
+
+// this function abstracts slot reading across all flash chips, so instead of 
+// passing chip_select and start_address, the same can be accomplished by
+// "slot number"
+void externalStorageReadImageSlot(uint32_t slot) {
+    
+    // each flash chip can store 64 images
+    // With 8 spi flash chips, that's 512 images total
+    // (512 slots)
+    if (slot >= 512) return;
+    
+    // determine active_chip_select and active_start_address from slot number
+    uint32_t active_chip_select, active_start_address;
+    active_chip_select = slot / 64;
+    active_start_address = (slot % 64) * 16384;
+    
+    externalFlashReadImageSlot(active_chip_select, active_start_address);
     
 }

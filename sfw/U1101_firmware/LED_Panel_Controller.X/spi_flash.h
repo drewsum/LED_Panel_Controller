@@ -82,7 +82,6 @@ void SPI_flash_eraseSector(uint8_t chip_select, uint32_t start_address);
 // this function disables write protection on all external flash chips
 void externalFlashInitialize(void);
 
-
 // this function erases one image worth of external flash memory, beginning at the passed address
 // (this erases 16384 bytes = 16kB, so four complete flash sectors
 // start address must be mod 16384
@@ -91,12 +90,26 @@ void externalFlashEraseImageSlot(uint8_t chip_select, uint32_t start_address);
 // this function copies contents of panel_direct_data_scratchpad to an image slot
 // this function is blocking - REALLY blocking
 // start address must be mod 16384
-void externalFlashWriteImageSlot(uint8_t chip_select, uint8_t start_address);
+void externalFlashWriteImageSlot(uint8_t chip_select, uint32_t start_address);
 
 // this function copies contents of spi flash slot into panel_direct_data_scratchpad
 // this function is blocking - REALLY blocking
 // start address must be mod 16384
-void externalFlashReadImageSlot(uint8_t chip_select, uint8_t start_address);
+void externalFlashReadImageSlot(uint8_t chip_select, uint32_t start_address);
+
+// this function abstracts slot writing across all flash chips, so instead of 
+// passing chip_select and start_address, the same can be accomplished by
+// "slot number"
+// can pass slot as between 0 and 511 (512 total slots)
+void externalStorageWriteImageSlot(uint32_t slot);
+
+// this function abstracts slot reading across all flash chips, so instead of 
+// passing chip_select and start_address, the same can be accomplished by
+// "slot number"
+// can pass slot as between 0 and 511 (512 total slots)
+void externalStorageReadImageSlot(uint32_t slot);
+
+
 
 #endif /* _SPI_FLASH_H */
 

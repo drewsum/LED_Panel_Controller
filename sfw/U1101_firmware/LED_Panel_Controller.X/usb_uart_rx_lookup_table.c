@@ -605,16 +605,25 @@ usb_uart_command_function_t writeStratchpadExternalFlashCommand(char * input_str
  
     
     uint32_t target_slot;
-    sscanf(input_str, "Write Scratchpad Slot: %d", &target_slot);
+    sscanf(input_str, "Write Scratchpad to Slot: %d", &target_slot);
     
-    #warning "eventually fix this to allow for writing to slots, not just spi flash chips"
-    externalFlashWriteImageSlot((uint8_t) target_slot, 0x000000);
-        
-    terminalTextAttributesReset();
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Transfer from Scratchpad to External Flash complete\n\r");
-    terminalTextAttributesReset();
-    
+    if (target_slot >= 512) {
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a target slot between 0 and 511, user entered %u\n\r", target_slot);
+        terminalTextAttributesReset();
+
+    }
+
+    else {
+        externalStorageWriteImageSlot(target_slot);
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Transfer from Scratchpad to External Flash complete\n\r");
+        terminalTextAttributesReset();
+    }    
     
 }
 
@@ -623,13 +632,23 @@ usb_uart_command_function_t readStratchpadExternalFlashCommand(char * input_str)
     uint32_t target_slot;
     sscanf(input_str, "Read Slot to Scratchpad: %d", &target_slot);
     
-    #warning "eventually fix this to allow for reading from slots, not just spi flash chips"
-    externalFlashReadImageSlot((uint8_t) target_slot, 0x000000);
+    if (target_slot >= 512) {
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a target slot between 0 and 511, user entered %u\n\r", target_slot);
+        terminalTextAttributesReset();
+
+    }
     
-    terminalTextAttributesReset();
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Transfer from External Flash to Scratchpad complete\n\r");
-    terminalTextAttributesReset();
+    else {
+        externalStorageReadImageSlot(target_slot);
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Transfer from External Flash to Scratchpad complete\n\r");
+        terminalTextAttributesReset();
+    }
     
 }
 
@@ -716,12 +735,12 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Copy Panel Scratchpad Contents",
             "Moves data from the scratchpad into the panel direct data buffer",
             copyPanelScratchpadCommand);
-    
+    if (nSPI_FLASH_CONFIG_PIN == LOW) {
         usbUartAddCommand("Write Scratchpad to Slot: ",
                 "\b\b<Target Slot>: Copies data in image scratchpad to external storage (SPI Flash)",
                 writeStratchpadExternalFlashCommand);
         usbUartAddCommand("Read Slot to Scratchpad: ",
                 "\b\b<Target Slot>: Copies data in external storage (SPI Flash) to image scratchpad",
                 readStratchpadExternalFlashCommand);
-
+    }
 }
