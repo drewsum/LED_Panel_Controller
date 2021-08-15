@@ -26,7 +26,7 @@ void spiFlashInit(void)
     SPI3CONbits.ON = 0;         
     SPI3BUF = 0;                
     SPI3CONbits.ENHBUF = 0;     // Disable enhanced buffer
-    SPI3BRG = 10;                // Baud Rate configuration: PBCLK2 = 66.67MHz
+    SPI3BRG = 5;                // Baud Rate configuration: PBCLK2 = 66.67MHz
     #warning "speed this up eventually"
     SPI3STATbits.SPIROV = 0;
     SPI3CONbits.MSTEN = 1;      // Master mode
@@ -494,7 +494,7 @@ void SPI_flash_eraseSector(uint8_t chip_select, uint32_t start_address) {
     // Clear CE and WP signals
     spiFlashGPIOReset();
     
-    softwareDelay(600000);
+    softwareDelay(2500000);
     
 }
 
@@ -531,7 +531,7 @@ void externalFlashEraseImageSlot(uint8_t chip_select, uint32_t start_address) {
 // this function is blocking - REALLY blocking
 // start address must be mod 16384
 void externalFlashWriteImageSlot(uint8_t chip_select, uint8_t start_address) {
-
+    
     SPI_Flash_writeEnable(chip_select);
     
     SPI_Flash_blockProtectionDisable(chip_select);
