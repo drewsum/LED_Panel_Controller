@@ -200,8 +200,7 @@ def enable_panel(dev):
 
     dev.reset_input_buffer()
 
-    # check if response to *IDN? starts with "Pulse Oximeter"
-    if (response.startswith("Copied Data!")):
+    if (response.startswith("Copied image from scratchpad to buffer")):
         dev.reset_output_buffer()
 
     dev.write(b"Set Panel Power: On\r")
@@ -254,7 +253,7 @@ def main():
                 dev.reset_input_buffer()
 
                 # check if response to *IDN? starts with "Pulse Oximeter"
-                if (response.startswith("Received Data!")):
+                if (response.startswith("Received data into scratchpad")):
                     dev.reset_output_buffer()
 
             # tell MCU to load scratchpad into active buffer

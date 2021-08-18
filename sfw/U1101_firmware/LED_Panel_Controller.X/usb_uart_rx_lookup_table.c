@@ -23,6 +23,7 @@
 #include "pgood_monitor.h"
 #include "rtcc.h"
 #include "spi_flash.h"
+#include "external_storage_management.h"
 
 #include "panel_control.h"
 
@@ -569,7 +570,7 @@ usb_uart_command_function_t fillPanelScratchpadCommand(char * input_str) {
     char * rx_data_str;
     rx_data_str = (char *) malloc(2050);
     uint32_t starting_address;
-    sscanf(input_str, "Fill Panel Scratchpad: %d, %2048c", &starting_address, rx_data_str);
+    sscanf(input_str, "Fill Panel Scratchpad: %u, %2048c", &starting_address, rx_data_str);
     
     uint32_t index;
     for (index = 0; index < 2048; index++) {
@@ -577,7 +578,7 @@ usb_uart_command_function_t fillPanelScratchpadCommand(char * input_str) {
     }
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Received Data!\r\n");
+    printf("Received data into scratchpad\r\n");
     terminalTextAttributesReset();
     
     free(rx_data_str);
@@ -595,17 +596,19 @@ usb_uart_command_function_t copyPanelScratchpadCommand(char * input_str) {
     panelDataCopyScratchpad();
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Copied Data!\r\n");
+    printf("Copied image from scratchpad to buffer\r\n");
     terminalTextAttributesReset();
     
     
 }
 
+#warning "write two commands to copy data from slots and move from scratchpad to buffer"
+
 usb_uart_command_function_t writeStratchpadExternalFlashCommand(char * input_str) {
  
     
     uint32_t target_slot;
-    sscanf(input_str, "Write Scratchpad to Slot: %d", &target_slot);
+    sscanf(input_str, "Write Scratchpad to Slot: %u", &target_slot);
     
     if (target_slot >= 512) {
 
@@ -615,13 +618,22 @@ usb_uart_command_function_t writeStratchpadExternalFlashCommand(char * input_str
         terminalTextAttributesReset();
 
     }
+    
+    else if (ext_str_manager.slot_in_use[target_slot] == true) {
+        
+        terminalTextAttributesReset();
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Slot %u is currently in use, either append an image to next available slot or erase all slots\n\r", target_slot);
+        terminalTextAttributesReset();
+        
+    }
 
     else {
         externalStorageWriteImageSlot(target_slot);
 
         terminalTextAttributesReset();
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("Transfer from Scratchpad to External Flash complete\n\r");
+        printf("Transfer from Scratchpad to External Image Slot %u complete\n\r", target_slot);
         terminalTextAttributesReset();
     }    
     
@@ -630,7 +642,7 @@ usb_uart_command_function_t writeStratchpadExternalFlashCommand(char * input_str
 usb_uart_command_function_t readStratchpadExternalFlashCommand(char * input_str) {
     
     uint32_t target_slot;
-    sscanf(input_str, "Read Slot to Scratchpad: %d", &target_slot);
+    sscanf(input_str, "Read Slot to Scratchpad: %u", &target_slot);
     
     if (target_slot >= 512) {
 
@@ -641,12 +653,21 @@ usb_uart_command_function_t readStratchpadExternalFlashCommand(char * input_str)
 
     }
     
+    else if (ext_str_manager.slot_in_use[target_slot] == false) {
+        
+        terminalTextAttributesReset();
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Slot %u is currently not filled, please read from another slot\n\r", target_slot);
+        terminalTextAttributesReset();
+        
+    }
+    
     else {
         externalStorageReadImageSlot(target_slot);
 
         terminalTextAttributesReset();
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("Transfer from External Flash to Scratchpad complete\n\r");
+        printf("Transfer from Image Slot %u to Scratchpad complete\n\r", target_slot);
         terminalTextAttributesReset();
     }
     
@@ -662,6 +683,29 @@ usb_uart_command_function_t eraseAllExternalStorageCommand(char * input_str) {
     printf("External storage erased\r\n");
     terminalTextAttributesReset();
     
+    
+}
+
+usb_uart_command_function_t appendScratchpadToImageSlotCommand(char * input_str) {
+ 
+    // first, write scratchpad data into slot and record which slot it was written to
+    uint32_t slot_written = externaStorageAppendImageSlot();
+    
+    #warning "add catch here to determine if we're out of space
+    
+    // print what we did
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Scratchpad written to external storage image slot %u\n\r", slot_written);
+    terminalTextAttributesReset();
+    
+    
+    
+}
+
+
+usb_uart_command_function_t printImageSlotsInUseCommand(char * input_str) {
+    
+    externalStoragePrintUsedImageSlots();
     
 }
 
@@ -758,5 +802,11 @@ void usbUartHashTableInitialize(void) {
         usbUartAddCommand("Erase All Slots",
                 "Clears the contents of all external flash/image slots",
                 eraseAllExternalStorageCommand);
+        usbUartAddCommand("Print Filled Slots",
+                "Prints which external storage image slots are currently filled",
+                printImageSlotsInUseCommand);
+        usbUartAddCommand("Append Scratchpad to Slot",
+                "Copies scratchpad image data to next available external storage image slot",
+                appendScratchpadToImageSlotCommand);
     }
 }

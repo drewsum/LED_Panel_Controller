@@ -97,22 +97,6 @@ void externalFlashWriteImageSlot(uint8_t chip_select, uint32_t start_address);
 // start address must be mod 16384
 void externalFlashReadImageSlot(uint8_t chip_select, uint32_t start_address);
 
-// this function abstracts slot writing across all flash chips, so instead of 
-// passing chip_select and start_address, the same can be accomplished by
-// "slot number"
-// can pass slot as between 0 and 511 (512 total slots)
-void externalStorageWriteImageSlot(uint32_t slot);
-
-// this function abstracts slot reading across all flash chips, so instead of 
-// passing chip_select and start_address, the same can be accomplished by
-// "slot number"
-// can pass slot as between 0 and 511 (512 total slots)
-void externalStorageReadImageSlot(uint32_t slot);
-
-// this function erases all external storage
-// use with caution
-void externalStorageEraseAll(void);
-
 
 #endif /* _SPI_FLASH_H */
 

@@ -57,6 +57,7 @@
 
 // External Storage
 #include "spi_flash.h"
+#include "external_storage_management.h"
 
 void main(void) {
     

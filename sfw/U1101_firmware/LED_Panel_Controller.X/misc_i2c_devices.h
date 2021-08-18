@@ -25,7 +25,8 @@
 #include "plib_i2c.h"
 
 #include "ds1683_time_of_flight.h"
-// #include "ds3231_rtc.h"
+#include "ds3231_rtc.h"
+#include "24AA02UID_eeprom.h"
 
 // misc device I2C addresses
 #define PLATFORM_ETC_ADDR           0x6B

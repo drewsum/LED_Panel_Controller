@@ -27,7 +27,7 @@ void _24AA02UIDWriteByte(uint8_t device_addr,
 
 // write up to 8 bytes at address, NO MORE
 void _24AA02UIDWritePage(uint8_t device_addr, 
-        uint8_t write_addr, 
+        uint8_t write_addr,
         uint8_t length,
         uint8_t * page_data,
         volatile uint8_t *device_error_handler_flag) {
