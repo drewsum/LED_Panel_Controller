@@ -22,20 +22,9 @@
 
 #include "spi_flash.h"
 
-#include <stdbool.h>
 
-// this union is used to keep track of which external storage image slots are used
-// one member is an array of booleans (512 long for each slot), the other 
-// member is an array of uint8_t (for storage in external I2C EEPROM)
-union ext_str_manager_t {
-    
-    bool slot_in_use[512];
-    uint8_t slot_in_use_bytes[512];
-    
-} ext_str_manager;
-
-// this function writes the ext_str_manager.slot_in_use_bytes[] array into external I2C EEPROM
-void externalStorageManagerBackupSlotsInUse(void);
+// this array keeps track of which external storage image slots are in use
+uint8_t external_storage_slot_in_use[512];
 
 // this function recovers the ext_str_manager.slot_in_use_bytes[] array from external I2C EEPROM into RAM
 void externalStorageManagerRestoreSlotsInUse(void);

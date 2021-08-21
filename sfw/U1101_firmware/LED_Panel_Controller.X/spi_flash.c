@@ -648,3 +648,43 @@ void externalFlashReadImageSlot(uint8_t chip_select, uint32_t start_address) {
     spiFlashGPIOReset();
     
 }
+
+// this function returns 1 if a slot at passed address is filled/contains image data
+// returns 0 if all contents of slot at 0xFF (erased state)
+uint8_t externalFlashCheckIfSlotFilled(uint8_t chip_select, uint32_t start_address) {
+ 
+    spiFlashGPIOSet(chip_select);
+    
+    uint32_t current_data_read_address;
+    
+    uint8_t addr_msb = (uint8_t) (start_address >> 16) & 0xFF;
+    uint8_t addr_mb = (uint8_t) (start_address >> 8) & 0xFF;
+    uint8_t addr_lsb = (uint8_t) start_address & 0xFF;
+    
+    // Write chip read opcode to SPI3 (0x0B for high speed read, 0x03 for standard read))
+    SPI3_writeByte(0x03);
+    
+    // write the address we want to start at
+    SPI3_writeByte(addr_msb);
+    SPI3_writeByte(addr_mb);
+    SPI3_writeByte(addr_lsb);
+    
+    // loop through this until all data to be read has been received
+    for (current_data_read_address = 0; current_data_read_address < 16384; current_data_read_address++) {
+     
+        // read all contents of slot sequentially
+        uint8_t read_val = SPI3_readByte();
+        
+        if (read_val != 0xFF) {
+         
+            spiFlashGPIOReset();
+            return 1;
+            
+        }
+        
+    }
+    
+    spiFlashGPIOReset();
+    return 0;
+    
+}

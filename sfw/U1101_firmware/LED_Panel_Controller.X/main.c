@@ -244,8 +244,8 @@ void main(void) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     }
     
-    // Setup the real time clock-calendar
-    if (nBACKUP_RTC_CONFIG_PIN == LOW) {
+    // Setup SPI Flash
+    if (nSPI_FLASH_CONFIG_PIN == LOW) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("    SPI Flash Storage Configuration Detected\r\n");
         while(usbUartCheckIfBusy());
@@ -259,6 +259,10 @@ void main(void) {
         printf("    External Flash Write Protection Disabled\r\n");
         while(usbUartCheckIfBusy());
         
+        printf("    Checking contents of external image storage...\r\n");
+        externalStorageManagerRestoreSlotsInUse();
+        printf("    Restored external image storage slot tracking\r\n");
+        while(usbUartCheckIfBusy());
         
     }
     

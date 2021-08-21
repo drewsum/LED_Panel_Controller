@@ -6,26 +6,26 @@
 #include "terminal_control.h"
 #include "watchdog_timer.h"
 
-// this function writes the ext_str_manager.slot_in_use_bytes[] array into external I2C EEPROM
-void externalStorageManagerBackupSlotsInUse(void) {
- 
-    // write all contents of ext_str_manager.slot_in_use_bytes[] into external flash
-    // this must be done 8 bytes at a time since I2C EEPROM is really stupid
-    uint32_t slot_write_index;
-    for (slot_write_index = 0; slot_write_index < 512; slot_write_index += 1) {
-     
-        Nop();
-        #warning "add code to record into EEPROM here"
+// this function recovers the ext_str_manager.slot_in_use_bytes[] array from internal flash into RAM
+void externalStorageManagerRestoreSlotsInUse(void) {
+    
+    uint32_t slot_check_index;
+    for (slot_check_index = 0; slot_check_index < 512; slot_check_index ++) {
+   
+        // determine active_chip_select and active_start_address from slot number
+        uint32_t active_chip_select, active_start_address;
+        active_chip_select = slot_check_index / 64;
+        active_start_address = (slot_check_index % 64) * 16384;
         
+        external_storage_slot_in_use[slot_check_index] = externalFlashCheckIfSlotFilled((uint8_t) active_chip_select, active_start_address);
+        
+        if (slot_check_index % 64 == 0) printf("        Checking SPI Flash chip %u\r\n", slot_check_index / 64);
+        
+        // clear WDT
+        kickTheDog();
+    
     }
     
-}
-
-// this function recovers the ext_str_manager.slot_in_use_bytes[] array from external I2C EEPROM into RAM
-void externalStorageManagerRestoreSlotsInUse(void) {
- 
-    Nop();
-    #warning "implement this with new EEPROM you clown"
     
 }
 
@@ -37,14 +37,13 @@ uint32_t externaStorageAppendImageSlot(void) {
     uint32_t slot_write_index;
     for (slot_write_index = 0; slot_write_index < 512; slot_write_index += 1) {
      
-        if (ext_str_manager.slot_in_use[slot_write_index] == false) {
+        if (external_storage_slot_in_use[slot_write_index] == 0) {
          
             // write image currently in scratchpad into next available slot
             externalStorageWriteImageSlot(slot_write_index);
             
-            // update variables of interest, stash in EEPROM
-            ext_str_manager.slot_in_use[slot_write_index] = true;
-            externalStorageManagerBackupSlotsInUse();
+            // update variables of interest
+            external_storage_slot_in_use[slot_write_index] = 1;
          
             return slot_write_index;
         }
@@ -62,9 +61,9 @@ void externalStoragePrintUsedImageSlots(void) {
     uint32_t slot_index;
     for (slot_index = 0; slot_index < 512; slot_index += 1) {
      
-        if (ext_str_manager.slot_in_use[slot_index]) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        if (external_storage_slot_in_use[slot_index]) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("   Slot %03u in use: %s\n\r", slot_index, ext_str_manager.slot_in_use[slot_index] ? "T" : "F");
+        printf("   Slot %03u in use: %s\n\r", slot_index, external_storage_slot_in_use[slot_index] ? "T" : "F");
         while(usbUartCheckIfBusy());
         kickTheDog();
         
@@ -132,4 +131,12 @@ void externalStorageEraseAll(void) {
         SPI_FLASH_chipErase(chip_select);
     
     }
+    
+    uint32_t slot_write_index;
+    for (slot_write_index = 0; slot_write_index < 512; slot_write_index ++) {
+     
+        external_storage_slot_in_use[slot_write_index] = 0;
+        
+    }
+    
 }

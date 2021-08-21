@@ -97,6 +97,9 @@ void externalFlashWriteImageSlot(uint8_t chip_select, uint32_t start_address);
 // start address must be mod 16384
 void externalFlashReadImageSlot(uint8_t chip_select, uint32_t start_address);
 
+// this function returns 1 if a slot at passed address is filled/contains image data
+// returns 0 if all contents of slot at 0xFF (erased state)
+uint8_t externalFlashCheckIfSlotFilled(uint8_t chip_select, uint32_t start_address);
 
 #endif /* _SPI_FLASH_H */
 
