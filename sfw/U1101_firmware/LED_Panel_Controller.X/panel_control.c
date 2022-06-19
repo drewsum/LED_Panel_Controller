@@ -526,7 +526,7 @@ void LEDPanelSetup() {
     while (POS5_PGOOD_PIN == LOW && timeout > 0) timeout--;
     if (POS5_PGOOD_PIN == LOW) {
         terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("    Failed to enable +5V Power Supply\r\n");
+        printf("Failed to enable +5V Power Supply\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         error_handler.flags.pos5_pgood = 1;
         terminalTextAttributesReset();
@@ -534,7 +534,7 @@ void LEDPanelSetup() {
     }
     else {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("    +5V Power Supply Enabled, Within Regulation\r\n");
+        printf("+5V Power Supply Enabled, Within Regulation\r\n");
         terminalTextAttributesReset();
     }
     
@@ -565,7 +565,7 @@ void LEDPanelTeardown() {
     
     // disable +5V power supply
     POS5_RUN_PIN = LOW;
-    printf("    +5V Power Supply Disabled\r\n");
+    printf("+5V Power Supply Disabled\r\n");
     
     // get ready to shift another round of data in
     PANEL_LAT_PIN = HIGH;

@@ -712,7 +712,9 @@ usb_uart_command_function_t eraseAllExternalStorageCommand(char * input_str) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Erasing All External Storage\n\r");
     
-    externalStorageEraseAll();
+    externalStorageEraseAllSlots();
+    
+    maximum_slot_in_use = 0;
     
     printf("External storage erased\r\n");
     terminalTextAttributesReset();
@@ -726,6 +728,8 @@ usb_uart_command_function_t appendScratchpadToImageSlotCommand(char * input_str)
     uint32_t slot_written = externaStorageAppendImageSlot();
     
     #warning "add catch here to determine if we're out of space"
+
+    maximum_slot_in_use = slot_written;
     
     // print what we did
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -739,9 +743,45 @@ usb_uart_command_function_t appendScratchpadToImageSlotCommand(char * input_str)
 
 usb_uart_command_function_t printImageSlotsInUseCommand(char * input_str) {
     
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Maximum detected filled slot is %u\n\r", maximum_slot_in_use);
+    terminalTextAttributesReset();
+    
+    
     externalStoragePrintUsedImageSlots();
     
 }
+
+usb_uart_command_function_t slotSlideshowBeginCommand(char * input_str) {
+ 
+    display_mode = slot_slideshow;
+    
+    externalStorageBeginSlotSlideshow(0);
+    
+}
+
+usb_uart_command_function_t slotSlideshowEndCommand(char * input_str) {
+ 
+    display_mode = idle;
+    
+    externalStorageSlotEndSlideshow();
+    
+}
+
+usb_uart_command_function_t slotSlideshowDelayTime(char * input_str) {
+ 
+    uint32_t read_delay;
+    sscanf(input_str, "Set Slot Slideshow Delay: %u", &read_delay);
+    
+    slot_slideshow_delay = read_delay;
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Set slot slideshow delay to %u\n\r", slot_slideshow_delay);
+    terminalTextAttributesReset();
+    
+    
+}
+
 
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
@@ -845,5 +885,14 @@ void usbUartHashTableInitialize(void) {
         usbUartAddCommand("Append Scratchpad to Slot",
                 "Copies scratchpad image data to next available external storage image slot",
                 appendScratchpadToImageSlotCommand);
+        usbUartAddCommand("Begin Slot Slideshow",
+                "Displays contents in external SPI Flash at a routine interval",
+                slotSlideshowBeginCommand);
+        usbUartAddCommand("End Slot Slideshow",
+                "Suspends displaying contents of SPI Flash",
+                slotSlideshowEndCommand);
+        usbUartAddCommand("Set Slot Slideshow Delay: ",
+                "\b\b<delay_seconds>: Sets the delay time between external images in slots displayed. Default is 10",
+                slotSlideshowDelayTime);
     }
 }

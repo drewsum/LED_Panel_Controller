@@ -262,6 +262,7 @@ void main(void) {
         printf("    Checking contents of external image storage...\r\n");
         externalStorageManagerRestoreSlotsInUse();
         printf("    Restored external image storage slot tracking\r\n");
+        printf("        Found %u external image storage slots in use\r\n", maximum_slot_in_use);
         while(usbUartCheckIfBusy());
         
     }
@@ -356,6 +357,8 @@ void main(void) {
         
         // update error LEDs if needed
         if (update_error_leds_flag) updateErrorLEDs();
+        
+        if (display_mode == slot_slideshow && update_slot_slideshow == 1) externalStorageSlotSlideshowCallback(active_slideshow_slot);
         
     }
     

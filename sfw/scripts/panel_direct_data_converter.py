@@ -10,6 +10,7 @@ import re
 import signal
 import sys
 import warnings
+import time
 
 # This method returns a list of the available COM ports to talk on
 def serial_ports():
@@ -204,6 +205,23 @@ def enable_panel(dev):
         dev.reset_output_buffer()
 
     dev.write(b"Set Panel Power: On\r")
+    response = dev.readline().decode('utf-8')
+    response = trim_escape_codes(response)
+    dev.reset_input_buffer()
+
+
+
+def append_to_slot(dev):
+    dev.write(b"Append Scratchpad to Slot\r")
+    response = dev.readline().decode('utf-8')
+    response = trim_escape_codes(response)
+
+    dev.reset_input_buffer()
+
+    if (response.startswith("Scratchpad written to external storage image slot")):
+        dev.reset_output_buffer()
+        print(response)
+
 
 def main():
     # set up arguments to pass
@@ -211,6 +229,7 @@ def main():
     parser.add_argument('--input', type=pathlib.Path, required=True, help='The path to the image file to scale and convert')
     parser.add_argument('--output', required=True, help="Type of script output (serial or ascii)")
     parser.add_argument('-d', '--display', action="store_true", help="Force image to be displayed after serial transfer")
+    parser.add_argument('-a', '--append', action="store_true", help="Append transferred image into the next available external storage slot")
     args = parser.parse_args()
 
     # open passed image
@@ -259,6 +278,12 @@ def main():
             # tell MCU to load scratchpad into active buffer
             if args.display:
                 enable_panel(dev)
+
+            time.sleep(1.0)
+
+            # tell MCU to load scratchpad into next available external storage slot
+            if args.append:
+                append_to_slot(dev)
 
             # Close active COM port
             dev.close()

@@ -5,6 +5,7 @@
 #include "misc_i2c_devices.h"
 #include "terminal_control.h"
 #include "watchdog_timer.h"
+#include "heartbeat_services.h"
 
 // this function recovers the ext_str_manager.slot_in_use_bytes[] array from internal flash into RAM
 void externalStorageManagerRestoreSlotsInUse(void) {
@@ -18,6 +19,8 @@ void externalStorageManagerRestoreSlotsInUse(void) {
         active_start_address = (slot_check_index % 64) * 16384;
         
         external_storage_slot_in_use[slot_check_index] = externalFlashCheckIfSlotFilled((uint8_t) active_chip_select, active_start_address);
+        
+        if (external_storage_slot_in_use[slot_check_index] == 1) maximum_slot_in_use = slot_check_index;
         
         if (slot_check_index % 64 == 0) printf("        Checking SPI Flash chip %u\r\n", slot_check_index / 64);
         
@@ -116,7 +119,7 @@ void externalStorageReadImageSlot(uint32_t slot) {
 
 // this function erases all external storage
 // use with caution
-void externalStorageEraseAll(void) {
+void externalStorageEraseAllSlots(void) {
  
     uint8_t chip_select;
     for (chip_select = 0; chip_select < 8; chip_select++) {
@@ -138,5 +141,66 @@ void externalStorageEraseAll(void) {
         external_storage_slot_in_use[slot_write_index] = 0;
         
     }
+    
+}
+
+// this function starts the spi flash slideshow functionality
+void externalStorageBeginSlotSlideshow(uint32_t starting_slot) {
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Beginning slot slideshow\n\r");
+    terminalTextAttributesReset();
+    
+    slot_slideshow_delay = 10;
+    
+    LEDPanelSetup();
+    
+    // copy image data for starting_slot from external spi flash into scratchpad, then into buffer
+    externalStorageReadImageSlot(starting_slot);
+    panelDataCopyScratchpad();
+    
+
+    // print stuff
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Transfer from Image Slot %u to Buffer complete\n\r", starting_slot);
+    terminalTextAttributesReset();
+    
+    // save starting slot as the slow we're currently displaying
+    active_slideshow_slot = starting_slot;
+    
+    slot_slideshow_start_device_on_time = device_on_time_counter;
+    
+    
+}
+
+// this function updates the image in the buffer during slideshow functionality
+// meant to be a callback from main
+void externalStorageSlotSlideshowCallback(uint32_t active_slot) {
+ 
+    // copy image data for starting_slot from external spi flash into scratchpad, then into buffer
+    externalStorageReadImageSlot(active_slot);
+    panelDataCopyScratchpad();
+
+    // print stuff
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Transfer from Image Slot %u to Buffer complete\n\r", active_slot);
+    terminalTextAttributesReset();
+ 
+    update_slot_slideshow = 0;
+    
+}
+
+// this function stops the slot slideshow
+void externalStorageSlotEndSlideshow(void) {
+ 
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Ending slot slideshow\n\r");
+    terminalTextAttributesReset();
+    
+    update_slot_slideshow = 0;
+    
+    LEDPanelTeardown();
     
 }

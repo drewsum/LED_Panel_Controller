@@ -9,6 +9,7 @@
 #include "device_control.h"
 #include "terminal_control.h"
 #include "pin_macros.h"
+#include "external_storage_management.h"
 
 #include <stdio.h>
 
@@ -36,5 +37,21 @@ void heartbeatServices(void) {
     
     // Increment on time counter
     if (heartbeat_systick % 100 == 0) device_on_time_counter++;
+    
+    if (display_mode == slot_slideshow && update_slot_slideshow == 0 && heartbeat_systick % 100 == 0) {
+        
+        // figure out if we need to load a new image from spi flash when in slideshow mode
+        if ((device_on_time_counter - slot_slideshow_start_device_on_time)%slot_slideshow_delay == 0) {
+
+            active_slideshow_slot++;
+
+            if (active_slideshow_slot > maximum_slot_in_use) active_slideshow_slot = 0;
+
+            update_slot_slideshow = 1;
+
+        }
+    
+    }
+    
     
 }
