@@ -358,7 +358,7 @@ void main(void) {
         // update error LEDs if needed
         if (update_error_leds_flag) updateErrorLEDs();
         
-        if (display_mode == slot_slideshow && update_slot_slideshow == 1) externalStorageSlotSlideshowCallback(active_slideshow_slot);
+        if (display_mode == slot_slideshow_display_mode && update_slot_slideshow == 1) externalStorageSlotSlideshowCallback(active_slideshow_slot);
         
     }
     

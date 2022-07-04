@@ -754,7 +754,7 @@ usb_uart_command_function_t printImageSlotsInUseCommand(char * input_str) {
 
 usb_uart_command_function_t slotSlideshowBeginCommand(char * input_str) {
  
-    display_mode = slot_slideshow;
+    display_mode = slot_slideshow_display_mode;
     
     externalStorageBeginSlotSlideshow(0);
     
@@ -762,7 +762,7 @@ usb_uart_command_function_t slotSlideshowBeginCommand(char * input_str) {
 
 usb_uart_command_function_t slotSlideshowEndCommand(char * input_str) {
  
-    display_mode = idle;
+    display_mode = idle_display_mode;
     
     externalStorageSlotEndSlideshow();
     

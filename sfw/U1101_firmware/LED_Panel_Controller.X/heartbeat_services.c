@@ -38,7 +38,7 @@ void heartbeatServices(void) {
     // Increment on time counter
     if (heartbeat_systick % 100 == 0) device_on_time_counter++;
     
-    if (display_mode == slot_slideshow && update_slot_slideshow == 0 && heartbeat_systick % 100 == 0) {
+    if (display_mode == slot_slideshow_display_mode && update_slot_slideshow == 0 && heartbeat_systick % 100 == 0) {
         
         // figure out if we need to load a new image from spi flash when in slideshow mode
         if ((device_on_time_counter - slot_slideshow_start_device_on_time)%slot_slideshow_delay == 0) {

@@ -49,7 +49,7 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL7SRS) powerCapTouchPushbuttonISR(void) {
     else {
         LEDPanelTeardown();
         update_slot_slideshow = 0;
-        display_mode = idle;
+        display_mode = idle_display_mode;
         
     }
     

@@ -105,7 +105,6 @@ void __ISR(_ADC_DATA44_VECTOR, IPL1SRS) ADCData44ISR(void) {
     
 }
 
-#warning "find an efficient way of printing this"
 // this function prints out ADC channel status
 void printADCChannelStatus(void) {
  

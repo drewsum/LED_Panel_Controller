@@ -23,30 +23,17 @@
 #include <xc.h>
 
 #include "panel_control.h"
+#include "image_management.h"
 
 // This flag signifies that a SPI flash read operation has completed
 // Used for standard operation state machine
 uint8_t SPI_Read_Finished_Flag;
 
-// indexes ebi sram array as we read the flash chip
+// indexes sram array as we read the flash chip
 uint32_t sram_addr_index;
 
 // this array keeps track of which external storage image slots are in use
 uint8_t external_storage_slot_in_use[512];
-
-// this keeps track of the highest slot number in use
-uint32_t maximum_slot_in_use;
-
-// this keeps track of the active slot to be displayed when in spi flash slideshow mode
-uint32_t active_slideshow_slot;
-
-// this keeps track of the delay between slots to be displayed, when in spi flash slideshow mode
-uint32_t slot_slideshow_delay;
-uint32_t slot_slideshow_start_device_on_time;
-
-// this flag is set when we want to update the image in the buffer from main
-// it's set in heartbeat services and cleared within the slideshow callback, externalStorageSlotSlideshowCallback()
-uint32_t update_slot_slideshow = 0;
 
 // Function to initialize SPI
 void spiFlashInit(void);
@@ -143,17 +130,6 @@ void externalStorageReadImageSlot(uint32_t slot);
 // this function erases all external storage
 // use with caution
 void externalStorageEraseAllSlots(void);
-
-// this function starts the spi flash slideshow functionality
-void externalStorageBeginSlotSlideshow(uint32_t starting_slot);
-
-// this function updates the image in the buffer during slideshow functionality
-// meant to be a callback from main
-void externalStorageSlotSlideshowCallback(uint32_t active_slot);
-
-// this function stops the slot slideshow
-void externalStorageSlotEndSlideshow(void);
-
 
 #endif /* _SPI_FLASH_H */
 
