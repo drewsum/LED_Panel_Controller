@@ -20,22 +20,6 @@
 
 // this function sets up PMP for use
 void PMPInitialize(void) {
- 
-    /* Configuration Example: Master mode 2, 16-bit data, partially multiplexed address/data, active-lo polarities. */
-    /*
-    IEC1CLR = 0x0004// Disable PMP interrupt
-    PMCON = 0x0000;// Stop PMP module and clear control register?
-    PMCONSET = 0x0B80;// Configure the addressing and polarities?
-    PMMODE = 0x2A40;// Configure the mode
-    PMAEN = 0xFF00;// Enable all address and Chip Select lines
-    IPC7SET = 0x001C;// Set priority level = 7 and
-    IPC7SET = 0x0003;// Set subpriority level = 3
-    // Could have also done this in single
-    // operation by assigning IPC7SET = 0x001F
-    
-    IEC1SET = 0x0004;// Enable PMP interrupts?
-    PMCONSET = 0x8000;// Enable the PMP module
-    */
     
     // disable interrupts
     disableInterrupt(Parallel_Master_Port);
@@ -514,6 +498,9 @@ void LEDPanelInitialize(void) {
     // set up timer 4 and OC3 for PWM dimming
     panelPWMInitialize();
     
+    // this DMA channel (channel 3) is used to move data from scratchpad into direct data buffer
+    scratchpadCopyDMAInitialize();
+    
 }
 
 // this function enables the +5V power supply, sets up PMP, sets up DMA, clears the PMP buffer, and begins multiplexing
@@ -706,17 +693,61 @@ void panelPWMSetBrightness(uint8_t set_brightness) {
     
 }
 
-#warning "replace this with a DMA function eventually"
+// this function sets up DMA to move data from scratchpad to direct data buffer
+void scratchpadCopyDMAInitialize(void) {
+    
+    // Disable DMA controller
+    DMACONbits.ON = 0;
+    // Disable DMA CRC
+    DCRCCONbits.CRCEN = 0;
+    // Turn off channel 2
+    DCH3CONbits.CHEN = 0;
+    // Set channel 2 priority to 2
+    DCH3CONbits.CHPRI = 1;
+    // Disable DMA chaining
+    DCH3CONbits.CHCHN = 0;
+    // disable automatic enable on block move complete
+    DCH3CONbits.CHAEN = 0;
+    
+    // Start interrupt request is PMP TX done
+    DCH3ECONbits.CHSIRQ = 0;
+    // configure DMA3 to start only on a force, ignore interrupts
+    DCH3ECONbits.SIRQEN = 0;
+    // no pattern abort
+    DCH3ECONbits.PATEN = 0;
+    
+    // Set DMA0 source location
+    DCH3SSA = KVA_TO_PA((void *) &panel_direct_data_scratchpad[0]);
+    // Set DMA0 destination location
+    DCH3DSA = KVA_TO_PA((void*) &panel_direct_data_buffer[0]);
+    // Set source size to size of transmit buffer
+    DCH3SSIZ = PANEL_DIRECT_DATA_BUFFER_SIZE;
+    // 
+    DCH3DSIZ = PANEL_DIRECT_DATA_BUFFER_SIZE;
+    // panel_direct_data_scratchpad bytes transferred per event (cell size = 64)
+    DCH3CSIZ = PANEL_DIRECT_DATA_BUFFER_SIZE;
+    
+    // clear existing events, disable all interrupts
+    DCH3INTCLR = 0x00000000;
+    
+    DCH3CONbits.CHEN = 1;
+    
+    // Turn on DMA
+    DMACONbits.ON = 1;
+    
+}
+
 // this function copies data from scratchpad into direct data buffer
 void panelDataCopyScratchpad(void) {
  
-    uint32_t address_index;
-    
-    for (address_index = 0; address_index < PANEL_DIRECT_DATA_BUFFER_SIZE; address_index++) {
-    
-        panel_direct_data_buffer[address_index] = panel_direct_data_scratchpad[address_index];
-        
-    }
+    // force a transfer on DMA3 to copy scratchpad to panel_direct_data_buffer
+    // DCH3CONbits.CHEN = 0;
+    // Set DMA0 source location
+    DCH3SSA = KVA_TO_PA((void *) &panel_direct_data_scratchpad[0]);
+    // Set DMA0 destination location
+    DCH3DSA = KVA_TO_PA((void*) &panel_direct_data_buffer[0]);
+    // DCH3CONbits.CHEN = 1;
+    DCH3ECONbits.CFORCE = 1;
     
 }
 
