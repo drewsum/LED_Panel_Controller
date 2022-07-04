@@ -62,6 +62,13 @@ void externalStorageSlotEndSlideshow(void);
 // this function is called within main to fill the panel buffer with random data in void mode
 void voidModeFillBuffer(void);
 
+
+// this function updates the mode LEDs based on the current display_mode setting
+void updateDisplayModeLEDs(void);
+
+// this function clears all mode LEDs
+void clearDisplayModeLEDs(void);
+
 #endif /* _IMAGE_MANAGEMENT_H */
 
 /* *****************************************************************************

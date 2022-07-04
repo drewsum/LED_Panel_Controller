@@ -362,7 +362,8 @@ void main(void) {
         if (display_mode == slot_slideshow_display_mode && update_slot_slideshow == 1) externalStorageSlotSlideshowCallback(active_slideshow_slot);
         else if(display_mode == void_display_mode && update_buffer_void_mode == 1) voidModeFillBuffer();
      
-        #warning "add setting mode LEDs here"
+        // update mode LEDs periodically
+        if (display_mode != idle_display_mode && heartbeat_systick % 20 == 0) updateDisplayModeLEDs();
         
     }
     

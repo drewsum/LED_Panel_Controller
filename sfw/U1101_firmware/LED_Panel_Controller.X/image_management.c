@@ -68,6 +68,8 @@ void externalStorageSlotEndSlideshow(void) {
     
     LEDPanelTeardown();
     
+    clearDisplayModeLEDs();
+    
 }
 
 // this function is called within main to fill the panel buffer with random data in void mode
@@ -76,5 +78,59 @@ void voidModeFillBuffer(void) {
     fillPanelBufferRand();
     
     update_buffer_void_mode = 0;
+    
+}
+
+// this function updates the mode LEDs based on the current display_mode setting
+void updateDisplayModeLEDs(void) {
+    
+    switch (display_mode) {
+     
+        case idle_display_mode:
+            USB_STREAM_MODE_LED_PIN = LOW;
+            FLASH_SLIDESHOW_MODE_LED_PIN = LOW;
+            VOID_MODE_LED_PIN = LOW;
+            MLVDS_STREAM_MODE_LED_PIN = LOW;
+            PROG1_MODE_LED_PIN = LOW;
+            PROG2_MODE_LED_PIN = LOW;
+            PROG3_MODE_LED_PIN = LOW;
+            PROG4_MODE_LED_PIN = LOW;
+            break;
+        case slot_slideshow_display_mode:
+            USB_STREAM_MODE_LED_PIN = LOW;
+            FLASH_SLIDESHOW_MODE_LED_PIN = HIGH;
+            VOID_MODE_LED_PIN = LOW;
+            MLVDS_STREAM_MODE_LED_PIN = LOW;
+            PROG1_MODE_LED_PIN = LOW;
+            PROG2_MODE_LED_PIN = LOW;
+            PROG3_MODE_LED_PIN = LOW;
+            PROG4_MODE_LED_PIN = LOW;
+            break;
+        case void_display_mode:
+            USB_STREAM_MODE_LED_PIN = LOW;
+            FLASH_SLIDESHOW_MODE_LED_PIN = LOW;
+            VOID_MODE_LED_PIN = HIGH;
+            MLVDS_STREAM_MODE_LED_PIN = LOW;
+            PROG1_MODE_LED_PIN = LOW;
+            PROG2_MODE_LED_PIN = LOW;
+            PROG3_MODE_LED_PIN = LOW;
+            PROG4_MODE_LED_PIN = LOW;
+            break;
+        
+    }
+    
+}
+
+// this function clears all mode LEDs
+void clearDisplayModeLEDs(void) {
+ 
+    USB_STREAM_MODE_LED_PIN = LOW;
+    FLASH_SLIDESHOW_MODE_LED_PIN = LOW;
+    VOID_MODE_LED_PIN = LOW;
+    MLVDS_STREAM_MODE_LED_PIN = LOW;
+    PROG1_MODE_LED_PIN = LOW;
+    PROG2_MODE_LED_PIN = LOW;
+    PROG3_MODE_LED_PIN = LOW;
+    PROG4_MODE_LED_PIN = LOW;
     
 }

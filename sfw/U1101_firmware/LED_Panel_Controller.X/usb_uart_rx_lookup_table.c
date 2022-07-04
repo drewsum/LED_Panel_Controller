@@ -800,6 +800,8 @@ usb_uart_command_function_t voidModeEndCommand(char * input_str) {
     
     LEDPanelTeardown();
     
+    clearDisplayModeLEDs();
+    
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Exiting Void Mode\r\n");
     terminalTextAttributesReset();
