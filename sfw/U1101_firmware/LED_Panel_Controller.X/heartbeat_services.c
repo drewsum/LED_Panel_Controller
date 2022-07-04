@@ -9,7 +9,7 @@
 #include "device_control.h"
 #include "terminal_control.h"
 #include "pin_macros.h"
-#include "external_storage_management.h"
+#include "image_management.h"
 
 #include <stdio.h>
 

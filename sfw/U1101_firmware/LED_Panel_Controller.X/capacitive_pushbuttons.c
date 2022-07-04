@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #include "terminal_control.h"
+#include "image_management.h"
 
 #include "pin_macros.h"
 
@@ -47,6 +48,9 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL7SRS) powerCapTouchPushbuttonISR(void) {
     // we're currently on, need to turn off
     else {
         LEDPanelTeardown();
+        update_slot_slideshow = 0;
+        display_mode = idle;
+        
     }
     
     clearInterruptFlag(External_Interrupt_2);

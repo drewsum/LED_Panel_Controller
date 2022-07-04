@@ -142,7 +142,7 @@ def image_to_byte_array(input_image):
             output_byte_array[column + (row*64) + 14336]    |= (int(current_px[2] > 224) << 4)
             
             # get curent color at this pixelon row n + 32
-            current_px = input_image.getpixel((column, row + 32))
+            current_px = input_image.getpixel((column, row + 32))   
             
             # determine red data for row n +32 (0b00xxxx1x)
             output_byte_array[column + (row*64)]            |= (int(current_px[0] > 0) << 1)

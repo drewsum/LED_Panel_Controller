@@ -31,7 +31,7 @@
       </logicalFolder>
       <logicalFolder name="f7" displayName="External Storage" projectFiles="true">
         <itemPath>spi_flash.h</itemPath>
-        <itemPath>external_storage_management.h</itemPath>
+        <itemPath>image_management.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>pin_macros.h</itemPath>
@@ -92,7 +92,7 @@
       </logicalFolder>
       <logicalFolder name="f7" displayName="External Storage" projectFiles="true">
         <itemPath>spi_flash.c</itemPath>
-        <itemPath>external_storage_management.c</itemPath>
+        <itemPath>image_management.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="GPIO" projectFiles="true">
         <itemPath>gpio_setup.c</itemPath>

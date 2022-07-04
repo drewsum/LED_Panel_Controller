@@ -23,7 +23,7 @@
 #include "pgood_monitor.h"
 #include "rtcc.h"
 #include "spi_flash.h"
-#include "external_storage_management.h"
+#include "image_management.h"
 
 #include "panel_control.h"
 
