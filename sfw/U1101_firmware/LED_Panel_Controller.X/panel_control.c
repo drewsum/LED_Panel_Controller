@@ -741,12 +741,12 @@ void scratchpadCopyDMAInitialize(void) {
 void panelDataCopyScratchpad(void) {
  
     // force a transfer on DMA3 to copy scratchpad to panel_direct_data_buffer
-    // DCH3CONbits.CHEN = 0;
+    DCH3CONbits.CHEN = 0;
     // Set DMA0 source location
     DCH3SSA = KVA_TO_PA((void *) &panel_direct_data_scratchpad[0]);
     // Set DMA0 destination location
     DCH3DSA = KVA_TO_PA((void*) &panel_direct_data_buffer[0]);
-    // DCH3CONbits.CHEN = 1;
+    DCH3CONbits.CHEN = 1;
     DCH3ECONbits.CFORCE = 1;
     
 }
