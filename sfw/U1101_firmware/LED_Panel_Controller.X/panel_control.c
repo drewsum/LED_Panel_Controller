@@ -14,6 +14,7 @@
 #include "pin_macros.h"
 #include "terminal_control.h"
 #include "error_handler.h"
+#include "generic_buffer_fills.h"
 
 #include "panel_control.h"
 

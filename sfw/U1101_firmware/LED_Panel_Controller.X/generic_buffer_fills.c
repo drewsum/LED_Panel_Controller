@@ -69,8 +69,6 @@ void fillPanelBufferRand(void) {
     // Load a new seed
     RNGCONbits.LOAD = 1;
     
-    #warning "switch to DMA implementation eventually"
-    
     unsigned int i;
     for (i = 0; i < PANEL_DIRECT_DATA_BUFFER_SIZE / 4; i++) {
         panel_direct_data_buffer[i] = (uint8_t) RNGNUMGEN1;       // random number in each byte

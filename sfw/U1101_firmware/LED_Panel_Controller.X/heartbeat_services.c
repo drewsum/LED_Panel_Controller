@@ -57,7 +57,7 @@ void heartbeatServices(void) {
     
     // this else if statement is what triggers loading new random numbers into the
     // panel frame buffer in void mode
-    else if (display_mode == void_display_mode && heartbeat_systick % 5 == 0) {
+    else if (display_mode == void_display_mode && heartbeat_systick % 4 == 0) {
      
         update_buffer_void_mode = 1;
         
