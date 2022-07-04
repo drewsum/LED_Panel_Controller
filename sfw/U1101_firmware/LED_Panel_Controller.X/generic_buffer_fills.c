@@ -15,6 +15,16 @@ void fillPanelBufferWhite(void) {
     
 }
 
+// this fills panel_direct_data_buffer with data for a black screen
+void fillPanelBufferBlack(void) {
+ 
+    unsigned int i;
+    for (i = 0; i < PANEL_DIRECT_DATA_BUFFER_SIZE; i++) {
+        panel_direct_data_buffer[i] = 0;
+    }
+    
+}
+
 // this fills panel_direct_data_buffer with an RGB column pattern
 void fillPanelBufferRGBStripes(void) {
  
@@ -58,6 +68,8 @@ void fillPanelBufferRand(void) {
     
     // Load a new seed
     RNGCONbits.LOAD = 1;
+    
+    #warning "switch to DMA implementation eventually"
     
     unsigned int i;
     for (i = 0; i < PANEL_DIRECT_DATA_BUFFER_SIZE / 4; i++) {

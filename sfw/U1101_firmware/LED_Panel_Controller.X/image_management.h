@@ -46,6 +46,8 @@ uint32_t slot_slideshow_start_device_on_time;
 // it's set in heartbeat services and cleared within the slideshow callback, externalStorageSlotSlideshowCallback()
 uint32_t update_slot_slideshow = 0;
 
+// this flag is used to fill the frame buffer with random data for void mode
+uint32_t update_buffer_void_mode;
 
 // this function starts the spi flash slideshow functionality
 void externalStorageBeginSlotSlideshow(uint32_t starting_slot);
@@ -57,7 +59,8 @@ void externalStorageSlotSlideshowCallback(uint32_t active_slot);
 // this function stops the slot slideshow
 void externalStorageSlotEndSlideshow(void);
 
-
+// this function is called within main to fill the panel buffer with random data in void mode
+void voidModeFillBuffer(void);
 
 #endif /* _IMAGE_MANAGEMENT_H */
 

@@ -38,6 +38,8 @@ void heartbeatServices(void) {
     // Increment on time counter
     if (heartbeat_systick % 100 == 0) device_on_time_counter++;
     
+    // this if statement is what controls if we're loading new data from external SPI flash
+    // when in slot slideshow mode
     if (display_mode == slot_slideshow_display_mode && update_slot_slideshow == 0 && heartbeat_systick % 100 == 0) {
         
         // figure out if we need to load a new image from spi flash when in slideshow mode
@@ -51,6 +53,14 @@ void heartbeatServices(void) {
 
         }
     
+    }
+    
+    // this else if statement is what triggers loading new random numbers into the
+    // panel frame buffer in void mode
+    else if (display_mode == void_display_mode && heartbeat_systick % 5 == 0) {
+     
+        update_buffer_void_mode = 1;
+        
     }
     
     

@@ -358,7 +358,11 @@ void main(void) {
         // update error LEDs if needed
         if (update_error_leds_flag) updateErrorLEDs();
         
+        // evaluate moving new data into panel buffer depending on display mode
         if (display_mode == slot_slideshow_display_mode && update_slot_slideshow == 1) externalStorageSlotSlideshowCallback(active_slideshow_slot);
+        else if(display_mode == void_display_mode && update_buffer_void_mode == 1) voidModeFillBuffer();
+     
+        #warning "add setting mode LEDs here"
         
     }
     

@@ -6,7 +6,8 @@
 #include "terminal_control.h"
 #include "watchdog_timer.h"
 #include "heartbeat_services.h"
-
+#include "panel_control.h"
+#include "generic_buffer_fills.h"
 
 
 // this function starts the spi flash slideshow functionality
@@ -16,6 +17,7 @@ void externalStorageBeginSlotSlideshow(uint32_t starting_slot) {
     printf("Beginning slot slideshow\n\r");
     terminalTextAttributesReset();
     
+    #warning "might want to remove this once this is a little more automated with pushbutton"
     LEDPanelSetup();
     
     // copy image data for starting_slot from external spi flash into scratchpad, then into buffer
@@ -65,5 +67,14 @@ void externalStorageSlotEndSlideshow(void) {
     update_slot_slideshow = 0;
     
     LEDPanelTeardown();
+    
+}
+
+// this function is called within main to fill the panel buffer with random data in void mode
+void voidModeFillBuffer(void) {
+ 
+    fillPanelBufferRand();
+    
+    update_buffer_void_mode = 0;
     
 }

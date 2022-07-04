@@ -782,6 +782,30 @@ usb_uart_command_function_t slotSlideshowDelayTime(char * input_str) {
     
 }
 
+usb_uart_command_function_t voidModeBeginCommand(char * input_str) {
+ 
+    display_mode = void_display_mode;
+    
+    fillPanelBufferBlack();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Entering Void Mode\r\n");
+    terminalTextAttributesReset();
+    
+}
+
+usb_uart_command_function_t voidModeEndCommand(char * input_str) {
+ 
+    display_mode = idle_display_mode;
+    
+    LEDPanelTeardown();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Exiting Void Mode\r\n");
+    terminalTextAttributesReset();
+    
+    
+}
 
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
@@ -894,5 +918,11 @@ void usbUartHashTableInitialize(void) {
         usbUartAddCommand("Set Slot Slideshow Delay: ",
                 "\b\b<delay_seconds>: Sets the delay time between external images in slots displayed. Default is 10",
                 slotSlideshowDelayTime);
+        usbUartAddCommand("Begin Void Mode",
+                "Displays random data on panel",
+                voidModeBeginCommand);
+        usbUartAddCommand("End Void Mode",
+                "Suspends displaying random data on panel",
+                voidModeEndCommand);
     }
 }
