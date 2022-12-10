@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/image_management.c</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/panel_control.c</file>
-            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/external_storage_management.h</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/heartbeat_services.c</file>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/generic_buffer_fills.c</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/main.c</file>
-            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/external_storage_management.c</file>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/image_management.h</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/usb_uart_rx_lookup_table.c</file>
-            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/capacitive_pushbuttons.c</file>
-            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/LED_Panel_Controller/sfw/U1101_firmware/LED_Panel_Controller.X/spi_flash.c</file>
         </group>
     </open-files>
 </project-private>

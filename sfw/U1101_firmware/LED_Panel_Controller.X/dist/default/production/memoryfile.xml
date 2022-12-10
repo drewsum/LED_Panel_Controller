@@ -4,8 +4,8 @@
     <memory name="program">                 
       <units>bytes</units>                 
       <length>2098304</length>                 
-      <used>296668</used>                     
-      <free>1801636</free>                     
+      <used>297168</used>                     
+      <free>1801136</free>                     
     </memory>                              
     <memory name="data">              
       <units>bytes</units>                 

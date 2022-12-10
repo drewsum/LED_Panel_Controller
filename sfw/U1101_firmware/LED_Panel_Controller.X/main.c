@@ -360,6 +360,11 @@ void main(void) {
         
         // evaluate moving new data into panel buffer depending on display mode
         if (display_mode == slot_slideshow_display_mode && update_slot_slideshow == 1) externalStorageSlotSlideshowCallback(active_slideshow_slot);
+        else if (display_mode == slot_shuffle_display_mode && update_slot_slideshow == 1) {
+            // Load a new seed
+            RNGCONbits.LOAD = 1;
+            externalStorageSlotSlideshowCallback((uint16_t) RNGNUMGEN1 % (maximum_slot_in_use + 1));
+        }
         else if(display_mode == void_display_mode && update_buffer_void_mode == 1) voidModeFillBuffer();
      
         // update mode LEDs periodically

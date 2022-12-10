@@ -55,6 +55,21 @@ void heartbeatServices(void) {
     
     }
     
+    if (display_mode == slot_shuffle_display_mode && update_slot_slideshow == 0 && heartbeat_systick % 100 == 0) {
+        
+        // figure out if we need to load a new image from spi flash when in slideshow mode
+        if ((device_on_time_counter - slot_slideshow_start_device_on_time)%slot_slideshow_delay == 0) {
+
+            active_slideshow_slot++;
+
+            if (active_slideshow_slot > maximum_slot_in_use) active_slideshow_slot = 0;
+
+            update_slot_slideshow = 1;
+
+        }
+    
+    }
+    
     // this else if statement is what triggers loading new random numbers into the
     // panel frame buffer in void mode
     else if (display_mode == void_display_mode && heartbeat_systick % 4 == 0) {

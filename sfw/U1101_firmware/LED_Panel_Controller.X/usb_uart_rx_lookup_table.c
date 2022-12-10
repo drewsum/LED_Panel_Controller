@@ -624,6 +624,13 @@ usb_uart_command_function_t writeStratchpadExternalFlashCommand(char * input_str
         printf("Slot %u is currently in use, either append an image to next available slot or erase all slots\n\r", target_slot);
         terminalTextAttributesReset();
         
+        externalStorageWriteImageSlot(target_slot);
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Transfer from Scratchpad to External Image Slot %u complete\n\r", target_slot);
+        terminalTextAttributesReset();
+        
     }
 
     else {
@@ -757,6 +764,15 @@ usb_uart_command_function_t slotSlideshowBeginCommand(char * input_str) {
     display_mode = slot_slideshow_display_mode;
     
     externalStorageBeginSlotSlideshow(0);
+    
+}
+
+usb_uart_command_function_t slotShuffleBeginCommand(char * input_str) {
+ 
+    display_mode = slot_shuffle_display_mode;
+    // Load a new seed
+    RNGCONbits.LOAD = 1;
+    externalStorageBeginSlotSlideshow((uint16_t) RNGNUMGEN1 % (maximum_slot_in_use + 1));
     
 }
 
@@ -914,6 +930,9 @@ void usbUartHashTableInitialize(void) {
         usbUartAddCommand("Begin Slot Slideshow",
                 "Displays contents in external SPI Flash at a routine interval",
                 slotSlideshowBeginCommand);
+        usbUartAddCommand("Begin Slot Shuffle",
+                "Displays contents in external SPI Flash at a routine interval in a random order",
+                slotShuffleBeginCommand);
         usbUartAddCommand("End Slot Slideshow",
                 "Suspends displaying contents of SPI Flash",
                 slotSlideshowEndCommand);

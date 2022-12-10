@@ -28,6 +28,7 @@ enum display_mode_t{
 
     idle_display_mode,
     slot_slideshow_display_mode,
+    slot_shuffle_display_mode,
     void_display_mode
     
 } display_mode;
