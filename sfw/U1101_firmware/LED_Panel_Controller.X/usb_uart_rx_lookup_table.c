@@ -501,6 +501,9 @@ usb_uart_command_function_t setPanelPowerCommand(char * input_str) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         
         LEDPanelSetup();
+        
+        fillPanelBufferBlack();
+        display_mode = void_display_mode;
 
         terminalTextAttributesReset();
         
@@ -513,6 +516,8 @@ usb_uart_command_function_t setPanelPowerCommand(char * input_str) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         
         LEDPanelTeardown();
+        
+        display_mode = idle_display_mode;
         
         terminalTextAttributesReset();
         
@@ -825,6 +830,57 @@ usb_uart_command_function_t voidModeEndCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t setModeCommand(char * input_str) {
+ 
+    char * received_mode;
+    received_mode = (char *) malloc(64);
+    uint32_t starting_address;
+    sscanf(input_str, "Set Mode: %[^\t\n\r]", received_mode);
+    
+    if (strcmp(received_mode, "USB Stream") == 0) {
+        display_mode = usb_stream_display_mode;
+
+        fillPanelBufferBlack();
+
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Entered USB Stream Mode\r\n");
+        terminalTextAttributesReset();
+    }
+    else if (strcmp(received_mode, "Slot Slideshow") == 0) {
+        display_mode = slot_slideshow_display_mode;
+
+        fillPanelBufferBlack();
+        externalStorageBeginSlotSlideshow(0);
+
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Entered Slot Slideshow Mode\r\n");
+        terminalTextAttributesReset();
+    }
+    else if (strcmp(received_mode, "Slot Shuffle") == 0) {
+        display_mode = slot_shuffle_display_mode;
+
+        fillPanelBufferBlack();
+        RNGCONbits.LOAD = 1;
+        externalStorageBeginSlotSlideshow((uint16_t) RNGNUMGEN1 % (maximum_slot_in_use + 1));
+
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Entered Slot Shuffle Mode\r\n");
+        terminalTextAttributesReset();
+    }
+    else if (strcmp(received_mode, "Void") == 0) {
+        display_mode = void_display_mode;
+
+        fillPanelBufferBlack();
+
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Entered Void Mode\r\n");
+        terminalTextAttributesReset();
+    }
+
+    free(received_mode);
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -927,23 +983,11 @@ void usbUartHashTableInitialize(void) {
         usbUartAddCommand("Append Scratchpad to Slot",
                 "Copies scratchpad image data to next available external storage image slot",
                 appendScratchpadToImageSlotCommand);
-        usbUartAddCommand("Begin Slot Slideshow",
-                "Displays contents in external SPI Flash at a routine interval",
-                slotSlideshowBeginCommand);
-        usbUartAddCommand("Begin Slot Shuffle",
-                "Displays contents in external SPI Flash at a routine interval in a random order",
-                slotShuffleBeginCommand);
-        usbUartAddCommand("End Slot Slideshow",
-                "Suspends displaying contents of SPI Flash",
-                slotSlideshowEndCommand);
+        usbUartAddCommand("Set Mode: ",
+            "\b\b<Mode>: Sets display mode. Supported modes: USB Stream, Slot Slideshow, Slot Shuffle, Void",
+            setModeCommand);
         usbUartAddCommand("Set Slot Slideshow Delay: ",
-                "\b\b<delay_seconds>: Sets the delay time between external images in slots displayed. Default is 10",
+                "\b\b<delay_seconds>: Sets the delay time between external images in slow slideshow and shuffle modes. Default is 10",
                 slotSlideshowDelayTime);
-        usbUartAddCommand("Begin Void Mode",
-                "Displays random data on panel",
-                voidModeBeginCommand);
-        usbUartAddCommand("End Void Mode",
-                "Suspends displaying random data on panel",
-                voidModeEndCommand);
     }
 }
