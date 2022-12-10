@@ -28,6 +28,16 @@ def get_image():
     response = requests.get(image_url)
     return Image.open(BytesIO(response.content))
 
+def get_album():
+    scope = "user-read-playback-state"
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=cred.client_id, client_secret= cred.client_secret, redirect_uri=cred.redirect_url, scope=scope))
+    results = sp.currently_playing()
+    for key, value in results.items():
+        if key == "item":
+            album = value["album"]
+            
+    return album["uri"]
+
 def set_usb_mode(com_port):
     # open a connection on this COM port at 115.2kBaud
     with serial.Serial(com_port, 115200) as dev:
@@ -48,11 +58,17 @@ set_usb_mode(com_port)
 
 print("Streaming Spotify Album Art")
 
+old_album = None
 while (1):
     try:
-        album_art = get_image()
-        panel_direct_data_converter.send_image(album_art, com_port)
-        time.sleep(5)
+        if old_album != get_album():
+            album_art = get_image()
+            panel_direct_data_converter.send_image(album_art, com_port)
+            old_album = get_album()
+            print("Got artwork for " + str(old_album))
+        else:
+            print("No new music playing: " + time.strftime("%H:%M:%S", time.localtime()))
+        time.sleep(10)
     except:
-        print("Error getting artwork")
+        print("Error getting artwork: " + time.strftime("%H:%M:%S", time.localtime()))
         time.sleep(10)
