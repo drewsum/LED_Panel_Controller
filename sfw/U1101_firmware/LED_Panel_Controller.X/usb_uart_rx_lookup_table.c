@@ -764,31 +764,6 @@ usb_uart_command_function_t printImageSlotsInUseCommand(char * input_str) {
     
 }
 
-usb_uart_command_function_t slotSlideshowBeginCommand(char * input_str) {
- 
-    display_mode = slot_slideshow_display_mode;
-    
-    externalStorageBeginSlotSlideshow(0);
-    
-}
-
-usb_uart_command_function_t slotShuffleBeginCommand(char * input_str) {
- 
-    display_mode = slot_shuffle_display_mode;
-    // Load a new seed
-    RNGCONbits.LOAD = 1;
-    externalStorageBeginSlotSlideshow((uint16_t) RNGNUMGEN1 % (maximum_slot_in_use + 1));
-    
-}
-
-usb_uart_command_function_t slotSlideshowEndCommand(char * input_str) {
- 
-    display_mode = idle_display_mode;
-    
-    externalStorageSlotEndSlideshow();
-    
-}
-
 usb_uart_command_function_t slotSlideshowDelayTime(char * input_str) {
  
     uint32_t read_delay;
@@ -798,33 +773,6 @@ usb_uart_command_function_t slotSlideshowDelayTime(char * input_str) {
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Set slot slideshow delay to %u\n\r", slot_slideshow_delay);
-    terminalTextAttributesReset();
-    
-    
-}
-
-usb_uart_command_function_t voidModeBeginCommand(char * input_str) {
- 
-    display_mode = void_display_mode;
-    
-    fillPanelBufferBlack();
-    
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Entering Void Mode\r\n");
-    terminalTextAttributesReset();
-    
-}
-
-usb_uart_command_function_t voidModeEndCommand(char * input_str) {
- 
-    display_mode = idle_display_mode;
-    
-    LEDPanelTeardown();
-    
-    clearDisplayModeLEDs();
-    
-    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Exiting Void Mode\r\n");
     terminalTextAttributesReset();
     
     
