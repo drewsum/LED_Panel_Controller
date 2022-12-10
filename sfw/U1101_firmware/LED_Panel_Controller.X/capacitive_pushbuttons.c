@@ -89,7 +89,64 @@ void powerCapTouchPushbuttonCallback(void) {
 // this is the callback for when the mode pushbutton is pressed
 void modeCapTouchPushbuttonCallback(void) {
     
-    Nop();
+    // only do something if we're operating
+    if (display_mode != idle_display_mode) {
+     
+        // increment, decide if we need to wrap around
+        display_mode++;
+        if (display_mode == NumberOfSupportedDisplayModes) display_mode = 1;
+        
+        
+        switch (display_mode) {
+            
+            case usb_stream_display_mode:
+                fillPanelBufferBlack();
+                
+                terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, NORMAL_FONT);
+                printf("Entered USB Stream Mode\r\n");
+                terminalTextAttributesReset();
+                break;
+            
+            case slot_slideshow_display_mode:
+                fillPanelBufferBlack();
+                
+                externalStorageBeginSlotSlideshow(0);
+                
+                terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, NORMAL_FONT);
+                printf("Entered Slot Slideshow Mode\r\n");
+                terminalTextAttributesReset();
+                break;
+            
+            case slot_shuffle_display_mode:
+                fillPanelBufferBlack();
+                
+                RNGCONbits.LOAD = 1;
+                externalStorageBeginSlotSlideshow((uint16_t) RNGNUMGEN1 % (maximum_slot_in_use + 1));
+                terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, NORMAL_FONT);
+                printf("Entered Slot Shuffle Mode\r\n");
+                terminalTextAttributesReset();
+                break;
+            
+            case void_display_mode:
+                fillPanelBufferBlack();
+                
+                terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, NORMAL_FONT);
+                printf("Entered Void Mode\r\n");
+                terminalTextAttributesReset();
+                break;
+
+        }
+        
+    }
+    
+    else {
+     
+        terminalTextAttributesReset();
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Panel is not currently configured to be on\n\r");
+        terminalTextAttributesReset();
+        
+    }
     
     mode_pushbutton_flag = 0;
     

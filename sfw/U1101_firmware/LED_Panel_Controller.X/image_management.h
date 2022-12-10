@@ -30,7 +30,8 @@ enum display_mode_t{
     usb_stream_display_mode,
     slot_slideshow_display_mode,
     slot_shuffle_display_mode,
-    void_display_mode
+    void_display_mode,
+    NumberOfSupportedDisplayModes          // trick C into evaluating this as available options
     
 } display_mode;
 
