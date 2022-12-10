@@ -53,6 +53,8 @@ else: print("Could not find LED Panel Controller")
 
 set_usb_mode(com_port)
 
+i = 1
 while (1):
     panel_direct_data_converter.send_image(create_image(), com_port)
-    time.sleep(1)
+    print("sent new data " + str(i))
+    i = i + 1
