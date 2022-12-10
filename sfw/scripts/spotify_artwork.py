@@ -49,8 +49,10 @@ set_usb_mode(com_port)
 print("Streaming Spotify Album Art")
 
 while (1):
-    album_art = get_image()
-
-    panel_direct_data_converter.send_image(album_art, com_port)
-
-    time.sleep(5)
+    try:
+        album_art = get_image()
+        panel_direct_data_converter.send_image(album_art, com_port)
+        time.sleep(5)
+    except:
+        print("Error getting artwork")
+        time.sleep(10)
