@@ -194,6 +194,17 @@ def write_output_file(input_array):
 
     f.close()
 
+def load_scratphad_to_buffer(dev):
+    dev.write(b"Copy Panel Scratchpad to Buffer\r")
+    response = dev.readline().decode('utf-8')
+    response = trim_escape_codes(response)
+
+    dev.reset_input_buffer()
+
+    if (response.startswith("Copied image from scratchpad to buffer")):
+        dev.reset_output_buffer()
+
+
 def enable_panel(dev):
     dev.write(b"Copy Panel Scratchpad to Buffer\r")
     response = dev.readline().decode('utf-8')
@@ -297,3 +308,38 @@ if __name__ == "__main__":
         warnings.simplefilter("ignore")
 
         main()
+
+def send_image(im, com_port):
+    # open passed image
+    scaled_image = scale_image(im)
+    
+    # conert scaled image to bytes
+    image_byte_array = image_to_byte_array(image_gamma_correction(scaled_image))
+        
+    # open a connection on this COM port at 115.2kBaud
+    with serial.Serial(com_port, 115200) as dev:
+
+        # loop over frames, send 2kB at a time
+        for frame in range(8):
+            values = list(image_byte_array[(frame*2048):((frame+1)*2048)])
+            # create output sting to send to device
+            output_str = "Fill Panel Scratchpad: " + str(frame*2048) + ", "
+            for value in values:
+                output_str = output_str + chr(value+14)
+            output_str = output_str + "\r"
+            # write to device
+            dev.write(bytes(output_str, 'utf-8'))
+
+            response = dev.readline().decode('utf-8')
+            response = trim_escape_codes(response)
+
+            dev.reset_input_buffer()
+
+            # check if response to *IDN? starts with "Pulse Oximeter"
+            if (response.startswith("Received data into scratchpad")):
+                dev.reset_output_buffer()
+
+        load_scratphad_to_buffer(dev)        
+
+        # Close active COM port
+        dev.close()
