@@ -370,6 +370,9 @@ void main(void) {
         // update mode LEDs periodically
         if (display_mode != idle_display_mode && heartbeat_systick % 20 == 0) updateDisplayModeLEDs();
         
+        if (power_pushbutton_flag) powerCapTouchPushbuttonCallback();
+        if (mode_pushbutton_flag) modeCapTouchPushbuttonCallback();
+        
     }
     
 }

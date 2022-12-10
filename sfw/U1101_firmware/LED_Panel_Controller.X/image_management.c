@@ -106,12 +106,32 @@ void updateDisplayModeLEDs(void) {
             PROG3_MODE_LED_PIN = LOW;
             PROG4_MODE_LED_PIN = LOW;
             break;
+        case usb_stream_display_mode:
+            USB_STREAM_MODE_LED_PIN = HIGH;
+            FLASH_SLIDESHOW_MODE_LED_PIN = LOW;
+            VOID_MODE_LED_PIN = LOW;
+            MLVDS_STREAM_MODE_LED_PIN = LOW;
+            PROG1_MODE_LED_PIN = LOW;
+            PROG2_MODE_LED_PIN = LOW;
+            PROG3_MODE_LED_PIN = LOW;
+            PROG4_MODE_LED_PIN = LOW;
+            break;
         case void_display_mode:
             USB_STREAM_MODE_LED_PIN = LOW;
             FLASH_SLIDESHOW_MODE_LED_PIN = LOW;
             VOID_MODE_LED_PIN = HIGH;
             MLVDS_STREAM_MODE_LED_PIN = LOW;
             PROG1_MODE_LED_PIN = LOW;
+            PROG2_MODE_LED_PIN = LOW;
+            PROG3_MODE_LED_PIN = LOW;
+            PROG4_MODE_LED_PIN = LOW;
+            break;
+        case slot_shuffle_display_mode:
+            USB_STREAM_MODE_LED_PIN = LOW;
+            FLASH_SLIDESHOW_MODE_LED_PIN = LOW;
+            VOID_MODE_LED_PIN = LOW;
+            MLVDS_STREAM_MODE_LED_PIN = LOW;
+            PROG1_MODE_LED_PIN = HIGH;
             PROG2_MODE_LED_PIN = LOW;
             PROG3_MODE_LED_PIN = LOW;
             PROG4_MODE_LED_PIN = LOW;

@@ -27,6 +27,7 @@
 enum display_mode_t{
 
     idle_display_mode,
+    usb_stream_display_mode,
     slot_slideshow_display_mode,
     slot_shuffle_display_mode,
     void_display_mode
@@ -62,7 +63,6 @@ void externalStorageSlotEndSlideshow(void);
 
 // this function is called within main to fill the panel buffer with random data in void mode
 void voidModeFillBuffer(void);
-
 
 // this function updates the mode LEDs based on the current display_mode setting
 void updateDisplayModeLEDs(void);

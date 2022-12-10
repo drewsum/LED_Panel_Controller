@@ -27,6 +27,8 @@
 
 #include "32mz_interrupt_control.h"
 
+// these flags are set by cap touch ISRs an cleared in the callback functions from main()
+uint32_t power_pushbutton_flag, mode_pushbutton_flag;
 
 // this function initializes the "Power" capacitive pushbutton interrupt
 void capTouchPushbuttonsInitialize(void);
@@ -36,6 +38,12 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL7SRS) powerCapTouchPushbuttonISR(void);
 
 // this is the cap touch mode toggle button interrupt service routine
 void __ISR(_EXTERNAL_4_VECTOR, IPL7SRS) modeCapTouchPushbuttonISR(void);
+
+// this is the callback function for when the power pushbutton is pressed
+void powerCapTouchPushbuttonCallback(void);
+
+// this is the callback for when the mode pushbutton is pressed
+void modeCapTouchPushbuttonCallback(void);
 
 #endif /* _CAPACITIVE_PUSHBUTTONS_H */
 
