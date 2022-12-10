@@ -19,3 +19,5 @@ fp-info-cache
 *.ses
 
 *\sfw\scripts\venv
+
+*\sfw\scripts\test_images\*
