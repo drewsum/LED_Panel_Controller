@@ -1,0 +1,5 @@
+venv
+*.jpg
+*.png
+*.dru
+cred.py

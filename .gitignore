@@ -17,3 +17,7 @@ fp-info-cache
 # Autorouter files (exported from Pcbnew)
 *.dsn
 *.ses
+
+*\sfw\scripts\venv
+
+*\sfw\scripts\test_images
